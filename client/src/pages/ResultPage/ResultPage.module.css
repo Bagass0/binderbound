@@ -1,0 +1,104 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.exports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.collectionBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-glass);
+}
+
+.collectionBar > label {
+  flex: 1 1 18rem;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.binderAnchor {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.collectionStats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 12rem;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.bar {
+  height: 4px;
+  background: var(--line);
+}
+
+.barFill {
+  height: 100%;
+  transform-origin: left;
+  background: var(--rift-gradient);
+  box-shadow: var(--rift-glow);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-block: 1.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  composes: label-caps from global;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.25rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  transition: color 0.2s;
+}
+
+.tab svg {
+  font-size: 1.1rem;
+}
+
+.tab:hover,
+.tabActive {
+  color: var(--text-strong);
+}
+
+.underline {
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--rift-gradient);
+  box-shadow: var(--rift-glow);
+}

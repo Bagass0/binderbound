@@ -1,0 +1,21 @@
+# Production : `docker compose -f compose.prod.yaml up -d --build`
+# → une seule image : Express sert l'API et le client buildé sur http://localhost:8080
+name: binderbound
+
+services:
+  app:
+    build:
+      context: .
+      target: prod
+    image: binderbound:latest
+    restart: unless-stopped
+    ports:
+      - '${PORT:-8080}:3001'
+    # Les sets sont lus au démarrage : ajoute un fichier puis `docker compose restart`.
+    volumes:
+      - ./server/data/sets:/app/server/data/sets:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true

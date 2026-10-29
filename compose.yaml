@@ -1,0 +1,31 @@
+# Développement local : `docker compose up --build`
+# → client Vite sur http://localhost:5173 (rechargement à chaud), API Express en interne.
+name: binderbound-dev
+
+services:
+  server:
+    build:
+      context: .
+      target: dev
+    command: npm run dev -w server
+    volumes:
+      - ./server:/app/server
+    ports:
+      - '${API_PORT:-3001}:3001'
+
+  client:
+    build:
+      context: .
+      target: dev
+    command: npm run dev -w client -- --host 0.0.0.0
+    environment:
+      API_PROXY_TARGET: http://server:3001
+      VITE_USE_POLLING: '1'
+    volumes:
+      - ./client:/app/client
+      # Garde les dépendances installées dans l'image (pas celles de l'hôte)
+      - /app/client/node_modules
+    ports:
+      - '${CLIENT_PORT:-5173}:5173'
+    depends_on:
+      - server

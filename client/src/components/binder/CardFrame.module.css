@@ -1,0 +1,142 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 6%;
+  border: 1px solid color-mix(in srgb, var(--domain) 70%, black);
+  border-radius: 5%/3.6%;
+  overflow: hidden;
+  text-align: left;
+  color: var(--text-strong);
+  container-type: inline-size;
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      color-mix(in srgb, var(--domain) 30%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(180deg, color-mix(in srgb, var(--domain) 18%, var(--surface)), var(--bg-void));
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--text-rgb) / 0.06),
+    0 2px 6px rgb(0 0 0 / 0.5);
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s,
+    filter 0.35s,
+    opacity 0.35s;
+}
+
+button.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  z-index: 2;
+  transform: translateY(-3%) scale(1.04);
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--text-rgb) / 0.12),
+    0 0 1rem color-mix(in srgb, var(--domain) 50%, transparent),
+    0 0.5rem 1rem rgb(0 0 0 / 0.6);
+}
+
+/* Liseré de domaine */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4%;
+  background: var(--domain);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+
+.number {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(0.55rem, 13cqi, 0.85rem);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.gem {
+  width: 11cqi;
+  height: 11cqi;
+  max-width: 0.7rem;
+  max-height: 0.7rem;
+  border: 1px solid rgb(0 0 0 / 0.5);
+  background: var(--rarity);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0.35rem var(--rarity);
+}
+
+.art {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  font-size: 34cqi;
+  color: color-mix(in srgb, var(--domain) 75%, white);
+  opacity: 0.75;
+}
+
+.name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: clamp(0.5rem, 10.5cqi, 0.78rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.badge {
+  position: absolute;
+  top: 18%;
+  right: -1px;
+  padding: 0.1em 0.45em;
+  font-size: clamp(0.45rem, 8.5cqi, 0.65rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bg-void);
+  background: linear-gradient(180deg, var(--rift-light), var(--rift));
+  clip-path: polygon(0.4em 0, 100% 0, 100% 100%, 0.4em 100%, 0 50%);
+}
+
+/* Carte non possédée : grisée, mais garde son emplacement */
+.missing {
+  filter: grayscale(1) brightness(0.55);
+  opacity: 0.45;
+}
+
+.missing:hover {
+  filter: grayscale(0.6) brightness(0.8);
+  opacity: 0.8;
+}
+
+/* Carte trouvée par la recherche */
+.highlight {
+  z-index: 3;
+  animation: pulse 0.6s ease-in-out 4 alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow:
+      0 0 0 2px var(--rift),
+      0 0 0.5rem var(--rift);
+    transform: scale(1);
+  }
+  to {
+    box-shadow:
+      0 0 0 3px var(--rift-light),
+      0 0 1.75rem var(--rift);
+    transform: scale(1.08);
+  }
+}

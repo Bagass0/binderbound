@@ -1,0 +1,231 @@
+{
+  "app": {
+    "name": "Binderbound",
+    "tagline": "Rangement de classeur Riftbound",
+    "home": "Binderbound — accueil",
+    "language": "Langue"
+  },
+  "common": {
+    "back": "Retour",
+    "next": "Suivant",
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue",
+    "increase": "Augmenter",
+    "decrease": "Diminuer",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "steps": {
+    "label": "Étapes",
+    "set": "Set",
+    "binder": "Classeur",
+    "options": "Options",
+    "result": "Résultat"
+  },
+  "setSelect": {
+    "eyebrow": "Étape 1",
+    "title": "Choisis ton set",
+    "lead": "Sélectionne l’extension à ranger. Binderbound calculera l’emplacement exact de chaque carte dans ton classeur.",
+    "released": "Sortie le {{date}}",
+    "baseCards_one": "carte",
+    "baseCards_other": "cartes",
+    "withVariants": "avec variantes",
+    "choose": "Choisir",
+    "empty": "Aucun set disponible. Ajoute un fichier dans server/data/sets."
+  },
+  "binder": {
+    "title": "Ton classeur",
+    "lead": "Indique le format de tes pages et leur fonctionnement.",
+    "format": "Format des pages",
+    "formatHint": "Nombre de pochettes sur chaque face",
+    "perFace_one": "{{count}} carte par face",
+    "perFace_other": "{{count}} cartes par face",
+    "custom": "Personnalisé",
+    "customHint": "Lignes × colonnes",
+    "rows": "Lignes",
+    "cols": "Colonnes",
+    "doubleSided": "Recto-verso",
+    "doubleSidedHint": "Chaque feuillet accueille des cartes sur ses deux faces",
+    "maxPages": "Feuillets max",
+    "maxPagesHint": "Optionnel : on te prévient si le set ne rentre pas",
+    "preview": "Aperçu",
+    "previewCaption_one": "{{rows}} × {{cols}} — {{count}} carte par face",
+    "previewCaption_other": "{{rows}} × {{cols}} — {{count}} cartes par face",
+    "emptySlot": "Emplacement vide",
+    "reserved": "Réservée",
+    "insideCover": "Intérieur de couverture",
+    "blankBack": "Dos du feuillet",
+    "end": "Fin du classeur",
+    "prevPage": "Page précédente",
+    "nextPage": "Page suivante",
+    "prevFace": "Face précédente",
+    "nextFace": "Face suivante",
+    "spreadOf": "Double page {{current}} / {{total}}",
+    "faceOf": "Face {{current}} / {{total}}",
+    "goToSpread": "Aller à la double page {{n}}",
+    "swipeHint": "Glisse vers la gauche ou la droite pour tourner les pages"
+  },
+  "options": {
+    "title": "Options de rangement",
+    "lead": "Choisis l’ordre des cartes et la place des variantes.",
+    "sorting": "Tri",
+    "sortBy": "Ordre de tri",
+    "breakBy": "Nouvelle face par {{group}}",
+    "breakByHint": "Laisse des cases vides pour que chaque groupe commence en haut d’une face",
+    "breakByDisabled": "Nouvelle face par groupe",
+    "breakByDisabledHint": "Disponible avec un tri par domaine, rareté ou type",
+    "variants": "Variantes",
+    "variantMode": "Position des variantes",
+    "includedVariants": "Variantes incluses",
+    "start": "Début du classeur",
+    "reservedFaces": "Faces réservées",
+    "reservedFacesHint": "Faces laissées vides au début (page de garde…)",
+    "startOnRight": "Commencer sur une face de droite",
+    "startOnRightHint": "Saute une face si la première carte tomberait sur une page de gauche",
+    "startOnRightSingle": "Inutile en simple face : toutes les faces sont à droite",
+    "compute": "Calculer"
+  },
+  "sort": {
+    "number": "Numéro",
+    "domain": "Domaine",
+    "rarity": "Rareté",
+    "type": "Type"
+  },
+  "groupBy": {
+    "domain": "domaine",
+    "rarity": "rareté",
+    "type": "type"
+  },
+  "variantMode": {
+    "after-base": {
+      "label": "Après la carte de base",
+      "hint": "Chaque variante suit directement sa carte"
+    },
+    "end": {
+      "label": "À la fin du set",
+      "hint": "Toutes les variantes regroupées après le set"
+    },
+    "exclude": {
+      "label": "Exclues",
+      "hint": "Seules les cartes de base sont rangées"
+    }
+  },
+  "domain": {
+    "fury": "Fureur",
+    "calm": "Calme",
+    "mind": "Esprit",
+    "body": "Corps",
+    "chaos": "Chaos",
+    "order": "Ordre",
+    "colorless": "Incolore"
+  },
+  "rarity": {
+    "common": "Commune",
+    "uncommon": "Peu commune",
+    "rare": "Rare",
+    "epic": "Épique",
+    "showcase": "Showcase"
+  },
+  "variant": {
+    "base": "Base",
+    "alt-art": "Alt-art",
+    "overnumbered": "Overnumbered",
+    "signature": "Signature",
+    "promo": "Promo",
+    "foil": "Foil"
+  },
+  "variantShort": {
+    "alt-art": "Alt",
+    "overnumbered": "Over",
+    "signature": "Sig",
+    "promo": "Promo",
+    "foil": "Foil"
+  },
+  "side": {
+    "recto": "Recto",
+    "verso": "Verso"
+  },
+  "position": {
+    "face": "Feuillet {{sheet}} · {{side}}",
+    "full": "Feuillet {{sheet}} · {{side}} · L{{row}} · C{{col}}"
+  },
+  "summary": {
+    "cards_one": "carte",
+    "cards_other": "cartes",
+    "cardsHint": "{{base}} de base · {{variants}} variantes",
+    "faces_one": "face",
+    "faces_other": "faces",
+    "slotsPerFace_one": "{{count}} emplacement par face",
+    "slotsPerFace_other": "{{count}} emplacements par face",
+    "skippedHint_one": "+ {{count}} face réservée",
+    "skippedHint_other": "+ {{count}} faces réservées",
+    "sheets_one": "feuillet",
+    "sheets_other": "feuillets",
+    "maxHint": "sur {{max}} disponibles",
+    "noMax": "pas de limite",
+    "empty_one": "case vide",
+    "empty_other": "cases vides",
+    "emptyHint": "places libres entre les cartes",
+    "overflow_one": "Le set ne rentre pas : {{used}} feuillets nécessaires pour {{max}} disponibles ({{count}} feuillet en trop).",
+    "overflow_other": "Le set ne rentre pas : {{used}} feuillets nécessaires pour {{max}} disponibles ({{count}} feuillets en trop).",
+    "overflowShort_one": "{{count}} feuillet en trop",
+    "overflowShort_other": "{{count}} feuillets en trop"
+  },
+  "result": {
+    "title": "Ton rangement",
+    "lead": "Voici l’emplacement exact de chaque carte. Recherche une carte pour la retrouver.",
+    "computing": "Calcul du placement…",
+    "share": "Partager",
+    "copied": "Lien copié !",
+    "exportCsv": "CSV",
+    "print": "Imprimer",
+    "views": "Vues",
+    "tab": {
+      "binder": "Classeur",
+      "list": "Liste"
+    }
+  },
+  "search": {
+    "label": "Rechercher une carte",
+    "placeholder": "Nom ou numéro de carte…",
+    "noResult": "Aucune carte trouvée"
+  },
+  "list": {
+    "number": "N°",
+    "name": "Carte",
+    "domain": "Domaine",
+    "rarity": "Rareté",
+    "variant": "Variante",
+    "sheet": "Feuillet",
+    "side": "Face",
+    "row": "Ligne",
+    "col": "Colonne",
+    "locate": "Voir",
+    "filterText": "Filtrer…",
+    "allDomains": "Tous les domaines",
+    "allVariants": "Toutes les variantes",
+    "allCards": "Toutes les cartes",
+    "count_one": "{{count}} carte",
+    "count_other": "{{count}} cartes"
+  },
+  "collection": {
+    "title": "Ma collection",
+    "hint": "Clique sur une carte pour la marquer comme possédée. Les cartes manquantes gardent leur place.",
+    "progress": "{{owned}} / {{total}} possédées",
+    "all": "Tout cocher",
+    "none": "Tout décocher",
+    "owned": "Possédées",
+    "ownedShort": "Possédée",
+    "missing": "Manquante",
+    "toggle": "Marquer comme possédée"
+  },
+  "print": {
+    "meta": "Format {{rows}} × {{cols}} · {{mode}} · {{cards}} cartes · {{sheets}} feuillets",
+    "doubleSided": "recto-verso",
+    "singleSided": "simple face",
+    "sheet": "Feuillet {{sheet}}"
+  },
+  "footer": {
+    "disclaimer": "Binderbound n’est pas affilié à Riot Games. Riftbound et League of Legends sont des marques de Riot Games, Inc."
+  }
+}

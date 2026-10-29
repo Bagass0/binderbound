@@ -1,0 +1,26 @@
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+.rune {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--rift);
+  border-right-color: var(--violet);
+  filter: drop-shadow(var(--rift-glow));
+}
+
+.error strong {
+  font-family: var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--danger);
+}

@@ -1,0 +1,37 @@
+/* Panneau vitré, avec une « couture de faille » lumineuse en haut. */
+.panel {
+  position: relative;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-glass), rgb(var(--bg-rgb) / 0.6));
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-deep);
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 1.5rem;
+  right: 40%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--rift-gradient);
+  opacity: 0.85;
+}
+
+.header {
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: var(--text-strong);
+}
+
+.subtitle {
+  margin-top: 0.35rem;
+  color: var(--text-2);
+  font-size: 0.875rem;
+}

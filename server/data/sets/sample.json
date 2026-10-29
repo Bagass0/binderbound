@@ -1,0 +1,599 @@
+{
+  "id": "sample",
+  "code": "SMP",
+  "name": {
+    "fr": "Set d'exemple",
+    "en": "Sample Set"
+  },
+  "releaseDate": "2025-10-31",
+  "cards": [
+    {
+      "id": "SMP-001",
+      "number": 1,
+      "name": {
+        "fr": "Gardienne des Braises",
+        "en": "Ember Warden"
+      },
+      "type": "legend",
+      "domain": "fury",
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-002",
+      "number": 2,
+      "name": {
+        "fr": "Brute des Cendres",
+        "en": "Ash Brute"
+      },
+      "type": "unit",
+      "domain": "fury",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-003",
+      "number": 3,
+      "name": {
+        "fr": "Lame Rougeoyante",
+        "en": "Glowing Blade"
+      },
+      "type": "gear",
+      "domain": "fury",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-004",
+      "number": 4,
+      "name": {
+        "fr": "Déferlante de Flammes",
+        "en": "Flame Surge"
+      },
+      "type": "spell",
+      "domain": "fury",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-005",
+      "number": 5,
+      "name": {
+        "fr": "Pillard du Volcan",
+        "en": "Volcano Raider"
+      },
+      "type": "unit",
+      "domain": "fury",
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-006",
+      "number": 6,
+      "name": {
+        "fr": "Rune de Fureur",
+        "en": "Fury Rune"
+      },
+      "type": "rune",
+      "domain": "fury",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-007",
+      "number": 7,
+      "name": {
+        "fr": "Moine du Lac Calme",
+        "en": "Still Lake Monk"
+      },
+      "type": "champion",
+      "domain": "calm",
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-008",
+      "number": 8,
+      "name": {
+        "fr": "Esprit de la Brume",
+        "en": "Mist Spirit"
+      },
+      "type": "unit",
+      "domain": "calm",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-009",
+      "number": 9,
+      "name": {
+        "fr": "Souffle Apaisant",
+        "en": "Soothing Breath"
+      },
+      "type": "spell",
+      "domain": "calm",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-010",
+      "number": 10,
+      "name": {
+        "fr": "Talisman de Jade",
+        "en": "Jade Talisman"
+      },
+      "type": "gear",
+      "domain": "calm",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-011",
+      "number": 11,
+      "name": {
+        "fr": "Rune de Calme",
+        "en": "Calm Rune"
+      },
+      "type": "rune",
+      "domain": "calm",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-012",
+      "number": 12,
+      "name": {
+        "fr": "Archiviste Astral",
+        "en": "Astral Archivist"
+      },
+      "type": "legend",
+      "domain": "mind",
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-013",
+      "number": 13,
+      "name": {
+        "fr": "Apprenti Arcaniste",
+        "en": "Arcane Apprentice"
+      },
+      "type": "unit",
+      "domain": "mind",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-014",
+      "number": 14,
+      "name": {
+        "fr": "Prisme de Pensée",
+        "en": "Thought Prism"
+      },
+      "type": "gear",
+      "domain": "mind",
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-015",
+      "number": 15,
+      "name": {
+        "fr": "Éclair de Lucidité",
+        "en": "Flash of Insight"
+      },
+      "type": "spell",
+      "domain": "mind",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-016",
+      "number": 16,
+      "name": {
+        "fr": "Rune de Savoir",
+        "en": "Mind Rune"
+      },
+      "type": "rune",
+      "domain": "mind",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-017",
+      "number": 17,
+      "name": {
+        "fr": "Colosse de Granit",
+        "en": "Granite Colossus"
+      },
+      "type": "champion",
+      "domain": "body",
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-018",
+      "number": 18,
+      "name": {
+        "fr": "Lutteur des Steppes",
+        "en": "Steppe Wrestler"
+      },
+      "type": "unit",
+      "domain": "body",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-019",
+      "number": 19,
+      "name": {
+        "fr": "Cri de Guerre",
+        "en": "War Cry"
+      },
+      "type": "spell",
+      "domain": "body",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-020",
+      "number": 20,
+      "name": {
+        "fr": "Gantelets Lestés",
+        "en": "Weighted Gauntlets"
+      },
+      "type": "gear",
+      "domain": "body",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-021",
+      "number": 21,
+      "name": {
+        "fr": "Rune de Force",
+        "en": "Body Rune"
+      },
+      "type": "rune",
+      "domain": "body",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-022",
+      "number": 22,
+      "name": {
+        "fr": "Bouffon du Néant",
+        "en": "Void Jester"
+      },
+      "type": "champion",
+      "domain": "chaos",
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-023",
+      "number": 23,
+      "name": {
+        "fr": "Rôdeur Fracturé",
+        "en": "Fractured Prowler"
+      },
+      "type": "unit",
+      "domain": "chaos",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-024",
+      "number": 24,
+      "name": {
+        "fr": "Pacte Instable",
+        "en": "Unstable Pact"
+      },
+      "type": "spell",
+      "domain": "chaos",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-025",
+      "number": 25,
+      "name": {
+        "fr": "Masque Grimaçant",
+        "en": "Grinning Mask"
+      },
+      "type": "gear",
+      "domain": "chaos",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-026",
+      "number": 26,
+      "name": {
+        "fr": "Rune de Chaos",
+        "en": "Chaos Rune"
+      },
+      "type": "rune",
+      "domain": "chaos",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-027",
+      "number": 27,
+      "name": {
+        "fr": "Juge Céleste",
+        "en": "Celestial Judge"
+      },
+      "type": "legend",
+      "domain": "order",
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-028",
+      "number": 28,
+      "name": {
+        "fr": "Sentinelle Dorée",
+        "en": "Golden Sentinel"
+      },
+      "type": "unit",
+      "domain": "order",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-029",
+      "number": 29,
+      "name": {
+        "fr": "Édit Impérial",
+        "en": "Imperial Edict"
+      },
+      "type": "spell",
+      "domain": "order",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-030",
+      "number": 30,
+      "name": {
+        "fr": "Bouclier du Serment",
+        "en": "Oathshield"
+      },
+      "type": "gear",
+      "domain": "order",
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-031",
+      "number": 31,
+      "name": {
+        "fr": "Rune d'Ordre",
+        "en": "Order Rune"
+      },
+      "type": "rune",
+      "domain": "order",
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-032",
+      "number": 32,
+      "name": {
+        "fr": "Carrefour Oublié",
+        "en": "Forgotten Crossroads"
+      },
+      "type": "battlefield",
+      "domain": "colorless",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-033",
+      "number": 33,
+      "name": {
+        "fr": "Pont des Brumes",
+        "en": "Mistbridge"
+      },
+      "type": "battlefield",
+      "domain": "colorless",
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-034",
+      "number": 34,
+      "name": {
+        "fr": "Relique Errante",
+        "en": "Wandering Relic"
+      },
+      "type": "gear",
+      "domain": "colorless",
+      "rarity": "showcase",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-001a",
+      "number": 1,
+      "name": {
+        "fr": "Gardienne des Braises",
+        "en": "Ember Warden"
+      },
+      "type": "legend",
+      "domain": "fury",
+      "rarity": "epic",
+      "variant": "alt-art",
+      "baseCardId": "SMP-001",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-001s",
+      "number": 1,
+      "name": {
+        "fr": "Gardienne des Braises",
+        "en": "Ember Warden"
+      },
+      "type": "legend",
+      "domain": "fury",
+      "rarity": "epic",
+      "variant": "signature",
+      "baseCardId": "SMP-001",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-007a",
+      "number": 7,
+      "name": {
+        "fr": "Moine du Lac Calme",
+        "en": "Still Lake Monk"
+      },
+      "type": "champion",
+      "domain": "calm",
+      "rarity": "rare",
+      "variant": "alt-art",
+      "baseCardId": "SMP-007",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-035",
+      "number": 35,
+      "name": {
+        "fr": "Archiviste Astral",
+        "en": "Astral Archivist"
+      },
+      "type": "legend",
+      "domain": "mind",
+      "rarity": "showcase",
+      "variant": "overnumbered",
+      "baseCardId": "SMP-012",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-017f",
+      "number": 17,
+      "name": {
+        "fr": "Colosse de Granit",
+        "en": "Granite Colossus"
+      },
+      "type": "champion",
+      "domain": "body",
+      "rarity": "epic",
+      "variant": "foil",
+      "baseCardId": "SMP-017",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-022p",
+      "number": 22,
+      "name": {
+        "fr": "Bouffon du Néant",
+        "en": "Void Jester"
+      },
+      "type": "champion",
+      "domain": "chaos",
+      "rarity": "rare",
+      "variant": "promo",
+      "baseCardId": "SMP-022",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-027a",
+      "number": 27,
+      "name": {
+        "fr": "Juge Céleste",
+        "en": "Celestial Judge"
+      },
+      "type": "legend",
+      "domain": "order",
+      "rarity": "epic",
+      "variant": "alt-art",
+      "baseCardId": "SMP-027",
+      "imageUrl": null
+    },
+    {
+      "id": "SMP-036",
+      "number": 36,
+      "name": {
+        "fr": "Relique Errante",
+        "en": "Wandering Relic"
+      },
+      "type": "gear",
+      "domain": "colorless",
+      "rarity": "showcase",
+      "variant": "overnumbered",
+      "baseCardId": "SMP-034",
+      "imageUrl": null
+    }
+  ]
+}

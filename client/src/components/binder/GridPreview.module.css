@@ -1,0 +1,50 @@
+.grid {
+  display: grid;
+  gap: var(--gap);
+  aspect-ratio: calc(var(--cols) * var(--card-w)) / calc(var(--rows) * var(--card-h));
+}
+
+.sm {
+  --gap: 2px;
+  width: calc(var(--cols) * 0.75rem);
+}
+
+.md {
+  --gap: 3px;
+  width: calc(var(--cols) * 1.1rem);
+}
+
+.lg {
+  --gap: 0.4rem;
+  width: min(100%, calc(var(--cols) * 4.5rem));
+}
+
+.cell {
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg, rgb(var(--accent-rgb) / 0.18), rgb(var(--accent-rgb) / 0.04));
+}
+
+.lg .cell {
+  border-radius: 3px;
+}
+
+.active .cell {
+  border-color: var(--rift-deep);
+  background: linear-gradient(180deg, rgb(var(--rift-rgb) / 0.35), rgb(var(--rift-rgb) / 0.08));
+}
+
+.base {
+  border-color: var(--accent-dim);
+  background: var(--accent-gradient);
+}
+
+.variant {
+  border-color: var(--rift);
+  background: linear-gradient(180deg, var(--rift-light), var(--rift-deep));
+}
+
+.empty {
+  border-style: dashed;
+  border-color: var(--line);
+  background: transparent;
+}

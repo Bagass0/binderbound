@@ -1,0 +1,83 @@
+/*
+ * Charte « Rift Atlas » de Binderbound.
+ * Encre indigo, laiton chaud (léger clin d'œil fantasy) et une « faille » sarcelle → violet
+ * comme signature. Couleurs par domaine dans l'esprit du TCG, palette maison non officielle.
+ */
+:root {
+  /* Fonds */
+  --bg-rgb: 11 10 22;
+  --bg-void: rgb(var(--bg-rgb));
+  --bg-deep: #100e1d;
+  --surface: #15132a;
+  --surface-2: #1c1936;
+  --surface-glass: rgb(28 25 54 / 0.72);
+
+  /* Laiton (accent principal) */
+  --accent-rgb: 240 184 90;
+  --accent: rgb(var(--accent-rgb));
+  --accent-dim: #b98a43;
+  --accent-gradient: linear-gradient(135deg, #ffd58a 0%, #f0b85a 45%, #d98a3a 100%);
+  --on-accent: #1a1206;
+
+  /* Faille (signature) */
+  --rift-rgb: 62 224 204;
+  --rift: rgb(var(--rift-rgb));
+  --rift-light: #c9fff6;
+  --rift-deep: #22a99a;
+  --violet: #8f7cff;
+  --rift-gradient: linear-gradient(110deg, #3ee0cc 0%, #8f7cff 55%, #ff7ab0 100%);
+  --rift-glow: 0 0 0.9rem rgb(var(--rift-rgb) / 0.45);
+
+  /* Lignes */
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.18);
+
+  /* Texte */
+  --text-rgb: 243 238 230;
+  --text: rgb(var(--text-rgb));
+  --text-strong: #fffaf0;
+  --text-2: #a7a2b8;
+  --text-3: #6a6580;
+
+  --danger: #ff5d73;
+
+  /* Domaines (palette maison) */
+  --domain-fury: #ef4b3f;
+  --domain-calm: #3fbf74;
+  --domain-mind: #4c8dff;
+  --domain-body: #ff9440;
+  --domain-chaos: #a764ff;
+  --domain-order: #f2cc4a;
+  --domain-colorless: #a3a8b5;
+
+  /* Raretés */
+  --rarity-common: #a7a2b8;
+  --rarity-uncommon: #46d18a;
+  --rarity-rare: #4c8dff;
+  --rarity-epic: #b46cff;
+  --rarity-showcase: #ffc857;
+
+  /* Format d'une carte (mm) : ratio des pochettes */
+  --card-w: 63;
+  --card-h: 88;
+
+  /* Classeur physique : cuir prune et pages */
+  --binder-cover: linear-gradient(180deg, #241d33, #120e1c);
+  --binder-spine: linear-gradient(90deg, #08060d, #2e2642 50%, #08060d);
+  --page-bg: linear-gradient(180deg, #19172e, #111024);
+  --page-blank: linear-gradient(180deg, #1a1525, #0f0c17);
+
+  /* Typo */
+  --font-display: 'Marcellus', 'Georgia', serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Formes : coins coupés en diagonale (« éclat ») */
+  --cut: 0.7rem;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-deep: 0 1.25rem 3rem rgb(0 0 0 / 0.45);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --header-h: 4rem;
+  --content-w: 78rem;
+}

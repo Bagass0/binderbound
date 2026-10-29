@@ -1,0 +1,125 @@
+.stepper {
+  width: 100%;
+  max-width: 44rem;
+  margin: 1.5rem auto 0;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.inner {
+  position: relative;
+}
+
+.list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* La ligne relie le centre du premier losange au centre du dernier. */
+.track {
+  position: absolute;
+  top: 1rem;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.fill {
+  height: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--accent), var(--rift), var(--violet));
+  box-shadow: 0 0 0.5rem rgb(var(--rift-rgb) / 0.4);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.node {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--bg-void);
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    box-shadow 0.3s;
+}
+
+.node span {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  composes: label-caps from global;
+  font-size: 0.6875rem;
+  color: var(--text-3);
+  transition: color 0.3s;
+}
+
+.done .node {
+  border-color: transparent;
+  background: var(--accent-gradient);
+}
+
+.done .node span {
+  color: var(--on-accent);
+}
+
+.done .label {
+  color: var(--accent);
+}
+
+.current .node {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--bg-void), var(--bg-void)) padding-box,
+    var(--rift-gradient) border-box;
+  box-shadow: var(--rift-glow);
+}
+
+.current .node span {
+  color: var(--rift-light);
+}
+
+.current .label {
+  color: var(--text-strong);
+}
+
+a.link:hover .node {
+  border-color: var(--text-strong);
+}
+
+a.link:hover .label {
+  color: var(--text-strong);
+}
+
+@media (max-width: 30rem) {
+  .todo .label,
+  .done .label {
+    opacity: 0;
+  }
+}

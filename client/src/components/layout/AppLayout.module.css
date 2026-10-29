@@ -1,0 +1,12 @@
+.stage {
+  flex: 1;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.main {
+  width: 100%;
+  max-width: var(--content-w);
+  margin-inline: auto;
+  padding: 1.5rem clamp(1rem, 4vw, 2rem) 3rem;
+}

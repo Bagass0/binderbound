@@ -1,0 +1,74 @@
+/* Impression : on masque l'interface et on n'affiche que la liste de rangement. */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-sheet {
+    font-family: var(--font-body);
+    font-size: 9.5pt;
+  }
+
+  .print-sheet h1 {
+    font-family: var(--font-display);
+    font-size: 15pt;
+    color: #111;
+    background: none;
+    margin-bottom: 2mm;
+  }
+
+  .print-meta {
+    margin-bottom: 5mm;
+    color: #444;
+  }
+
+  .print-sheet table {
+    width: 100%;
+    margin-bottom: 5mm;
+    border-collapse: collapse;
+    break-inside: avoid;
+  }
+
+  .print-sheet caption {
+    padding: 1mm 0;
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1.5pt solid #111;
+  }
+
+  .print-sheet th,
+  .print-sheet td {
+    padding: 1mm 2mm;
+    border-bottom: 0.5pt solid #bbb;
+    text-align: left;
+  }
+
+  .print-sheet th {
+    font-size: 8pt;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .print-footer {
+    margin-top: 6mm;
+    font-size: 7.5pt;
+    color: #777;
+  }
+}

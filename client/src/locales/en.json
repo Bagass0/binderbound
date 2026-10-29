@@ -1,0 +1,231 @@
+{
+  "app": {
+    "name": "Binderbound",
+    "tagline": "Riftbound binder organizer",
+    "home": "Binderbound — home",
+    "language": "Language"
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "increase": "Increase",
+    "decrease": "Decrease",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "steps": {
+    "label": "Steps",
+    "set": "Set",
+    "binder": "Binder",
+    "options": "Options",
+    "result": "Result"
+  },
+  "setSelect": {
+    "eyebrow": "Step 1",
+    "title": "Choose your set",
+    "lead": "Pick the expansion to organize. Binderbound will work out the exact slot of every card in your binder.",
+    "released": "Released {{date}}",
+    "baseCards_one": "card",
+    "baseCards_other": "cards",
+    "withVariants": "with variants",
+    "choose": "Choose",
+    "empty": "No set available. Add a file to server/data/sets."
+  },
+  "binder": {
+    "title": "Your binder",
+    "lead": "Tell us your page format and how it works.",
+    "format": "Page format",
+    "formatHint": "Number of pockets on each face",
+    "perFace_one": "{{count}} card per face",
+    "perFace_other": "{{count}} cards per face",
+    "custom": "Custom",
+    "customHint": "Rows × columns",
+    "rows": "Rows",
+    "cols": "Columns",
+    "doubleSided": "Double-sided",
+    "doubleSidedHint": "Each sheet holds cards on both faces",
+    "maxPages": "Max sheets",
+    "maxPagesHint": "Optional: we'll warn you if the set doesn't fit",
+    "preview": "Preview",
+    "previewCaption_one": "{{rows}} × {{cols}} — {{count}} card per face",
+    "previewCaption_other": "{{rows}} × {{cols}} — {{count}} cards per face",
+    "emptySlot": "Empty slot",
+    "reserved": "Reserved",
+    "insideCover": "Inside cover",
+    "blankBack": "Back of sheet",
+    "end": "End of binder",
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "prevFace": "Previous face",
+    "nextFace": "Next face",
+    "spreadOf": "Spread {{current}} / {{total}}",
+    "faceOf": "Face {{current}} / {{total}}",
+    "goToSpread": "Go to spread {{n}}",
+    "swipeHint": "Swipe left or right to turn the pages"
+  },
+  "options": {
+    "title": "Sorting options",
+    "lead": "Choose the card order and where variants go.",
+    "sorting": "Sorting",
+    "sortBy": "Sort order",
+    "breakBy": "New face per {{group}}",
+    "breakByHint": "Leaves empty slots so each group starts at the top of a face",
+    "breakByDisabled": "New face per group",
+    "breakByDisabledHint": "Available when sorting by domain, rarity or type",
+    "variants": "Variants",
+    "variantMode": "Variant placement",
+    "includedVariants": "Included variants",
+    "start": "Binder start",
+    "reservedFaces": "Reserved faces",
+    "reservedFacesHint": "Faces left empty at the start (title page…)",
+    "startOnRight": "Start on a right-hand face",
+    "startOnRightHint": "Skips one face if the first card would land on a left-hand page",
+    "startOnRightSingle": "Not needed single-sided: every face is on the right",
+    "compute": "Compute"
+  },
+  "sort": {
+    "number": "Number",
+    "domain": "Domain",
+    "rarity": "Rarity",
+    "type": "Type"
+  },
+  "groupBy": {
+    "domain": "domain",
+    "rarity": "rarity",
+    "type": "type"
+  },
+  "variantMode": {
+    "after-base": {
+      "label": "After the base card",
+      "hint": "Each variant directly follows its card"
+    },
+    "end": {
+      "label": "At the end of the set",
+      "hint": "All variants grouped after the set"
+    },
+    "exclude": {
+      "label": "Excluded",
+      "hint": "Only base cards are placed"
+    }
+  },
+  "domain": {
+    "fury": "Fury",
+    "calm": "Calm",
+    "mind": "Mind",
+    "body": "Body",
+    "chaos": "Chaos",
+    "order": "Order",
+    "colorless": "Colorless"
+  },
+  "rarity": {
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "epic": "Epic",
+    "showcase": "Showcase"
+  },
+  "variant": {
+    "base": "Base",
+    "alt-art": "Alt-art",
+    "overnumbered": "Overnumbered",
+    "signature": "Signature",
+    "promo": "Promo",
+    "foil": "Foil"
+  },
+  "variantShort": {
+    "alt-art": "Alt",
+    "overnumbered": "Over",
+    "signature": "Sig",
+    "promo": "Promo",
+    "foil": "Foil"
+  },
+  "side": {
+    "recto": "Front",
+    "verso": "Back"
+  },
+  "position": {
+    "face": "Sheet {{sheet}} · {{side}}",
+    "full": "Sheet {{sheet}} · {{side}} · R{{row}} · C{{col}}"
+  },
+  "summary": {
+    "cards_one": "card",
+    "cards_other": "cards",
+    "cardsHint": "{{base}} base · {{variants}} variants",
+    "faces_one": "face",
+    "faces_other": "faces",
+    "slotsPerFace_one": "{{count}} slot per face",
+    "slotsPerFace_other": "{{count}} slots per face",
+    "skippedHint_one": "+ {{count}} reserved face",
+    "skippedHint_other": "+ {{count}} reserved faces",
+    "sheets_one": "sheet",
+    "sheets_other": "sheets",
+    "maxHint": "out of {{max}} available",
+    "noMax": "no limit",
+    "empty_one": "empty slot",
+    "empty_other": "empty slots",
+    "emptyHint": "free slots between cards",
+    "overflow_one": "The set doesn't fit: {{used}} sheets needed, {{max}} available ({{count}} sheet over).",
+    "overflow_other": "The set doesn't fit: {{used}} sheets needed, {{max}} available ({{count}} sheets over).",
+    "overflowShort_one": "{{count}} sheet over",
+    "overflowShort_other": "{{count}} sheets over"
+  },
+  "result": {
+    "title": "Your layout",
+    "lead": "Here is the exact slot of every card. Search for a card to find it.",
+    "computing": "Computing layout…",
+    "share": "Share",
+    "copied": "Link copied!",
+    "exportCsv": "CSV",
+    "print": "Print",
+    "views": "Views",
+    "tab": {
+      "binder": "Binder",
+      "list": "List"
+    }
+  },
+  "search": {
+    "label": "Search for a card",
+    "placeholder": "Card name or number…",
+    "noResult": "No card found"
+  },
+  "list": {
+    "number": "No.",
+    "name": "Card",
+    "domain": "Domain",
+    "rarity": "Rarity",
+    "variant": "Variant",
+    "sheet": "Sheet",
+    "side": "Face",
+    "row": "Row",
+    "col": "Column",
+    "locate": "Show",
+    "filterText": "Filter…",
+    "allDomains": "All domains",
+    "allVariants": "All variants",
+    "allCards": "All cards",
+    "count_one": "{{count}} card",
+    "count_other": "{{count}} cards"
+  },
+  "collection": {
+    "title": "My collection",
+    "hint": "Click a card to mark it as owned. Missing cards keep their slot.",
+    "progress": "{{owned}} / {{total}} owned",
+    "all": "Check all",
+    "none": "Uncheck all",
+    "owned": "Owned",
+    "ownedShort": "Owned",
+    "missing": "Missing",
+    "toggle": "Mark as owned"
+  },
+  "print": {
+    "meta": "{{rows}} × {{cols}} format · {{mode}} · {{cards}} cards · {{sheets}} sheets",
+    "doubleSided": "double-sided",
+    "singleSided": "single-sided",
+    "sheet": "Sheet {{sheet}}"
+  },
+  "footer": {
+    "disclaimer": "Binderbound is not affiliated with Riot Games. Riftbound and League of Legends are trademarks of Riot Games, Inc."
+  }
+}

@@ -1,0 +1,286 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Classeur ouvert */
+.book {
+  --turn-duration: 0.75s;
+  --turn-ease: cubic-bezier(0.45, 0.05, 0.25, 1);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  /* Le classeur ouvert tient dans la hauteur de l'écran */
+  width: 100%;
+  /* Ratio d'une page (largeur / hauteur), déduit du format de carte */
+  --page-ratio: calc(var(--cols) * var(--card-w) / (var(--rows) * var(--card-h)));
+  max-width: max(36rem, calc(2 * var(--page-ratio) * (100dvh - 22rem) + 6rem));
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  perspective: 2600px;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.4), transparent 4%, transparent 96%, rgb(0 0 0 / 0.4)),
+    var(--binder-cover);
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    inset 0 0 0 4px #08060d,
+    inset 0 0 0 5px rgb(var(--accent-rgb) / 0.18),
+    0 2rem 4rem rgb(0 0 0 / 0.6);
+}
+
+.page {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.pageLeft {
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset -1.5rem 0 1.5rem -1rem rgb(0 0 0 / 0.6);
+}
+
+.pageRight {
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 1.5rem 0 1.5rem -1rem rgb(0 0 0 / 0.6);
+}
+
+.spine {
+  width: 1.4rem;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 18%,
+      var(--line-strong) 18% 20%,
+      transparent 20% 30%
+    ),
+    var(--binder-spine);
+  box-shadow: inset 0 0 0.5rem #000;
+}
+
+/* La feuille qui tourne : même taille qu'une page, pivote autour de la reliure */
+.leaf {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  width: calc((100% - 2rem - 1.4rem) / 2);
+  transform-style: preserve-3d;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.leafRight {
+  right: 1rem;
+  transform-origin: left center;
+  animation: turn-forward var(--turn-duration) var(--turn-ease) forwards;
+}
+
+.leafLeft {
+  left: 1rem;
+  transform-origin: right center;
+  animation: turn-backward var(--turn-duration) var(--turn-ease) forwards;
+}
+
+@keyframes turn-forward {
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes turn-backward {
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+.leafFront,
+.leafBack {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 0.6);
+}
+
+.leafBack {
+  transform: rotateY(180deg);
+}
+
+.leafShade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 0.55),
+    rgb(0 0 0 / 0.1) 60%,
+    rgb(var(--text-rgb) / 0.06)
+  );
+}
+
+.leafFront .leafShade {
+  animation: shade-in calc(var(--turn-duration) / 2) ease-in forwards;
+}
+
+.leafBack .leafShade {
+  animation: shade-out calc(var(--turn-duration) / 2) ease-out calc(var(--turn-duration) / 2) both;
+}
+
+@keyframes shade-in {
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes shade-out {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.leafLeft .leafShade {
+  background: linear-gradient(
+    270deg,
+    rgb(0 0 0 / 0.55),
+    rgb(0 0 0 / 0.1) 60%,
+    rgb(var(--text-rgb) / 0.06)
+  );
+}
+
+/* Mobile : une face */
+.single {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  padding: 0.6rem;
+  border-radius: 10px;
+  perspective: 1400px;
+  background: var(--binder-cover);
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 1.25rem 2.5rem rgb(0 0 0 / 0.6);
+  touch-action: pan-y;
+}
+
+.singlePage {
+  grid-area: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.singlePage:active {
+  cursor: grabbing;
+}
+
+/* Contrôles */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.nav {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--accent-dim);
+  background: radial-gradient(circle, var(--surface-2), var(--bg-void));
+  color: var(--text-strong);
+  font-size: 1.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+.nav:hover:not(:disabled) {
+  border-color: var(--rift);
+  box-shadow: var(--rift-glow);
+}
+
+.nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.indicator {
+  composes: label-caps from global;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 14rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-strong);
+}
+
+.indicator em {
+  margin-inline: 0.5rem;
+  font-style: normal;
+  color: var(--line-strong);
+}
+
+.indicator small {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--text-2);
+}
+
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot,
+.dotActive {
+  width: 0.6rem;
+  height: 0.6rem;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s,
+    width 0.3s var(--ease-out);
+}
+
+.dot:hover {
+  border-color: var(--text-strong);
+}
+
+.dotActive {
+  width: 1.4rem;
+  border-color: transparent;
+  background: var(--rift-gradient);
+  box-shadow: var(--rift-glow);
+}
+
+.swipeHint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+@media (max-width: 30rem) {
+  .indicator {
+    min-width: 0;
+  }
+}
