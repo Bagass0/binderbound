@@ -1,8 +1,16 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '../../components/ui/controls.jsx';
-import { domainStyle, isVariant, localizedName, padNumber } from '../../lib/format.js';
+import {
+  domainGroup,
+  domainLabel,
+  domainStyle,
+  isVariant,
+  localizedName,
+  padNumber,
+} from '../../lib/format.js';
 import styles from './ListView.module.css';
+import { cardImage } from '../../lib/images.js';
 
 const ALL = '';
 
@@ -25,8 +33,8 @@ function sortValue(key, { lang, config }) {
     case 'name':
       return (p) => localizedName(p.card, lang);
     case 'domain': {
-      const ranks = rank(config.domains);
-      return (p) => ranks.get(p.card.domain);
+      const ranks = rank(config.domainGroups);
+      return (p) => ranks.get(domainGroup(p.card));
     }
     case 'rarity': {
       const ranks = rank(config.rarities);
@@ -39,7 +47,7 @@ function sortValue(key, { lang, config }) {
   }
 }
 
-export function ListView({ placements, config, collection, onLocate }) {
+export function ListView({ placements, config, collection, onLocate, onPreview }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const [sort, setSort] = useState({ key: 'position', dir: 1 });
@@ -48,7 +56,7 @@ export function ListView({ placements, config, collection, onLocate }) {
   const rows = useMemo(() => {
     const q = filters.text.trim().toLowerCase();
     const filtered = placements.filter(({ card }) => {
-      if (filters.domain && card.domain !== filters.domain) return false;
+      if (filters.domain && !card.domains.includes(filters.domain)) return false;
       if (filters.variant && card.variant !== filters.variant) return false;
       if (filters.owned && collection.tracking) {
         const has = collection.owned.has(card.id);
@@ -159,7 +167,7 @@ export function ListView({ placements, config, collection, onLocate }) {
                 <tr
                   key={p.card.id}
                   className={missing ? styles.missing : ''}
-                  style={domainStyle(p.card.domain)}
+                  style={domainStyle(p.card)}
                 >
                   {collection.tracking && (
                     <td className={styles.ownedCol}>
@@ -171,9 +179,27 @@ export function ListView({ placements, config, collection, onLocate }) {
                     </td>
                   )}
                   <td className={styles.num}>{padNumber(p.card.number)}</td>
-                  <td className={styles.name}>{localizedName(p.card, lang)}</td>
                   <td>
-                    <span className={styles.domain}>{t(`domain.${p.card.domain}`)}</span>
+                    <button
+                      type="button"
+                      className={styles.name}
+                      onClick={() => onPreview(p.card)}
+                      title={t('preview.open')}
+                    >
+                      {p.card.imageUrl && (
+                        <img
+                          className={styles.thumb}
+                          {...cardImage(p.card.imageUrl, { sizes: 'auto, 48px' })}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
+                      {localizedName(p.card, lang)}
+                    </button>
+                  </td>
+                  <td>
+                    <span className={styles.domain}>{domainLabel(t, p.card)}</span>
                   </td>
                   <td>{t(`rarity.${p.card.rarity}`)}</td>
                   <td>

@@ -1,0 +1,140 @@
+.root {
+  position: relative;
+}
+
+.login {
+  composes: label-caps from global;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.3rem;
+  padding: 0 0.95rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.6875rem;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.login svg {
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.login:hover {
+  border-color: var(--accent);
+  color: var(--text-strong);
+  box-shadow: 0 0 0.8rem rgb(var(--accent-rgb) / 0.25);
+}
+
+.avatarButton {
+  display: grid;
+  padding: 2px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.avatarButton:hover,
+.avatarButton[aria-expanded='true'] {
+  box-shadow: 0 0 0.9rem rgb(var(--accent-rgb) / 0.45);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  padding: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-deep);
+  transform-origin: top right;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.75rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.identity strong {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.identity span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.item svg {
+  color: var(--accent-dim);
+  font-size: 1.1rem;
+}
+
+.item:hover,
+.item:focus-visible {
+  background: var(--surface-2);
+  color: var(--text-strong);
+}
+
+/* Petits écrans : icône seule (le libellé reste lu par les lecteurs d'écran). */
+@media (max-width: 40rem) {
+  .login {
+    justify-content: center;
+    width: 2.3rem;
+    padding: 0;
+  }
+
+  .login span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

@@ -1,5 +1,12 @@
 import { z } from 'zod';
-import { CARD_TYPES, DOMAINS, RARITIES, VARIANTS } from '../config/cardEnums.js';
+import {
+  CARD_TYPES,
+  DOMAINS,
+  ORIENTATIONS,
+  RARITIES,
+  SET_KINDS,
+  VARIANTS,
+} from '../config/cardEnums.js';
 
 const localized = z.object({ fr: z.string().min(1), en: z.string().min(1) });
 
@@ -9,14 +16,20 @@ export const cardSchema = z
     number: z.number().int().nonnegative(),
     name: localized,
     type: z.enum(CARD_TYPES),
-    domain: z.enum(DOMAINS),
+    /** Sur-type libre fourni par la source (Champion, Signature, Token…). */
+    supertype: z.string().min(1).nullable().default(null),
+    /** Un ou deux domaines ; le premier sert de couleur principale. */
+    domains: z.array(z.enum(DOMAINS)).min(1),
     rarity: z.enum(RARITIES),
     variant: z.enum(VARIANTS),
+    /** Carte de base d'une variante ; null pour une base ou une variante sans base dans le set. */
     baseCardId: z.string().min(1).nullable(),
     imageUrl: z.url().nullable(),
+    orientation: z.enum(ORIENTATIONS).default('portrait'),
+    artist: z.string().min(1).nullable().default(null),
   })
-  .refine((c) => (c.variant === 'base') === (c.baseCardId === null), {
-    message: 'Une carte "base" doit avoir baseCardId = null, une variante doit le renseigner',
+  .refine((c) => c.variant !== 'base' || c.baseCardId === null, {
+    message: 'Une carte "base" doit avoir baseCardId = null',
     path: ['baseCardId'],
   });
 
@@ -26,6 +39,9 @@ export const setSchema = z
     code: z.string().min(1),
     name: localized,
     releaseDate: z.iso.date(),
+    kind: z.enum(SET_KINDS).default('main'),
+    /** Provenance des données (affichée en crédit). */
+    source: z.object({ name: z.string(), url: z.url() }).nullable().default(null),
     cards: z.array(cardSchema).min(1),
   })
   .superRefine((set, ctx) => {

@@ -10,6 +10,8 @@ import { LiveEstimate } from '../components/common/LiveEstimate.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { GridPreview } from '../components/binder/GridPreview.jsx';
 import { Panel } from '../components/ui/Panel.jsx';
+import { Disclosure } from '../components/ui/Disclosure.jsx';
+import { SetEyebrow } from '../components/common/SetEyebrow.jsx';
 import {
   Checkbox,
   ChoiceCards,
@@ -55,32 +57,62 @@ export default function OptionsPage() {
 
   return (
     <>
-      <PageHeading eyebrow={t('steps.options')} title={t('options.title')}>
+      <PageHeading eyebrow={<SetEyebrow setId={params.setId} />} title={t('options.title')}>
         {t('options.lead')}
       </PageHeading>
 
       <div className={styles.layout}>
-        <Panel title={t('options.sorting')}>
-          <div className={styles.stack}>
-            <Segmented
-              label={t('options.sortBy')}
-              value={params.sortBy}
-              onChange={(sortBy) => update({ sortBy })}
-              options={config.sortOptions.map((value) => ({ value, label: t(`sort.${value}`) }))}
-            />
-            <Toggle
-              label={
-                canBreak
-                  ? t('options.breakBy', { group: t(`groupBy.${params.sortBy}`) })
-                  : t('options.breakByDisabled')
-              }
-              description={canBreak ? t('options.breakByHint') : t('options.breakByDisabledHint')}
-              checked={canBreak && params.breakByGroup}
-              disabled={!canBreak}
-              onChange={(breakByGroup) => update({ breakByGroup })}
-            />
-          </div>
-        </Panel>
+        <div className={styles.column}>
+          <Panel title={t('options.sorting')}>
+            <div className={styles.stack}>
+              <Segmented
+                label={t('options.sortBy')}
+                value={params.sortBy}
+                onChange={(sortBy) => update({ sortBy })}
+                options={config.sortOptions.map((value) => ({ value, label: t(`sort.${value}`) }))}
+              />
+              <Toggle
+                label={
+                  canBreak
+                    ? t('options.breakBy', { group: t(`groupBy.${params.sortBy}`) })
+                    : t('options.breakByDisabled')
+                }
+                description={canBreak ? t('options.breakByHint') : t('options.breakByDisabledHint')}
+                checked={canBreak && params.breakByGroup}
+                disabled={!canBreak}
+                onChange={(breakByGroup) => update({ breakByGroup })}
+              />
+            </div>
+          </Panel>
+
+          <Disclosure
+            title={t('options.start')}
+            summary={t('options.startSummary')}
+            defaultOpen={params.reservedFaces > 0 || params.startOnRight}
+          >
+            <div className={styles.stack}>
+              <NumberStepper
+                label={t('options.reservedFaces')}
+                description={t('options.reservedFacesHint')}
+                value={params.reservedFaces}
+                min={0}
+                max={50}
+                onChange={(reservedFaces) => update({ reservedFaces })}
+              />
+              <Toggle
+                label={t('options.startOnRight')}
+                description={
+                  params.doubleSided
+                    ? t('options.startOnRightHint')
+                    : t('options.startOnRightSingle')
+                }
+                checked={params.startOnRight}
+                disabled={!params.doubleSided}
+                onChange={(startOnRight) => update({ startOnRight })}
+              />
+            </div>
+          </Disclosure>
+        </div>
 
         <Panel title={t('options.variants')}>
           <div className={styles.stack}>
@@ -123,28 +155,6 @@ export default function OptionsPage() {
                 </motion.fieldset>
               )}
             </AnimatePresence>
-          </div>
-        </Panel>
-
-        <Panel title={t('options.start')}>
-          <div className={styles.stack}>
-            <NumberStepper
-              label={t('options.reservedFaces')}
-              description={t('options.reservedFacesHint')}
-              value={params.reservedFaces}
-              min={0}
-              max={50}
-              onChange={(reservedFaces) => update({ reservedFaces })}
-            />
-            <Toggle
-              label={t('options.startOnRight')}
-              description={
-                params.doubleSided ? t('options.startOnRightHint') : t('options.startOnRightSingle')
-              }
-              checked={params.startOnRight}
-              disabled={!params.doubleSided}
-              onChange={(startOnRight) => update({ startOnRight })}
-            />
           </div>
         </Panel>
       </div>

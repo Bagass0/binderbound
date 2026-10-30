@@ -1,0 +1,2277 @@
+{
+  "id": "opp",
+  "code": "OPP",
+  "name": {
+    "fr": "Riftbound Organized Play Promotional Cards",
+    "en": "Riftbound Organized Play Promotional Cards"
+  },
+  "releaseDate": "2025-10-31",
+  "kind": "promo",
+  "source": {
+    "name": "Riftcodex",
+    "url": "https://riftcodex.com"
+  },
+  "cards": [
+    {
+      "id": "OPP-001-024",
+      "number": 1,
+      "name": {
+        "fr": "Annie - Fiery",
+        "en": "Annie - Fiery"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/532d75dc36a16eb5954253a77366fcceac7aec62-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OPP-001-219",
+      "number": 1,
+      "name": {
+        "fr": "Arena Kingpin",
+        "en": "Arena Kingpin"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/db48f8c1da0e4f9804ae94398f0864859db0002a-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-007B-298",
+      "number": 1,
+      "name": {
+        "fr": "Fury Rune",
+        "en": "Fury Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f95ed6ba0c4d4d357c45bf5bdb1a8e540af1f85f-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-001-298",
+      "number": 1,
+      "name": {
+        "fr": "Blazing Scorcher",
+        "en": "Blazing Scorcher"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/15ed971e4029a92b362a81ccadf309fb81e40b81-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-042B-298",
+      "number": 2,
+      "name": {
+        "fr": "Calm Rune",
+        "en": "Calm Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9b70aa1b334728a3e8beeea0c9154a2d0f79b1eb-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-089B-298",
+      "number": 3,
+      "name": {
+        "fr": "Mind Rune",
+        "en": "Mind Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/33df1c56c6e76f9cb783c19161f16fcdbdc20f98-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-004-024",
+      "number": 4,
+      "name": {
+        "fr": "Master Yi - Meditative",
+        "en": "Master Yi - Meditative"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5508566c8f05f09492148faa803332a731095eb7-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-126B-298",
+      "number": 4,
+      "name": {
+        "fr": "Body Rune",
+        "en": "Body Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3313c73c5b31daa482073bfefbf4d2255a89d7d0-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-166B-298",
+      "number": 5,
+      "name": {
+        "fr": "Chaos Rune",
+        "en": "Chaos Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3861fc566891a70c21cf3d3075adec716deb7080-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-014-024",
+      "number": 6,
+      "name": {
+        "fr": "Lux - Crownguard",
+        "en": "Lux - Crownguard"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b9778ec229e052268ea66213ca2dbf60612b2862-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-006-024",
+      "number": 6,
+      "name": {
+        "fr": "Lux - Illuminated",
+        "en": "Lux - Illuminated"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a0d10edf30abb6fde21f5d386e9a7db3c1b0a098-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-214B-298",
+      "number": 6,
+      "name": {
+        "fr": "Order Rune",
+        "en": "Order Rune"
+      },
+      "type": "rune",
+      "supertype": "Basic",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/71e7d71ebadb81ccad7ca4cb8b3fb85d2f5fd4bf-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Greg Ghielmetti & Leah Chen"
+    },
+    {
+      "id": "OPP-007-221",
+      "number": 7,
+      "name": {
+        "fr": "Gem Jammer",
+        "en": "Gem Jammer"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9f487e8a76e6e6b9f2e32de0c9c147be42f49e59-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-007-024",
+      "number": 7,
+      "name": {
+        "fr": "Garen - Rugged",
+        "en": "Garen - Rugged"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/67c22dc29a7a28dabe0f169a7848c25bef1fbda4-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-009-221",
+      "number": 9,
+      "name": {
+        "fr": "Serrated Dirk",
+        "en": "Serrated Dirk"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9498c8146745124fc45a7b55184854a9c9da21f5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-009-024",
+      "number": 9,
+      "name": {
+        "fr": "Master Yi - Honed",
+        "en": "Master Yi - Honed"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0e16976cd6d7ee5a874be9351b428671990fbd25-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-009-219",
+      "number": 9,
+      "name": {
+        "fr": "Upstage Comedy",
+        "en": "Upstage Comedy"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4a636fcd682b32b41a4886c7383e781414139adb-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "莺之歌"
+    },
+    {
+      "id": "OPP-010-024",
+      "number": 10,
+      "name": {
+        "fr": "Annie - Stubborn",
+        "en": "Annie - Stubborn"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/44eb968cf0c54e75970588b69eef5c5f5ccc9b24-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OPP-011-024",
+      "number": 11,
+      "name": {
+        "fr": "Flash",
+        "en": "Flash"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4d9cc1c13b75933e509e642213f13359350cd3f9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Sugar Free"
+    },
+    {
+      "id": "OPP-013-024",
+      "number": 13,
+      "name": {
+        "fr": "Garen - Commander",
+        "en": "Garen - Commander"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cbf2c12d69a86566e4cda07050b2d4495e40187e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-013-221",
+      "number": 13,
+      "name": {
+        "fr": "Blast Corps Cadet",
+        "en": "Blast Corps Cadet"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9efe5a8322a90822650ff18578cd5e1a8561fac5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-013-298",
+      "number": 13,
+      "name": {
+        "fr": "Pouty Poro",
+        "en": "Pouty Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d541bf3bcb5aa3ad0d48d87f5753569b72ac426f-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-016-219",
+      "number": 16,
+      "name": {
+        "fr": "Scorchclaw",
+        "en": "Scorchclaw"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f69940824f8ce62a479df28988dcbdf6ea6d3960-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-017-024-METAL",
+      "number": 17,
+      "name": {
+        "fr": "Annie - Dark Child (Metal)",
+        "en": "Annie - Dark Child (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/89963e1d1cffd69c620fb5d6b037f50d5c334463-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-017-024",
+      "number": 17,
+      "name": {
+        "fr": "Annie - Dark Child",
+        "en": "Annie - Dark Child"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/89963e1d1cffd69c620fb5d6b037f50d5c334463-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-018-024",
+      "number": 18,
+      "name": {
+        "fr": "Tibbers",
+        "en": "Tibbers"
+      },
+      "type": "unit",
+      "supertype": "Signature",
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/74f8bc78573b33d9979b0e9c121b858d770a490c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OPP-019-024-METAL",
+      "number": 19,
+      "name": {
+        "fr": "Master Yi - Wuju Bladesman (Metal)",
+        "en": "Master Yi - Wuju Bladesman (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8231ced23eaf22ca3bf62ec8cb86b83a3e222da6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Quy Ho"
+    },
+    {
+      "id": "OPP-019-024",
+      "number": 19,
+      "name": {
+        "fr": "Master Yi - Wuju Bladesman",
+        "en": "Master Yi - Wuju Bladesman"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8231ced23eaf22ca3bf62ec8cb86b83a3e222da6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Quy Ho"
+    },
+    {
+      "id": "OPP-020-024",
+      "number": 20,
+      "name": {
+        "fr": "Highlander",
+        "en": "Highlander"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/18c0818cbbfdf26a1237b4f7703b1f035f47b014-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-021-024-METAL",
+      "number": 21,
+      "name": {
+        "fr": "Lux - Lady of Luminosity (Metal)",
+        "en": "Lux - Lady of Luminosity (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["mind", "order"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/44885d811b70621b188d9813b2b10b5cff1b81e6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Maki Planas Mata"
+    },
+    {
+      "id": "OPP-021-024",
+      "number": 21,
+      "name": {
+        "fr": "Lux - Lady of Luminosity",
+        "en": "Lux - Lady of Luminosity"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["mind", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/44885d811b70621b188d9813b2b10b5cff1b81e6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Maki Planas Mata"
+    },
+    {
+      "id": "OPP-022-024",
+      "number": 22,
+      "name": {
+        "fr": "Final Spark",
+        "en": "Final Spark"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["mind", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4558a2dc1bb1f1b8a73ec0d82244654e84b12687-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-023-024-METAL",
+      "number": 23,
+      "name": {
+        "fr": "Garen - Might of Demacia (Metal)",
+        "en": "Garen - Might of Demacia (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e7185deb46f17770802d06aeddfe3b929afff880-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-023-024",
+      "number": 23,
+      "name": {
+        "fr": "Garen - Might of Demacia",
+        "en": "Garen - Might of Demacia"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e7185deb46f17770802d06aeddfe3b929afff880-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-024-024",
+      "number": 24,
+      "name": {
+        "fr": "Decisive Strike",
+        "en": "Decisive Strike"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/986782271be078c184a8d1c196e375106459c6c5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-024-298",
+      "number": 24,
+      "name": {
+        "fr": "Void Seeker",
+        "en": "Void Seeker"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b64b63c6be58ff3c33c7fb3c2dcb168d64e287e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-033-221",
+      "number": 33,
+      "name": {
+        "fr": "Doran's Shield",
+        "en": "Doran's Shield"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/49a24d4c6d770ed233c4a69bf8d87385bfc997d8-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-034-298",
+      "number": 34,
+      "name": {
+        "fr": "Tryndamere - Barbarian",
+        "en": "Tryndamere - Barbarian"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/124c93495c927be1baea03fdacf6c7b283cf8b6c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-036-219",
+      "number": 36,
+      "name": {
+        "fr": "Mutated Mouser",
+        "en": "Mutated Mouser"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/20276519677a4d1ebe230aaad7692588e1e8d046-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-037-221",
+      "number": 37,
+      "name": {
+        "fr": "Navori Scout",
+        "en": "Navori Scout"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/038625518f5b46f5217d300d9dc9fbf507c4ae09-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-039-219",
+      "number": 39,
+      "name": {
+        "fr": "Soul Sword",
+        "en": "Soul Sword"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/519361230cb8554cdf0f5dd795e115ffbb5bb932-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-047-219",
+      "number": 47,
+      "name": {
+        "fr": "Mosstomper",
+        "en": "Mosstomper"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0ea32d0f6f49c0b48b1ea2cc98fe0a3c540bc9db-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-048-221",
+      "number": 48,
+      "name": {
+        "fr": "Stellacorn Herder",
+        "en": "Stellacorn Herder"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1e7960a35d45dd55e934260ea23307853aa5afd4-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-052-298",
+      "number": 52,
+      "name": {
+        "fr": "Stalwart Poro",
+        "en": "Stalwart Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c4a5d7178e783c3975749271b6df333a82a2328a-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-055-298",
+      "number": 55,
+      "name": {
+        "fr": "Wielder of Water",
+        "en": "Wielder of Water"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b38a7758705bd739caf07b5c0c49482a4a23015-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-056-219",
+      "number": 56,
+      "name": {
+        "fr": "Yuumi - Magical Cat",
+        "en": "Yuumi - Magical Cat"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/588ddfeb01ab7b37110d8a7e656cf9f35530ce4e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-058-219",
+      "number": 58,
+      "name": {
+        "fr": "Lillia - Protector of Dreams",
+        "en": "Lillia - Protector of Dreams"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/daa5fe15e0a1c14c8dbb8f858d8a6d444ea6096e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OPP-058-298",
+      "number": 58,
+      "name": {
+        "fr": "Discipline",
+        "en": "Discipline"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8b9613970b505e3ad6abe2d51d091778314a7d48-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-061-219",
+      "number": 61,
+      "name": {
+        "fr": "Downstage Dramatics",
+        "en": "Downstage Dramatics"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d76418eabcddbea148f3331913223b79a39aabda-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "莺之歌"
+    },
+    {
+      "id": "OPP-064-221",
+      "number": 64,
+      "name": {
+        "fr": "Cloth Armor",
+        "en": "Cloth Armor"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fe02bf01609ff2e6cc6fa8fbd578fd596ab5cb84-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-065-219",
+      "number": 65,
+      "name": {
+        "fr": "Icevale Archer",
+        "en": "Icevale Archer"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c14db2ae064ccee80d8ec373f9fe9b4f44776e3e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-067-221",
+      "number": 67,
+      "name": {
+        "fr": "Frostcoat Cub",
+        "en": "Frostcoat Cub"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0b5f1f6ed65e070d2878b8aa21fd95e43688fc1d-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-067-298",
+      "number": 67,
+      "name": {
+        "fr": "Blitzcrank - Impassive",
+        "en": "Blitzcrank - Impassive"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/654dcc4aef0a0b5a0c6e928d7aae397a52c3ab17-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OPP-075-219",
+      "number": 75,
+      "name": {
+        "fr": "Gustwalker",
+        "en": "Gustwalker"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3f314cea0c05d2ea274a81d723299e4e20b2ebde-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-076-221",
+      "number": 76,
+      "name": {
+        "fr": "Production Surge",
+        "en": "Production Surge"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/78783854dd9372138e599affbe96a269d8908c29-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-078-298",
+      "number": 78,
+      "name": {
+        "fr": "Lee Sin - Ascetic",
+        "en": "Lee Sin - Ascetic"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/70734e8833bfbbdb2736407c449f418553e3cf7c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-083-298",
+      "number": 83,
+      "name": {
+        "fr": "Consult the Past",
+        "en": "Consult the Past"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/198d950d3933972273ec714e9264cbd563ea6920-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-086-219",
+      "number": 86,
+      "name": {
+        "fr": "Zilean - Time Mage",
+        "en": "Zilean - Time Mage"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2a3165b43bd9878c0eb519bc25d370064aacac35-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-086-221",
+      "number": 86,
+      "name": {
+        "fr": "World Atlas",
+        "en": "World Atlas"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7b8d96e128c19c5ff368119a60759cffa644e942-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-092-298",
+      "number": 92,
+      "name": {
+        "fr": "Riptide Rex",
+        "en": "Riptide Rex"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e09bf1fb6d72da31d415ea31ae7413fe7f02d650-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "MAR Studio"
+    },
+    {
+      "id": "OPP-093-219",
+      "number": 93,
+      "name": {
+        "fr": "Dragonsoul Sage",
+        "en": "Dragonsoul Sage"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2065a3b0fef9779fed8a3d42202606a31acf59ff-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Dao Trong Le"
+    },
+    {
+      "id": "OPP-095-221",
+      "number": 95,
+      "name": {
+        "fr": "Doran's Blade",
+        "en": "Doran's Blade"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/53fc0c307c83871c9755a496764ef7d6aa11f510-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-098-221",
+      "number": 98,
+      "name": {
+        "fr": "Sea Monkey",
+        "en": "Sea Monkey"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0ef7f1de2bc7845f5e3dace1634c6c58a8765452-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Bubble Cat Studio"
+    },
+    {
+      "id": "OPP-100-219",
+      "number": 100,
+      "name": {
+        "fr": "Voracious Gromp",
+        "en": "Voracious Gromp"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3c006b8c9aa4581ad90c258cc6cfac9098d3c296-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OPP-101-221",
+      "number": 101,
+      "name": {
+        "fr": "Fae Dragon",
+        "en": "Fae Dragon"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/76aeda6bf59acee92b512f4a0272892673cfce90-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Bubble Cat Studio"
+    },
+    {
+      "id": "OPP-103-298",
+      "number": 103,
+      "name": {
+        "fr": "Ravenbloom Student",
+        "en": "Ravenbloom Student"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b98b1ff793b6eb263957258742cc83d50fda6537-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OPP-107-219",
+      "number": 107,
+      "name": {
+        "fr": "Stare Down",
+        "en": "Stare Down"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/58d0353a966bb0ca292855a0a55de5769e28d155-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OPP-116-221",
+      "number": 116,
+      "name": {
+        "fr": "Yone - Blademaster",
+        "en": "Yone - Blademaster"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0e8efd9af74b65170e04eed45844e6d7e2c4d70b-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "蛋费鸡丁"
+    },
+    {
+      "id": "OPP-118A-221",
+      "number": 118,
+      "name": {
+        "fr": "Boneshiver",
+        "en": "Boneshiver"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c3e4d8c3f3975a7429428ac90e5ebcffa1f8e5a9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-124-221",
+      "number": 124,
+      "name": {
+        "fr": "Doran's Ring",
+        "en": "Doran's Ring"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/054df5a11967b768430a2f763e1b5d4dbbac3b50-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-125-219",
+      "number": 125,
+      "name": {
+        "fr": "Lunar Boon",
+        "en": "Lunar Boon"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7dc31cec93a355ba52b8cf2ca0b232a0edd57586-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-127-219",
+      "number": 127,
+      "name": {
+        "fr": "Mister Root",
+        "en": "Mister Root"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c9bb7a8f5a1426a4af9843f2473ee6cc37dd24bd-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-128-298",
+      "number": 128,
+      "name": {
+        "fr": "Challenge",
+        "en": "Challenge"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f5c1aeaee373c481b7ea2a638cd6f9e815ac105d-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-130-221",
+      "number": 130,
+      "name": {
+        "fr": "Treasure Hunter",
+        "en": "Treasure Hunter"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c4e1bf257379b4612a1c58f0480480d9b698196c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio"
+    },
+    {
+      "id": "OPP-135-298",
+      "number": 135,
+      "name": {
+        "fr": "Pakaa Cub",
+        "en": "Pakaa Cub"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/156a66d7d44165367cc5a470fb35c86f337f9429-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Bubble Cat Studio"
+    },
+    {
+      "id": "OPP-137-221",
+      "number": 137,
+      "name": {
+        "fr": "Harpoon Squad",
+        "en": "Harpoon Squad"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f50d32a202375bf09781ae578db107abe84937e0-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-137-219",
+      "number": 137,
+      "name": {
+        "fr": "Sinister Poro",
+        "en": "Sinister Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7f2a623a83556bafebfbe7cb280bdedcfe116531-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-137-298",
+      "number": 137,
+      "name": {
+        "fr": "Stormclaw Ursine",
+        "en": "Stormclaw Ursine"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/137e5a1faec1c8b26a5a0abc7802f6461cc725c8-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-153-221",
+      "number": 153,
+      "name": {
+        "fr": "Eye of the Herald",
+        "en": "Eye of the Herald"
+      },
+      "type": "gear",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fc3e26e0e4ff94de360f1163c41641daf81c1900-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "黯荧岛Dark Glow"
+    },
+    {
+      "id": "OPP-156-221",
+      "number": 156,
+      "name": {
+        "fr": "Laurent Duelist",
+        "en": "Laurent Duelist"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7b3410a1d9ee175c4853453798bcd5f09d2e217c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "JiHun Lee"
+    },
+    {
+      "id": "OPP-156-219",
+      "number": 156,
+      "name": {
+        "fr": "Loyal Poro",
+        "en": "Loyal Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/860e1afc7364a002c6305ece7b6941e2e328d0a4-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-160-219",
+      "number": 160,
+      "name": {
+        "fr": "Ultrasoft Poro",
+        "en": "Ultrasoft Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/36900508e2ce61196450a4bf7e27722ae36521d9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Caravan Studio"
+    },
+    {
+      "id": "OPP-167-221",
+      "number": 167,
+      "name": {
+        "fr": "Unsung Hero",
+        "en": "Unsung Hero"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2a227ef7494af6409000c13c4f3d1094cec3a3a8-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-168-219",
+      "number": 168,
+      "name": {
+        "fr": "Undying Loyalty",
+        "en": "Undying Loyalty"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/703b85f8284ed13865012289d03602e2cd24f4b2-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Max Grecke"
+    },
+    {
+      "id": "OPP-169-219",
+      "number": 169,
+      "name": {
+        "fr": "Ashe - Focused",
+        "en": "Ashe - Focused"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ebc033772f2005b7f39ba87ba9ea35f43df0da7a-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-084-221",
+      "number": 175,
+      "name": {
+        "fr": "Jayce - Man of Progress",
+        "en": "Jayce - Man of Progress"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/be6d6a608c5bee9d2012e24d9e6f6f1d1977a37a-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "莺之歌"
+    },
+    {
+      "id": "OPP-177-298",
+      "number": 177,
+      "name": {
+        "fr": "Stealthy Pursuer",
+        "en": "Stealthy Pursuer"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab23fd84badd67e9981512acbe6c3e9a8f97f42d-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-178-219",
+      "number": 178,
+      "name": {
+        "fr": "Poppy - Defender of the Meek",
+        "en": "Poppy - Defender of the Meek"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1a75c5322b2179e772af83b1fd16fed864c5bf24-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Dao Trong Le"
+    },
+    {
+      "id": "OPP-120-219",
+      "number": 179,
+      "name": {
+        "fr": "Rengar - Trophy Hunter",
+        "en": "Rengar - Trophy Hunter"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1f16f5b1f980106057606a2faa3cce64fa4850e7-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "莺之歌"
+    },
+    {
+      "id": "OPP-181-221-METAL",
+      "number": 181,
+      "name": {
+        "fr": "Rumble - Mechanized Menace (Metal)",
+        "en": "Rumble - Mechanized Menace (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f311115e4c527ce82010596ce462d4050a9201b2-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-183-221-METAL",
+      "number": 183,
+      "name": {
+        "fr": "Lucian - Purifier (Metal)",
+        "en": "Lucian - Purifier (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/450cfb71b8890904d48b37a24bbdc78f8d849614-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-183-298",
+      "number": 183,
+      "name": {
+        "fr": "Stacked Deck",
+        "en": "Stacked Deck"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fdcb22cb620a4c1c37920d6b744edb615647cbd4-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-185-221-METAL",
+      "number": 185,
+      "name": {
+        "fr": "Draven - Glorious Executioner (Metal)",
+        "en": "Draven - Glorious Executioner (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b01b2d0454ceeffdc106c4c64a390b275ebf390b-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-187-221-METAL",
+      "number": 187,
+      "name": {
+        "fr": "Rek'sai - Void Burrower (Metal)",
+        "en": "Rek'sai - Void Burrower (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2db78549c30d8f9012af797fe075c4dc2355ec5d-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-189-221-METAL",
+      "number": 189,
+      "name": {
+        "fr": "Ornn - Fire Below the Mountain (Metal)",
+        "en": "Ornn - Fire Below the Mountain (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ed58d654034d545e54c85d836f3a6552772dd75b-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-193-221-METAL",
+      "number": 193,
+      "name": {
+        "fr": "Jax - Grandmaster At Arms (Metal)",
+        "en": "Jax - Grandmaster At Arms (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c6ddf49d7249bc8ac194fd9b194bfcb8857a4466-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-193-298",
+      "number": 193,
+      "name": {
+        "fr": "Miss Fortune - Buccaneer",
+        "en": "Miss Fortune - Buccaneer"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e6ff9ad3d6e2b96ff76cda4c7bc75415c1cdcced-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-195-221-METAL",
+      "number": 195,
+      "name": {
+        "fr": "Irelia - Blade Dancer (Metal)",
+        "en": "Irelia - Blade Dancer (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/656ef2d1724b818e9e737ec5dcce923de067a316-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-197-221-METAL",
+      "number": 197,
+      "name": {
+        "fr": "Azir - Emperor of the Sands (Metal)",
+        "en": "Azir - Emperor of the Sands (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0472274c49f6540858758ebf9bd2f107a601541a-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "蛋费鸡丁"
+    },
+    {
+      "id": "OPP-197B-298-GG-EZ",
+      "number": 197,
+      "name": {
+        "fr": "Teemo - Scout (GG EZ)",
+        "en": "Teemo - Scout (GG EZ)"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ca8a2e11dd78dd09ad1c9ad3a23e5699254b947e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OPP-199-221-METAL",
+      "number": 199,
+      "name": {
+        "fr": "Ezreal - Prodigal Explorer (Metal)",
+        "en": "Ezreal - Prodigal Explorer (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d0e143d9edbc14971b2a7b463b3c25b2b6a0c098-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-201-221-METAL",
+      "number": 201,
+      "name": {
+        "fr": "Renata Glasc - Chem-Baroness (Metal)",
+        "en": "Renata Glasc - Chem-Baroness (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4bd289c281ad64229061ff909abf88c12a574833-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-202-298",
+      "number": 202,
+      "name": {
+        "fr": "Jinx - Rebel",
+        "en": "Jinx - Rebel"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7fe105f40df66525be51bd18e25506945a7b027-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-203-221-METAL",
+      "number": 203,
+      "name": {
+        "fr": "Sivir - Battle Mistress (Metal)",
+        "en": "Sivir - Battle Mistress (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["body", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fd060882c32a8deac04aea4241c6ab7b97236a05-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Zhongqi Li"
+    },
+    {
+      "id": "OPP-205-221-METAL",
+      "number": 205,
+      "name": {
+        "fr": "Fiora - Grand Duelist (Metal)",
+        "en": "Fiora - Grand Duelist (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/37064aa79c13316b5dd28f0a2b054821a43f6650-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Pandart Studio"
+    },
+    {
+      "id": "OPP-210-298",
+      "number": 210,
+      "name": {
+        "fr": "Daring Poro",
+        "en": "Daring Poro"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/41dee7ec46124c261352595cfbd8a6d38d32b947-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-218-298",
+      "number": 218,
+      "name": {
+        "fr": "Vanguard Captain",
+        "en": "Vanguard Captain"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f0c9ddb2af7a0d4991938cf1e3058eb0f5d2e357-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-229-298",
+      "number": 229,
+      "name": {
+        "fr": "Vengeance",
+        "en": "Vengeance"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a21e2ffee47ecdd1575bf48edb8c2a84722cc6b9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Max Grecke"
+    },
+    {
+      "id": "OPP-246-298",
+      "number": 246,
+      "name": {
+        "fr": "Viktor - Leader",
+        "en": "Viktor - Leader"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab390d6d074c3f07abba000cc166faa1796ec464-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OPP-247-298",
+      "number": 247,
+      "name": {
+        "fr": "Kai'Sa - Daughter of the Void",
+        "en": "Kai'Sa - Daughter of the Void"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a576472c7bb00f475882ac814e1d8f9be233b402-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-247-298-METAL",
+      "number": 247,
+      "name": {
+        "fr": "Kai'Sa - Daughter of the Void (Metal)",
+        "en": "Kai'Sa - Daughter of the Void (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a576472c7bb00f475882ac814e1d8f9be233b402-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OPP-249-298",
+      "number": 249,
+      "name": {
+        "fr": "Volibear - Relentless Storm",
+        "en": "Volibear - Relentless Storm"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f1842ef373434db3e8109d8959832f9d184866c3-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio"
+    },
+    {
+      "id": "OPP-249-298-METAL",
+      "number": 249,
+      "name": {
+        "fr": "Volibear - Relentless Storm (Metal)",
+        "en": "Volibear - Relentless Storm (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f1842ef373434db3e8109d8959832f9d184866c3-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio"
+    },
+    {
+      "id": "OPP-251-298",
+      "number": 251,
+      "name": {
+        "fr": "Jinx - Loose Cannon",
+        "en": "Jinx - Loose Cannon"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f57c14381b126e9f5a7b5bc4913151cb24c14fc3-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Sugar Free"
+    },
+    {
+      "id": "OPP-251-298-METAL",
+      "number": 251,
+      "name": {
+        "fr": "Jinx - Loose Cannon (Metal)",
+        "en": "Jinx - Loose Cannon (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f57c14381b126e9f5a7b5bc4913151cb24c14fc3-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Sugar Free"
+    },
+    {
+      "id": "OPP-253-298",
+      "number": 253,
+      "name": {
+        "fr": "Darius - Hand of Noxus",
+        "en": "Darius - Hand of Noxus"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b9a904048b7fb936377844ec2d31564b7fedf81-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-253-298-METAL",
+      "number": 253,
+      "name": {
+        "fr": "Darius - Hand of Noxus (Metal)",
+        "en": "Darius - Hand of Noxus (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["fury", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b9a904048b7fb936377844ec2d31564b7fedf81-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-255-298",
+      "number": 255,
+      "name": {
+        "fr": "Ahri - Nine-Tailed Fox",
+        "en": "Ahri - Nine-Tailed Fox"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fbce641f5e4d8cdf2956e8ead5884b6cd3ccd90d-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-255-298-METAL",
+      "number": 255,
+      "name": {
+        "fr": "Ahri - Nine-Tailed Fox (Metal)",
+        "en": "Ahri - Nine-Tailed Fox (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fbce641f5e4d8cdf2956e8ead5884b6cd3ccd90d-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-257-298",
+      "number": 257,
+      "name": {
+        "fr": "Lee Sin - Blind Monk",
+        "en": "Lee Sin - Blind Monk"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ffe064e002d3b9a366748eb85102a769b2545835-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-257-298-METAL",
+      "number": 257,
+      "name": {
+        "fr": "Lee Sin - Blind Monk (Metal)",
+        "en": "Lee Sin - Blind Monk (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ffe064e002d3b9a366748eb85102a769b2545835-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-259-298",
+      "number": 259,
+      "name": {
+        "fr": "Yasuo - Unforgiven",
+        "en": "Yasuo - Unforgiven"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/68e4d3230b785738ae9d86f780f7f5607ef11807-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "TSWCK逍"
+    },
+    {
+      "id": "OPP-259-298-METAL",
+      "number": 259,
+      "name": {
+        "fr": "Yasuo - Unforgiven (Metal)",
+        "en": "Yasuo - Unforgiven (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/68e4d3230b785738ae9d86f780f7f5607ef11807-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "TSWCK逍"
+    },
+    {
+      "id": "OPP-261-298",
+      "number": 261,
+      "name": {
+        "fr": "Leona - Radiant Dawn",
+        "en": "Leona - Radiant Dawn"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/822b8bc7987a47498550708b18ef166b121fd620-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-261-298-METAL",
+      "number": 261,
+      "name": {
+        "fr": "Leona - Radiant Dawn (Metal)",
+        "en": "Leona - Radiant Dawn (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["calm", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/822b8bc7987a47498550708b18ef166b121fd620-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-263-298",
+      "number": 263,
+      "name": {
+        "fr": "Teemo - Swift Scout",
+        "en": "Teemo - Swift Scout"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9723181e3392bb61c2aabc804a44f7b0558cedf1-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Shawn Lee"
+    },
+    {
+      "id": "OPP-263-298-METAL",
+      "number": 263,
+      "name": {
+        "fr": "Teemo - Swift Scout (Metal)",
+        "en": "Teemo - Swift Scout (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9723181e3392bb61c2aabc804a44f7b0558cedf1-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Shawn Lee"
+    },
+    {
+      "id": "OPP-265-298",
+      "number": 265,
+      "name": {
+        "fr": "Viktor - Herald of the Arcane",
+        "en": "Viktor - Herald of the Arcane"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/913236dabf1e4f71650bbba46870fff8163e2eff-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Fortiche Production"
+    },
+    {
+      "id": "OPP-265-298-METAL",
+      "number": 265,
+      "name": {
+        "fr": "Viktor - Herald of the Arcane (Metal)",
+        "en": "Viktor - Herald of the Arcane (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/913236dabf1e4f71650bbba46870fff8163e2eff-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Fortiche Production"
+    },
+    {
+      "id": "OPP-267-298",
+      "number": 267,
+      "name": {
+        "fr": "Miss Fortune - Bounty Hunter",
+        "en": "Miss Fortune - Bounty Hunter"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["body", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cc11261fcdbf0851525030bd9e835b718efad3bc-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-267-298-METAL",
+      "number": 267,
+      "name": {
+        "fr": "Miss Fortune - Bounty Hunter (Metal)",
+        "en": "Miss Fortune - Bounty Hunter (Metal)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["body", "chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cc11261fcdbf0851525030bd9e835b718efad3bc-744x1040.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OPP-269-298",
+      "number": 269,
+      "name": {
+        "fr": "Sett - The Boss",
+        "en": "Sett - The Boss"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b132becb843b2cf418cb110ead64758f49f51554-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OPP-269-298-METAL",
+      "number": 269,
+      "name": {
+        "fr": "Sett - The Boss (Metal)",
+        "en": "Sett - The Boss (Metal)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["body", "order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b132becb843b2cf418cb110ead64758f49f51554-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    }
+  ]
+}

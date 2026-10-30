@@ -19,7 +19,6 @@
   margin-inline: auto;
   padding: 1rem;
   border-radius: 10px;
-  perspective: 2600px;
   background:
     linear-gradient(90deg, rgb(0 0 0 / 0.4), transparent 4%, transparent 96%, rgb(0 0 0 / 0.4)),
     var(--binder-cover);
@@ -81,15 +80,25 @@
   animation: turn-backward var(--turn-duration) var(--turn-ease) forwards;
 }
 
+/*
+ * La perspective est portée par la feuille qui tourne, pas par tout le classeur : au repos,
+ * les pages restent en 2D et Chrome dessine les illustrations à leur résolution réelle.
+ */
 @keyframes turn-forward {
+  from {
+    transform: perspective(2600px) rotateY(0);
+  }
   to {
-    transform: rotateY(-180deg);
+    transform: perspective(2600px) rotateY(-180deg);
   }
 }
 
 @keyframes turn-backward {
+  from {
+    transform: perspective(2600px) rotateY(0);
+  }
   to {
-    transform: rotateY(180deg);
+    transform: perspective(2600px) rotateY(180deg);
   }
 }
 

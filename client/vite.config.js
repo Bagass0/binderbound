@@ -24,7 +24,8 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    proxy: { '/api': apiTarget },
+    // Host d'origine conservé (pas de changeOrigin) : l'API vérifie que l'Origin lui correspond.
+    proxy: { '/api': { target: apiTarget } },
     // Le polling fiabilise le rechargement à chaud sur des volumes Docker montés.
     watch: process.env.VITE_USE_POLLING ? { usePolling: true, interval: 300 } : undefined,
   },

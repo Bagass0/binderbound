@@ -60,6 +60,12 @@
   color: var(--text-2);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .lang {
   display: flex;
   padding: 3px;
@@ -99,6 +105,21 @@
 
 @media (max-width: 30rem) {
   .name small {
+    display: none;
+  }
+
+  .actions {
+    gap: 0.4rem;
+  }
+
+  .lang button {
+    min-width: 2.1rem;
+  }
+}
+
+/* Très petits écrans : l'emblème seul suffit à identifier l'app. */
+@media (max-width: 25rem) {
+  .name {
     display: none;
   }
 }

@@ -3,9 +3,11 @@ import request from 'supertest';
 import { createApp } from '../src/app.js';
 import { createSetRepository, loadSets } from '../src/services/setRepository.js';
 
+const FIXTURES = new URL('./fixtures', import.meta.url).pathname;
+
 let app;
 beforeAll(async () => {
-  app = createApp(createSetRepository(await loadSets()));
+  app = createApp(createSetRepository(await loadSets(FIXTURES)));
 });
 
 describe('GET /api/config', () => {
@@ -88,7 +90,7 @@ describe('mode production (client statique)', () => {
     const path = await import('node:path');
     const dir = await mkdtemp(path.join(tmpdir(), 'bb-static-'));
     await writeFile(path.join(dir, 'index.html'), '<div id="root"></div>');
-    const prodApp = createApp(createSetRepository(await loadSets()), { staticDir: dir });
+    const prodApp = createApp(createSetRepository(await loadSets(FIXTURES)), { staticDir: dir });
 
     const page = await request(prodApp).get('/result?set=sample').expect(200);
     expect(page.text).toContain('id="root"');

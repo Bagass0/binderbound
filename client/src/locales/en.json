@@ -13,7 +13,9 @@
     "increase": "Increase",
     "decrease": "Decrease",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "cancel": "Cancel",
+    "save": "Save"
   },
   "steps": {
     "label": "Steps",
@@ -31,7 +33,11 @@
     "baseCards_other": "cards",
     "withVariants": "with variants",
     "choose": "Choose",
-    "empty": "No set available. Add a file to server/data/sets."
+    "empty": "No set available. Add a file to server/data/sets.",
+    "kind": {
+      "main": "Expansions",
+      "promo": "Promotional cards"
+    }
   },
   "binder": {
     "title": "Your binder",
@@ -46,8 +52,6 @@
     "cols": "Columns",
     "doubleSided": "Double-sided",
     "doubleSidedHint": "Each sheet holds cards on both faces",
-    "maxPages": "Max sheets",
-    "maxPagesHint": "Optional: we'll warn you if the set doesn't fit",
     "preview": "Preview",
     "previewCaption_one": "{{rows}} × {{cols}} — {{count}} card per face",
     "previewCaption_other": "{{rows}} × {{cols}} — {{count}} cards per face",
@@ -63,7 +67,10 @@
     "spreadOf": "Spread {{current}} / {{total}}",
     "faceOf": "Face {{current}} / {{total}}",
     "goToSpread": "Go to spread {{n}}",
-    "swipeHint": "Swipe left or right to turn the pages"
+    "swipeHint": "Swipe left or right to turn the pages",
+    "sheetsTitle": "Sheets needed",
+    "sheetsHint_one": "To hold the {{cards}} cards in this format ({{count}} side). A sheet = one plastic sleeve page, front and back.",
+    "sheetsHint_other": "To hold the {{cards}} cards in this format ({{count}} sides). A sheet = one plastic sleeve page, front and back."
   },
   "options": {
     "title": "Sorting options",
@@ -83,7 +90,8 @@
     "startOnRight": "Start on a right-hand face",
     "startOnRightHint": "Skips one face if the first card would land on a left-hand page",
     "startOnRightSingle": "Not needed single-sided: every face is on the right",
-    "compute": "Compute"
+    "compute": "Compute",
+    "startSummary": "Front pages and starting on a right-hand page"
   },
   "sort": {
     "number": "Number",
@@ -99,7 +107,7 @@
   "variantMode": {
     "after-base": {
       "label": "After the base card",
-      "hint": "Each variant directly follows its card"
+      "hint": "Alt-arts follow their card; overnumbered and signatures keep their own number, at the end of the set"
     },
     "end": {
       "label": "At the end of the set",
@@ -117,20 +125,23 @@
     "body": "Body",
     "chaos": "Chaos",
     "order": "Order",
-    "colorless": "Colorless"
+    "colorless": "Colorless",
+    "multi": "Multi"
   },
   "rarity": {
     "common": "Common",
     "uncommon": "Uncommon",
     "rare": "Rare",
     "epic": "Epic",
-    "showcase": "Showcase"
+    "showcase": "Showcase",
+    "promo": "Promo"
   },
   "variant": {
     "base": "Base",
     "alt-art": "Alt-art",
     "overnumbered": "Overnumbered",
     "signature": "Signature",
+    "special": "Special",
     "promo": "Promo",
     "foil": "Foil"
   },
@@ -138,6 +149,7 @@
     "alt-art": "Alt",
     "overnumbered": "Over",
     "signature": "Sig",
+    "special": "SP",
     "promo": "Promo",
     "foil": "Foil"
   },
@@ -161,15 +173,10 @@
     "skippedHint_other": "+ {{count}} reserved faces",
     "sheets_one": "sheet",
     "sheets_other": "sheets",
-    "maxHint": "out of {{max}} available",
-    "noMax": "no limit",
     "empty_one": "empty slot",
     "empty_other": "empty slots",
     "emptyHint": "free slots between cards",
-    "overflow_one": "The set doesn't fit: {{used}} sheets needed, {{max}} available ({{count}} sheet over).",
-    "overflow_other": "The set doesn't fit: {{used}} sheets needed, {{max}} available ({{count}} sheets over).",
-    "overflowShort_one": "{{count}} sheet over",
-    "overflowShort_other": "{{count}} sheets over"
+    "sheetsHint": "to plan in your binder"
   },
   "result": {
     "title": "Your layout",
@@ -217,7 +224,8 @@
     "owned": "Owned",
     "ownedShort": "Owned",
     "missing": "Missing",
-    "toggle": "Mark as owned"
+    "toggle": "Mark as owned",
+    "hintSynced": "Click a card to mark it as owned. Your collection is synced with your account."
   },
   "print": {
     "meta": "{{rows}} × {{cols}} format · {{mode}} · {{cards}} cards · {{sheets}} sheets",
@@ -226,6 +234,103 @@
     "sheet": "Sheet {{sheet}}"
   },
   "footer": {
-    "disclaimer": "Binderbound is not affiliated with Riot Games. Riftbound and League of Legends are trademarks of Riot Games, Inc."
+    "disclaimer": "Binderbound was created under Riot Games’ “Legal Jibber Jabber” policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project. Riftbound and League of Legends are trademarks of Riot Games, Inc.",
+    "data": "Card data: {{source}} (unofficial community project)."
+  },
+  "type": {
+    "legend": "Legend",
+    "unit": "Unit",
+    "spell": "Spell",
+    "gear": "Gear",
+    "rune": "Rune",
+    "battlefield": "Battlefield"
+  },
+  "preview": {
+    "open": "View card",
+    "position": "Slot",
+    "type": "Type",
+    "artist": "Artist",
+    "close": "Close",
+    "markOwned": "I own it",
+    "markMissing": "I no longer own it",
+    "noImage": "Artwork unavailable"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "eyebrow": "Your account",
+    "title": {
+      "login": "Welcome back, summoner",
+      "register": "Join Binderbound"
+    },
+    "lead": "Find your binders and collection on all your devices.",
+    "mode": {
+      "login": "Sign in",
+      "register": "Create account"
+    },
+    "or": "or",
+    "name": "Username",
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 8 characters",
+    "submit": {
+      "login": "Sign in",
+      "register": "Create my account"
+    },
+    "guestNote": "Don’t want an account? Everything else works without one: your collection stays in this browser, and joins your account if you create one later.",
+    "googleUnavailable": "Google sign-in is temporarily unavailable.",
+    "error": {
+      "INVALID_CREDENTIALS": "Incorrect email or password.",
+      "EMAIL_TAKEN": "An account already exists with this email. Sign in instead.",
+      "RATE_LIMITED": "Too many attempts. Try again in a few minutes.",
+      "GOOGLE_INVALID": "Google sign-in failed. Please try again.",
+      "GOOGLE_NO_EMAIL": "This Google account doesn’t share an email address.",
+      "default": "Unable to sign in right now. Please try again."
+    },
+    "invalid": {
+      "name": "Enter a username (80 characters max).",
+      "email": "This email address isn’t valid.",
+      "password": "The password must be at least 8 characters."
+    }
+  },
+  "account": {
+    "menu": "{{name}}’s account",
+    "binders": "My binders"
+  },
+  "binders": {
+    "eyebrow": "{{name}}’s account",
+    "title": "My binders",
+    "lead": "Your saved layouts, with your collection progress. Open one to view or edit it.",
+    "new": "New binder",
+    "empty": "Pick a set, set up your binder, then click “Save” on the result.",
+    "format": "{{rows}}×{{cols}}",
+    "duplex": "double-sided",
+    "simplex": "single-sided",
+    "sortedBy": "sorted by {{sort}}",
+    "updated": "Updated {{date}}",
+    "open": "Open",
+    "rename": "Rename",
+    "delete": "Delete",
+    "confirmDelete": "Delete?"
+  },
+  "save": {
+    "signInToSave": "Save",
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "saved": "Saved",
+    "title": "Save binder",
+    "hint": "Your settings will be saved to your account. Find them in “My binders”.",
+    "name": "Binder name",
+    "invalidName": "Enter a name (80 characters max).",
+    "limit": "You’ve reached the maximum number of binders. Delete one first."
+  },
+  "sound": {
+    "on": "Play ambient music",
+    "off": "Mute ambient music"
+  },
+  "recent": {
+    "title": "Pick up a binder",
+    "all_one": "See my binder",
+    "all_other": "See all {{count}} binders"
   }
 }

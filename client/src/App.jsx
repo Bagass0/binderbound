@@ -1,7 +1,9 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router';
 import { AppLayout } from './components/layout/AppLayout.jsx';
 import { RequireSet } from './components/layout/RequireSet.jsx';
+import { RequireUser } from './components/layout/RequireUser.jsx';
 import { RouteError } from './components/layout/RouteError.jsx';
+import { AuthProvider } from './auth/AuthProvider.jsx';
 import SetSelectPage from './pages/SetSelectPage.jsx';
 
 // Les étapes suivantes sont chargées à la demande : la page d'accueil reste légère.
@@ -21,11 +23,20 @@ const router = createBrowserRouter([
           { path: 'result', lazy: page(() => import('./pages/ResultPage/index.jsx')) },
         ],
       },
+      { path: 'login', lazy: page(() => import('./pages/LoginPage.jsx')) },
+      {
+        element: <RequireUser />,
+        children: [{ path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) }],
+      },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }

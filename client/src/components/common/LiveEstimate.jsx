@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedNumber } from './AnimatedNumber.jsx';
-import { Warning } from '../icons/Icons.jsx';
 import styles from './LiveEstimate.module.css';
 
 /** Estimation en direct du résultat, affichée dans la barre d'actions. */
@@ -24,11 +23,6 @@ export function LiveEstimate({ layout }) {
         <AnimatedNumber value={summary.sheetsUsed} className={styles.value} />{' '}
         {t('summary.sheets', { count: summary.sheetsUsed })}
       </span>
-      {!summary.fits && (
-        <span className={styles.warn}>
-          <Warning /> {t('summary.overflowShort', { count: summary.overflowSheets })}
-        </span>
-      )}
     </div>
   );
 }

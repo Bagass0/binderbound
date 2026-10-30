@@ -16,7 +16,7 @@ export const DEFAULTS = {
   breakByGroup: false, // la coupure suit le critère de tri (breakBy = sortBy)
   reservedFaces: 0,
   startOnRight: false,
-  maxPages: null,
+  binderId: null, // classeur sauvegardé en cours d'édition (compte connecté)
 };
 
 const URL_KEYS = {
@@ -30,7 +30,7 @@ const URL_KEYS = {
   breakByGroup: 'break',
   reservedFaces: 'reserved',
   startOnRight: 'right',
-  maxPages: 'max',
+  binderId: 'binder',
 };
 
 const int = (v, min, max) => {
@@ -50,7 +50,7 @@ const parsers = {
   breakByGroup: bool,
   reservedFaces: (v) => int(v, 0, 50),
   startOnRight: bool,
-  maxPages: (v) => int(v, 1, 9999),
+  binderId: (v) => int(v, 1, Number.MAX_SAFE_INTEGER),
 };
 
 const serialize = (value) => {
@@ -64,6 +64,7 @@ export function withParams(search, patch) {
   const next = new URLSearchParams(search);
   for (const [key, value] of Object.entries(patch)) {
     const urlKey = URL_KEYS[key];
+    if (!urlKey) continue; // ex. réglage d'un ancien classeur sauvegardé, retiré depuis
     if (value === null || value === undefined || value === DEFAULTS[key]) next.delete(urlKey);
     else next.set(urlKey, serialize(value));
   }
@@ -95,6 +96,15 @@ export function useLayoutParams() {
 /** La coupure par groupe suit le critère de tri, s'il fait partie des critères de coupure. */
 export const canBreakBy = (sortBy, config) => config.breakOptions.includes(sortBy);
 
+/** Réglages sauvegardés avec un classeur : tous les paramètres, sauf l'identifiant du classeur. */
+export const binderParams = ({ binderId, ...params }) => params;
+
+/** Deux jeux de réglages identiques ? (pour savoir si un classeur a des modifications) */
+export const sameParams = (a, b) =>
+  Object.keys(binderParams(DEFAULTS)).every(
+    (key) => JSON.stringify(a[key] ?? DEFAULTS[key]) === JSON.stringify(b[key] ?? DEFAULTS[key]),
+  );
+
 /** Transforme les paramètres d'URL en body pour POST /api/layout. */
 export function toLayoutRequest(params, config) {
   return {
@@ -108,6 +118,5 @@ export function toLayoutRequest(params, config) {
     breakBy: params.breakByGroup && canBreakBy(params.sortBy, config) ? params.sortBy : null,
     reservedFaces: params.reservedFaces,
     startOnRight: params.startOnRight,
-    maxPages: params.maxPages,
   };
 }

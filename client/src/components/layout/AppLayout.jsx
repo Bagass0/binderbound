@@ -5,7 +5,8 @@ import { EASE_OUT } from '../../lib/motion.js';
 import { Header } from './Header.jsx';
 import { Footer } from './Footer.jsx';
 import { Stepper } from './Stepper.jsx';
-import { stepIndex } from './steps.js';
+import { PresenceLocation } from './PresenceLocation.jsx';
+import { isStep, stepIndex } from './steps.js';
 import styles from './AppLayout.module.css';
 
 const pageVariants = {
@@ -32,7 +33,7 @@ export function AppLayout() {
   return (
     <MotionConfig reducedMotion="user">
       <Header />
-      <Stepper current={index} />
+      {isStep(pathname) && <Stepper current={index} />}
       <div className={styles.stage}>
         <AnimatePresence mode="wait" custom={nav.dir} initial={false}>
           <motion.main
@@ -45,7 +46,7 @@ export function AppLayout() {
             exit="exit"
             transition={{ duration: 0.35, ease: EASE_OUT }}
           >
-            {outlet}
+            <PresenceLocation>{outlet}</PresenceLocation>
           </motion.main>
         </AnimatePresence>
       </div>

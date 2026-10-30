@@ -79,6 +79,38 @@ export const Link = (p) => (
     <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" />
   </svg>
 );
+export const User = (p) => (
+  <svg {...base} {...p}>
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5" />
+  </svg>
+);
+export const Logout = (p) => (
+  <svg {...base} {...p}>
+    <path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 16l-4-4 4-4M6 12h10" />
+  </svg>
+);
+export const Save = (p) => (
+  <svg {...base} {...p}>
+    <path d="M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4Zm3 0v5h7V4M8 20v-6h8v6" />
+  </svg>
+);
+export const Plus = (p) => (
+  <svg {...base} {...p}>
+    <path d="M12 5v14M5 12h14" />
+  </svg>
+);
+export const Pencil = (p) => (
+  <svg {...base} {...p}>
+    <path d="m15 5 4 4L8 20H4v-4L15 5Z" />
+  </svg>
+);
+export const Trash = (p) => (
+  <svg {...base} {...p}>
+    <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+  </svg>
+);
+
 /** Glyphes par type de carte. */
 const TYPE_PATHS = {
   legend: 'M4 17h16M5 17 3.5 7.5 8.5 11 12 5l3.5 6 5-3.5L19 17', // couronne

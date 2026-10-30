@@ -1,0 +1,180 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid > li {
+  display: grid;
+}
+
+.card {
+  --pcut: 1.25rem;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 17rem;
+  padding: 1.6rem 1.5rem 1.25rem;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background:
+    radial-gradient(circle at 85% 0%, rgb(143 124 255 / 0.25), transparent 55%) padding-box,
+    linear-gradient(180deg, var(--surface-2), var(--bg-deep)) padding-box,
+    linear-gradient(160deg, var(--accent), var(--line-strong) 45%, var(--line)) border-box;
+  clip-path: polygon(
+    var(--pcut) 0,
+    100% 0,
+    100% calc(100% - var(--pcut)),
+    calc(100% - var(--pcut)) 100%,
+    0 100%,
+    0 var(--pcut)
+  );
+}
+
+/* Illustration de la légende du set, estompée derrière le texte. */
+.cover {
+  position: absolute;
+  inset: -10% -25% auto auto;
+  z-index: -1;
+  width: 70%;
+  opacity: 0.22;
+  mask-image: linear-gradient(200deg, #000 20%, transparent 75%);
+  rotate: 8deg;
+  pointer-events: none;
+}
+
+.code {
+  composes: label-caps from global;
+  color: var(--accent);
+}
+
+.name {
+  font-size: 1.45rem;
+  color: var(--text-strong);
+  overflow-wrap: anywhere;
+}
+
+.details,
+.updated {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.updated {
+  color: var(--text-3);
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg-void);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--rift-gradient);
+  transform-origin: left;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.open {
+  composes: label-caps from global;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.open:hover {
+  color: var(--text-strong);
+}
+
+.tools,
+.confirm {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.danger {
+  color: var(--danger);
+}
+
+/* Carte « Nouveau classeur » : contour pointillé, renvoie au choix du set. */
+.newCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 17rem;
+  padding: 1.5rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+
+.newCard svg {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.newCard span {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.newCard small {
+  max-width: 16rem;
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+
+.newCard:hover {
+  border-color: var(--accent);
+  color: var(--text-strong);
+  background: rgb(var(--accent-rgb) / 0.05);
+}
+
+.dialogForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

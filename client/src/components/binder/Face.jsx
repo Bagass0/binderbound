@@ -35,6 +35,7 @@ export const Face = memo(function Face({
       <div className={`${styles.grid} ${stagger ? styles.stagger : ''}`} style={style}>
         {face.slots.map((slot, i) => {
           const highlighted = highlight?.cardId === slot.card?.id;
+          const owned = slot.card && collection?.owned.has(slot.card.id);
           return (
             <div key={i} className={styles.slot} style={{ '--i': i }}>
               {slot.card ? (
@@ -42,7 +43,8 @@ export const Face = memo(function Face({
                   // Nouvelle clé à chaque recherche : relance l'animation de surbrillance.
                   key={highlighted ? highlight.nonce : undefined}
                   card={slot.card}
-                  missing={collection?.tracking && !collection.owned.has(slot.card.id)}
+                  missing={collection?.tracking && !owned}
+                  pressed={collection?.tracking ? owned : undefined}
                   highlight={highlighted}
                   onClick={onCardClick}
                 />

@@ -15,4 +15,19 @@ export const storage = {
       /* stockage indisponible : on ignore */
     }
   },
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      /* stockage indisponible : on ignore */
+    }
+  },
+  /** Clés commençant par `prefix`. */
+  keys(prefix) {
+    try {
+      return Object.keys(localStorage).filter((k) => k.startsWith(prefix));
+    } catch {
+      return [];
+    }
+  },
 };

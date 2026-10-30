@@ -25,8 +25,17 @@ export async function loadSets(dir = SETS_DIR) {
   return sets;
 }
 
+/** Illustration de couverture : la première légende illustrée, à défaut la première carte. */
+const coverImage = (cards) =>
+  (cards.find((c) => c.type === 'legend' && c.imageUrl) ?? cards.find((c) => c.imageUrl))
+    ?.imageUrl ?? null;
+
 /** Métadonnées d'un set pour la liste (sans les cartes). */
-export const toSummary = ({ cards, ...meta }) => ({ ...meta, counts: countCards(cards) });
+export const toSummary = ({ cards, ...meta }) => ({
+  ...meta,
+  counts: countCards(cards),
+  coverImage: coverImage(cards),
+});
 
 export function createSetRepository(sets) {
   // Les sets ne changent pas après le chargement : la liste est calculée une seule fois.

@@ -116,7 +116,7 @@ export function SearchBar({ cards, index, onSelect }) {
                   e.preventDefault();
                   select(card);
                 }}
-                style={domainStyle(card.domain)}
+                style={domainStyle(card)}
               >
                 <span className={styles.number}>#{padNumber(card.number)}</span>
                 <span className={styles.name}>

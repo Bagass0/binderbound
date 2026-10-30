@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { Warning } from '../../components/icons/Icons.jsx';
 import styles from './Summary.module.css';
 
 export function Summary({ summary }) {
@@ -24,7 +23,7 @@ export function Summary({ summary }) {
       key: 'sheets',
       value: summary.sheetsUsed,
       label: t('summary.sheets', { count: summary.sheetsUsed }),
-      hint: summary.maxPages ? t('summary.maxHint', { max: summary.maxPages }) : t('summary.noMax'),
+      hint: t('summary.sheetsHint'),
     },
     {
       key: 'empty',
@@ -48,29 +47,14 @@ export function Summary({ summary }) {
             className={styles.tile}
             variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
           >
-            <span className={styles.value}>{tile.value}</span>
-            <span className={styles.label}>{tile.label}</span>
+            <span className={styles.main}>
+              <span className={styles.value}>{tile.value}</span>
+              <span className={styles.label}>{tile.label}</span>
+            </span>
             <span className={styles.hint}>{tile.hint}</span>
           </motion.li>
         ))}
       </motion.ul>
-      {!summary.fits && (
-        <motion.div
-          className={styles.warning}
-          role="alert"
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-        >
-          <Warning />
-          <span>
-            {t('summary.overflow', {
-              count: summary.overflowSheets,
-              used: summary.sheetsUsed,
-              max: summary.maxPages,
-            })}
-          </span>
-        </motion.div>
-      )}
     </>
   );
 }

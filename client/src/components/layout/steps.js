@@ -11,3 +11,6 @@ export const stepIndex = (pathname) =>
     STEPS.findIndex((s) => s.path === pathname),
     0,
   );
+
+/** Pages hors parcours (connexion, classeurs) : pas de barre d'étapes. */
+export const isStep = (pathname) => STEPS.some((s) => s.path === pathname);

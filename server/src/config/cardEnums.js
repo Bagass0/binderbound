@@ -4,20 +4,39 @@
  * (ex. tri par rareté : common avant uncommon, etc.).
  */
 
-export const CARD_TYPES = ['legend', 'champion', 'unit', 'spell', 'gear', 'rune', 'battlefield'];
+export const CARD_TYPES = ['legend', 'unit', 'spell', 'gear', 'rune', 'battlefield'];
 
 export const DOMAINS = ['fury', 'calm', 'mind', 'body', 'chaos', 'order', 'colorless'];
 
-export const RARITIES = ['common', 'uncommon', 'rare', 'epic', 'showcase'];
+/** Groupe de tri des cartes à plusieurs domaines, rangé après les domaines simples. */
+export const MULTI_DOMAIN = 'multi';
 
-/** `base` est la carte normale ; toutes les autres valeurs sont des variantes. */
-export const VARIANTS = ['base', 'alt-art', 'overnumbered', 'signature', 'promo', 'foil'];
+export const RARITIES = ['common', 'uncommon', 'rare', 'epic', 'showcase', 'promo'];
+
+/**
+ * `base` est la carte normale ; toutes les autres valeurs sont des variantes.
+ * `special` : carte hors numérotation du set (runes R01…, cartes SP…, jetons).
+ */
+export const VARIANTS = [
+  'base',
+  'alt-art',
+  'overnumbered',
+  'signature',
+  'special',
+  'promo',
+  'foil',
+];
 
 export const VARIANT_TYPES = VARIANTS.filter((v) => v !== 'base');
 
 export const SORT_OPTIONS = ['number', 'domain', 'rarity', 'type'];
 
 export const VARIANT_MODES = ['after-base', 'end', 'exclude'];
+
+/** Sets principaux (extensions) ou de promos (affichés à part sur l'accueil). */
+export const SET_KINDS = ['main', 'promo'];
+
+export const ORIENTATIONS = ['portrait', 'landscape'];
 
 /** Critères de coupure de groupe (« nouvelle face par … »). */
 export const BREAK_OPTIONS = SORT_OPTIONS.filter((s) => s !== 'number');

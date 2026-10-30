@@ -1,4 +1,4 @@
-import { localizedName } from '../../lib/format.js';
+import { domainLabel, localizedName } from '../../lib/format.js';
 
 const escape = (value, sep) => {
   const s = String(value ?? '');
@@ -36,7 +36,7 @@ export function buildCsv(placements, { t, lang, collection }) {
       p.card.number,
       p.card.id,
       localizedName(p.card, lang),
-      t(`domain.${p.card.domain}`),
+      domainLabel(t, p.card),
       t(`rarity.${p.card.rarity}`),
       t(`variant.${p.card.variant}`),
     ];

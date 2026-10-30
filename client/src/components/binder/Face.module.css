@@ -23,9 +23,13 @@
   min-height: 0;
 }
 
-/* Apparition en cascade au montage de la face */
+/*
+ * Apparition en cascade au montage de la face. `backwards` (et non `both`) : une fois
+ * l'animation finie, plus aucune transformation ne reste appliquée, sinon Chrome garde la
+ * carte dans un calque GPU étiré, ce qui crénelait le texte des illustrations.
+ */
 .stagger .slot {
-  animation: slot-in 0.3s var(--ease-out) calc(var(--i) * 25ms) both;
+  animation: slot-in 0.3s var(--ease-out) calc(var(--i) * 25ms) backwards;
 }
 
 @keyframes slot-in {

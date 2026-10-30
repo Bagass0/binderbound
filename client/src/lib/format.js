@@ -7,8 +7,17 @@ export const isVariant = (card) => card.variant !== 'base';
 
 export const padNumber = (n) => String(n).padStart(3, '0');
 
-/** Variable CSS de couleur du domaine, à passer en `style`. */
-export const domainStyle = (domain) => ({ '--domain': `var(--domain-${domain})` });
+/** Variables CSS de couleur des domaines d'une carte (le second sert aux cartes bi-domaines). */
+export const domainStyle = ({ domains }) => ({
+  '--domain': `var(--domain-${domains[0]})`,
+  '--domain-2': `var(--domain-${domains.at(-1)})`,
+});
+
+/** Libellé des domaines : « Fureur / Esprit ». */
+export const domainLabel = (t, { domains }) => domains.map((d) => t(`domain.${d}`)).join(' / ');
+
+/** Groupe de tri par domaine (miroir du serveur) : les bi-domaines forment le groupe « multi ». */
+export const domainGroup = ({ domains }) => (domains.length > 1 ? 'multi' : domains[0]);
 
 /** Libellé de face « Feuillet 2 · Verso ». */
 export const formatFace = (t, face) =>

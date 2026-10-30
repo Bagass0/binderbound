@@ -1,0 +1,12 @@
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+}
+
+.failed {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  text-align: center;
+}

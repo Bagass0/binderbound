@@ -4,6 +4,6 @@
 .git
 .DS_Store
 *.log
-.env
+.env*
 Dockerfile
 compose*.yaml

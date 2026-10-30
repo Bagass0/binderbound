@@ -1,62 +1,78 @@
+/* Bandeau de chiffres clés : une seule ligne, séparée par de fins filets. */
 .tiles {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-glass);
 }
 
 .tile {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: var(--surface-glass);
+  gap: 0.1rem;
+  min-width: 0;
+  padding: 0.7rem 1.1rem;
 }
 
-.tile::before {
+.tile + .tile {
+  border-left: 1px solid var(--line);
+}
+
+.tile:first-child::before {
   content: '';
   position: absolute;
   top: -1px;
-  left: 1.25rem;
+  left: 1.1rem;
   width: 2rem;
   height: 2px;
   background: var(--rift-gradient);
 }
 
+.main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
 .value {
   font-family: var(--font-body);
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--text-strong);
   font-variant-numeric: tabular-nums;
 }
 
 .label {
   composes: label-caps from global;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--accent);
 }
 
 .hint {
+  overflow: hidden;
   font-size: 0.75rem;
   color: var(--text-2);
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .warning {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
-  padding: 0.85rem 1.1rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1.1rem;
   border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
   background: rgb(255 93 115 / 0.1);
   color: #ffc2cc;
+  font-size: 0.875rem;
 }
 
 .warning svg {
@@ -68,5 +84,13 @@
 @media (max-width: 48rem) {
   .tiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tile:nth-child(3) {
+    border-left: 0;
+  }
+
+  .tile:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
   }
 }

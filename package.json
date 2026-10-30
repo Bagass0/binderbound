@@ -19,8 +19,12 @@
     "format:check": "prettier --check .",
     "import-set": "npm run import-set -w server --",
     "docker:dev": "docker compose up --build",
-    "docker:prod": "docker compose -f compose.prod.yaml up -d --build",
-    "docker:prod:down": "docker compose -f compose.prod.yaml down"
+    "docker:prod": "docker compose --env-file .env.production -f compose.prod.yaml up -d --build",
+    "docker:prod:down": "docker compose --env-file .env.production -f compose.prod.yaml down",
+    "sync-sets": "npm run sync-sets -w server --",
+    "test:db": "npm run test:db -w server",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose stop db"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

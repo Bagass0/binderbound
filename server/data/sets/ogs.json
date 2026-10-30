@@ -1,0 +1,424 @@
+{
+  "id": "ogs",
+  "code": "OGS",
+  "name": {
+    "fr": "Origins: Proving Grounds",
+    "en": "Origins: Proving Grounds"
+  },
+  "releaseDate": "2025-10-31",
+  "kind": "main",
+  "source": {
+    "name": "Riftcodex",
+    "url": "https://riftcodex.com"
+  },
+  "cards": [
+    {
+      "id": "OGS-001-024",
+      "number": 1,
+      "name": {
+        "fr": "Annie - Fiery",
+        "en": "Annie - Fiery"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["fury"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/532d75dc36a16eb5954253a77366fcceac7aec62-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OGS-002-024",
+      "number": 2,
+      "name": {
+        "fr": "Firestorm",
+        "en": "Firestorm"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7a34129e64f0296bf2da166c2b06ed156d568db-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-003-024",
+      "number": 3,
+      "name": {
+        "fr": "Incinerate",
+        "en": "Incinerate"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["fury"],
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/46e4eaada1412f9b6c24751bdb3932c6a51e905f-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-004-024",
+      "number": 4,
+      "name": {
+        "fr": "Master Yi - Meditative",
+        "en": "Master Yi - Meditative"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5508566c8f05f09492148faa803332a731095eb7-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-005-024",
+      "number": 5,
+      "name": {
+        "fr": "Zephyr Sage",
+        "en": "Zephyr Sage"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["calm"],
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7664b03bb107954195153d9f2f86c5d63682fa4b-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-006-024",
+      "number": 6,
+      "name": {
+        "fr": "Lux - Illuminated",
+        "en": "Lux - Illuminated"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["mind"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a0d10edf30abb6fde21f5d386e9a7db3c1b0a098-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-007-024",
+      "number": 7,
+      "name": {
+        "fr": "Garen - Rugged",
+        "en": "Garen - Rugged"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/67c22dc29a7a28dabe0f169a7848c25bef1fbda4-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-008-024",
+      "number": 8,
+      "name": {
+        "fr": "Gentlemen's Duel",
+        "en": "Gentlemen's Duel"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["body"],
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4568ab827fdcd42d6bb86b1c2de6182e286c9ee9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-009-024",
+      "number": 9,
+      "name": {
+        "fr": "Master Yi - Honed",
+        "en": "Master Yi - Honed"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0e16976cd6d7ee5a874be9351b428671990fbd25-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-010-024",
+      "number": 10,
+      "name": {
+        "fr": "Annie - Stubborn",
+        "en": "Annie - Stubborn"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/44eb968cf0c54e75970588b69eef5c5f5ccc9b24-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "OGS-011-024",
+      "number": 11,
+      "name": {
+        "fr": "Flash",
+        "en": "Flash"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["chaos"],
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4d9cc1c13b75933e509e642213f13359350cd3f9-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Sugar Free"
+    },
+    {
+      "id": "OGS-012-024",
+      "number": 12,
+      "name": {
+        "fr": "Blast of Power",
+        "en": "Blast of Power"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/026f851a703601fce4142c0791e913377c170b47-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-013-024",
+      "number": 13,
+      "name": {
+        "fr": "Garen - Commander",
+        "en": "Garen - Commander"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cbf2c12d69a86566e4cda07050b2d4495e40187e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-014-024",
+      "number": 14,
+      "name": {
+        "fr": "Lux - Crownguard",
+        "en": "Lux - Crownguard"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/17d0793ad495727e67bb1c94ae0e11cd4705870f-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Envar Studio"
+    },
+    {
+      "id": "OGS-015-024",
+      "number": 15,
+      "name": {
+        "fr": "Recruit the Vanguard",
+        "en": "Recruit the Vanguard"
+      },
+      "type": "spell",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "uncommon",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/81d1c47459606f7b627778cce9b5f0e44d80f7fa-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-016-024",
+      "number": 16,
+      "name": {
+        "fr": "Vanguard Attendant",
+        "en": "Vanguard Attendant"
+      },
+      "type": "unit",
+      "supertype": null,
+      "domains": ["order"],
+      "rarity": "common",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4ce467c1d51a65ab4fbae918dca38ae90b510844-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-017-024-STARTER",
+      "number": 17,
+      "name": {
+        "fr": "Annie - Dark Child (Starter)",
+        "en": "Annie - Dark Child (Starter)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["fury", "chaos"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/89963e1d1cffd69c620fb5d6b037f50d5c334463-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-018-024",
+      "number": 18,
+      "name": {
+        "fr": "Tibbers",
+        "en": "Tibbers"
+      },
+      "type": "unit",
+      "supertype": "Signature",
+      "domains": ["fury", "chaos"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/74f8bc78573b33d9979b0e9c121b858d770a490c-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "OGS-019-024-STARTER",
+      "number": 19,
+      "name": {
+        "fr": "Master Yi - Wuju Bladesman (Starter)",
+        "en": "Master Yi - Wuju Bladesman (Starter)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["calm", "body"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8231ced23eaf22ca3bf62ec8cb86b83a3e222da6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Quy Ho"
+    },
+    {
+      "id": "OGS-020-024",
+      "number": 20,
+      "name": {
+        "fr": "Highlander",
+        "en": "Highlander"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["calm", "body"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/18c0818cbbfdf26a1237b4f7703b1f035f47b014-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-021-024-STARTER",
+      "number": 21,
+      "name": {
+        "fr": "Lux - Lady of Luminosity (Starter)",
+        "en": "Lux - Lady of Luminosity (Starter)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["mind", "order"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/44885d811b70621b188d9813b2b10b5cff1b81e6-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio/Maki Planas Mata"
+    },
+    {
+      "id": "OGS-022-024",
+      "number": 22,
+      "name": {
+        "fr": "Final Spark",
+        "en": "Final Spark"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["mind", "order"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4558a2dc1bb1f1b8a73ec0d82244654e84b12687-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "OGS-023-024-STARTER",
+      "number": 23,
+      "name": {
+        "fr": "Garen - Might of Demacia (Starter)",
+        "en": "Garen - Might of Demacia (Starter)"
+      },
+      "type": "legend",
+      "supertype": "Champion",
+      "domains": ["body", "order"],
+      "rarity": "rare",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e7185deb46f17770802d06aeddfe3b929afff880-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "OGS-024-024",
+      "number": 24,
+      "name": {
+        "fr": "Decisive Strike",
+        "en": "Decisive Strike"
+      },
+      "type": "spell",
+      "supertype": "Signature",
+      "domains": ["body", "order"],
+      "rarity": "epic",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/986782271be078c184a8d1c196e375106459c6c5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    }
+  ]
+}

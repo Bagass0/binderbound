@@ -1,0 +1,237 @@
+{
+  "id": "pr",
+  "code": "PR",
+  "name": {
+    "fr": "Riftbound Promotional Cards",
+    "en": "Riftbound Promotional Cards"
+  },
+  "releaseDate": "2025-10-31",
+  "kind": "promo",
+  "source": {
+    "name": "Riftcodex",
+    "url": "https://riftcodex.com"
+  },
+  "cards": [
+    {
+      "id": "PR-066-298-LAUNCH-EXCLUSIVE",
+      "number": 66,
+      "name": {
+        "fr": "Ahri - Alluring (Launch Exclusive)",
+        "en": "Ahri - Alluring (Launch Exclusive)"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fabbcc2f83f397cf07299236a702db05a151053b-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "PR-068A-298",
+      "number": 68,
+      "name": {
+        "fr": "Caitlyn - Patrolling",
+        "en": "Caitlyn - Patrolling"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["calm"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/51e6bacf25d19e7c391367ff107efb9e0b9f1ff5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "PR-111A-298",
+      "number": 111,
+      "name": {
+        "fr": "Heimerdinger - Inventor",
+        "en": "Heimerdinger - Inventor"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["mind"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b14a5f9d567c90329c151a8cc72d870b47b1434-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Six More Vodka"
+    },
+    {
+      "id": "PR-159A-298",
+      "number": 159,
+      "name": {
+        "fr": "Warwick - Hunter",
+        "en": "Warwick - Hunter"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["body"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fcbf878905001fa81858e9f081346fd05425f264-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "PR-036A-298",
+      "number": 167,
+      "name": {
+        "fr": "Vi - Destructive",
+        "en": "Vi - Destructive"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["fury"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dff596efc7413bfdd9cc8e667c46bd4228447de5-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Grafit Studio"
+    },
+    {
+      "id": "PR-197-298",
+      "number": 197,
+      "name": {
+        "fr": "Teemo - Scout",
+        "en": "Teemo - Scout"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ca8a2e11dd78dd09ad1c9ad3a23e5699254b947e-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "PR-202-298",
+      "number": 202,
+      "name": {
+        "fr": "Jinx - Rebel",
+        "en": "Jinx - Rebel"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["chaos"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7fe105f40df66525be51bd18e25506945a7b027-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "PR-246A-298",
+      "number": 246,
+      "name": {
+        "fr": "Viktor - Leader",
+        "en": "Viktor - Leader"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab390d6d074c3f07abba000cc166faa1796ec464-744x1039.png",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "PR-246B-298",
+      "number": 246,
+      "name": {
+        "fr": "Viktor - Leader",
+        "en": "Viktor - Leader"
+      },
+      "type": "unit",
+      "supertype": "Champion",
+      "domains": ["order"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab390d6d074c3f07abba000cc166faa1796ec464-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "League Splash Team"
+    },
+    {
+      "id": "PR-263A-298",
+      "number": 263,
+      "name": {
+        "fr": "Teemo - Swift Scout (Alternate Art)",
+        "en": "Teemo - Swift Scout (Alternate Art)"
+      },
+      "type": "legend",
+      "supertype": null,
+      "domains": ["mind", "chaos"],
+      "rarity": "promo",
+      "variant": "alt-art",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9723181e3392bb61c2aabc804a44f7b0558cedf1-744x1039.png?accountingTag=RB",
+      "orientation": "portrait",
+      "artist": "Shawn Lee"
+    },
+    {
+      "id": "PR-276A-298",
+      "number": 276,
+      "name": {
+        "fr": "Aspirant's Climb",
+        "en": "Aspirant's Climb"
+      },
+      "type": "battlefield",
+      "supertype": null,
+      "domains": ["colorless"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9301593f3800e68427469d38181b578a672473c3-1038x744.png?accountingTag=RB",
+      "orientation": "landscape",
+      "artist": "Polar Engine Studio"
+    },
+    {
+      "id": "PR-278A-298",
+      "number": 278,
+      "name": {
+        "fr": "Bandle Tree",
+        "en": "Bandle Tree"
+      },
+      "type": "battlefield",
+      "supertype": null,
+      "domains": ["colorless"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/538f93a34006c4afaddb890cbc75b4db222f1783-1038x744.png?accountingTag=RB",
+      "orientation": "landscape",
+      "artist": "Kudos Productions"
+    },
+    {
+      "id": "PR-293A-298",
+      "number": 293,
+      "name": {
+        "fr": "The Grand Plaza",
+        "en": "The Grand Plaza"
+      },
+      "type": "battlefield",
+      "supertype": null,
+      "domains": ["colorless"],
+      "rarity": "promo",
+      "variant": "base",
+      "baseCardId": null,
+      "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f9ca8d04cb269ad99bca7e6dae874cad1bec336a-1038x744.png?accountingTag=RB",
+      "orientation": "landscape",
+      "artist": "Six More Vodka"
+    }
+  ]
+}

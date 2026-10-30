@@ -13,7 +13,9 @@
     "increase": "Augmenter",
     "decrease": "Diminuer",
     "yes": "Oui",
-    "no": "Non"
+    "no": "Non",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
   },
   "steps": {
     "label": "Étapes",
@@ -31,7 +33,11 @@
     "baseCards_other": "cartes",
     "withVariants": "avec variantes",
     "choose": "Choisir",
-    "empty": "Aucun set disponible. Ajoute un fichier dans server/data/sets."
+    "empty": "Aucun set disponible. Ajoute un fichier dans server/data/sets.",
+    "kind": {
+      "main": "Extensions",
+      "promo": "Cartes promotionnelles"
+    }
   },
   "binder": {
     "title": "Ton classeur",
@@ -46,8 +52,6 @@
     "cols": "Colonnes",
     "doubleSided": "Recto-verso",
     "doubleSidedHint": "Chaque feuillet accueille des cartes sur ses deux faces",
-    "maxPages": "Feuillets max",
-    "maxPagesHint": "Optionnel : on te prévient si le set ne rentre pas",
     "preview": "Aperçu",
     "previewCaption_one": "{{rows}} × {{cols}} — {{count}} carte par face",
     "previewCaption_other": "{{rows}} × {{cols}} — {{count}} cartes par face",
@@ -63,7 +67,10 @@
     "spreadOf": "Double page {{current}} / {{total}}",
     "faceOf": "Face {{current}} / {{total}}",
     "goToSpread": "Aller à la double page {{n}}",
-    "swipeHint": "Glisse vers la gauche ou la droite pour tourner les pages"
+    "swipeHint": "Glisse vers la gauche ou la droite pour tourner les pages",
+    "sheetsTitle": "Feuillets nécessaires",
+    "sheetsHint_one": "Pour ranger les {{cards}} cartes dans ce format ({{count}} face). Un feuillet = une pochette plastique, recto et verso.",
+    "sheetsHint_other": "Pour ranger les {{cards}} cartes dans ce format ({{count}} faces). Un feuillet = une pochette plastique, recto et verso."
   },
   "options": {
     "title": "Options de rangement",
@@ -83,7 +90,8 @@
     "startOnRight": "Commencer sur une face de droite",
     "startOnRightHint": "Saute une face si la première carte tomberait sur une page de gauche",
     "startOnRightSingle": "Inutile en simple face : toutes les faces sont à droite",
-    "compute": "Calculer"
+    "compute": "Calculer",
+    "startSummary": "Pages de garde et départ sur une page de droite"
   },
   "sort": {
     "number": "Numéro",
@@ -99,7 +107,7 @@
   "variantMode": {
     "after-base": {
       "label": "Après la carte de base",
-      "hint": "Chaque variante suit directement sa carte"
+      "hint": "Les alt-arts suivent leur carte ; overnumbered et signatures restent à leur numéro, en fin de set"
     },
     "end": {
       "label": "À la fin du set",
@@ -117,20 +125,23 @@
     "body": "Corps",
     "chaos": "Chaos",
     "order": "Ordre",
-    "colorless": "Incolore"
+    "colorless": "Incolore",
+    "multi": "Multi"
   },
   "rarity": {
     "common": "Commune",
     "uncommon": "Peu commune",
     "rare": "Rare",
     "epic": "Épique",
-    "showcase": "Showcase"
+    "showcase": "Showcase",
+    "promo": "Promo"
   },
   "variant": {
     "base": "Base",
     "alt-art": "Alt-art",
     "overnumbered": "Overnumbered",
     "signature": "Signature",
+    "special": "Hors série",
     "promo": "Promo",
     "foil": "Foil"
   },
@@ -138,6 +149,7 @@
     "alt-art": "Alt",
     "overnumbered": "Over",
     "signature": "Sig",
+    "special": "HS",
     "promo": "Promo",
     "foil": "Foil"
   },
@@ -161,15 +173,10 @@
     "skippedHint_other": "+ {{count}} faces réservées",
     "sheets_one": "feuillet",
     "sheets_other": "feuillets",
-    "maxHint": "sur {{max}} disponibles",
-    "noMax": "pas de limite",
     "empty_one": "case vide",
     "empty_other": "cases vides",
     "emptyHint": "places libres entre les cartes",
-    "overflow_one": "Le set ne rentre pas : {{used}} feuillets nécessaires pour {{max}} disponibles ({{count}} feuillet en trop).",
-    "overflow_other": "Le set ne rentre pas : {{used}} feuillets nécessaires pour {{max}} disponibles ({{count}} feuillets en trop).",
-    "overflowShort_one": "{{count}} feuillet en trop",
-    "overflowShort_other": "{{count}} feuillets en trop"
+    "sheetsHint": "à prévoir dans ton classeur"
   },
   "result": {
     "title": "Ton rangement",
@@ -217,7 +224,8 @@
     "owned": "Possédées",
     "ownedShort": "Possédée",
     "missing": "Manquante",
-    "toggle": "Marquer comme possédée"
+    "toggle": "Marquer comme possédée",
+    "hintSynced": "Clique sur une carte pour la marquer comme possédée. Ta collection est synchronisée avec ton compte."
   },
   "print": {
     "meta": "Format {{rows}} × {{cols}} · {{mode}} · {{cards}} cartes · {{sheets}} feuillets",
@@ -226,6 +234,103 @@
     "sheet": "Feuillet {{sheet}}"
   },
   "footer": {
-    "disclaimer": "Binderbound n’est pas affilié à Riot Games. Riftbound et League of Legends sont des marques de Riot Games, Inc."
+    "disclaimer": "Binderbound a été créé dans le cadre de la politique « Legal Jibber Jabber » de Riot Games, à partir d’éléments appartenant à Riot Games. Riot Games ne cautionne ni ne parraine ce projet. Riftbound et League of Legends sont des marques de Riot Games, Inc.",
+    "data": "Données des cartes : {{source}} (projet communautaire non officiel)."
+  },
+  "type": {
+    "legend": "Légende",
+    "unit": "Unité",
+    "spell": "Sort",
+    "gear": "Équipement",
+    "rune": "Rune",
+    "battlefield": "Champ de bataille"
+  },
+  "preview": {
+    "open": "Voir la carte en grand",
+    "position": "Emplacement",
+    "type": "Type",
+    "artist": "Illustration",
+    "close": "Fermer",
+    "markOwned": "Je la possède",
+    "markMissing": "Je ne l’ai plus",
+    "noImage": "Illustration indisponible"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "eyebrow": "Ton compte",
+    "title": {
+      "login": "Bon retour, invocateur",
+      "register": "Rejoins Binderbound"
+    },
+    "lead": "Retrouve tes classeurs et ta collection sur tous tes appareils.",
+    "mode": {
+      "login": "Connexion",
+      "register": "Créer un compte"
+    },
+    "or": "ou",
+    "name": "Pseudo",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "passwordHint": "8 caractères minimum",
+    "submit": {
+      "login": "Se connecter",
+      "register": "Créer mon compte"
+    },
+    "guestNote": "Pas envie de créer un compte ? Tout le reste fonctionne sans : ta collection reste alors dans ce navigateur, et elle rejoindra ton compte si tu en crées un plus tard.",
+    "googleUnavailable": "La connexion Google est momentanément indisponible.",
+    "error": {
+      "INVALID_CREDENTIALS": "E-mail ou mot de passe incorrect.",
+      "EMAIL_TAKEN": "Un compte existe déjà avec cet e-mail. Connecte-toi plutôt.",
+      "RATE_LIMITED": "Trop de tentatives. Réessaie dans quelques minutes.",
+      "GOOGLE_INVALID": "La connexion Google a échoué. Réessaie.",
+      "GOOGLE_NO_EMAIL": "Ce compte Google ne partage pas d’adresse e-mail.",
+      "default": "Impossible de se connecter pour le moment. Réessaie."
+    },
+    "invalid": {
+      "name": "Indique un pseudo (80 caractères maximum).",
+      "email": "Cette adresse e-mail n’est pas valide.",
+      "password": "Le mot de passe doit faire au moins 8 caractères."
+    }
+  },
+  "account": {
+    "menu": "Compte de {{name}}",
+    "binders": "Mes classeurs"
+  },
+  "binders": {
+    "eyebrow": "Compte de {{name}}",
+    "title": "Mes classeurs",
+    "lead": "Tes rangements sauvegardés, avec l’avancement de ta collection. Ouvre-en un pour le consulter ou le modifier.",
+    "new": "Nouveau classeur",
+    "empty": "Choisis un set, règle ton classeur puis clique sur « Enregistrer » dans le résultat.",
+    "format": "{{rows}}×{{cols}}",
+    "duplex": "recto-verso",
+    "simplex": "simple face",
+    "sortedBy": "tri par {{sort}}",
+    "updated": "Modifié le {{date}}",
+    "open": "Ouvrir",
+    "rename": "Renommer",
+    "delete": "Supprimer",
+    "confirmDelete": "Supprimer ?"
+  },
+  "save": {
+    "signInToSave": "Sauvegarder",
+    "save": "Enregistrer",
+    "saveChanges": "Enregistrer les modifications",
+    "saved": "Enregistré",
+    "title": "Enregistrer le classeur",
+    "hint": "Tes réglages seront sauvegardés dans ton compte. Retrouve-les dans « Mes classeurs ».",
+    "name": "Nom du classeur",
+    "invalidName": "Indique un nom (80 caractères maximum).",
+    "limit": "Tu as atteint le nombre maximum de classeurs. Supprimes-en un d’abord."
+  },
+  "sound": {
+    "on": "Lancer l’ambiance sonore",
+    "off": "Couper l’ambiance sonore"
+  },
+  "recent": {
+    "title": "Reprendre un classeur",
+    "all_one": "Voir mon classeur",
+    "all_other": "Voir les {{count}} classeurs"
   }
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { computeLayout } from '../src/layout/computeLayout.js';
-import sample from '../data/sets/sample.json' with { type: 'json' };
+import sample from './fixtures/sample.json' with { type: 'json' };
 
 /** Fabrique une carte minimale pour les tests. */
 const card = (number, extra = {}) => ({
@@ -8,7 +8,7 @@ const card = (number, extra = {}) => ({
   number,
   name: { fr: `Carte ${number}`, en: `Card ${number}` },
   type: 'unit',
-  domain: 'fury',
+  domains: ['fury'],
   rarity: 'common',
   variant: 'base',
   baseCardId: null,
@@ -84,15 +84,61 @@ describe('variantes', () => {
     card(1, { suffix: 's', variant: 'signature', baseCardId: 'T-1' }),
   ];
 
-  it('after-base : chaque variante suit sa base, ordre stable', () => {
+  it('after-base : les variantes de même numéro suivent leur base, les autres restent à leur numéro', () => {
     expect(ids(computeLayout(cards, { rows: 1, cols: 6 }))).toEqual([
       'T-1',
       'T-1a',
       'T-1s',
       'T-2',
-      'T-4',
       'T-3',
+      'T-4',
     ]);
+  });
+
+  it('after-base : overnumbered et signatures en fin de set, comme dans un vrai set', () => {
+    // 113 / 113a côte à côte ; l'overnumbered 167 et la signature 167* de la carte 2 à la fin.
+    const set = [
+      card(2),
+      card(113),
+      card(113, { suffix: 'a', variant: 'alt-art', baseCardId: 'T-113' }),
+      card(167, { suffix: '*', variant: 'signature', baseCardId: 'T-2' }),
+      card(167, { variant: 'overnumbered', baseCardId: 'T-2' }),
+      card(166),
+    ];
+    expect(ids(computeLayout(set, { rows: 1, cols: 6 }))).toEqual([
+      'T-2',
+      'T-113',
+      'T-113a',
+      'T-166',
+      'T-167',
+      'T-167*',
+    ]);
+  });
+
+  it('les cartes hors série sont rangées dans l’ordre de leur identifiant', () => {
+    const set = [
+      card(2, { suffix: 'SP', variant: 'special' }),
+      card(1, { suffix: 'R', variant: 'special' }),
+      card(1, { suffix: 'SP', variant: 'special' }),
+      card(2, { suffix: 'R', variant: 'special' }),
+    ];
+    expect(ids(computeLayout(set, { rows: 1, cols: 4 }))).toEqual([
+      'T-1R',
+      'T-1SP',
+      'T-2R',
+      'T-2SP',
+    ]);
+  });
+
+  it('les cartes hors série ferment toujours le classeur', () => {
+    const set = [card(5), card(1, { suffix: 'R', variant: 'special' }), card(7)];
+    for (const variantMode of ['after-base', 'end']) {
+      expect(ids(computeLayout(set, { rows: 1, cols: 3, variantMode }))).toEqual([
+        'T-5',
+        'T-7',
+        'T-1R',
+      ]);
+    }
   });
 
   it('end : variantes regroupées après le set', () => {
@@ -125,10 +171,10 @@ describe('variantes', () => {
 
 describe('tri', () => {
   const mixed = [
-    card(1, { domain: 'mind', rarity: 'rare', type: 'spell' }),
-    card(2, { domain: 'fury', rarity: 'epic', type: 'legend' }),
-    card(3, { domain: 'calm', rarity: 'common', type: 'unit' }),
-    card(4, { domain: 'fury', rarity: 'common', type: 'spell' }),
+    card(1, { domains: ['mind'], rarity: 'rare', type: 'spell' }),
+    card(2, { domains: ['fury'], rarity: 'epic', type: 'legend' }),
+    card(3, { domains: ['calm'], rarity: 'common', type: 'unit' }),
+    card(4, { domains: ['fury'], rarity: 'common', type: 'spell' }),
   ];
   const order = (sortBy) => ids(computeLayout(mixed, { rows: 1, cols: 4, sortBy }));
 
@@ -139,10 +185,48 @@ describe('tri', () => {
   it('par type puis numéro', () => expect(order('type')).toEqual(['T-2', 'T-3', 'T-1', 'T-4']));
 });
 
+describe('cartes à plusieurs domaines', () => {
+  it('forment un groupe « multi » rangé après les domaines simples', () => {
+    const cards = [
+      card(1, { domains: ['fury', 'mind'] }),
+      card(2, { domains: ['colorless'] }),
+      card(3, { domains: ['calm'] }),
+    ];
+    const layout = computeLayout(cards, { rows: 1, cols: 3, sortBy: 'domain' });
+    expect(ids(layout)).toEqual(['T-3', 'T-2', 'T-1']);
+  });
+
+  it('commencent une nouvelle face avec la coupure par domaine', () => {
+    const cards = [card(1, { domains: ['fury', 'mind'] }), card(2, { domains: ['fury'] })];
+    const layout = computeLayout(cards, { rows: 2, cols: 2, sortBy: 'domain', breakBy: 'domain' });
+    expect(layout.index['T-1']).toMatchObject({ faceIndex: 1, row: 1, col: 1 });
+  });
+});
+
+describe('variantes sans base dans le set', () => {
+  const cards = [card(1), card(3), card(2, { variant: 'overnumbered' })];
+
+  it('after-base : rangée à sa place comme une base', () => {
+    expect(ids(computeLayout(cards, { rows: 1, cols: 3 }))).toEqual(['T-1', 'T-2', 'T-3']);
+  });
+
+  it('end : rangée avec les variantes', () => {
+    expect(ids(computeLayout(cards, { rows: 1, cols: 3, variantMode: 'end' }))).toEqual([
+      'T-1',
+      'T-3',
+      'T-2',
+    ]);
+  });
+
+  it('exclude : retirée', () => {
+    expect(computeLayout(cards, { variantMode: 'exclude' }).summary.totalCards).toBe(2);
+  });
+});
+
 describe('coupure par groupe', () => {
   const cards = [
-    ...range(5, { domain: 'fury' }),
-    ...Array.from({ length: 3 }, (_, i) => card(10 + i, { domain: 'calm' })),
+    ...range(5, { domains: ['fury'] }),
+    ...Array.from({ length: 3 }, (_, i) => card(10 + i, { domains: ['calm'] })),
   ];
 
   it('chaque domaine commence en haut d’une face', () => {
@@ -160,7 +244,7 @@ describe('coupure par groupe', () => {
 
   it('une variante reste avec sa base même si son domaine diffère', () => {
     const layout = computeLayout(
-      [card(1), card(1, { suffix: 'a', variant: 'alt-art', baseCardId: 'T-1', domain: 'calm' })],
+      [card(1), card(1, { suffix: 'a', variant: 'alt-art', baseCardId: 'T-1', domains: ['calm'] })],
       { rows: 2, cols: 2, breakBy: 'domain' },
     );
     expect(layout.index['T-1a']).toMatchObject({ faceIndex: 0, row: 1, col: 2 });

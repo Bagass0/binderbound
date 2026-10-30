@@ -1,0 +1,57 @@
+.page {
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.or {
+  composes: label-caps from global;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-3);
+}
+
+.or::before,
+.or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* La marge disparaît avec la hauteur quand le champ « nom » se replie. */
+.collapsible {
+  overflow: hidden;
+}
+
+.form button[type='submit'] {
+  margin-top: 0.4rem;
+}
+
+.error {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgb(255 93 115 / 0.4);
+  border-radius: var(--radius-sm);
+  background: rgb(255 93 115 / 0.08);
+  color: var(--danger);
+  font-size: 0.875rem;
+}
+
+.note {
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  text-align: center;
+}

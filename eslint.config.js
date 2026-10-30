@@ -31,6 +31,6 @@ export default [
     },
   },
   { files: ['client/vite.config.js'], languageOptions: { globals: globals.node } },
-  { rules: { 'no-unused-vars': ['error', { argsIgnorePattern: '^_' }] } },
+  { rules: { 'no-unused-vars': ['error', { argsIgnorePattern: '^_', ignoreRestSiblings: true }] } },
   prettier,
 ];

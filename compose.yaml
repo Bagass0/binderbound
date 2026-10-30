@@ -1,17 +1,43 @@
 # Développement local : `docker compose up --build`
-# → client Vite sur http://localhost:5173 (rechargement à chaud), API Express en interne.
+# → client Vite sur http://localhost:5173 (rechargement à chaud), API Express et MySQL en interne.
+# MySQL seul (pour `npm run dev` hors Docker) : `npm run db:up` → localhost:3316.
 name: binderbound-dev
 
 services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: binderbound
+      MYSQL_USER: binderbound
+      MYSQL_PASSWORD: binderbound
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./docker/mysql/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    ports:
+      - '${DB_PORT:-3316}:3306'
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', '127.0.0.1', '-ubinderbound', '-pbinderbound']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
   server:
     build:
       context: .
       target: dev
     command: npm run dev -w server
+    environment:
+      DATABASE_URL: mysql://binderbound:binderbound@db:3306/binderbound
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
     volumes:
       - ./server:/app/server
     ports:
       - '${API_PORT:-3001}:3001'
+    depends_on:
+      db:
+        condition: service_healthy
 
   client:
     build:
@@ -29,3 +55,6 @@ services:
       - '${CLIENT_PORT:-5173}:5173'
     depends_on:
       - server
+
+volumes:
+  db-data:

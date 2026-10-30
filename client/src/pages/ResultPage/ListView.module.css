@@ -121,7 +121,28 @@
 }
 
 .name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
   font-weight: 600;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.name:hover {
+  color: var(--text-strong);
+}
+
+/* Vignette : la hauteur de ligne reste fixe, l'image se charge à l'affichage */
+.thumb {
+  width: 1.45rem;
+  aspect-ratio: var(--card-w) / var(--card-h);
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--line-strong);
 }
 
 .domain {
