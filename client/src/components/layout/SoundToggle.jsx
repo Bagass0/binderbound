@@ -7,12 +7,13 @@ import styles from './SoundToggle.module.css';
 const KEY = 'binderbound.sound';
 
 /**
- * Bouton d'ambiance sonore. Le choix est mémorisé ; comme les navigateurs bloquent le son
- * sans geste de l'utilisateur, une ambiance laissée allumée reprend au premier clic.
+ * Bouton d'ambiance sonore, activée par défaut. Le choix est mémorisé ; comme les navigateurs
+ * bloquent le son sans geste de l'utilisateur, l'ambiance démarre au premier clic ou à la
+ * première touche.
  */
 export function SoundToggle() {
   const { t } = useTranslation();
-  const [on, setOn] = useState(() => storage.get(KEY, false));
+  const [on, setOn] = useState(() => storage.get(KEY, true));
   const [playing, setPlaying] = useState(false);
 
   const play = useCallback(async () => {
@@ -26,8 +27,9 @@ export function SoundToggle() {
 
   useEffect(() => {
     if (!on || playing) return;
-    window.addEventListener('pointerdown', play, { once: true });
-    return () => window.removeEventListener('pointerdown', play);
+    const events = ['pointerdown', 'keydown'];
+    events.forEach((e) => window.addEventListener(e, play, { once: true }));
+    return () => events.forEach((e) => window.removeEventListener(e, play));
   }, [on, playing, play]);
 
   const toggle = async () => {
@@ -50,6 +52,7 @@ export function SoundToggle() {
       title={t(playing ? 'sound.off' : 'sound.on')}
       // Le clic sur le bouton ne doit pas aussi déclencher la reprise automatique.
       onPointerDown={(e) => e.stopPropagation()}
+      onKeyDown={(e) => e.stopPropagation()}
       onClick={toggle}
     >
       <span className={styles.bars} aria-hidden>
