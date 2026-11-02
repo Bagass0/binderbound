@@ -1,0 +1,50 @@
+# Chaque push sur `prod` (typiquement un merge de main → prod) est vérifié puis mis en ligne.
+name: Déploiement
+
+on:
+  push:
+    branches: [prod]
+  workflow_dispatch:
+
+# Un seul déploiement à la fois ; un nouveau attend la fin du précédent.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Vérifications
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+
+  deploy:
+    name: Mise en production
+    needs: check
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Déploiement sur le VPS
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # La clé est restreinte côté serveur à deploy/deploy.sh : aucune commande à passer.
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes "$TARGET"
