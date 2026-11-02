@@ -76,7 +76,7 @@ Côté Google : publie l'application (Google Auth Platform → Audience → « P
 
 ### Mise en ligne sur le VPS
 
-Le VPS a déjà un Caddy (stack guidevo), seul exposé sur 80/443, qui obtient les certificats HTTPS. Binderbound n'ouvre aucun port : Caddy le joint par un réseau Docker partagé, `proxy`, sous le nom `binderbound` (voir `compose.vps.yaml`).
+Le VPS a un Caddy commun à tous ses projets (`/srv/caddy`, hors de ce repo), seul exposé sur 80/443, qui obtient les certificats HTTPS. Binderbound n'ouvre aucun port : Caddy le joint par un réseau Docker partagé, `proxy`, sous le nom `binderbound` (voir `compose.vps.yaml`).
 
 **Déploiement continu.** Chaque push sur la branche `prod`, par exemple un merge de `main` dans `prod`, lance [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Le workflow lance le lint, le formatage, les tests et le build, puis se connecte au VPS en SSH. Sur le VPS, [deploy/deploy.sh](deploy/deploy.sh) récupère `origin/prod`, reconstruit l'image et attend que l'app soit saine. Si une étape échoue, le job échoue et la version en ligne reste en place. Pour déployer à la main sur le VPS, lance `/srv/binderbound/deploy/deploy.sh`.
 
@@ -89,19 +89,9 @@ sudo chown -R ubuntu: /srv/binderbound
 ```
 
 1. Copie le `.env.production` dans `/srv/binderbound/` (`scp -P <port> .env.production ubuntu@VPS:/srv/binderbound/`), avec `TRUST_PROXY=1`.
-2. Dans `/srv/guidevo/docker-compose.prod.yml`, branche le service Caddy sur le réseau `proxy` :
+2. Dans le `Caddyfile` du Caddy commun (`/srv/caddy`), un bloc `binderbound.space { reverse_proxy binderbound:3001 }` envoie le domaine vers l'app. Les enregistrements DNS A de `binderbound.space` et `www` doivent pointer vers le VPS.
 
-   ```yaml
-   services:
-     caddy:
-       networks: [default, proxy]
-   networks:
-     proxy:
-       external: true
-   ```
-
-3. Ajoute le bloc de [deploy/binderbound.caddy](deploy/binderbound.caddy) au `Caddyfile` en y mettant ton domaine. Fais pointer le DNS (enregistrement A) vers le VPS, puis relance Caddy (`docker compose -f docker-compose.prod.yml up -d caddy`).
-4. Crée une clé SSH réservée au déploiement, sur ta machine :
+3. Crée une clé SSH réservée au déploiement, sur ta machine :
 
    ```bash
    ssh-keygen -t ed25519 -N '' -C github-deploy -f binderbound-deploy
@@ -113,7 +103,7 @@ sudo chown -R ubuntu: /srv/binderbound
    command="/srv/binderbound/deploy/deploy.sh",restrict ssh-ed25519 AAAA… github-deploy
    ```
 
-5. Sur GitHub, va dans Settings → Environments, crée l'environnement `production` et ajoute ces secrets :
+4. Sur GitHub, va dans Settings → Environments, crée l'environnement `production` et ajoute ces secrets :
 
    | Secret               | Valeur                                                                             |
    | -------------------- | ---------------------------------------------------------------------------------- |
@@ -121,7 +111,7 @@ sudo chown -R ubuntu: /srv/binderbound
    | `DEPLOY_TARGET`      | `ssh://ubuntu@<IP du VPS>:<port SSH>` (le port peut être omis s'il vaut 22)        |
    | `DEPLOY_KNOWN_HOSTS` | Sortie de `ssh-keyscan -p <port> <IP du VPS>`, qui empêche l'usurpation du serveur |
 
-6. Crée la branche `prod` (`git push origin main:prod`). Les merges suivants de `main` dans `prod` se déploient seuls.
+5. Crée la branche `prod` (`git push origin main:prod`). Les merges suivants de `main` dans `prod` se déploient seuls.
 
 ## Scripts
 

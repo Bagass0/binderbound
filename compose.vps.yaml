@@ -1,5 +1,5 @@
 # Surcouche pour le VPS, ajoutée à compose.prod.yaml par `deploy/deploy.sh`.
-# L'app n'ouvre aucun port sur la machine : le Caddy déjà en place (stack guidevo), seul
+# L'app n'ouvre aucun port sur la machine : le Caddy commun du VPS (/srv/caddy), seul
 # exposé sur 80/443, la joint par le réseau Docker partagé `proxy` sous le nom `binderbound`.
 services:
   app:
