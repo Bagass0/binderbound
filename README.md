@@ -88,7 +88,7 @@ sudo git clone https://github.com/Bagass0/binderbound.git /srv/binderbound
 sudo chown -R ubuntu: /srv/binderbound
 ```
 
-1. Copie le `.env.production` dans `/srv/binderbound/` (`scp .env.production ubuntu@VPS:/srv/binderbound/`), avec `TRUST_PROXY=1`.
+1. Copie le `.env.production` dans `/srv/binderbound/` (`scp -P <port> .env.production ubuntu@VPS:/srv/binderbound/`), avec `TRUST_PROXY=1`.
 2. Dans `/srv/guidevo/docker-compose.prod.yml`, branche le service Caddy sur le réseau `proxy` :
 
    ```yaml
@@ -115,11 +115,11 @@ sudo chown -R ubuntu: /srv/binderbound
 
 5. Sur GitHub, va dans Settings → Environments, crée l'environnement `production` et ajoute ces secrets :
 
-   | Secret               | Valeur                                                                   |
-   | -------------------- | ------------------------------------------------------------------------ |
-   | `DEPLOY_SSH_KEY`     | Contenu de la clé privée `binderbound-deploy`                            |
-   | `DEPLOY_TARGET`      | `ubuntu@<IP du VPS>`                                                     |
-   | `DEPLOY_KNOWN_HOSTS` | Sortie de `ssh-keyscan <IP du VPS>`, qui empêche l'usurpation du serveur |
+   | Secret               | Valeur                                                                             |
+   | -------------------- | ---------------------------------------------------------------------------------- |
+   | `DEPLOY_SSH_KEY`     | Contenu de la clé privée `binderbound-deploy`                                      |
+   | `DEPLOY_TARGET`      | `ssh://ubuntu@<IP du VPS>:<port SSH>` (le port peut être omis s'il vaut 22)        |
+   | `DEPLOY_KNOWN_HOSTS` | Sortie de `ssh-keyscan -p <port> <IP du VPS>`, qui empêche l'usurpation du serveur |
 
 6. Crée la branche `prod` (`git push origin main:prod`). Les merges suivants de `main` dans `prod` se déploient seuls.
 
