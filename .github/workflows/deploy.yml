@@ -1,9 +1,9 @@
-# Chaque push sur `prod` (typiquement un merge de main → prod) est vérifié puis mis en ligne.
+# Chaque push sur `production` (typiquement un merge de main → production) est vérifié puis mis en ligne.
 name: Déploiement
 
 on:
   push:
-    branches: [prod]
+    branches: [production]
   workflow_dispatch:
 
 # Un seul déploiement à la fois ; un nouveau attend la fin du précédent.

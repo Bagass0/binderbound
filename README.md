@@ -78,7 +78,7 @@ Côté Google : publie l'application (Google Auth Platform → Audience → « P
 
 Le VPS a un Caddy commun à tous ses projets (`/srv/caddy`, hors de ce repo), seul exposé sur 80/443, qui obtient les certificats HTTPS. Binderbound n'ouvre aucun port : Caddy le joint par un réseau Docker partagé, `proxy`, sous le nom `binderbound` (voir `compose.vps.yaml`).
 
-**Déploiement continu.** Chaque push sur la branche `prod`, par exemple un merge de `main` dans `prod`, lance [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Le workflow lance le lint, le formatage, les tests et le build, puis se connecte au VPS en SSH. Sur le VPS, [deploy/deploy.sh](deploy/deploy.sh) récupère `origin/prod`, reconstruit l'image et attend que l'app soit saine. Si une étape échoue, le job échoue et la version en ligne reste en place. Pour déployer à la main sur le VPS, lance `/srv/binderbound/deploy/deploy.sh`.
+**Déploiement continu.** Chaque push sur la branche `production`, par exemple un merge de `main` dans `production`, lance [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Le workflow lance le lint, le formatage, les tests et le build, puis se connecte au VPS en SSH. Sur le VPS, [deploy/deploy.sh](deploy/deploy.sh) récupère `origin/production`, reconstruit l'image et attend que l'app soit saine. Si une étape échoue, le job échoue et la version en ligne reste en place. Pour déployer à la main sur le VPS, lance `/srv/binderbound/deploy/deploy.sh`.
 
 **Installation (une seule fois)**, sur le VPS :
 
@@ -111,7 +111,7 @@ sudo chown -R ubuntu: /srv/binderbound
    | `DEPLOY_TARGET`      | `ssh://ubuntu@<IP du VPS>:<port SSH>` (le port peut être omis s'il vaut 22)        |
    | `DEPLOY_KNOWN_HOSTS` | Sortie de `ssh-keyscan -p <port> <IP du VPS>`, qui empêche l'usurpation du serveur |
 
-5. Crée la branche `prod` (`git push origin main:prod`). Les merges suivants de `main` dans `prod` se déploient seuls.
+5. Crée la branche `production` (`git push origin main:production`). Les merges suivants de `main` dans `production` se déploient seuls.
 
 ## Scripts
 

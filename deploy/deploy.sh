@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Met en ligne la dernière version de la branche `prod`. Lancé par GitHub Actions via SSH,
+# Met en ligne la dernière version de la branche `production`. Lancé par GitHub Actions via SSH,
 # avec une clé limitée à ce seul script (voir README), ou à la main sur le VPS.
 set -euo pipefail
 
@@ -9,9 +9,9 @@ compose() {
 
 main() {
   cd "$(dirname "$0")/.."
-  echo "→ Récupération de origin/prod"
-  git fetch --quiet origin prod
-  git reset --hard --quiet origin/prod
+  echo "→ Récupération de origin/production"
+  git fetch --quiet origin production
+  git reset --hard --quiet origin/production
   echo "→ Version $(git log -1 --format='%h %s')"
 
   # --wait : échoue (et fait échouer le job) si l'app ne devient pas saine.
