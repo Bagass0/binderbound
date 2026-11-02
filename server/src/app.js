@@ -37,7 +37,20 @@ export function createApp(repo, { staticDir, accounts, trustProxy = false } = {}
   app.use('/api', notFound);
 
   if (staticDir) {
-    app.use(express.static(staticDir, { index: false, maxAge: '1y', immutable: true }));
+    // Seuls les fichiers de Vite (assets/, nom haché) sont immuables ; robots.txt, sitemap.xml,
+    // favicon… peuvent changer sans changer de nom.
+    const assetsDir = path.join(staticDir, 'assets') + path.sep;
+    app.use(
+      express.static(staticDir, {
+        index: false,
+        maxAge: '1h',
+        setHeaders: (res, file) => {
+          if (file.startsWith(assetsDir)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+          }
+        },
+      }),
+    );
     app.get('/{*path}', (_req, res) =>
       res.sendFile(path.join(staticDir, 'index.html'), { maxAge: 0 }),
     );

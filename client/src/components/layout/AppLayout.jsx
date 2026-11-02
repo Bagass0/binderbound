@@ -7,6 +7,7 @@ import { Footer } from './Footer.jsx';
 import { Stepper } from './Stepper.jsx';
 import { PresenceLocation } from './PresenceLocation.jsx';
 import { isStep, stepIndex } from './steps.js';
+import { usePageMeta } from '../../hooks/usePageMeta.js';
 import styles from './AppLayout.module.css';
 
 const pageVariants = {
@@ -18,6 +19,7 @@ const pageVariants = {
 export function AppLayout() {
   const { pathname } = useLocation();
   const outlet = useOutlet();
+  usePageMeta(pathname);
 
   // Sens de la transition : vers la droite quand on avance dans les étapes.
   const index = stepIndex(pathname);

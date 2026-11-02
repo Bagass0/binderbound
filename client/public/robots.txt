@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /login
+Disallow: /binders
+
+Sitemap: https://binderbound.space/sitemap.xml

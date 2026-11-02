@@ -96,4 +96,20 @@ describe('mode production (client statique)', () => {
     expect(page.text).toContain('id="root"');
     await request(prodApp).get('/api/rien').expect(404);
   });
+
+  it('cache un an les assets hachés, une heure les autres fichiers', async () => {
+    const { mkdtemp, mkdir, writeFile } = await import('node:fs/promises');
+    const { tmpdir } = await import('node:os');
+    const path = await import('node:path');
+    const dir = await mkdtemp(path.join(tmpdir(), 'bb-static-'));
+    await mkdir(path.join(dir, 'assets'));
+    await writeFile(path.join(dir, 'assets', 'index-abc123.js'), '');
+    await writeFile(path.join(dir, 'robots.txt'), 'User-agent: *');
+    const prodApp = createApp(createSetRepository(await loadSets(FIXTURES)), { staticDir: dir });
+
+    const asset = await request(prodApp).get('/assets/index-abc123.js').expect(200);
+    expect(asset.headers['cache-control']).toBe('public, max-age=31536000, immutable');
+    const robots = await request(prodApp).get('/robots.txt').expect(200);
+    expect(robots.headers['cache-control']).toBe('public, max-age=3600');
+  });
 });
