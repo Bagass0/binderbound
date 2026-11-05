@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+# Le site est rendu en JavaScript : Google doit pouvoir lire les données publiques qu'il
+# affiche (sinon la page lui paraît vide → « Soft 404 »). La règle la plus précise l'emporte.
+Allow: /api/config
+Allow: /api/sets
+Allow: /api/auth/me
 Disallow: /api/
 Disallow: /login
 Disallow: /binders
