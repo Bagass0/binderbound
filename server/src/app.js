@@ -51,8 +51,12 @@ export function createApp(repo, { staticDir, accounts, trustProxy = false } = {}
         },
       }),
     );
-    app.get('/{*path}', (_req, res) =>
-      res.sendFile(path.join(staticDir, 'index.html'), { maxAge: 0 }),
+    // Les routes du SPA n'ont pas d'extension : un fichier absent (/favicon.png…) répond 404
+    // plutôt que la page HTML, que les robots prendraient pour une image cassée.
+    app.get('/{*path}', (req, res, next) =>
+      path.extname(req.path)
+        ? next()
+        : res.sendFile(path.join(staticDir, 'index.html'), { maxAge: 0 }),
     );
   }
 

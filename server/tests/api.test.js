@@ -95,6 +95,7 @@ describe('mode production (client statique)', () => {
     const page = await request(prodApp).get('/result?set=sample').expect(200);
     expect(page.text).toContain('id="root"');
     await request(prodApp).get('/api/rien').expect(404);
+    await request(prodApp).get('/favicon.png').expect(404); // fichier absent ≠ page du SPA
   });
 
   it('cache un an les assets hachés, une heure les autres fichiers', async () => {

@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0b0a16" />
+    <!-- Google affiche une icône PNG/ICO d'au moins 48 px dans ses résultats ; le SVG sert aux navigateurs. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Binderbound — Rangement de classeur Riftbound</title>
     <meta
       name="description"
@@ -30,6 +35,7 @@
         "@type": "WebApplication",
         "name": "Binderbound",
         "url": "https://binderbound.space/",
+        "image": "https://binderbound.space/icon-512.png",
         "description": "Outil gratuit pour ranger les cartes du TCG Riftbound dans un classeur : emplacement exact de chaque carte selon le set, le format du classeur et les options de tri.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Web",
