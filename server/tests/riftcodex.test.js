@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dedupe, mapSet, variantOf } from '../src/import/riftcodex.js';
+import { dedupe, mapSet, rarityOf, variantOf } from '../src/import/riftcodex.js';
 import { setSchema } from '../src/schemas/set.schema.js';
 
 /** Carte au format Riftcodex, réduite aux champs utilisés. */
@@ -142,5 +142,22 @@ describe('noms de sets', () => {
       mapSet({ set_id: code, name, published_on: '2025-10-31T00:00:00' }, [card]).name;
     expect(at('OGN', 'Origins')).toEqual({ fr: 'Origines', en: 'Origins' });
     expect(at('VEN', 'Vendetta')).toEqual({ fr: 'Vendetta', en: 'Vendetta' });
+  });
+});
+
+describe('rareté', () => {
+  const card = (id, rarity) => ({ riftbound_id: id, classification: { rarity } });
+
+  it('les variantes et cartes SP d’une extension sont Showcase (gemme dorée)', () => {
+    expect(rarityOf(card('ven-019a-166', 'Rare'), 'alt-art', false)).toBe('showcase');
+    expect(rarityOf(card('ven-167-166', 'Epic'), 'overnumbered', false)).toBe('showcase');
+    expect(rarityOf(card('unl-226*-219', 'Rare'), 'signature', false)).toBe('showcase');
+    expect(rarityOf(card('ven-sp1-006', 'Epic'), 'special', false)).toBe('showcase');
+  });
+
+  it('les autres cartes et les sets de promos gardent la rareté de la source', () => {
+    expect(rarityOf(card('ven-019-166', 'Rare'), 'base', false)).toBe('rare');
+    expect(rarityOf(card('ven-r01', 'Common'), 'special', false)).toBe('common');
+    expect(rarityOf(card('opp-007b-298', 'Rare'), 'alt-art', true)).toBe('rare');
   });
 });

@@ -92,6 +92,22 @@ export function variantOf(card, isPromoSet) {
   return 'base';
 }
 
+/** Variantes qui portent la gemme hexagonale dorée (Showcase) sur la carte imprimée. */
+const SHOWCASE_VARIANTS = new Set(['alt-art', 'overnumbered', 'signature']);
+
+/**
+ * Rareté d'une carte. Dans une extension, les alt-arts, overnumbered, signatures et cartes
+ * « SP » sont Showcase (gemme hexagonale dorée) ; la source leur donne parfois la rareté de
+ * la carte d'origine (rare, épique), comme sur Vendetta et Unleashed. Les sets de promos
+ * gardent la rareté de la source.
+ */
+export function rarityOf(card, variant, isPromoSet) {
+  const rarity = card.classification.rarity.toLowerCase();
+  if (isPromoSet) return rarity;
+  const isSp = /^[a-z]+-sp\d/i.test(card.riftbound_id);
+  return SHOWCASE_VARIANTS.has(variant) || isSp ? 'showcase' : rarity;
+}
+
 /**
  * Convertit un set Riftcodex et ses cartes au format Binderbound (pure, testable).
  * Les noms de cartes n'existent qu'en anglais : le français reprend le nom anglais officiel.
@@ -110,7 +126,7 @@ export function mapSet(meta, rawCards) {
         type: c.classification.type.toLowerCase(),
         supertype: c.classification.supertype,
         domains: c.classification.domain.map((d) => d.toLowerCase()),
-        rarity: c.classification.rarity.toLowerCase(),
+        rarity: rarityOf(c, variantOf(c, isPromoSet), isPromoSet),
         variant: variantOf(c, isPromoSet),
         baseCardId: null,
         imageUrl: c.media.image_url || null,
