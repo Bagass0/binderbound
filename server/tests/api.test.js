@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import request from 'supertest';
 import { createApp } from '../src/app.js';
-import { createSetRepository, loadSets } from '../src/services/setRepository.js';
+import { coverImage, createSetRepository, loadSets } from '../src/services/setRepository.js';
 
 const FIXTURES = new URL('./fixtures', import.meta.url).pathname;
 
@@ -24,6 +24,25 @@ describe('GET /api/sets', () => {
     const sample = res.body.find((s) => s.id === 'sample');
     expect(sample).toMatchObject({ code: 'SMP', counts: { base: 34, variants: 8, total: 42 } });
     expect(sample.cards).toBeUndefined();
+  });
+
+  it('choisit en couverture la légende pleine illustration (overnumbered)', () => {
+    const card = (imageUrl, type, variant = 'base', orientation = 'portrait') => ({
+      imageUrl,
+      type,
+      variant,
+      orientation,
+    });
+    const cards = [
+      card('unit.png', 'unit'),
+      card('field.png', 'battlefield', 'base', 'landscape'),
+      card('legend.png', 'legend'),
+      card('legend-full.png', 'legend', 'overnumbered'),
+    ];
+    expect(coverImage(cards)).toBe('legend-full.png');
+    expect(coverImage(cards.slice(0, 3))).toBe('legend.png');
+    expect(coverImage(cards.slice(0, 2))).toBe('unit.png');
+    expect(coverImage([])).toBeNull();
   });
 });
 

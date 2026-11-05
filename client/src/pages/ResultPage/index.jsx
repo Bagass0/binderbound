@@ -39,17 +39,21 @@ export default function ResultPage() {
   const [tab, setTab] = useState('binder');
   const [target, setTarget] = useState(null); // { cardId, nonce }
   const [copied, setCopied] = useState(false);
-  const [previewCard, setPreviewCard] = useState(null);
+  const [preview, setPreview] = useState(null); // { card, origin } : origin = élément cliqué
+  const openPreview = useCallback((card, origin) => setPreview({ card, origin }), []);
   const tabsRef = useRef(null);
 
   const placements = useMemo(() => (layout ? toPlacements(layout) : []), [layout]);
 
-  const locate = useCallback((card) => {
+  // Depuis la liste, on remonte jusqu'au classeur ; depuis la recherche, juste au-dessus,
+  // la page ne bouge pas pour qu'on puisse enchaîner les recherches.
+  const locate = useCallback((card, { scroll = true } = {}) => {
     setTab('binder');
     setTarget((prev) => ({ cardId: card.id, nonce: (prev?.nonce ?? 0) + 1 }));
     // Les onglets restent montés : on peut amener le classeur à l'écran tout de suite.
-    tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
+  const locateFromSearch = useCallback((card) => locate(card, { scroll: false }), [locate]);
 
   const { tracking, toggle } = collection;
   const toggleOwned = useCallback((card) => toggle(card.id), [toggle]);
@@ -102,7 +106,7 @@ export default function ResultPage() {
         </motion.div>
 
         <div className={styles.toolbar}>
-          <SearchBar cards={set.cards} index={layout.index} onSelect={locate} />
+          <SearchBar cards={set.cards} index={layout.index} onSelect={locateFromSearch} />
           <div className={styles.exports}>
             <Button size="sm" variant="ghost" icon={<Link />} onClick={copyLink}>
               {copied ? t('result.copied') : t('result.share')}
@@ -211,7 +215,7 @@ export default function ResultPage() {
                 layout={layout}
                 target={target}
                 collection={collection}
-                onCardClick={tracking ? toggleOwned : setPreviewCard}
+                onCardClick={tracking ? toggleOwned : openPreview}
               />
             ) : (
               <ListView
@@ -219,7 +223,7 @@ export default function ResultPage() {
                 config={config}
                 collection={collection}
                 onLocate={locate}
-                onPreview={setPreviewCard}
+                onPreview={openPreview}
               />
             )}
           </motion.div>
@@ -227,11 +231,12 @@ export default function ResultPage() {
       </div>
 
       <CardPreview
-        card={previewCard}
-        position={previewCard && layout.index[previewCard.id]}
+        card={preview?.card ?? null}
+        origin={preview?.origin}
+        position={preview && layout.index[preview.card.id]}
         setCode={set.code}
         collection={collection}
-        onClose={() => setPreviewCard(null)}
+        onClose={() => setPreview(null)}
       />
 
       <PrintSheet set={set} layout={layout} placements={placements} collection={collection} />

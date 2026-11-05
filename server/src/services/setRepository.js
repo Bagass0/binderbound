@@ -25,10 +25,18 @@ export async function loadSets(dir = SETS_DIR) {
   return sets;
 }
 
-/** Illustration de couverture : la première légende illustrée, à défaut la première carte. */
-const coverImage = (cards) =>
-  (cards.find((c) => c.type === 'legend' && c.imageUrl) ?? cards.find((c) => c.imageUrl))
-    ?.imageUrl ?? null;
+/**
+ * Illustration de couverture du set. Par ordre de préférence : une légende en version
+ * overnumbered (illustration pleine carte), une légende, puis n'importe quelle carte illustrée.
+ */
+export const coverImage = (cards) => {
+  const illustrated = cards.filter((c) => c.imageUrl && c.orientation !== 'landscape');
+  const legends = illustrated.filter((c) => c.type === 'legend');
+  return (
+    (legends.find((c) => c.variant === 'overnumbered') ?? legends[0] ?? illustrated[0])?.imageUrl ??
+    null
+  );
+};
 
 /** Métadonnées d'un set pour la liste (sans les cartes). */
 export const toSummary = ({ cards, ...meta }) => ({

@@ -2,11 +2,12 @@
   "id": "opp",
   "code": "OPP",
   "name": {
-    "fr": "Riftbound Organized Play Promotional Cards",
+    "fr": "Cartes promotionnelles du jeu organisé",
     "en": "Riftbound Organized Play Promotional Cards"
   },
   "releaseDate": "2025-10-31",
   "kind": "promo",
+  "color": "#7b473c",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

@@ -2,43 +2,48 @@
   width: min(56rem, calc(100% - 2rem));
   max-height: calc(100dvh - 2rem);
   padding: 0;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border: 0;
+  background: none;
   color: var(--text);
-  box-shadow: var(--shadow-deep);
   overflow: auto;
-  opacity: 0;
-  transform: translateY(12px) scale(0.98);
-  transition:
-    opacity 0.25s var(--ease-out),
-    transform 0.25s var(--ease-out),
-    overlay 0.25s allow-discrete,
-    display 0.25s allow-discrete;
-}
-
-.dialog[open] {
-  opacity: 1;
-  transform: none;
-}
-
-@starting-style {
-  .dialog[open] {
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-  }
+  /* L'animation d'ouverture et de fermeture est pilotée en JS (zoom depuis la carte). */
+  will-change: transform;
 }
 
 .dialog::backdrop {
   background: rgb(var(--bg-rgb) / 0.75);
   backdrop-filter: blur(6px);
+  transition: opacity 0.3s var(--ease-out);
+}
+
+@starting-style {
+  .dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.closing::backdrop {
+  opacity: 0;
 }
 
 .content {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   gap: 1.75rem;
   padding: 1.5rem;
+}
+
+/* Le panneau est un calque à part : il apparaît en fondu pendant que la carte zoome. */
+.surface {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-deep);
 }
 
 .visual {

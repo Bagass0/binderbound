@@ -36,16 +36,22 @@
   );
 }
 
-/* Illustration de la légende du set, estompée derrière le texte. */
-.cover {
-  position: absolute;
-  inset: -10% -25% auto auto;
-  z-index: -1;
-  width: 70%;
-  opacity: 0.22;
-  mask-image: linear-gradient(200deg, #000 20%, transparent 75%);
-  rotate: 8deg;
-  pointer-events: none;
+/* Le classeur, en vitrine au-dessus des informations ; cliquer dessus l'ouvre. */
+.stage {
+  display: grid;
+  place-items: center;
+  height: 14rem;
+  margin: -0.6rem -1.5rem 0.6rem;
+  background: radial-gradient(ellipse at 50% 60%, rgb(var(--accent-rgb) / 0.12), transparent 65%);
+}
+
+.binder {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.card:hover .binder {
+  --lift: -4%;
+  transform: translateY(-4px) rotate(-2deg);
 }
 
 .code {

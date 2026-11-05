@@ -2,11 +2,12 @@
   "id": "jdg",
   "code": "JDG",
   "name": {
-    "fr": "Riftbound Judge Promotional Cards",
+    "fr": "Cartes promotionnelles des juges",
     "en": "Riftbound Judge Promotional Cards"
   },
   "releaseDate": "2025-12-01",
   "kind": "promo",
+  "color": "#b27f8d",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

@@ -40,6 +40,12 @@ export const setSchema = z
     name: localized,
     releaseDate: z.iso.date(),
     kind: z.enum(SET_KINDS).default('main'),
+    /** Couleur dominante de l'illustration de couverture (fond du classeur du set). */
+    color: z
+      .string()
+      .regex(/^#[0-9a-f]{6}$/)
+      .nullable()
+      .default(null),
     /** Provenance des données (affichée en crédit). */
     source: z.object({ name: z.string(), url: z.url() }).nullable().default(null),
     cards: z.array(cardSchema).min(1),

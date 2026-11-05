@@ -134,3 +134,13 @@ describe('dedupe', () => {
     expect(ids).toEqual(['OPP-017-024', 'OPP-017-024-METAL']);
   });
 });
+
+describe('noms de sets', () => {
+  it('prend le nom français officiel quand il existe, sinon le nom anglais', () => {
+    const card = raw('ogn-001-298', 'Blazing Scorcher', 1);
+    const at = (code, name) =>
+      mapSet({ set_id: code, name, published_on: '2025-10-31T00:00:00' }, [card]).name;
+    expect(at('OGN', 'Origins')).toEqual({ fr: 'Origines', en: 'Origins' });
+    expect(at('VEN', 'Vendetta')).toEqual({ fr: 'Vendetta', en: 'Vendetta' });
+  });
+});

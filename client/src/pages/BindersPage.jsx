@@ -9,7 +9,7 @@ import { useSets } from '../hooks/useConfig.js';
 import { withParams } from '../hooks/useLayoutParams.js';
 import { EASE_OUT } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
-import { cardImage } from '../lib/images.js';
+import { BinderCover } from '../components/binder/BinderCover.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { Button } from '../components/ui/Button.jsx';
@@ -100,14 +100,16 @@ function BinderCard({ binder, set, onRename, onDeleted }) {
 
   return (
     <article className={styles.card}>
-      {set?.coverImage && (
-        <img
-          className={styles.cover}
-          {...cardImage(set.coverImage, { sizes: 'auto, 200px' })}
-          alt=""
-          loading="lazy"
+      <Link to={href} className={styles.stage} tabIndex={-1}>
+        <BinderCover
+          className={styles.binder}
+          setId={binder.setId}
+          image={set?.coverImage}
+          color={set?.color}
+          code={set?.code ?? binder.setId.toUpperCase()}
+          label={set && localizedName(set, i18n.language)}
         />
-      )}
+      </Link>
       <span className={styles.code}>
         {set ? `${set.code} · ${localizedName(set, i18n.language)}` : binder.setId}
       </span>

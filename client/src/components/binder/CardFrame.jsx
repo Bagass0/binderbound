@@ -7,7 +7,7 @@ import styles from './CardFrame.module.css';
 
 /**
  * Case occupée : illustration officielle de la carte (CDN Riot), ou cadre stylisé si elle
- * est absente ou ne charge pas. `onClick(card)` rend la carte cliquable ; `pressed` indique
+ * est absente ou ne charge pas. `onClick(card, element)` rend la carte cliquable ; `pressed` indique
  * l'état « possédée » en mode collection.
  */
 export const CardFrame = memo(function CardFrame({ card, missing, pressed, highlight, onClick }) {
@@ -48,7 +48,7 @@ export const CardFrame = memo(function CardFrame({ card, missing, pressed, highl
       title={label}
       aria-label={label}
       aria-pressed={interactive ? pressed : undefined}
-      onClick={interactive ? () => onClick(card) : undefined}
+      onClick={interactive ? (e) => onClick(card, e.currentTarget) : undefined}
     >
       {showImage ? (
         <img

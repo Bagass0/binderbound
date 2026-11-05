@@ -183,7 +183,7 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
                     <button
                       type="button"
                       className={styles.name}
-                      onClick={() => onPreview(p.card)}
+                      onClick={(e) => onPreview(p.card, e.currentTarget.querySelector('img'))}
                       title={t('preview.open')}
                     >
                       {p.card.imageUrl && (

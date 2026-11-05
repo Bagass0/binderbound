@@ -2,11 +2,12 @@
   "id": "unl",
   "code": "UNL",
   "name": {
-    "fr": "Unleashed",
+    "fr": "Déchaînement",
     "en": "Unleashed"
   },
   "releaseDate": "2026-05-08",
   "kind": "main",
+  "color": "#954148",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

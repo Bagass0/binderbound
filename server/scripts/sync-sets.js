@@ -12,7 +12,8 @@ import { parseArgs } from 'node:util';
 import { z } from 'zod';
 import { fetchSets, SOURCE } from '../src/import/riftcodex.js';
 import { setSchema } from '../src/schemas/set.schema.js';
-import { SETS_DIR } from '../src/services/setRepository.js';
+import { coverColor } from '../src/import/coverColor.js';
+import { coverImage, SETS_DIR } from '../src/services/setRepository.js';
 import { countCards } from '../src/layout/countCards.js';
 
 const { values, positionals } = parseArgs({
@@ -39,6 +40,11 @@ for (const raw of sets) {
     continue;
   }
   const set = result.data;
+  // Teinte du classeur : facultative, un échec du CDN ne bloque pas la synchronisation.
+  set.color = await coverColor(coverImage(set.cards)).catch((err) => {
+    console.warn(`⚠ ${set.code} : couleur non calculée (${err.message})`);
+    return null;
+  });
   const { base, variants } = countCards(set.cards);
   const standalone = set.cards.filter((c) => c.variant !== 'base' && !c.baseCardId).length;
   const note = standalone ? ` (${standalone} sans carte de base dans le set)` : '';

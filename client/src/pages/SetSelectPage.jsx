@@ -5,9 +5,9 @@ import { EASE_OUT } from '../lib/motion.js';
 import { useSets } from '../hooks/useConfig.js';
 import { useLayoutParams, withParams } from '../hooks/useLayoutParams.js';
 import { localizedName } from '../lib/format.js';
-import { cardImage } from '../lib/images.js';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
+import { BinderCover } from '../components/binder/BinderCover.jsx';
 import { ChevronRight } from '../components/icons/Icons.jsx';
 import { RecentBinders } from './RecentBinders.jsx';
 import styles from './SetSelectPage.module.css';
@@ -78,16 +78,16 @@ function SetCard({ set, selected, onChoose, dateFormat }) {
       whileHover={{ y: -6 }}
       whileTap={{ scale: 0.98 }}
     >
-      {set.coverImage && (
-        <img
-          className={styles.cover}
-          {...cardImage(set.coverImage, { sizes: 'auto, 200px' })}
-          alt=""
-          loading="lazy"
-          decoding="async"
+      <span className={styles.stage}>
+        <BinderCover
+          className={styles.binder}
+          setId={set.id}
+          image={set.coverImage}
+          color={set.color}
+          code={set.code}
+          label={localizedName(set, i18n.language)}
         />
-      )}
-      <span className={styles.code}>{set.code}</span>
+      </span>
       <span className={styles.name}>{localizedName(set, i18n.language)}</span>
       <span className={styles.date}>
         {t('setSelect.released', { date: dateFormat.format(new Date(set.releaseDate)) })}

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useBackdropClose } from '../../hooks/useBackdropClose.js';
 import styles from './Dialog.module.css';
 
 /**
@@ -7,6 +8,7 @@ import styles from './Dialog.module.css';
  */
 export function Dialog({ open, onClose, title, children }) {
   const ref = useRef(null);
+  const backdrop = useBackdropClose(() => ref.current.close());
 
   useEffect(() => {
     const dialog = ref.current;
@@ -15,13 +17,7 @@ export function Dialog({ open, onClose, title, children }) {
   }, [open]);
 
   return (
-    <dialog
-      ref={ref}
-      className={styles.dialog}
-      aria-label={title}
-      onClose={onClose}
-      onClick={(e) => e.target === e.currentTarget && ref.current.close()}
-    >
+    <dialog ref={ref} className={styles.dialog} aria-label={title} onClose={onClose} {...backdrop}>
       {open && (
         <div className={styles.content}>
           {title && <h2 className={styles.title}>{title}</h2>}

@@ -13,6 +13,19 @@ const PAGE_SIZE = 100;
 /** Codes des sets de promos (affichés à part sur l'accueil). */
 const PROMO_SETS = new Set(['PR', 'OPP', 'JDG']);
 
+/**
+ * Noms français officiels des sets (la source ne fournit que l'anglais). Un set absent
+ * garde son nom anglais, comme Vendetta qui n'est pas traduit.
+ */
+export const FRENCH_NAMES = {
+  OGN: 'Origines',
+  SFD: 'Armes Spirituelles',
+  UNL: 'Déchaînement',
+  PR: 'Cartes promotionnelles Riftbound',
+  OPP: 'Cartes promotionnelles du jeu organisé',
+  JDG: 'Cartes promotionnelles des juges',
+};
+
 const VARIANT_SUFFIX = /\s*\((alternate art|overnumbered|signature)\)\s*$/i;
 
 /** Clé de rapprochement d'un nom : « Jinx, Demolitionist (Overnumbered) » ≈ « Jinx - Demolitionist ». */
@@ -81,7 +94,8 @@ export function variantOf(card, isPromoSet) {
 
 /**
  * Convertit un set Riftcodex et ses cartes au format Binderbound (pure, testable).
- * Les noms n'existent qu'en anglais : le français reprend le nom anglais officiel.
+ * Les noms de cartes n'existent qu'en anglais : le français reprend le nom anglais officiel.
+ * Le nom du set, lui, prend sa traduction officielle quand elle existe (FRENCH_NAMES).
  */
 export function mapSet(meta, rawCards) {
   const isPromoSet = PROMO_SETS.has(meta.set_id);
@@ -129,7 +143,7 @@ export function mapSet(meta, rawCards) {
   return {
     id: meta.set_id.toLowerCase(),
     code: meta.set_id,
-    name: { fr: meta.name, en: meta.name },
+    name: { fr: FRENCH_NAMES[meta.set_id] ?? meta.name, en: meta.name },
     releaseDate: meta.published_on.slice(0, 10),
     kind: isPromoSet ? 'promo' : 'main',
     source: SOURCE,

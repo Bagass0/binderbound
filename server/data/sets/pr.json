@@ -2,11 +2,12 @@
   "id": "pr",
   "code": "PR",
   "name": {
-    "fr": "Riftbound Promotional Cards",
+    "fr": "Cartes promotionnelles Riftbound",
     "en": "Riftbound Promotional Cards"
   },
   "releaseDate": "2025-10-31",
   "kind": "promo",
+  "color": "#9b7162",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

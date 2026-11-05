@@ -2,11 +2,12 @@
   "id": "ogn",
   "code": "OGN",
   "name": {
-    "fr": "Origins",
+    "fr": "Origines",
     "en": "Origins"
   },
   "releaseDate": "2025-10-31",
   "kind": "main",
+  "color": "#3e4555",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

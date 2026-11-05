@@ -2,11 +2,12 @@
   "id": "sfd",
   "code": "SFD",
   "name": {
-    "fr": "Spiritforged",
+    "fr": "Armes Spirituelles",
     "en": "Spiritforged"
   },
   "releaseDate": "2026-02-13",
   "kind": "main",
+  "color": "#80162a",
   "source": {
     "name": "Riftcodex",
     "url": "https://riftcodex.com"

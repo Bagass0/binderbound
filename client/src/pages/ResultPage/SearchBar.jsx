@@ -47,9 +47,10 @@ export function SearchBar({ cards, index, onSelect }) {
     return found;
   }, [query, searchable]);
 
+  // Le champ se vide (et garde le focus) : on enchaîne directement avec le numéro suivant.
   const select = (card) => {
     onSelect(card);
-    setQuery(localizedName(card, i18n.language));
+    setQuery('');
     setOpen(false);
   };
 
