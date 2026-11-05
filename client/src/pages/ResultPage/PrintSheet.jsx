@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
-import { isVariant, localizedName, padNumber } from '../../lib/format.js';
+import { cardNumber, isVariant, localizedName } from '../../lib/format.js';
 
 /** Version imprimable : liste de rangement groupée par feuillet. Visible uniquement à l'impression. */
 export const PrintSheet = memo(function PrintSheet({ set, layout, placements, collection }) {
@@ -43,7 +43,7 @@ export const PrintSheet = memo(function PrintSheet({ set, layout, placements, co
                 <td>{t(`side.${p.side}`)}</td>
                 <td>{p.row}</td>
                 <td>{p.col}</td>
-                <td>{padNumber(p.card.number)}</td>
+                <td>{cardNumber(p.card)}</td>
                 <td>{localizedName(p.card, lang)}</td>
                 <td>{isVariant(p.card) ? t(`variant.${p.card.variant}`) : ''}</td>
                 {collection.tracking && <td>{collection.owned.has(p.card.id) ? '✔' : '☐'}</td>}

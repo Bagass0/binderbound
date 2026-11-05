@@ -1,3 +1,12 @@
+.root {
+  position: relative;
+  /* Teinte de chaque style dans le panneau. */
+  --sound-faille: var(--rift);
+  --sound-ionia: #ff9ec7;
+  --sound-taverne: var(--accent);
+  --sound-ombres: #46d1a8;
+}
+
 /* Égaliseur : quatre barres immobiles à l'arrêt, qui dansent pendant la lecture. */
 .button {
   display: grid;
@@ -69,5 +78,107 @@
   }
   100% {
     height: 45%;
+  }
+}
+
+/* Panneau : marche/arrêt et choix du style. */
+.panel {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 17.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-deep);
+  transform-origin: top right;
+}
+
+.styles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.style {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.style:hover {
+  background: rgb(var(--text-rgb) / 0.05);
+}
+
+.style strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-strong);
+}
+
+.style small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+.dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  border: 1px solid var(--hue);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.active {
+  border-color: color-mix(in srgb, var(--hue) 45%, transparent);
+  background: color-mix(in srgb, var(--hue) 9%, transparent);
+}
+
+.active .dot {
+  background: var(--hue);
+  box-shadow: 0 0 0.5rem var(--hue);
+}
+
+/* Petit égaliseur à côté du style en cours de lecture. */
+.mini {
+  height: 0.7rem;
+}
+
+.mini span {
+  width: 2px;
+  background: var(--hue);
+  animation: eq 1.1s ease-in-out calc(var(--i) * -0.27s) infinite alternate;
+}
+
+@media (max-width: 30rem) {
+  .panel {
+    position: fixed;
+    top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
   }
 }

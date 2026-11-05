@@ -2,7 +2,13 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TypeIcon } from '../icons/Icons.jsx';
 import { cardImage } from '../../lib/images.js';
-import { domainLabel, domainStyle, isVariant, localizedName, padNumber } from '../../lib/format.js';
+import {
+  cardNumber,
+  domainLabel,
+  domainStyle,
+  isVariant,
+  localizedName,
+} from '../../lib/format.js';
 import styles from './CardFrame.module.css';
 
 /**
@@ -18,7 +24,7 @@ export const CardFrame = memo(function CardFrame({ card, missing, pressed, highl
   const variant = isVariant(card);
 
   const label = [
-    `#${padNumber(card.number)} ${name}`,
+    `#${cardNumber(card)} ${name}`,
     domainLabel(t, card),
     t(`rarity.${card.rarity}`),
     variant && t(`variant.${card.variant}`),
@@ -63,7 +69,7 @@ export const CardFrame = memo(function CardFrame({ card, missing, pressed, highl
       ) : (
         <>
           <span className={styles.top}>
-            <span className={styles.number}>{padNumber(card.number)}</span>
+            <span className={styles.number}>{cardNumber(card)}</span>
             <span className={styles.gem} aria-hidden />
           </span>
           <span className={styles.art} aria-hidden>

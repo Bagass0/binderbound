@@ -7,7 +7,7 @@ import {
   domainStyle,
   isVariant,
   localizedName,
-  padNumber,
+  cardNumber,
 } from '../../lib/format.js';
 import styles from './ListView.module.css';
 import { cardImage } from '../../lib/images.js';
@@ -178,7 +178,7 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
                       />
                     </td>
                   )}
-                  <td className={styles.num}>{padNumber(p.card.number)}</td>
+                  <td className={styles.num}>{cardNumber(p.card)}</td>
                   <td>
                     <button
                       type="button"

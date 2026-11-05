@@ -7,7 +7,7 @@ import {
   formatPosition,
   isVariant,
   localizedName,
-  padNumber,
+  cardNumber,
 } from '../../lib/format.js';
 import styles from './SearchBar.module.css';
 
@@ -140,10 +140,7 @@ export function SearchBar({ cards, index, onSelect }) {
                 }}
                 style={domainStyle(card)}
               >
-                <span className={styles.number}>
-                  #{padNumber(card.number)}
-                  {collectorCode(card).replace(/^\d+/, '')}
-                </span>
+                <span className={styles.number}>#{cardNumber(card)}</span>
                 <span className={styles.name}>
                   {localizedName(card, i18n.language)}
                   {isVariant(card) && (

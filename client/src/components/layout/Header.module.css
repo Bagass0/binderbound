@@ -21,10 +21,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  max-width: var(--content-w);
+  /* Plus large que le contenu : logo à gauche, réglages et compte à droite, près des bords. */
+  max-width: 120rem;
   height: var(--header-h);
   margin-inline: auto;
-  padding-inline: clamp(1rem, 4vw, 2rem);
+  padding-inline: clamp(1rem, 3vw, 3rem);
 }
 
 .brand {

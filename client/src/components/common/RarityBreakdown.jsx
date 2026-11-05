@@ -5,7 +5,8 @@ import styles from './RarityBreakdown.module.css';
 const ORDER = ['common', 'uncommon', 'rare', 'epic', 'showcase', 'promo'];
 
 /**
- * Cartes possédées par rareté : `byRarity` = { rarity: { owned, total } }.
+ * Cartes possédées par rareté, avec la gemme officielle de Riftbound pour chacune (ronde,
+ * triangle, carrée, pentagone ; hexagone pour les illustrations alternatives). : `byRarity` = { rarity: { owned, total } }.
  * `compact` : une ligne de pastilles (cartes de classeur) ; sinon une barre par rareté.
  */
 export function RarityBreakdown({ byRarity, compact = false }) {
@@ -23,7 +24,7 @@ export function RarityBreakdown({ byRarity, compact = false }) {
             style={{ '--rarity': `var(--rarity-${r})` }}
             title={t(`rarity.${r}`)}
           >
-            <i aria-hidden />
+            <i className={styles.gem} data-rarity={r} aria-hidden />
             <span className="visually-hidden">{t(`rarity.${r}`)} : </span>
             {owned}/{total}
           </li>
@@ -36,7 +37,10 @@ export function RarityBreakdown({ byRarity, compact = false }) {
     <dl className={styles.bars}>
       {rows.map(({ r, owned, total }) => (
         <div key={r} className={styles.row} style={{ '--rarity': `var(--rarity-${r})` }}>
-          <dt>{t(`rarity.${r}`)}</dt>
+          <dt>
+            <i className={styles.gem} data-rarity={r} aria-hidden />
+            {t(`rarity.${r}`)}
+          </dt>
           <dd>
             <span className={styles.track} aria-hidden>
               <span className={styles.fill} style={{ '--ratio': owned / total }} />

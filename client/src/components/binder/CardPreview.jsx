@@ -9,7 +9,7 @@ import {
   formatPosition,
   isVariant,
   localizedName,
-  padNumber,
+  cardNumber,
 } from '../../lib/format.js';
 import { cardImage } from '../../lib/images.js';
 import { Button } from '../ui/Button.jsx';
@@ -124,7 +124,7 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
 
           <div ref={infoRef} className={styles.info}>
             <span className={styles.code}>
-              {setCode} · #{padNumber(card.number)}
+              {setCode} · #{cardNumber(card)}
             </span>
             <h2 className={styles.name}>{localizedName(card, i18n.language)}</h2>
 

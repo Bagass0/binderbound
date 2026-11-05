@@ -327,8 +327,26 @@
     "limit": "You’ve reached the maximum number of binders. Delete one first."
   },
   "sound": {
-    "on": "Play ambient music",
-    "off": "Mute ambient music"
+    "title": "Ambient music",
+    "style": "Ambience style",
+    "styles": {
+      "faille": {
+        "name": "The Rift",
+        "hint": "Epic and serene: strings, harp, war drums"
+      },
+      "ionia": {
+        "name": "Ionia",
+        "hint": "Zen: koto, wind chimes and birdsong"
+      },
+      "taverne": {
+        "name": "Demacian tavern",
+        "hint": "Medieval: lute, recorder, tambourine"
+      },
+      "ombres": {
+        "name": "Shadow Isles",
+        "hint": "Mystical: choir, bells and mist"
+      }
+    }
   },
   "recent": {
     "title": "Pick up a binder",

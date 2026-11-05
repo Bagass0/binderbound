@@ -6,8 +6,9 @@
   isolation: isolate;
   display: block;
   overflow: hidden;
-  /* Les tailles suivent le cadre (cqh/cqw) : la vitrine tient aussi dans une colonne étroite. */
-  container-type: size;
+  /* Largeur du cadre (cqw) pour dimensionner les boosters, plafonnée par un pourcentage de sa
+     hauteur (toujours résolu pour un élément positionné) : tient aussi en colonne étroite. */
+  container-type: inline-size;
   perspective: 900px;
   background:
     radial-gradient(circle at 50% 52%, oklch(from var(--tint) 0.7 c h / 0.55), transparent 58%),
@@ -40,7 +41,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  height: min(72cqh, 100cqw);
+  height: 100cqw;
+  max-height: 72%;
   translate: -18% -44%;
   rotate: 9deg;
   filter: brightness(0.45) saturate(0.8) blur(0.5px);
@@ -54,7 +56,8 @@
   top: 50%;
   left: 50%;
   /* Booster ≈ 0,59 de large pour 1 de haut : 118cqw de haut = 70 % de la largeur. */
-  height: min(86cqh, 118cqw);
+  height: 118cqw;
+  max-height: 86%;
   translate: -62% -50%;
   rotate: -4deg;
   transform: rotateY(calc(var(--px) * 14deg)) rotateX(calc(var(--py) * -10deg));
@@ -102,16 +105,24 @@
 
 /* Sans booster : la carte phare, coins arrondis comme une vraie carte. */
 .card .front {
-  height: min(80cqh, 98cqw);
+  height: 98cqw;
+  max-height: 80%;
 }
 
 .card .back {
-  height: min(68cqh, 84cqw);
+  height: 84cqw;
+  max-height: 68%;
 }
 
 .card .front img,
-.card .back {
+.card .back,
+.card .sheen {
   border-radius: 4.5% / 3.3%;
+}
+
+/* Carte rectangulaire : pas besoin de découper le reflet. */
+.card .sheen {
+  mask: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

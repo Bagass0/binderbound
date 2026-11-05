@@ -154,10 +154,8 @@
     grid-template-columns: 1fr;
   }
 
-  /* Hauteur explicite : la vitrine dimensionne son booster sur la taille de son cadre. */
   .showcase {
-    height: 12rem;
-    min-height: 0;
+    min-height: 12rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }

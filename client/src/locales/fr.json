@@ -327,8 +327,26 @@
     "limit": "Tu as atteint le nombre maximum de classeurs. Supprimes-en un d’abord."
   },
   "sound": {
-    "on": "Lancer l’ambiance sonore",
-    "off": "Couper l’ambiance sonore"
+    "title": "Ambiance sonore",
+    "style": "Style d’ambiance",
+    "styles": {
+      "faille": {
+        "name": "La Faille",
+        "hint": "Épique et serein : cordes, harpe, tambours de guerre"
+      },
+      "ionia": {
+        "name": "Ionia",
+        "hint": "Zen : koto, carillons et chants d’oiseaux"
+      },
+      "taverne": {
+        "name": "Taverne de Demacia",
+        "hint": "Médiéval : luth, flûte à bec, tambourin"
+      },
+      "ombres": {
+        "name": "Îles obscures",
+        "hint": "Mystique : chœurs, cloches et brume"
+      }
+    }
   },
   "recent": {
     "title": "Reprendre un classeur",

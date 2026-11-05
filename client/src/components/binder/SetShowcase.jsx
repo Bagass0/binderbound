@@ -37,7 +37,12 @@ export function SetShowcase({ setId, image, color, className = '' }) {
       {src && (
         <>
           <img className={styles.back} {...src} alt="" loading="lazy" decoding="async" />
-          <span className={styles.front} style={{ '--mask': `url("${src.src}")` }}>
+          {/* Masque du reflet : seulement pour nos boosters (même origine) ; une image du CDN
+              de Riot en masque CSS serait chargée en CORS et refusée. */}
+          <span
+            className={styles.front}
+            style={booster ? { '--mask': `url("${booster.image}")` } : undefined}
+          >
             <img {...src} alt="" loading="lazy" decoding="async" draggable={false} />
             <i className={styles.sheen} />
           </span>
