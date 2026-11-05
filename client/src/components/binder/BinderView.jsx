@@ -115,7 +115,7 @@ function SpreadView({ layout, target, collection, onCardClick }) {
   const sideLabel = (face) => (face ? formatFace(t, face) : '—');
 
   return (
-    <div className={`${styles.wrapper} ${styles.spread}`}>
+    <div className={styles.wrapper}>
       <div className={styles.book} style={{ '--rows': rows, '--cols': cols }}>
         <div className={`${styles.page} ${styles.pageLeft}`}>
           {renderFace(...base.left, Boolean(turn && turn.dir < 0))}

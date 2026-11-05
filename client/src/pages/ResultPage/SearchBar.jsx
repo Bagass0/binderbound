@@ -18,7 +18,16 @@ const normalize = (s) =>
     .replace(/\p{Diacritic}/gu, '')
     .toLowerCase();
 
-/** Recherche par nom (dans les deux langues), numéro ou identifiant. */
+/** Numéro de collection tapé : chiffres, lettre d'alt-art éventuelle, étoile de signature. */
+const CODE = /^\d+[a-z]?\*?$/;
+
+/** Numéro de collection d'une carte, tiré de son identifiant : OGN-027A-298 → « 27a ». */
+const collectorCode = (card) => {
+  const match = card.id.match(/^[A-Z]+-0*(\d+)([A-Z]?)(\*?)/);
+  return match ? `${match[1]}${match[2].toLowerCase()}${match[3]}` : String(card.number);
+};
+
+/** Recherche par nom (dans les deux langues), numéro (« 113a » pour l'alt-art) ou identifiant. */
 export function SearchBar({ cards, index, onSelect }) {
   const { t, i18n } = useTranslation();
   const listId = useId();
@@ -31,20 +40,32 @@ export function SearchBar({ cards, index, onSelect }) {
     () =>
       cards
         .filter((c) => index[c.id])
-        .map((card) => ({ card, text: normalize(`${card.id} ${card.name.fr} ${card.name.en}`) })),
+        .map((card) => ({
+          card,
+          code: collectorCode(card),
+          text: normalize(`${card.id} ${card.name.fr} ${card.name.en}`),
+        })),
     [cards, index],
   );
 
   const results = useMemo(() => {
-    const q = normalize(query.trim());
+    const q = normalize(query.trim()).replace(/^#/, '');
     if (!q) return [];
-    const asNumber = Number.parseInt(q.replace(/^#/, ''), 10);
-    const found = [];
-    for (const { card, text } of searchable) {
-      if (card.number === asNumber || text.includes(q)) found.push(card);
-      if (found.length === MAX_RESULTS) break;
-    }
-    return found;
+    // « 113a » vise l'alt-art, « 226* » la signature : la carte exacte passe en tête,
+    // puis les autres versions du même numéro, puis les correspondances de nom.
+    const code = q.match(CODE)?.[0];
+    const number = code && Number.parseInt(code, 10);
+    const rank = ({ card, code: c, text }) => {
+      if (c === code) return 0;
+      if (card.number === number) return 1;
+      return text.includes(q) ? 2 : null;
+    };
+    return searchable
+      .map((entry) => ({ entry, rank: rank(entry) }))
+      .filter((r) => r.rank !== null)
+      .sort((a, b) => a.rank - b.rank) // tri stable : l'ordre du set est conservé à rang égal
+      .slice(0, MAX_RESULTS)
+      .map((r) => r.entry.card);
   }, [query, searchable]);
 
   // Le champ se vide (et garde le focus) : on enchaîne directement avec le numéro suivant.
@@ -119,7 +140,10 @@ export function SearchBar({ cards, index, onSelect }) {
                 }}
                 style={domainStyle(card)}
               >
-                <span className={styles.number}>#{padNumber(card.number)}</span>
+                <span className={styles.number}>
+                  #{padNumber(card.number)}
+                  {collectorCode(card).replace(/^\d+/, '')}
+                </span>
                 <span className={styles.name}>
                   {localizedName(card, i18n.language)}
                   {isVariant(card) && (
