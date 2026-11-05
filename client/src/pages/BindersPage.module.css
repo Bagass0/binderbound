@@ -38,20 +38,16 @@
 
 /* Le classeur, en vitrine au-dessus des informations ; cliquer dessus l'ouvre. */
 .stage {
-  display: grid;
-  place-items: center;
-  height: 14rem;
-  margin: -0.6rem -1.5rem 0.6rem;
-  background: radial-gradient(ellipse at 50% 60%, rgb(var(--accent-rgb) / 0.12), transparent 65%);
+  display: block;
+  height: 15rem;
+  /* Pleine largeur, collée en haut de la carte. */
+  margin: -1.6rem -1.5rem 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.binder {
-  transition: transform 0.5s var(--ease-out);
-}
-
-.card:hover .binder {
-  --lift: -4%;
-  transform: translateY(-4px) rotate(-2deg);
+.showcase {
+  width: 100%;
+  height: 100%;
 }
 
 .code {
