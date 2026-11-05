@@ -16,7 +16,7 @@ export function usePageMeta(pathname) {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    const key = TITLES[pathname];
+    const key = TITLES[pathname] ?? (pathname.startsWith('/collection/') && TITLES['/collection']);
     document.title = key
       ? `${t(key)} · ${t('app.name')}`
       : `${t('app.name')} — ${t('app.tagline')}`;

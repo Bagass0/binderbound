@@ -469,9 +469,19 @@
     "started": "Sets started",
     "complete": "Sets complete",
     "empty": "No cards checked yet: open a set and turn on “My collection” to get started.",
-    "open": "Open the binder"
+    "open": "See my cards"
   },
   "rarityBreakdown": {
     "label": "Cards owned by rarity"
+  },
+  "collectionSet": {
+    "rarity": "Rarity",
+    "allRarities": "All",
+    "empty": "No card matches these filters.",
+    "show": {
+      "all": "All",
+      "owned": "Owned",
+      "missing": "Missing"
+    }
   }
 }

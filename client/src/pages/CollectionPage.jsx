@@ -5,7 +5,6 @@ import { api } from '../api/client.js';
 import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { localCollection } from '../hooks/localCollection.js';
-import { withParams } from '../hooks/useLayoutParams.js';
 import { EASE_OUT } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
@@ -134,10 +133,7 @@ export default function CollectionPage() {
                           </span>
                         </div>
                         <RarityBreakdown byRarity={progress.byRarity} />
-                        <Link
-                          className={styles.open}
-                          to={`/result?${withParams('', { setId: set.id })}`}
-                        >
+                        <Link className={styles.open} to={`/collection/${set.id}`}>
                           {t('collectionPage.open')} <ChevronRight />
                         </Link>
                       </div>

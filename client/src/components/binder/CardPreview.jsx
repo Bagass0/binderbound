@@ -130,8 +130,15 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
             <h2 className={styles.name}>{localizedName(card, i18n.language)}</h2>
 
             <dl className={styles.facts}>
-              <dt>{t('preview.position')}</dt>
-              <dd className={styles.position}>{position ? formatPosition(t, position) : '—'}</dd>
+              {/* position null : vue hors classeur (Ma collection), pas d'emplacement à montrer. */}
+              {position !== null && (
+                <>
+                  <dt>{t('preview.position')}</dt>
+                  <dd className={styles.position}>
+                    {position ? formatPosition(t, position) : '—'}
+                  </dd>
+                </>
+              )}
               <dt>{t('list.domain')}</dt>
               <dd>{domainLabel(t, card)}</dd>
               <dt>{t('preview.type')}</dt>

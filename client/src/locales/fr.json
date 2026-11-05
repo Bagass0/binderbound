@@ -469,9 +469,19 @@
     "started": "Sets commencés",
     "complete": "Sets complets",
     "empty": "Aucune carte cochée pour l’instant : ouvre un set et active « Ma collection » pour commencer.",
-    "open": "Ouvrir le classeur"
+    "open": "Voir mes cartes"
   },
   "rarityBreakdown": {
     "label": "Cartes possédées par rareté"
+  },
+  "collectionSet": {
+    "rarity": "Rareté",
+    "allRarities": "Toutes",
+    "empty": "Aucune carte ne correspond à ces filtres.",
+    "show": {
+      "all": "Toutes",
+      "owned": "Possédées",
+      "missing": "Manquantes"
+    }
   }
 }

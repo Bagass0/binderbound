@@ -28,6 +28,10 @@ const router = createBrowserRouter([
       { path: 'conditions', lazy: page(() => import('./pages/TermsPage.jsx')) },
       { path: 'collection', lazy: page(() => import('./pages/CollectionPage.jsx')) },
       {
+        path: 'collection/:setId',
+        lazy: page(() => import('./pages/CollectionSetPage.jsx')),
+      },
+      {
         element: <RequireUser />,
         children: [{ path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) }],
       },
