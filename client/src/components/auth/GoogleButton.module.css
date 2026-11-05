@@ -3,6 +3,9 @@
   justify-content: center;
   width: 100%;
   min-height: 44px;
+  /* Le bouton est une iframe Google en thème clair : dans notre page sombre, le navigateur
+     lui peindrait un fond blanc opaque. Aligner le color-scheme la rend transparente. */
+  color-scheme: light;
 }
 
 .failed {
