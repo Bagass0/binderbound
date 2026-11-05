@@ -233,6 +233,8 @@ Routes des comptes (actives avec une base de données) :
 | `POST /api/auth/login`                                | Connexion `{ email, password }`                                  |
 | `POST /api/auth/google`                               | Connexion Google `{ credential }` (jeton d'identité Google)      |
 | `POST /api/auth/logout`                               | Ferme la session                                                 |
+| `GET /api/auth/me/export`                             | RGPD : toutes les données du compte en JSON (pièce jointe)       |
+| `DELETE /api/auth/me`                                 | RGPD : supprime le compte, ses sessions, classeurs et collection |
 | `GET /api/auth/me`                                    | Utilisateur connecté, ou `null`                                  |
 | `GET /api/binders`                                    | Mes classeurs, avec leur avancement (cartes possédées / total)   |
 | `POST /api/binders`                                   | Sauvegarde un classeur `{ name, params }`                        |

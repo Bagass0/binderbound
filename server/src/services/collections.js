@@ -16,6 +16,17 @@ export function createCollectionStore(db) {
       return rows.map((r) => r.card_id);
     },
 
+    /** Toute la collection d'un utilisateur : { setId: [cardId…] } (export des données). */
+    async all(userId) {
+      const [rows] = await db.query(
+        'SELECT set_id, card_id FROM owned_cards WHERE user_id = ? ORDER BY set_id, card_id',
+        [userId],
+      );
+      const result = {};
+      for (const row of rows) (result[row.set_id] ??= []).push(row.card_id);
+      return result;
+    },
+
     /** Cartes possédées de chaque set demandé : Map setId → Set(cardId). */
     async bySet(userId, setIds) {
       const result = new Map(setIds.map((id) => [id, new Set()]));

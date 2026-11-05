@@ -235,7 +235,9 @@
   },
   "footer": {
     "disclaimer": "Binderbound a été créé dans le cadre de la politique « Legal Jibber Jabber » de Riot Games, à partir d’éléments appartenant à Riot Games. Riot Games ne cautionne ni ne parraine ce projet. Riftbound et League of Legends sont des marques de Riot Games, Inc.",
-    "data": "Données des cartes : {{source}} (projet communautaire non officiel)."
+    "data": "Données des cartes : {{source}} (projet communautaire non officiel).",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d’utilisation"
   },
   "type": {
     "legend": "Légende",
@@ -295,7 +297,8 @@
   },
   "account": {
     "menu": "Compte de {{name}}",
-    "binders": "Mes classeurs"
+    "binders": "Mes classeurs",
+    "myData": "Mes données"
   },
   "binders": {
     "eyebrow": "Compte de {{name}}",
@@ -332,5 +335,106 @@
     "title": "Reprendre un classeur",
     "all_one": "Voir mon classeur",
     "all_other": "Voir les {{count}} classeurs"
+  },
+  "privacy": {
+    "title": "Confidentialité",
+    "lead": "Binderbound est un projet de fan gratuit, sans publicité ni traceur. Voici exactement ce qu’il conserve, pourquoi, et comment garder la main sur tes données (RGPD).",
+    "sections": [
+      {
+        "title": "Responsable du traitement",
+        "body": "Binderbound est édité par Hugo, à titre personnel et non commercial, qui est responsable du traitement de tes données. Contact : {{email}}."
+      },
+      {
+        "title": "Sans compte",
+        "body": "Tu peux utiliser Binderbound sans compte. Ta collection, ta langue et le réglage du son restent alors dans ton navigateur (stockage local) : rien n’est envoyé au serveur."
+      },
+      {
+        "title": "Données d’un compte",
+        "body": "Si tu crées un compte, nous conservons ton adresse e-mail, ton nom et, selon ta façon de te connecter, ton mot de passe sous forme chiffrée (jamais en clair) ou ton identifiant Google avec ta photo de profil. Nous conservons aussi tes classeurs enregistrés et les cartes que tu as cochées."
+      },
+      {
+        "title": "Connexion avec Google",
+        "body": "Avec « Se connecter avec Google », Google nous transmet uniquement ton nom, ton adresse e-mail et ta photo de profil. Nous n’avons accès à rien d’autre de ton compte Google."
+      },
+      {
+        "title": "Finalité et base légale",
+        "body": "Ces données servent uniquement à faire fonctionner ton compte : te connecter, enregistrer tes classeurs et ta collection. Le traitement repose sur l’exécution du service que tu demandes en créant un compte (article 6.1.b du RGPD). Aucune décision automatisée ni aucun profilage."
+      },
+      {
+        "title": "Durée de conservation",
+        "body": "Tes données sont conservées tant que ton compte existe. Une session expire au bout de 30 jours. Si tu supprimes ton compte, tout est effacé immédiatement et définitivement."
+      },
+      {
+        "title": "Cookies",
+        "body": "Un seul cookie, strictement nécessaire, garde ta session ouverte : il est donc dispensé de consentement. Il n’y a ni cookie publicitaire ni mesure d’audience."
+      },
+      {
+        "title": "Destinataires et hébergement",
+        "body": "Tes données ne sont ni vendues, ni partagées, ni utilisées à des fins publicitaires. Elles sont hébergées par OVHcloud (OVH SAS, France). Les images des cartes sont chargées depuis les serveurs de Riot Games, et le bouton Google depuis ceux de Google : comme pour tout site, ils reçoivent ton adresse IP."
+      },
+      {
+        "title": "Tes droits",
+        "body": "Tu disposes des droits d’accès, de rectification, d’effacement, de portabilité, de limitation et d’opposition. Une fois connecté, tu peux télécharger toutes tes données ou supprimer ton compte toi-même, en bas de cette page. Pour le reste, écris à {{email}} : réponse sous 30 jours. Tu peux aussi adresser une réclamation à la CNIL (cnil.fr)."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Conditions d’utilisation",
+    "lead": "Les règles du jeu pour utiliser Binderbound, et les mentions légales du site.",
+    "sections": [
+      {
+        "title": "Mentions légales",
+        "body": "Éditeur : Hugo, particulier, à titre non commercial. Contact : {{email}}. Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France (ovhcloud.com)."
+      },
+      {
+        "title": "Objet",
+        "body": "Binderbound est un outil gratuit qui indique où ranger les cartes du jeu Riftbound dans un classeur. Utiliser le site vaut acceptation des présentes conditions."
+      },
+      {
+        "title": "Accès au service",
+        "body": "Le service est gratuit et accessible sans compte. Il est fourni sans garantie de disponibilité : il peut être interrompu, modifié ou arrêté à tout moment, notamment pour maintenance."
+      },
+      {
+        "title": "Compte",
+        "body": "Le compte est facultatif. Tu t’engages à fournir des informations exactes et à garder ton mot de passe confidentiel ; tu es responsable de ce qui est fait depuis ton compte. Tu peux le supprimer à tout moment depuis la page Confidentialité. Un compte utilisé de façon abusive peut être suspendu ou supprimé."
+      },
+      {
+        "title": "Utilisation acceptable",
+        "body": "Il est interdit de tenter de porter atteinte à la sécurité ou au fonctionnement du site, d’accéder aux données d’autres personnes, d’envoyer des requêtes automatisées en masse ou d’utiliser le service à des fins commerciales sans accord préalable."
+      },
+      {
+        "title": "Propriété intellectuelle",
+        "body": "Binderbound a été créé dans le cadre de la politique « Legal Jibber Jabber » de Riot Games, à partir d’éléments appartenant à Riot Games ; Riot Games ne cautionne ni ne parraine ce projet. Riftbound, League of Legends et les illustrations des cartes sont la propriété de Riot Games, Inc. Les données des cartes proviennent de Riftcodex, projet communautaire non officiel. Le code et le design de Binderbound appartiennent à son éditeur."
+      },
+      {
+        "title": "Responsabilité",
+        "body": "Les informations sont fournies en l’état. Les données des cartes peuvent contenir des erreurs ou des oublis : vérifie avant de ranger une carte de valeur. L’éditeur ne peut être tenu responsable d’un dommage lié à l’utilisation du site ou à son indisponibilité."
+      },
+      {
+        "title": "Données personnelles",
+        "body": "Le traitement de tes données est décrit sur la page Confidentialité."
+      },
+      {
+        "title": "Modifications",
+        "body": "Ces conditions peuvent évoluer ; la date de mise à jour figure en bas de page. Continuer à utiliser le site après une modification vaut acceptation de la nouvelle version."
+      },
+      {
+        "title": "Droit applicable",
+        "body": "Ces conditions sont soumises au droit français. En cas de litige, une solution amiable sera recherchée avant toute action ; à défaut, les tribunaux français seront compétents."
+      }
+    ]
+  },
+  "myData": {
+    "title": "Mes données",
+    "lead": "Connecté en tant que {{email}}. Télécharge tout ce que Binderbound conserve sur toi (fichier JSON), ou supprime ton compte.",
+    "export": "Télécharger mes données",
+    "delete": "Supprimer mon compte",
+    "confirmTitle": "Supprimer ton compte ?",
+    "confirmText": "Ton compte, tes classeurs enregistrés et ta collection seront effacés immédiatement et définitivement. Cette action est irréversible.",
+    "confirm": "Supprimer définitivement",
+    "error": "La suppression a échoué. Réessaie dans un instant."
+  },
+  "legal": {
+    "updated": "Dernière mise à jour : 5 novembre 2026"
   }
 }

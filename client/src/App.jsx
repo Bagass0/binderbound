@@ -24,6 +24,8 @@ const router = createBrowserRouter([
         ],
       },
       { path: 'login', lazy: page(() => import('./pages/LoginPage.jsx')) },
+      { path: 'confidentialite', lazy: page(() => import('./pages/PrivacyPage.jsx')) },
+      { path: 'conditions', lazy: page(() => import('./pages/TermsPage.jsx')) },
       {
         element: <RequireUser />,
         children: [{ path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) }],

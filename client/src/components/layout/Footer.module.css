@@ -14,3 +14,9 @@
 .footer a {
   color: var(--text-2);
 }
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}

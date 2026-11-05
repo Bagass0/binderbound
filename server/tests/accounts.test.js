@@ -265,6 +265,40 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
         .expect(400);
     });
 
+    it('exporte toutes les données du compte (RGPD)', async () => {
+      await agent.put('/api/collection/sample/cards/SMP-002').expect(204);
+      await agent
+        .post('/api/binders')
+        .send({ name: 'Export', params: { setId: 'sample' } })
+        .expect(201);
+      const res = await agent.get('/api/auth/me/export').expect(200);
+      expect(res.headers['content-disposition']).toContain('binderbound-mes-donnees.json');
+      expect(res.body).toMatchObject({
+        account: { email: 'ezreal@piltover.gg', name: 'Ezreal', googleId: null },
+        binders: [{ name: 'Export', setId: 'sample' }],
+        collection: { sample: ['SMP-002'] },
+      });
+      expect(JSON.stringify(res.body)).not.toContain('scrypt');
+      await request(app).get('/api/auth/me/export').expect(401);
+    });
+
+    it('supprime le compte et toutes ses données (RGPD)', async () => {
+      await agent.put('/api/collection/sample/cards/SMP-001').expect(204);
+      await agent
+        .post('/api/binders')
+        .send({ name: 'Adieu', params: { setId: 'sample' } })
+        .expect(201);
+      const res = await agent.delete('/api/auth/me').expect(204);
+      expect(res.headers['set-cookie'][0]).toMatch(/bb_session=;/);
+
+      expect((await agent.get('/api/auth/me')).body.user).toBeNull();
+      for (const table of ['users', 'sessions', 'binders', 'owned_cards']) {
+        const [[row]] = await db.query(`SELECT COUNT(*) AS n FROM ${table}`);
+        expect(row.n, table).toBe(0);
+      }
+      await request(app).delete('/api/auth/me').expect(401);
+    });
+
     it('importe la collection locale et l’intègre à l’avancement des classeurs', async () => {
       await agent.put('/api/collection/sample/cards/SMP-001').expect(204);
       const res = await agent

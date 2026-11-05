@@ -46,6 +46,11 @@ export function AuthProvider({ children }) {
         window.google?.accounts.id.disableAutoSelect();
         setOverride(null);
       },
+      deleteAccount: async () => {
+        await api.auth.deleteAccount();
+        window.google?.accounts.id.disableAutoSelect();
+        setOverride(null);
+      },
     }),
     [enabled, config, status, user, signIn],
   );

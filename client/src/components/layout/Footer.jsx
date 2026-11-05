@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.css';
 
@@ -13,6 +14,10 @@ export function Footer() {
         <a href={DATA_SOURCE.url} target="_blank" rel="noreferrer">
           {DATA_SOURCE.url.replace('https://', '')}
         </a>
+      </p>
+      <p className={styles.links}>
+        <Link to="/conditions">{t('footer.terms')}</Link>
+        <Link to="/confidentialite">{t('footer.privacy')}</Link>
       </p>
     </footer>
   );

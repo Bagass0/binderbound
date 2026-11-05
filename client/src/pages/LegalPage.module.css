@@ -1,0 +1,60 @@
+.article {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.section + .section {
+  margin-top: 1.5rem;
+}
+
+.section h2 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  color: var(--text-strong);
+}
+
+.section p {
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+.updated {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.data {
+  max-width: 46rem;
+  margin: 1.5rem auto 0;
+  scroll-margin-top: 6rem;
+}
+
+.data p {
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.dataActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.dialogText {
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.error {
+  margin-top: 0.75rem;
+  color: var(--danger);
+}

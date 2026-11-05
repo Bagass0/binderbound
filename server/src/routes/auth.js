@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import { DUMMY_HASH, hashPassword, verifyPassword } from '../auth/password.js';
 import { HttpError } from '../middleware/errorHandler.js';
-import { cookieOptions, SESSION_COOKIE } from '../middleware/session.js';
+import { cookieOptions, requireUser, SESSION_COOKIE } from '../middleware/session.js';
 import { publicUser } from '../services/users.js';
 import { googleLoginSchema, loginSchema, registerSchema } from '../schemas/account.schema.js';
 
@@ -16,7 +16,7 @@ const authLimiter = rateLimit({
     next(new HttpError(429, 'RATE_LIMITED', 'Trop de tentatives, réessaie plus tard')),
 });
 
-export function authRouter({ users, sessions, verifyGoogle, cookieSecure }) {
+export function authRouter({ users, sessions, binders, collections, verifyGoogle, cookieSecure }) {
   const router = Router();
 
   const startSession = async (res, user, status = 200) => {
@@ -78,11 +78,37 @@ export function authRouter({ users, sessions, verifyGoogle, cookieSecure }) {
     await startSession(res, user, created ? 201 : 200);
   });
 
+  const clearSession = (res) => {
+    const { maxAge, ...options } = cookieOptions(cookieSecure);
+    res.clearCookie(SESSION_COOKIE, options);
+  };
+
   router.post('/logout', async (req, res) => {
     const token = req.cookies?.[SESSION_COOKIE];
     if (token) await sessions.destroy(token);
-    const { maxAge, ...options } = cookieOptions(cookieSecure);
-    res.clearCookie(SESSION_COOKIE, options);
+    clearSession(res);
+    res.status(204).end();
+  });
+
+  // RGPD : droit d'accès et à la portabilité (tout ce qui est stocké, en JSON)…
+  router.get('/me/export', requireUser, async (req, res) => {
+    const { user } = req;
+    res.attachment('binderbound-mes-donnees.json').json({
+      exportedAt: new Date().toISOString(),
+      account: {
+        ...publicUser(user),
+        googleId: user.google_sub,
+        createdAt: user.created_at,
+      },
+      binders: await binders.list(user.id),
+      collection: await collections.all(user.id),
+    });
+  });
+
+  // … et droit à l'effacement : le compte et toutes ses données, immédiatement.
+  router.delete('/me', requireUser, async (req, res) => {
+    await users.remove(req.user.id);
+    clearSession(res);
     res.status(204).end();
   });
 

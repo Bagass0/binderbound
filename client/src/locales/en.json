@@ -235,7 +235,9 @@
   },
   "footer": {
     "disclaimer": "Binderbound was created under Riot Games’ “Legal Jibber Jabber” policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project. Riftbound and League of Legends are trademarks of Riot Games, Inc.",
-    "data": "Card data: {{source}} (unofficial community project)."
+    "data": "Card data: {{source}} (unofficial community project).",
+    "privacy": "Privacy",
+    "terms": "Terms of use"
   },
   "type": {
     "legend": "Legend",
@@ -295,7 +297,8 @@
   },
   "account": {
     "menu": "{{name}}’s account",
-    "binders": "My binders"
+    "binders": "My binders",
+    "myData": "My data"
   },
   "binders": {
     "eyebrow": "{{name}}’s account",
@@ -332,5 +335,106 @@
     "title": "Pick up a binder",
     "all_one": "See my binder",
     "all_other": "See all {{count}} binders"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "lead": "Binderbound is a free fan project with no ads and no trackers. Here is exactly what it stores, why, and how you stay in control of your data (GDPR).",
+    "sections": [
+      {
+        "title": "Data controller",
+        "body": "Binderbound is published by Hugo, as a personal, non-commercial project, who is the controller of your data. Contact: {{email}}."
+      },
+      {
+        "title": "Without an account",
+        "body": "You can use Binderbound without an account. Your collection, language and sound setting then stay in your browser (local storage): nothing is sent to the server."
+      },
+      {
+        "title": "Account data",
+        "body": "If you create an account, we store your email address, your name and, depending on how you sign in, your password in hashed form (never in plain text) or your Google ID with your profile picture. We also store your saved binders and the cards you have checked."
+      },
+      {
+        "title": "Sign in with Google",
+        "body": "With “Sign in with Google”, Google only shares your name, email address and profile picture with us. We have no access to anything else in your Google account."
+      },
+      {
+        "title": "Purpose and legal basis",
+        "body": "This data is only used to run your account: signing you in and saving your binders and collection. Processing is based on providing the service you request by creating an account (GDPR article 6.1.b). No automated decision-making and no profiling."
+      },
+      {
+        "title": "Retention",
+        "body": "Your data is kept for as long as your account exists. A session expires after 30 days. If you delete your account, everything is erased immediately and permanently."
+      },
+      {
+        "title": "Cookies",
+        "body": "A single, strictly necessary cookie keeps you signed in, so it does not require consent. There are no advertising cookies and no analytics."
+      },
+      {
+        "title": "Recipients and hosting",
+        "body": "Your data is never sold, shared or used for advertising. It is hosted by OVHcloud (OVH SAS, France). Card images are loaded from Riot Games’ servers and the Google button from Google’s: like any website, they receive your IP address."
+      },
+      {
+        "title": "Your rights",
+        "body": "You have the rights of access, rectification, erasure, portability, restriction and objection. Once signed in, you can download all your data or delete your account yourself at the bottom of this page. For anything else, write to {{email}}: we reply within 30 days. You can also lodge a complaint with your data protection authority (in France, the CNIL: cnil.fr)."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of use",
+    "lead": "The ground rules for using Binderbound, and the site’s legal notice.",
+    "sections": [
+      {
+        "title": "Legal notice",
+        "body": "Publisher: Hugo, private individual, non-commercial. Contact: {{email}}. Host: OVH SAS, 2 rue Kellermann, 59100 Roubaix, France (ovhcloud.com)."
+      },
+      {
+        "title": "Purpose",
+        "body": "Binderbound is a free tool that tells you where to file Riftbound cards in a binder. Using the site means you accept these terms."
+      },
+      {
+        "title": "Access",
+        "body": "The service is free and usable without an account. It comes with no availability guarantee: it may be interrupted, changed or discontinued at any time, for example for maintenance."
+      },
+      {
+        "title": "Account",
+        "body": "An account is optional. You agree to provide accurate information and keep your password confidential; you are responsible for activity on your account. You can delete it at any time from the Privacy page. An account used abusively may be suspended or deleted."
+      },
+      {
+        "title": "Acceptable use",
+        "body": "You must not try to compromise the site’s security or operation, access other people’s data, send automated requests in bulk, or use the service commercially without prior agreement."
+      },
+      {
+        "title": "Intellectual property",
+        "body": "Binderbound was created under Riot Games’ “Legal Jibber Jabber” policy using assets owned by Riot Games; Riot Games does not endorse or sponsor this project. Riftbound, League of Legends and the card artwork are the property of Riot Games, Inc. Card data comes from Riftcodex, an unofficial community project. Binderbound’s code and design belong to its publisher."
+      },
+      {
+        "title": "Liability",
+        "body": "Information is provided as is. Card data may contain errors or omissions: double-check before filing a valuable card. The publisher cannot be held liable for any damage arising from use of the site or its unavailability."
+      },
+      {
+        "title": "Personal data",
+        "body": "How your data is processed is described on the Privacy page."
+      },
+      {
+        "title": "Changes",
+        "body": "These terms may change; the last update date appears at the bottom of the page. Continuing to use the site after a change means you accept the new version."
+      },
+      {
+        "title": "Governing law",
+        "body": "These terms are governed by French law. In case of dispute, an amicable solution will be sought first; failing that, the French courts will have jurisdiction."
+      }
+    ]
+  },
+  "myData": {
+    "title": "My data",
+    "lead": "Signed in as {{email}}. Download everything Binderbound stores about you (JSON file), or delete your account.",
+    "export": "Download my data",
+    "delete": "Delete my account",
+    "confirmTitle": "Delete your account?",
+    "confirmText": "Your account, saved binders and collection will be erased immediately and permanently. This cannot be undone.",
+    "confirm": "Delete permanently",
+    "error": "Deletion failed. Please try again in a moment."
+  },
+  "legal": {
+    "updated": "Last updated: November 5, 2026"
   }
 }

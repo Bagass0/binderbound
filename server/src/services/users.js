@@ -23,6 +23,9 @@ export function createUserStore(db) {
       );
       return this.findById(id);
     },
+
+    /** Supprime le compte ; sessions, classeurs et collection suivent (ON DELETE CASCADE). */
+    remove: (id) => db.query('DELETE FROM users WHERE id = ?', [id]),
   };
 }
 

@@ -48,6 +48,7 @@ export const api = {
     login: (body) => send('POST', '/auth/login', body),
     google: (credential) => send('POST', '/auth/google', { credential }),
     logout: () => send('POST', '/auth/logout'),
+    deleteAccount: () => send('DELETE', '/auth/me'),
   },
 
   binders: {
