@@ -130,6 +130,25 @@ describe('variantes', () => {
     ]);
   });
 
+  it('une rune alternative suit sa rune, en fin de classeur', () => {
+    const set = [
+      card(1, { suffix: 'R', variant: 'special' }),
+      card(2, { suffix: 'R', variant: 'special' }),
+      card(2, { suffix: 'RA', variant: 'alt-art', baseCardId: 'T-2R', rarity: 'showcase' }),
+      card(1),
+      card(2),
+    ];
+    for (const variantMode of ['after-base', 'end']) {
+      expect(ids(computeLayout(set, { rows: 1, cols: 5, variantMode }))).toEqual([
+        'T-1',
+        'T-2',
+        'T-1R',
+        'T-2R',
+        'T-2RA',
+      ]);
+    }
+  });
+
   it('les cartes hors série ferment toujours le classeur', () => {
     const set = [card(5), card(1, { suffix: 'R', variant: 'special' }), card(7)];
     for (const variantMode of ['after-base', 'end']) {

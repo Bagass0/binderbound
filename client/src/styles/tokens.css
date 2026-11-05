@@ -50,12 +50,13 @@
   --domain-order: #f2cc4a;
   --domain-colorless: #a3a8b5;
 
-  /* Raretés */
-  --rarity-common: #a7a2b8;
-  --rarity-uncommon: #46d18a;
-  --rarity-rare: #4c8dff;
-  --rarity-epic: #b46cff;
-  --rarity-showcase: #ffc857;
+  /* Raretés : couleurs des gemmes imprimées sur les cartes Riftbound */
+  --rarity-common: #dfe6ee; /* perle blanche */
+  --rarity-uncommon: #2fb8ab; /* triangle turquoise */
+  --rarity-rare: #d6338f; /* losange rose */
+  --rarity-epic: #f2891f; /* pentagone orange */
+  --rarity-showcase: #f5c518; /* hexagone doré (alt-arts, overnumbered) */
+  --rarity-promo: #c4cad6; /* pas de gemme officielle */
 
   /* Format d'une carte (mm) : ratio des pochettes */
   --card-w: 63;

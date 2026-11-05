@@ -13,6 +13,7 @@ import { z } from 'zod';
 import { fetchSets, SOURCE } from '../src/import/riftcodex.js';
 import { setSchema } from '../src/schemas/set.schema.js';
 import { coverColor } from '../src/import/coverColor.js';
+import { applySupplement, loadSupplement } from '../src/import/supplements.js';
 import { coverImage, SETS_DIR } from '../src/services/setRepository.js';
 import { countCards } from '../src/layout/countCards.js';
 
@@ -32,7 +33,11 @@ if (!sets.length) {
 }
 
 let failed = 0;
-for (const raw of sets) {
+for (const fetched of sets) {
+  // Cartes absentes de la source, ajoutées à la main (data/supplements/<id>.json).
+  const { set: raw, added } = applySupplement(fetched, await loadSupplement(fetched.id));
+  if (added.length)
+    console.log(`  + ${fetched.code} : ${added.map((c) => c.id).join(', ')} (supplément)`);
   const result = setSchema.safeParse(raw);
   if (!result.success) {
     failed += 1;

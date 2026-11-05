@@ -9,6 +9,7 @@ import {
   localizedName,
   cardNumber,
 } from '../../lib/format.js';
+import { RarityGem } from '../../components/common/RarityGem.jsx';
 import styles from './ListView.module.css';
 import { cardImage } from '../../lib/images.js';
 
@@ -201,7 +202,12 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
                   <td>
                     <span className={styles.domain}>{domainLabel(t, p.card)}</span>
                   </td>
-                  <td>{t(`rarity.${p.card.rarity}`)}</td>
+                  <td>
+                    <span className={styles.rarity}>
+                      <RarityGem rarity={p.card.rarity} className={styles.gem} />
+                      {t(`rarity.${p.card.rarity}`)}
+                    </span>
+                  </td>
                   <td>
                     {!isVariant(p.card) ? (
                       <span className={styles.dim}>—</span>

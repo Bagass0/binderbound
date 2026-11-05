@@ -200,3 +200,15 @@
   color: var(--rift-light);
   text-decoration: underline;
 }
+
+.rarity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gem {
+  flex-shrink: 0;
+  width: 0.95rem;
+  height: 0.95rem;
+}

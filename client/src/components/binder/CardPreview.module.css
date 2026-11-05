@@ -137,3 +137,15 @@
     max-width: 20rem;
   }
 }
+
+.rarity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gem {
+  flex-shrink: 0;
+  width: 0.95rem;
+  height: 0.95rem;
+}

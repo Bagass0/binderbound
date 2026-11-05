@@ -51,24 +51,36 @@ export function sortCards(cards, { sortBy, variantMode, breakBy }) {
   const sorted = (list, section) => list.toSorted(compare).map((c) => entry(c, section));
   // Hors série : ordre de leur identifiant (R01…R06, puis SP1…SP6), leur numéro n'ayant pas de sens.
   const byId = new Intl.Collator('en', { numeric: true }).compare;
-  const specials = cards
-    .filter((c) => c.variant === 'special')
+  const specialCards = cards.filter((c) => c.variant === 'special');
+  // Variante d'une carte hors série (rune alternative R02a) : elle la suit en fin de classeur,
+  // quel que soit le mode, puisque sa base n'a pas de place dans la numérotation.
+  const specialIds = new Set(specialCards.map((c) => c.id));
+  const ofSpecial = (v) => specialIds.has(v.baseCardId);
+  const bySpecial = Map.groupBy(
+    variants.filter(ofSpecial).toSorted((a, b) => byId(a.id, b.id)),
+    (v) => v.baseCardId,
+  );
+  const specials = specialCards
     .toSorted((a, b) => byId(a.id, b.id))
-    .map((c) => entry(c, 'special'));
+    .flatMap((c) => [
+      entry(c, 'special'),
+      ...(bySpecial.get(c.id) ?? []).map((v) => entry(v, 'special', c)),
+    ]);
+  const numbered = variants.filter((v) => !ofSpecial(v));
 
   if (variantMode === 'exclude') return sorted(bases, 'base');
 
   // Les variantes forment leur propre section, triée avec le même critère.
   if (variantMode === 'end')
-    return [...sorted(bases, 'base'), ...sorted(variants, 'variants'), ...specials];
+    return [...sorted(bases, 'base'), ...sorted(numbered, 'variants'), ...specials];
 
   // after-base : seules les variantes qui partagent le numéro de leur base (alt-arts : 113,
   // 113a) la suivent et héritent de son groupe. Les overnumbered et signatures ont leur propre
   // numéro de collection : elles se rangent à ce numéro, donc en fin de set.
   const baseById = new Map(bases.map((b) => [b.id, b]));
   const followsBase = (v) => baseById.get(v.baseCardId)?.number === v.number;
-  const byBase = Map.groupBy(variants.filter(followsBase).toSorted(compare), (v) => v.baseCardId);
-  const anchors = [...bases, ...variants.filter((v) => !followsBase(v))].toSorted(compare);
+  const byBase = Map.groupBy(numbered.filter(followsBase).toSorted(compare), (v) => v.baseCardId);
+  const anchors = [...bases, ...numbered.filter((v) => !followsBase(v))].toSorted(compare);
   return [
     ...anchors.flatMap((anchor) => [
       entry(anchor, 'base'),

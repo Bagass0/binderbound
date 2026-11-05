@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TypeIcon } from '../icons/Icons.jsx';
+import { RarityGem } from '../common/RarityGem.jsx';
 import { cardImage } from '../../lib/images.js';
 import {
   cardNumber,
@@ -70,7 +71,7 @@ export const CardFrame = memo(function CardFrame({ card, missing, pressed, highl
         <>
           <span className={styles.top}>
             <span className={styles.number}>{cardNumber(card)}</span>
-            <span className={styles.gem} aria-hidden />
+            <RarityGem rarity={card.rarity} className={styles.gem} />
           </span>
           <span className={styles.art} aria-hidden>
             <TypeIcon type={card.type} />

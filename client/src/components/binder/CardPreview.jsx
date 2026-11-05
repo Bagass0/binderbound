@@ -13,6 +13,7 @@ import {
 } from '../../lib/format.js';
 import { cardImage } from '../../lib/images.js';
 import { Button } from '../ui/Button.jsx';
+import { RarityGem } from '../common/RarityGem.jsx';
 import styles from './CardPreview.module.css';
 
 const ZOOM = { duration: 0.42, ease: EASE_OUT };
@@ -139,7 +140,10 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
                 {card.supertype && ` · ${card.supertype}`}
               </dd>
               <dt>{t('list.rarity')}</dt>
-              <dd>{t(`rarity.${card.rarity}`)}</dd>
+              <dd className={styles.rarity}>
+                <RarityGem rarity={card.rarity} className={styles.gem} />
+                {t(`rarity.${card.rarity}`)}
+              </dd>
               {isVariant(card) && (
                 <>
                   <dt>{t('list.variant')}</dt>

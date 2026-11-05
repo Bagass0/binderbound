@@ -97,14 +97,11 @@ button.card {
 }
 
 .gem {
-  width: 11cqi;
-  height: 11cqi;
-  max-width: 0.7rem;
-  max-height: 0.7rem;
-  border: 1px solid rgb(0 0 0 / 0.5);
-  background: var(--rarity);
-  transform: rotate(45deg);
-  box-shadow: 0 0 0.35rem var(--rarity);
+  width: 13cqi;
+  height: 13cqi;
+  max-width: 0.9rem;
+  max-height: 0.9rem;
+  filter: drop-shadow(0 0 0.3rem color-mix(in srgb, var(--rarity) 60%, transparent));
 }
 
 .art {

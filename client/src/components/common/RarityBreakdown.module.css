@@ -21,40 +21,12 @@
   background: color-mix(in srgb, var(--rarity) 8%, transparent);
 }
 
-/* Gemmes de rareté de Riftbound : la forme distingue la rareté autant que la couleur. */
+/* Gemme de rareté (SVG), légèrement lumineuse. */
 .gem {
   flex-shrink: 0;
-  width: 0.6rem;
-  height: 0.6rem;
-  background: var(--rarity);
-  filter: drop-shadow(0 0 0.25rem var(--rarity));
-}
-
-.gem[data-rarity='common'] {
-  border-radius: 50%;
-}
-
-.gem[data-rarity='uncommon'] {
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.gem[data-rarity='rare'] {
-  width: 0.55rem;
-  height: 0.55rem;
-}
-
-.gem[data-rarity='epic'] {
-  clip-path: polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%);
-}
-
-.gem[data-rarity='showcase'] {
-  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-}
-
-.gem[data-rarity='promo'] {
-  rotate: 45deg;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  filter: drop-shadow(0 0 0.2rem color-mix(in srgb, var(--rarity) 70%, transparent));
 }
 
 .complete {

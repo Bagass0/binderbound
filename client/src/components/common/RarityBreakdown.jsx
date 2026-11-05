@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { RarityGem } from './RarityGem.jsx';
 import styles from './RarityBreakdown.module.css';
 
 /** Ordre d'affichage des raretés (de la plus courante à la plus rare). */
@@ -24,7 +25,7 @@ export function RarityBreakdown({ byRarity, compact = false }) {
             style={{ '--rarity': `var(--rarity-${r})` }}
             title={t(`rarity.${r}`)}
           >
-            <i className={styles.gem} data-rarity={r} aria-hidden />
+            <RarityGem rarity={r} className={styles.gem} />
             <span className="visually-hidden">{t(`rarity.${r}`)} : </span>
             {owned}/{total}
           </li>
@@ -38,7 +39,7 @@ export function RarityBreakdown({ byRarity, compact = false }) {
       {rows.map(({ r, owned, total }) => (
         <div key={r} className={styles.row} style={{ '--rarity': `var(--rarity-${r})` }}>
           <dt>
-            <i className={styles.gem} data-rarity={r} aria-hidden />
+            <RarityGem rarity={r} className={styles.gem} />
             {t(`rarity.${r}`)}
           </dt>
           <dd>

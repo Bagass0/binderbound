@@ -24,7 +24,8 @@ export const cardSchema = z
     variant: z.enum(VARIANTS),
     /** Carte de base d'une variante ; null pour une base ou une variante sans base dans le set. */
     baseCardId: z.string().min(1).nullable(),
-    imageUrl: z.url().nullable(),
+    /** CDN de Riot, ou image servie par le site (/cards/…) pour une carte ajoutée à la main. */
+    imageUrl: z.union([z.url(), z.string().regex(/^\/[\w./-]+$/)]).nullable(),
     orientation: z.enum(ORIENTATIONS).default('portrait'),
     artist: z.string().min(1).nullable().default(null),
   })
@@ -68,10 +69,11 @@ export const setSchema = z
           message: `baseCardId "${card.baseCardId}" introuvable`,
           path: ['cards', i, 'baseCardId'],
         });
-      } else if (base.variant !== 'base') {
+      } else if (base.variant !== 'base' && base.variant !== 'special') {
+        // Une variante vise une carte de base, ou une carte hors série (rune alternative).
         ctx.addIssue({
           code: 'custom',
-          message: `baseCardId "${card.baseCardId}" doit pointer vers une carte "base"`,
+          message: `baseCardId "${card.baseCardId}" doit pointer vers une carte "base" ou "special"`,
           path: ['cards', i, 'baseCardId'],
         });
       }

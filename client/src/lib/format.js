@@ -9,14 +9,15 @@ export const padNumber = (n) => String(n).padStart(3, '0');
 
 /**
  * Numéro imprimé sur la carte, tiré de son identifiant officiel : « 027a » (alt-art),
- * « 299* » (signature), « R02 » (rune), « T03 » (jeton), « SP1 »… Le simple numéro de
+ * « 299* » (signature), « R02 » (rune), « R02a » (rune alternative), « T03 » (jeton)… Le simple numéro de
  * collection perdrait la lettre ou le préfixe.
  */
 export const cardNumber = (card) => {
   const match = card.id.match(/^[A-Z]+-([A-Z]*)(\d+)([A-Z]?)(\*?)/);
   if (!match) return padNumber(card.number);
   const [, prefix, digits, letter, star] = match;
-  return prefix ? `${prefix}${digits}` : `${digits.padStart(3, '0')}${letter.toLowerCase()}${star}`;
+  const suffix = `${letter.toLowerCase()}${star}`;
+  return prefix ? `${prefix}${digits}${suffix}` : `${digits.padStart(3, '0')}${suffix}`;
 };
 
 /** Variables CSS de couleur des domaines d'une carte (le second sert aux cartes bi-domaines). */
