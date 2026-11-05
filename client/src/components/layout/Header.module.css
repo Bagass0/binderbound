@@ -20,7 +20,6 @@
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   max-width: var(--content-w);
   height: var(--header-h);
@@ -30,9 +29,19 @@
 
 .brand {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
+}
+
+/* Tout le bloc (emblème + nom) ramène à l'accueil : le nom réagit aussi au survol. */
+.brand .name {
+  transition: filter 0.2s;
+}
+
+.brand:hover .name {
+  filter: brightness(1.25) drop-shadow(0 0 0.5rem rgb(var(--accent-rgb) / 0.35));
 }
 
 .emblem {
@@ -117,8 +126,8 @@
   }
 }
 
-/* Très petits écrans : l'emblème seul suffit à identifier l'app. */
-@media (max-width: 25rem) {
+/* Petits écrans : la navigation prend la place, l'emblème seul identifie l'app. */
+@media (max-width: 46rem) {
   .name {
     display: none;
   }

@@ -6,7 +6,7 @@ import { Header } from './Header.jsx';
 import { Footer } from './Footer.jsx';
 import { Stepper } from './Stepper.jsx';
 import { PresenceLocation } from './PresenceLocation.jsx';
-import { isStep, stepIndex } from './steps.js';
+import { showsStepper, stepIndex } from './steps.js';
 import { usePageMeta } from '../../hooks/usePageMeta.js';
 import styles from './AppLayout.module.css';
 
@@ -35,7 +35,7 @@ export function AppLayout() {
   return (
     <MotionConfig reducedMotion="user">
       <Header />
-      {isStep(pathname) && <Stepper current={index} />}
+      {showsStepper(pathname) && <Stepper current={index} />}
       <div className={styles.stage}>
         <AnimatePresence mode="wait" custom={nav.dir} initial={false}>
           <motion.main

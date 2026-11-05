@@ -297,7 +297,6 @@
   },
   "account": {
     "menu": "{{name}}’s account",
-    "binders": "My binders",
     "myData": "My data"
   },
   "binders": {
@@ -334,7 +333,8 @@
   "recent": {
     "title": "Pick up a binder",
     "all_one": "See my binder",
-    "all_other": "See all {{count}} binders"
+    "all_other": "See all {{count}} binders",
+    "resume": "Resume"
   },
   "privacy": {
     "title": "Privacy",
@@ -436,5 +436,24 @@
   },
   "legal": {
     "updated": "Last updated: November 5, 2026"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "sets": "Sets",
+    "binders": "My binders",
+    "collection": "My collection"
+  },
+  "collectionPage": {
+    "title": "My collection",
+    "guest": "In this browser",
+    "lead": "Your progress set by set, every version included (variants, alt arts…), broken down by rarity. Check off cards from a binder’s “My collection” mode.",
+    "cards": "Cards owned",
+    "started": "Sets started",
+    "complete": "Sets complete",
+    "empty": "No cards checked yet: open a set and turn on “My collection” to get started.",
+    "open": "Open the binder"
+  },
+  "rarityBreakdown": {
+    "label": "Cards owned by rarity"
   }
 }

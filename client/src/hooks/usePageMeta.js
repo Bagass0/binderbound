@@ -9,6 +9,7 @@ const TITLES = {
   '/result': 'result.title',
   '/login': 'auth.title.login',
   '/binders': 'binders.title',
+  '/collection': 'collectionPage.title',
 };
 
 export function usePageMeta(pathname) {

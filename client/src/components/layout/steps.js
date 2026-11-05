@@ -12,5 +12,8 @@ export const stepIndex = (pathname) =>
     0,
   );
 
-/** Pages hors parcours (connexion, classeurs) : pas de barre d'étapes. */
-export const isStep = (pathname) => STEPS.some((s) => s.path === pathname);
+/**
+ * Barre d'étapes visible à partir de l'étape 2 : l'accueil (choix du set) sert aussi de page
+ * d'entrée, et les pages hors parcours (connexion, classeurs, collection) n'en ont pas.
+ */
+export const showsStepper = (pathname) => STEPS.slice(1).some((s) => s.path === pathname);

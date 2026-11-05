@@ -311,7 +311,14 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
         .post('/api/binders')
         .send({ name: 'Avancement', params: { setId: 'sample' } })
         .expect(201);
-      expect(body.progress).toEqual({ owned: 2, total: 42 });
+      expect(body.progress).toMatchObject({ owned: 2, total: 42 });
+      // Détail par rareté : les totaux s'additionnent, et les cartes possédées y sont réparties.
+      const rarities = Object.values(body.progress.byRarity);
+      expect(rarities.reduce((n, r) => n + r.total, 0)).toBe(42);
+      expect(rarities.reduce((n, r) => n + r.owned, 0)).toBe(2);
+
+      const all = await agent.get('/api/collection').expect(200);
+      expect(all.body).toEqual({ sets: { sample: ['SMP-001', 'SMP-002'] } });
     });
   });
 });

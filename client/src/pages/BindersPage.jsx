@@ -11,6 +11,7 @@ import { EASE_OUT } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
+import { RarityBreakdown } from '../components/common/RarityBreakdown.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { Button } from '../components/ui/Button.jsx';
 import { Dialog } from '../components/ui/Dialog.jsx';
@@ -129,6 +130,7 @@ function BinderCard({ binder, set, onRename, onDeleted }) {
               transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.2 }}
             />
           </div>
+          <RarityBreakdown byRarity={progress.byRarity} compact />
         </div>
       )}
       <span className={styles.updated}>{t('binders.updated', { date: updated })}</span>

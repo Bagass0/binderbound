@@ -27,20 +27,30 @@ export function bindersRouter(repo, { binders, collections }) {
   };
 
   /**
-   * Avancement de chaque classeur : cartes placées selon ses réglages, et combien sont possédées.
-   * Le placement est recalculé ici (fonction pure, rapide) plutôt que stocké.
+   * Avancement de chaque classeur : cartes placées selon ses réglages, combien sont possédées,
+   * et le même décompte par rareté. Le placement est recalculé ici (fonction pure, rapide)
+   * plutôt que stocké.
    */
   const withProgress = async (userId, list) => {
     const owned = await collections.bySet(userId, [...new Set(list.map((b) => b.setId))]);
     return list.map((binder) => {
       const set = repo.get(binder.setId);
       if (!set) return { ...binder, progress: null };
-      const cardIds = Object.keys(computeLayout(set.cards, toLayoutOptions(binder.params)).index);
+      const placed = new Set(
+        Object.keys(computeLayout(set.cards, toLayoutOptions(binder.params)).index),
+      );
       const have = owned.get(binder.setId);
-      return {
-        ...binder,
-        progress: { owned: cardIds.filter((id) => have.has(id)).length, total: cardIds.length },
-      };
+      const progress = { owned: 0, total: 0, byRarity: {} };
+      for (const card of set.cards) {
+        if (!placed.has(card.id)) continue;
+        const rarity = (progress.byRarity[card.rarity] ??= { owned: 0, total: 0 });
+        const isOwned = have.has(card.id) ? 1 : 0;
+        progress.total += 1;
+        progress.owned += isOwned;
+        rarity.total += 1;
+        rarity.owned += isOwned;
+      }
+      return { ...binder, progress };
     });
   };
 

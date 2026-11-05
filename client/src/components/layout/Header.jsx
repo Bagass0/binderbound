@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Emblem } from '../icons/Icons.jsx';
 import { LANGUAGES } from '../../i18n.js';
 import { AccountMenu } from './AccountMenu.jsx';
+import { MainNav } from './MainNav.jsx';
 import { SoundToggle } from './SoundToggle.jsx';
 import styles from './Header.module.css';
 
@@ -25,6 +26,8 @@ export function Header() {
             <small>{t('app.tagline')}</small>
           </span>
         </Link>
+
+        <MainNav />
 
         <div className={styles.actions}>
           <SoundToggle />

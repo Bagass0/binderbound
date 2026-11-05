@@ -1,0 +1,74 @@
+.nav {
+  display: flex;
+  align-self: stretch;
+  gap: 0.25rem;
+  margin-right: auto;
+  margin-left: clamp(0.5rem, 3vw, 2.5rem);
+}
+
+.link {
+  composes: label-caps from global;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.85rem;
+  font-size: 0.75rem;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--text-strong);
+}
+
+.icon {
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+
+.active {
+  color: var(--text-strong);
+}
+
+.active .icon {
+  color: var(--accent);
+}
+
+/* Trait lumineux posé sur le bas du header, qui glisse d'un lien à l'autre. */
+.underline {
+  position: absolute;
+  inset: auto 0.6rem 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 0.75rem rgb(var(--accent-rgb) / 0.6);
+}
+
+/* Petits écrans : icônes seules (le libellé reste lisible en info-bulle et pour les lecteurs). */
+@media (max-width: 62rem) {
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .link {
+    padding: 0 0.6rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .nav {
+    gap: 0;
+    margin-left: 0.25rem;
+  }
+
+  .link {
+    padding: 0 0.45rem;
+  }
+}

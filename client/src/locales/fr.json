@@ -297,7 +297,6 @@
   },
   "account": {
     "menu": "Compte de {{name}}",
-    "binders": "Mes classeurs",
     "myData": "Mes données"
   },
   "binders": {
@@ -334,7 +333,8 @@
   "recent": {
     "title": "Reprendre un classeur",
     "all_one": "Voir mon classeur",
-    "all_other": "Voir les {{count}} classeurs"
+    "all_other": "Voir les {{count}} classeurs",
+    "resume": "Reprendre"
   },
   "privacy": {
     "title": "Confidentialité",
@@ -436,5 +436,24 @@
   },
   "legal": {
     "updated": "Dernière mise à jour : 5 novembre 2026"
+  },
+  "nav": {
+    "label": "Navigation principale",
+    "sets": "Sets",
+    "binders": "Mes classeurs",
+    "collection": "Ma collection"
+  },
+  "collectionPage": {
+    "title": "Ma collection",
+    "guest": "Sur ce navigateur",
+    "lead": "Ton avancement set par set, toutes versions comprises (variantes, alt-arts…), détaillé par rareté. Coche tes cartes depuis le mode « Ma collection » d’un classeur.",
+    "cards": "Cartes possédées",
+    "started": "Sets commencés",
+    "complete": "Sets complets",
+    "empty": "Aucune carte cochée pour l’instant : ouvre un set et active « Ma collection » pour commencer.",
+    "open": "Ouvrir le classeur"
+  },
+  "rarityBreakdown": {
+    "label": "Cartes possédées par rareté"
   }
 }

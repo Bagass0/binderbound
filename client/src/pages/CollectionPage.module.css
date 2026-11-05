@@ -1,0 +1,168 @@
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-2), var(--bg-deep));
+}
+
+.summary > div {
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.summary > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.summary dt {
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.summary dd {
+  margin: 0.35rem 0 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-2);
+}
+
+.summary strong {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text-strong);
+}
+
+.empty {
+  max-width: 34rem;
+  margin: -1rem auto 2rem;
+  text-align: center;
+  color: var(--text-2);
+}
+
+.section + .section {
+  margin-top: 3rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1.25rem;
+  font-size: 1.35rem;
+  color: var(--text-strong);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Vitrine à gauche, avancement à droite. */
+.card {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-2), var(--bg-deep));
+}
+
+.showcase {
+  min-height: 15rem;
+  border-right: 1px solid var(--line);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.code {
+  composes: label-caps from global;
+  font-size: 0.6875rem;
+  color: var(--rift-light);
+}
+
+.name {
+  margin-top: -0.5rem;
+  font-size: 1.35rem;
+  color: var(--text-strong);
+}
+
+.overall {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.overall > span:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overall em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-void);
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  background: var(--rift-gradient);
+  transform: scaleX(var(--ratio));
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.open {
+  composes: label-caps from global;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.3rem;
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.open:hover {
+  color: var(--text-strong);
+}
+
+@media (max-width: 30rem) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hauteur explicite : la vitrine dimensionne son booster sur la taille de son cadre. */
+  .showcase {
+    height: 12rem;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .summary strong {
+    font-size: 1.35rem;
+  }
+}

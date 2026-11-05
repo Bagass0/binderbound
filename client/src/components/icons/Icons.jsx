@@ -54,6 +54,19 @@ export const Printer = (p) => (
     <path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M7 14h10v6H7z" />
   </svg>
 );
+/** Sets : trois boosters en éventail. */
+export const Packs = (p) => (
+  <svg {...base} {...p}>
+    <path d="m4.5 7.5 4-1.5 2.5 12-4 1.5-2.5-12ZM9 5h6v14H9zM15.5 6l4 1.5-2.5 12-4-1.5" />
+  </svg>
+);
+/** Collection : une pile de cartes. */
+export const Cards = (p) => (
+  <svg {...base} {...p}>
+    <rect x="8" y="3" width="11" height="15" rx="1.5" />
+    <path d="M5 6.5v12A2.5 2.5 0 0 0 7.5 21H15" />
+  </svg>
+);
 export const Book = (p) => (
   <svg {...base} {...p}>
     <path d="M12 6c-2-1.5-5-2-8-1.5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-14c-3-.5-6 0-8 1.5Zm0 0v14" />

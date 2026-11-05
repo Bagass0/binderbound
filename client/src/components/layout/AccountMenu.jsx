@@ -3,10 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'motion/react';
 import { useAuth } from '../../auth/useAuth.js';
-import { Book, Download, Logout, User } from '../icons/Icons.jsx';
+import { Download, Logout, User } from '../icons/Icons.jsx';
 import styles from './AccountMenu.module.css';
 
-/** Bouton « Se connecter », ou avatar + menu (Mes classeurs, mes données, déconnexion). */
+/** Bouton « Se connecter », ou avatar + menu (mes données, déconnexion). */
 export function AccountMenu() {
   const { t } = useTranslation();
   const { enabled, status, user, logout } = useAuth();
@@ -75,14 +75,6 @@ export function AccountMenu() {
               <strong>{user.name}</strong>
               <span>{user.email}</span>
             </div>
-            <Link
-              role="menuitem"
-              to="/binders"
-              className={styles.item}
-              onClick={() => setOpen(false)}
-            >
-              <Book /> {t('account.binders')}
-            </Link>
             <Link
               role="menuitem"
               to="/confidentialite#donnees"

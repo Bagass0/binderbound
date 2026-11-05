@@ -60,6 +60,7 @@ export const api = {
   },
 
   collection: {
+    all: (signal) => request('/collection', { signal }),
     get: (setId, signal) => request(`/collection/${enc(setId)}`, { signal }),
     add: (setId, cardId) => send('PUT', `/collection/${enc(setId)}/cards/${enc(cardId)}`),
     remove: (setId, cardId) => send('DELETE', `/collection/${enc(setId)}/cards/${enc(cardId)}`),

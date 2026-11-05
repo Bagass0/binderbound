@@ -15,6 +15,11 @@ export function collectionRouter(repo, { collections }) {
   };
   const cardIdsOf = (set) => new Set(set.cards.map((c) => c.id));
 
+  /** Toute la collection, set par set : { sets: { setId: [cardId…] } } (page « Ma collection »). */
+  router.get('/', async (req, res) => {
+    res.json({ sets: await collections.all(req.user.id) });
+  });
+
   router.get('/:setId', async (req, res) => {
     findSet(req.params.setId);
     res.json({ cardIds: await collections.list(req.user.id, req.params.setId) });
