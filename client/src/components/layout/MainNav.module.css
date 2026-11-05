@@ -2,8 +2,6 @@
   display: flex;
   align-self: stretch;
   gap: 0.25rem;
-  margin-right: auto;
-  margin-left: clamp(0.5rem, 3vw, 2.5rem);
 }
 
 .link {
@@ -65,7 +63,6 @@
 @media (max-width: 30rem) {
   .nav {
     gap: 0;
-    margin-left: 0.25rem;
   }
 
   .link {
