@@ -4,9 +4,10 @@ import { motion } from 'motion/react';
 import { api } from '../api/client.js';
 import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
+import { useAllPrices } from '../hooks/useConfig.js';
 import { localCollection } from '../hooks/localCollection.js';
 import { itemMotion, listMotion } from '../lib/motion.js';
-import { localizedName } from '../lib/format.js';
+import { formatPrice, localizedName, ownedValue } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { RarityBreakdown } from '../components/common/RarityBreakdown.jsx';
@@ -15,8 +16,7 @@ import { ChevronRight } from '../components/icons/Icons.jsx';
 import styles from './CollectionPage.module.css';
 
 /** Avancement d'un set : toutes ses cartes (variantes comprises), par rareté. */
-function setProgress(set, ownedIds) {
-  const owned = new Set(ownedIds);
+function setProgress(set, owned) {
   const progress = { owned: 0, total: 0, byRarity: {} };
   for (const card of set.cards) {
     const rarity = (progress.byRarity[card.rarity] ??= { owned: 0, total: 0 });
@@ -45,14 +45,23 @@ export default function CollectionPage() {
       user ? api.collection.all(signal).then((r) => r.sets) : localCollection.all(),
     ]);
     const sets = await Promise.all(summaries.map((s) => api.set(s.id)));
-    return sets.map((set, i) => ({
-      summary: summaries[i],
-      progress: setProgress(set, owned[set.id] ?? []),
-    }));
+    return sets.map((set, i) => {
+      const ownedIds = new Set(owned[set.id]);
+      return { summary: summaries[i], set, ownedIds, progress: setProgress(set, ownedIds) };
+    });
   });
+  // Prix chargés à part : la page s'affiche sans attendre, la valeur arrive ensuite.
+  const { data: allPrices } = useAllPrices();
 
   if (error) return <ErrorMessage error={error} />;
   if (!data) return <Loading />;
+
+  // Valeur de chaque set au prix du marché ; null tant que les prix ne sont pas arrivés.
+  const values = allPrices
+    ? data.map(({ set, ownedIds }) => ownedValue(allPrices[set.id], set.cards, ownedIds))
+    : null;
+  const currency = allPrices && Object.values(allPrices).find(Boolean)?.currency;
+  const money = (value) => formatPrice(value, currency, i18n.language);
 
   const totals = data.reduce(
     (acc, { progress }) => ({
@@ -92,12 +101,22 @@ export default function CollectionPage() {
             <strong>{totals.complete}</strong>
           </dd>
         </div>
+        {currency && (
+          <div>
+            <dt>{t('collectionPage.value')}</dt>
+            <dd>
+              <strong>{money(values.reduce((a, b) => a + b, 0))}</strong>
+            </dd>
+          </div>
+        )}
       </dl>
 
       {totals.owned === 0 && <p className={styles.empty}>{t('collectionPage.empty')}</p>}
 
       {['main', 'promo'].map((kind) => {
-        const group = data.filter(({ summary }) => summary.kind === kind);
+        const group = data
+          .map((entry, i) => ({ ...entry, value: values?.[i] }))
+          .filter(({ summary }) => summary.kind === kind);
         if (!group.length) return null;
         return (
           <section key={kind} className={styles.section}>
@@ -108,7 +127,7 @@ export default function CollectionPage() {
               initial="hidden"
               animate="show"
             >
-              {group.map(({ summary: set, progress }) => {
+              {group.map(({ summary: set, progress, value }) => {
                 const ratio = progress.total ? progress.owned / progress.total : 0;
                 return (
                   <motion.li key={set.id} variants={itemMotion}>
@@ -132,6 +151,11 @@ export default function CollectionPage() {
                           </span>
                         </div>
                         <RarityBreakdown byRarity={progress.byRarity} />
+                        {currency && value > 0 && (
+                          <span className={styles.value}>
+                            {t('collectionPage.setValue')} <strong>{money(value)}</strong>
+                          </span>
+                        )}
                         <Link className={styles.open} to={`/collection/${set.id}`}>
                           {t('collectionPage.open')} <ChevronRight />
                         </Link>

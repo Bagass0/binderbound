@@ -55,6 +55,10 @@ export function cardPrice(prices, card) {
     : { value: price.foil, foil: true };
 }
 
+/** Valeur des cartes possédées parmi `cards` (`owned` : Set d'identifiants), au prix affiché. */
+export const ownedValue = (prices, cards, owned) =>
+  cards.reduce((sum, c) => sum + (owned.has(c.id) ? (cardPrice(prices, c)?.value ?? 0) : 0), 0);
+
 const currencyFormats = new Map();
 /** « 2,26 $ » / « $2.26 » selon la langue. */
 export function formatPrice(value, currency, lang) {

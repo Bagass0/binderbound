@@ -81,6 +81,43 @@
   backdrop-filter: blur(10px);
 }
 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.sort {
+  composes: label-caps from global;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--text-3);
+}
+
+.sort select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-void);
+  font-size: 0.8125rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text-strong);
+}
+
+/* Valeur des cartes possédées, sous la barre d'avancement. */
+.value {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.value strong {
+  color: var(--accent);
+}
+
 .rarities {
   display: flex;
   flex-wrap: wrap;
@@ -165,6 +202,17 @@
 /* Une case au format d'une carte, comme une pochette de classeur. */
 .slot {
   aspect-ratio: var(--card-w) / var(--card-h);
+}
+
+/* Prix sous la carte. */
+.price {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .empty {

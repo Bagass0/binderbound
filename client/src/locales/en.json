@@ -504,7 +504,9 @@
     "started": "Sets started",
     "complete": "Sets complete",
     "empty": "No cards checked yet: open a set and turn on “My collection” to get started.",
-    "open": "See my cards"
+    "open": "See my cards",
+    "value": "Value",
+    "setValue": "Value of your cards:"
   },
   "rarityBreakdown": {
     "label": "Cards owned by rarity"
@@ -517,6 +519,13 @@
       "all": "All",
       "owned": "Owned",
       "missing": "Missing"
+    },
+    "sortLabel": "Sort",
+    "sort": {
+      "rarity": "By rarity",
+      "number": "By number",
+      "priceDesc": "Price: high to low",
+      "priceAsc": "Price: low to high"
     }
   }
 }

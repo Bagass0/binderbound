@@ -504,7 +504,9 @@
     "started": "Sets commencés",
     "complete": "Sets complets",
     "empty": "Aucune carte cochée pour l’instant : ouvre un set et active « Ma collection » pour commencer.",
-    "open": "Voir mes cartes"
+    "open": "Voir mes cartes",
+    "value": "Valeur",
+    "setValue": "Valeur de tes cartes :"
   },
   "rarityBreakdown": {
     "label": "Cartes possédées par rareté"
@@ -517,6 +519,13 @@
       "all": "Toutes",
       "owned": "Possédées",
       "missing": "Manquantes"
+    },
+    "sortLabel": "Trier",
+    "sort": {
+      "rarity": "Par rareté",
+      "number": "Par numéro",
+      "priceDesc": "Prix décroissant",
+      "priceAsc": "Prix croissant"
     }
   }
 }
