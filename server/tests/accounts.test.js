@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import request from 'supertest';
 import { createApp } from '../src/app.js';
@@ -12,7 +13,7 @@ import { HttpError } from '../src/middleware/errorHandler.js';
  * Ignorés sans TEST_DATABASE_URL. La base de test est entièrement vidée.
  */
 const url = process.env.TEST_DATABASE_URL;
-const FIXTURES = new URL('./fixtures', import.meta.url).pathname;
+const FIXTURES = fileURLToPath(new URL('./fixtures', import.meta.url));
 const TABLES = ['owned_cards', 'binders', 'sessions', 'users', 'schema_migrations'];
 
 // Faux vérificateur Google : le « jeton » est le profil encodé en JSON.

@@ -1,9 +1,10 @@
+import { fileURLToPath } from 'node:url';
 import { beforeAll, describe, expect, it } from 'vitest';
 import request from 'supertest';
 import { createApp } from '../src/app.js';
 import { coverImage, createSetRepository, loadSets } from '../src/services/setRepository.js';
 
-const FIXTURES = new URL('./fixtures', import.meta.url).pathname;
+const FIXTURES = fileURLToPath(new URL('./fixtures', import.meta.url));
 
 let app;
 beforeAll(async () => {
@@ -64,6 +65,7 @@ describe('POST /api/layout', () => {
     expect(res.body.summary).toMatchObject({ totalCards: 42, slotsPerFace: 9, facesUsed: 5 });
     expect(res.body.index['SMP-001']).toEqual({
       faceIndex: 0,
+      page: 1,
       sheet: 1,
       side: 'recto',
       row: 1,
