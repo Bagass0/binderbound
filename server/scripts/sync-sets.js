@@ -15,6 +15,7 @@ import { setSchema } from '../src/schemas/set.schema.js';
 import { coverColor } from '../src/import/coverColor.js';
 import { applySupplement, loadSupplement } from '../src/import/supplements.js';
 import { coverImage, SETS_DIR } from '../src/services/setRepository.js';
+import { writeFingerprints } from '../src/services/fingerprints.js';
 import { countCards } from '../src/layout/countCards.js';
 
 const { values, positionals } = parseArgs({
@@ -58,6 +59,8 @@ for (const fetched of sets) {
   );
   if (!values['dry-run']) {
     await writeFile(path.join(SETS_DIR, `${set.id}.json`), JSON.stringify(set, null, 2) + '\n');
+    // Empreintes du scan de carte, recalculées avec le set (ses illustrations peuvent changer).
+    console.log(`  ⌕ ${await writeFingerprints(set)} empreintes (scan)`);
   }
 }
 

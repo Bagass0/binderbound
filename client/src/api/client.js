@@ -39,7 +39,9 @@ const enc = encodeURIComponent;
 export const api = {
   config: () => cachedGet('/config'),
   sets: () => cachedGet('/sets'),
-  set: (id) => cachedGet(`/sets/${encodeURIComponent(id)}`),
+  set: (id) => cachedGet(`/sets/${enc(id)}`),
+  prices: (id) => cachedGet(`/sets/${enc(id)}/prices`),
+  fingerprints: (id) => cachedGet(`/sets/${enc(id)}/fingerprints`),
   layout: (params, signal) => send('POST', '/layout', params, signal),
 
   auth: {

@@ -158,8 +158,40 @@
     "verso": "Back"
   },
   "position": {
-    "face": "Sheet {{sheet}} · {{side}}",
-    "full": "Sheet {{sheet}} · {{side}} · R{{row}} · C{{col}}"
+    "face": "Page {{page}} · Sheet {{sheet}} · {{side}}",
+    "full": "Page {{page}} · Sheet {{sheet}} · {{side}} · R{{row}} · C{{col}}"
+  },
+  "placement": {
+    "page": "Page",
+    "sheet": "Sheet {{sheet}} · {{side}}",
+    "left": "Left-hand page when the binder is open",
+    "right": "Right-hand page when the binder is open",
+    "cell": "Row {{row}} · Column {{col}}",
+    "grid": "Slot on the page",
+    "notPlaced": "This card is not stored in this binder (variant excluded by your settings)."
+  },
+  "price": {
+    "label": "Price",
+    "foil": "foil",
+    "source": "{{source}} market price (USD), updated {{date}}"
+  },
+  "scan": {
+    "button": "Scan",
+    "title": "Scan a card",
+    "hint": "Place the card inside the frame, flat and without glare.",
+    "loading": "Preparing the scanner…",
+    "searching": "Looking for the card…",
+    "capture": "Identify",
+    "upload": "Choose a photo",
+    "noCamera": "Camera unavailable. Allow camera access, or choose a photo of the card.",
+    "unavailable": "Scanning is not available for this set yet.",
+    "found": "Card recognised",
+    "unsure": "Not 100% sure: check that this is your card.",
+    "addToCollection": "Add to my collection",
+    "added": "In your collection",
+    "showInBinder": "Show in binder",
+    "again": "Scan another card",
+    "notThis": "Not the right card?"
   },
   "summary": {
     "cards_one": "card",
@@ -195,7 +227,9 @@
   "search": {
     "label": "Search for a card",
     "placeholder": "Card name or number…",
-    "noResult": "No card found"
+    "noResult": "No card found",
+    "located": "Where this card goes",
+    "dismiss": "Hide"
   },
   "list": {
     "number": "No.",
@@ -203,8 +237,10 @@
     "domain": "Domain",
     "rarity": "Rarity",
     "variant": "Variant",
+    "page": "Page",
     "sheet": "Sheet",
     "side": "Face",
+    "price": "Price",
     "row": "Row",
     "col": "Column",
     "locate": "Show",
@@ -249,7 +285,6 @@
   },
   "preview": {
     "open": "View card",
-    "position": "Slot",
     "type": "Type",
     "artist": "Artist",
     "close": "Close",

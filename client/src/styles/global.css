@@ -36,6 +36,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Fond des fenêtres modales. Pas de backdrop-filter : flouter toute la page à chaque image
+   d'une animation la faisait saccader. */
+dialog::backdrop {
+  background: rgb(var(--bg-rgb) / 0.85);
+}
+
 #root {
   min-height: 100dvh;
   display: flex;

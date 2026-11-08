@@ -9,6 +9,7 @@
     "test:watch": "vitest",
     "import-set": "node scripts/import-set.js",
     "sync-sets": "node scripts/sync-sets.js",
+    "fingerprint-sets": "node scripts/fingerprint-sets.js",
     "test:db": "node --env-file=../.env ../node_modules/vitest/vitest.mjs run tests/accounts.test.js"
   },
   "dependencies": {

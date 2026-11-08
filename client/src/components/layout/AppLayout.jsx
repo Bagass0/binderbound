@@ -10,10 +10,11 @@ import { showsStepper, stepIndex } from './steps.js';
 import { usePageMeta } from '../../hooks/usePageMeta.js';
 import styles from './AppLayout.module.css';
 
+// Fondu et léger glissement seulement : un flou (filter) sur toute la page saccadait la transition.
 const pageVariants = {
-  enter: (dir) => ({ opacity: 0, x: dir * 48, filter: 'blur(6px)' }),
-  center: { opacity: 1, x: 0, filter: 'blur(0px)' },
-  exit: (dir) => ({ opacity: 0, x: dir * -48, filter: 'blur(6px)' }),
+  enter: (dir) => ({ opacity: 0, x: dir * 16 }),
+  center: { opacity: 1, x: 0 },
+  exit: (dir) => ({ opacity: 0, x: dir * -16 }),
 };
 
 export function AppLayout() {
@@ -46,7 +47,7 @@ export function AppLayout() {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.35, ease: EASE_OUT }}
+            transition={{ duration: 0.25, ease: EASE_OUT }}
           >
             <PresenceLocation>{outlet}</PresenceLocation>
           </motion.main>

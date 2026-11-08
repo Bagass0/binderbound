@@ -6,7 +6,7 @@ import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { useSets } from '../hooks/useConfig.js';
 import { withParams } from '../hooks/useLayoutParams.js';
-import { EASE_OUT } from '../lib/motion.js';
+import { itemMotion, listMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { ChevronRight } from '../components/icons/Icons.jsx';
@@ -37,17 +37,13 @@ export function RecentBinders() {
           {t('recent.all', { count: binders.length })} <ChevronRight />
         </Link>
       </div>
-      <ul className={styles.list}>
-        {binders.slice(0, SHOWN).map((binder, i) => {
+      <motion.ul className={styles.list} variants={listMotion} initial="hidden" animate="show">
+        {binders.slice(0, SHOWN).map((binder) => {
           const set = setsById.get(binder.setId);
           const { progress, params } = binder;
           const ratio = progress?.total ? progress.owned / progress.total : 0;
           return (
-            <motion.li
-              key={binder.id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.1 + i * 0.07, ease: EASE_OUT } }}
-            >
+            <motion.li key={binder.id} variants={itemMotion}>
               <Link
                 className={styles.item}
                 to={`/result?${withParams('', { ...params, binderId: binder.id })}`}
@@ -81,7 +77,7 @@ export function RecentBinders() {
             </motion.li>
           );
         })}
-      </ul>
+      </motion.ul>
     </motion.section>
   );
 }

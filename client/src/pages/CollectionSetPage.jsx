@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'motion/react';
 import { useSet } from '../hooks/useConfig.js';
 import { useCollection } from '../hooks/useCollection.js';
-import { EASE_OUT } from '../lib/motion.js';
+import { itemMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { CardFrame } from '../components/binder/CardFrame.jsx';
 import { CardPreview } from '../components/binder/CardPreview.jsx';
@@ -119,10 +119,10 @@ export default function CollectionSetPage() {
             key={g.rarity}
             className={styles.group}
             layout
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={itemMotion}
+            initial="hidden"
+            animate="show"
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: EASE_OUT }}
             style={{ '--rarity': `var(--rarity-${g.rarity})` }}
           >
             <h2 className={styles.groupTitle}>
@@ -151,7 +151,6 @@ export default function CollectionSetPage() {
       <CardPreview
         card={preview?.card ?? null}
         origin={preview?.origin}
-        position={null}
         setCode={set.code}
         collection={checking}
         onClose={() => setPreview(null)}

@@ -7,7 +7,7 @@ import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { useSets } from '../hooks/useConfig.js';
 import { withParams } from '../hooks/useLayoutParams.js';
-import { EASE_OUT } from '../lib/motion.js';
+import { EASE_OUT, itemMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
@@ -44,13 +44,14 @@ export default function BindersPage() {
       {binders && (
         <ul className={styles.grid}>
           <AnimatePresence initial={false}>
-            {binders.map((binder, i) => (
+            {binders.map((binder) => (
               <motion.li
                 key={binder.id}
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0, transition: { delay: i * 0.05, ease: EASE_OUT } }}
-                exit={{ opacity: 0, scale: 0.94 }}
+                variants={itemMotion}
+                initial="hidden"
+                animate="show"
+                exit={{ opacity: 0, scale: 0.98 }}
               >
                 <BinderCard
                   binder={binder}

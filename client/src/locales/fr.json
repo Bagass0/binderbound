@@ -158,8 +158,40 @@
     "verso": "Verso"
   },
   "position": {
-    "face": "Feuillet {{sheet}} · {{side}}",
-    "full": "Feuillet {{sheet}} · {{side}} · L{{row}} · C{{col}}"
+    "face": "Page {{page}} · Feuillet {{sheet}} · {{side}}",
+    "full": "Page {{page}} · Feuillet {{sheet}} · {{side}} · L{{row}} · C{{col}}"
+  },
+  "placement": {
+    "page": "Page",
+    "sheet": "Feuillet {{sheet}} · {{side}}",
+    "left": "Page de gauche quand le classeur est ouvert",
+    "right": "Page de droite quand le classeur est ouvert",
+    "cell": "Ligne {{row}} · Colonne {{col}}",
+    "grid": "Position dans la page",
+    "notPlaced": "Cette carte n’est pas rangée dans ce classeur (variante exclue de tes réglages)."
+  },
+  "price": {
+    "label": "Prix",
+    "foil": "foil",
+    "source": "Prix de marché {{source}} (USD), mis à jour le {{date}}"
+  },
+  "scan": {
+    "button": "Scanner",
+    "title": "Scanner une carte",
+    "hint": "Place la carte dans le cadre, bien à plat, sans reflet.",
+    "loading": "Préparation du scan…",
+    "searching": "Recherche de la carte…",
+    "capture": "Identifier",
+    "upload": "Choisir une photo",
+    "noCamera": "Caméra indisponible. Autorise l’accès à la caméra, ou choisis une photo de la carte.",
+    "unavailable": "Le scan n’est pas encore disponible pour ce set.",
+    "found": "Carte reconnue",
+    "unsure": "Pas sûr à 100 % : vérifie que c’est bien ta carte.",
+    "addToCollection": "Ajouter à ma collection",
+    "added": "Dans ta collection",
+    "showInBinder": "Voir dans le classeur",
+    "again": "Scanner une autre carte",
+    "notThis": "Pas la bonne carte ?"
   },
   "summary": {
     "cards_one": "carte",
@@ -195,7 +227,9 @@
   "search": {
     "label": "Rechercher une carte",
     "placeholder": "Nom ou numéro de carte…",
-    "noResult": "Aucune carte trouvée"
+    "noResult": "Aucune carte trouvée",
+    "located": "Où ranger cette carte",
+    "dismiss": "Masquer"
   },
   "list": {
     "number": "N°",
@@ -203,8 +237,10 @@
     "domain": "Domaine",
     "rarity": "Rareté",
     "variant": "Variante",
+    "page": "Page",
     "sheet": "Feuillet",
     "side": "Face",
+    "price": "Prix",
     "row": "Ligne",
     "col": "Colonne",
     "locate": "Voir",
@@ -249,7 +285,6 @@
   },
   "preview": {
     "open": "Voir la carte en grand",
-    "position": "Emplacement",
     "type": "Type",
     "artist": "Illustration",
     "close": "Fermer",

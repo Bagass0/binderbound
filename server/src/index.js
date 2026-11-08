@@ -3,6 +3,8 @@ import { connect } from './db/pool.js';
 import { migrate } from './db/migrate.js';
 import { createAccounts } from './services/accounts.js';
 import { createSetRepository, loadSets } from './services/setRepository.js';
+import { createPriceService } from './services/prices.js';
+import { createFingerprintStore } from './services/fingerprints.js';
 
 const env = process.env;
 const PORT = Number(env.PORT) || 3001;
@@ -28,6 +30,8 @@ if (env.DATABASE_URL) {
 const app = createApp(createSetRepository(sets), {
   staticDir: STATIC_DIR,
   accounts,
+  prices: createPriceService(),
+  fingerprints: createFingerprintStore(),
   trustProxy: Number(env.TRUST_PROXY) || false, // nombre de reverse proxies devant l'app
 });
 

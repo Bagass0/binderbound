@@ -44,6 +44,7 @@ services:
     # Les sets sont lus au démarrage : ajoute un fichier puis `docker compose restart app`.
     volumes:
       - ./server/data/sets:/app/server/data/sets:ro
+      - ./server/data/fingerprints:/app/server/data/fingerprints:ro
     read_only: true
     tmpfs:
       - /tmp

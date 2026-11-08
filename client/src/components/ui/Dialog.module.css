@@ -27,11 +27,6 @@
   }
 }
 
-.dialog::backdrop {
-  background: rgb(var(--bg-rgb) / 0.75);
-  backdrop-filter: blur(6px);
-}
-
 .content {
   display: flex;
   flex-direction: column;

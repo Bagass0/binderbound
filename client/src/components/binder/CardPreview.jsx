@@ -4,9 +4,9 @@ import { animate, useReducedMotion } from 'motion/react';
 import { useBackdropClose } from '../../hooks/useBackdropClose.js';
 import { EASE_OUT } from '../../lib/motion.js';
 import {
+  cardPrice,
   domainLabel,
   domainStyle,
-  formatPosition,
   isVariant,
   localizedName,
   cardNumber,
@@ -14,6 +14,8 @@ import {
 import { cardImage } from '../../lib/images.js';
 import { Button } from '../ui/Button.jsx';
 import { RarityGem } from '../common/RarityGem.jsx';
+import { PriceTag } from '../common/PriceTag.jsx';
+import { PlacementGuide } from './PlacementGuide.jsx';
 import styles from './CardPreview.module.css';
 
 const ZOOM = { duration: 0.42, ease: EASE_OUT };
@@ -38,11 +40,16 @@ function flipFrom(from, visual, dialog) {
   };
 }
 
+/** Vignette déjà chargée de la carte cliquée : affichée tout de suite sous la grande image. */
+const loadedThumbnail = (origin) =>
+  (origin?.tagName === 'IMG' ? origin : origin?.querySelector?.('img'))?.currentSrc || null;
+
 /**
  * Aperçu d'une carte en grand (dialog natif : focus et fond gérés par le navigateur).
  * `card` null = fermé ; `origin` est l'élément cliqué, d'où l'aperçu s'ouvre en zoomant.
+ * `layout` absent = vue hors classeur (Ma collection) : pas d'emplacement à montrer.
  */
-export function CardPreview({ card, origin, position, setCode, collection, onClose }) {
+export function CardPreview({ card, origin, layout, prices, setCode, collection, onClose }) {
   const { t, i18n } = useTranslation();
   const dialogRef = useRef(null);
   const visualRef = useRef(null);
@@ -68,7 +75,7 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
     } else {
       animate(dialog, { opacity: [0, 1], scale: [0.96, 1] }, ZOOM);
     }
-    animate(infoRef.current, { ...fade, x: [16, 0] }, { ...ZOOM, delay: 0.12 });
+    animate(infoRef.current, { ...fade, x: [8, 0] }, { ...ZOOM, delay: 0.1 });
   }, [card, origin, reduceMotion]);
 
   // Fermeture : chemin inverse vers la carte d'origine, puis fermeture réelle du dialog.
@@ -95,6 +102,7 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
   const backdrop = useBackdropClose(requestClose);
 
   const owned = card && collection.owned.has(card.id);
+  const thumbnail = card && loadedThumbnail(origin);
 
   return (
     <dialog
@@ -114,10 +122,20 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
           <span ref={surfaceRef} className={styles.surface} aria-hidden />
           <div ref={visualRef} className={`${styles.visual} ${styles[card.orientation]}`}>
             {card.imageUrl ? (
-              <img
-                {...cardImage(card.imageUrl, { sizes: '(max-width: 40rem) 90vw, 28rem' })}
-                alt={localizedName(card, i18n.language)}
-              />
+              // Cadre au ratio de la carte : sa taille ne dépend pas du chargement de l'image,
+              // le zoom part donc du bon endroit. La vignette déjà chargée sert de fond flou
+              // le temps que la grande image arrive : plus de « trou » pendant l'animation.
+              <span
+                className={styles.frame}
+                style={thumbnail ? { backgroundImage: `url("${thumbnail}")` } : undefined}
+              >
+                <img
+                  {...cardImage(card.imageUrl, { sizes: '(max-width: 40rem) 90vw, 28rem' })}
+                  alt={localizedName(card, i18n.language)}
+                  decoding="async"
+                  fetchPriority="high"
+                />
+              </span>
             ) : (
               <span className={styles.noImage}>{t('preview.noImage')}</span>
             )}
@@ -129,13 +147,14 @@ export function CardPreview({ card, origin, position, setCode, collection, onClo
             </span>
             <h2 className={styles.name}>{localizedName(card, i18n.language)}</h2>
 
+            {layout && <PlacementGuide layout={layout} card={card} />}
+
             <dl className={styles.facts}>
-              {/* position null : vue hors classeur (Ma collection), pas d'emplacement à montrer. */}
-              {position !== null && (
+              {cardPrice(prices, card) && (
                 <>
-                  <dt>{t('preview.position')}</dt>
-                  <dd className={styles.position}>
-                    {position ? formatPosition(t, position) : '—'}
+                  <dt>{t('price.label')}</dt>
+                  <dd className={styles.price}>
+                    <PriceTag prices={prices} card={card} />
                   </dd>
                 </>
               )}

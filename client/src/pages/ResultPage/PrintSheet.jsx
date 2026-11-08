@@ -28,6 +28,7 @@ export const PrintSheet = memo(function PrintSheet({ set, layout, placements, co
           <caption>{t('print.sheet', { sheet })}</caption>
           <thead>
             <tr>
+              <th>{t('list.page')}</th>
               <th>{t('list.side')}</th>
               <th>{t('list.row')}</th>
               <th>{t('list.col')}</th>
@@ -40,6 +41,7 @@ export const PrintSheet = memo(function PrintSheet({ set, layout, placements, co
           <tbody>
             {items.map((p) => (
               <tr key={p.card.id}>
+                <td>{p.page}</td>
                 <td>{t(`side.${p.side}`)}</td>
                 <td>{p.row}</td>
                 <td>{p.col}</td>

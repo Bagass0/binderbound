@@ -22,6 +22,7 @@
     "docker:prod": "docker compose --env-file .env.production -f compose.prod.yaml up -d --build",
     "docker:prod:down": "docker compose --env-file .env.production -f compose.prod.yaml down",
     "sync-sets": "npm run sync-sets -w server --",
+    "fingerprint-sets": "npm run fingerprint-sets -w server --",
     "test:db": "npm run test:db -w server",
     "db:up": "docker compose up -d db",
     "db:down": "docker compose stop db"

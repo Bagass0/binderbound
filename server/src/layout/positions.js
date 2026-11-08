@@ -1,7 +1,15 @@
-/** Convertit un index de face (0-based) en feuillet (1-based) et côté. */
+/**
+ * Convertit un index de face (0-based) en page, feuillet (1-based) et côté. Les pages se
+ * comptent comme dans un livre : feuillet 1 recto = page 1, feuillet 1 verso = page 2…
+ */
 export function faceToSheet(faceIndex, doubleSided) {
-  if (!doubleSided) return { sheet: faceIndex + 1, side: 'recto' };
-  return { sheet: Math.floor(faceIndex / 2) + 1, side: faceIndex % 2 === 0 ? 'recto' : 'verso' };
+  const page = faceIndex + 1;
+  if (!doubleSided) return { page, sheet: page, side: 'recto' };
+  return {
+    page,
+    sheet: Math.floor(faceIndex / 2) + 1,
+    side: faceIndex % 2 === 0 ? 'recto' : 'verso',
+  };
 }
 
 /**

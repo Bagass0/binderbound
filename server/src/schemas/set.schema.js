@@ -28,6 +28,8 @@ export const cardSchema = z
     imageUrl: z.union([z.url(), z.string().regex(/^\/[\w./-]+$/)]).nullable(),
     orientation: z.enum(ORIENTATIONS).default('portrait'),
     artist: z.string().min(1).nullable().default(null),
+    /** Produit TCGplayer de la carte : sert à retrouver son prix (services/prices.js). */
+    tcgplayerId: z.string().regex(/^\d+$/).nullable().default(null),
   })
   .refine((c) => c.variant !== 'base' || c.baseCardId === null, {
     message: 'Une carte "base" doit avoir baseCardId = null',

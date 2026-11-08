@@ -61,6 +61,8 @@
   /* Format d'une carte (mm) : ratio des pochettes */
   --card-w: 63;
   --card-h: 88;
+  /* Coins arrondis d'une carte (portrait ; inverser les deux valeurs en paysage) */
+  --card-radius: 4.5% / 3.3%;
 
   /* Classeur physique : cuir prune et pages */
   --binder-cover: linear-gradient(180deg, #241d33, #120e1c);

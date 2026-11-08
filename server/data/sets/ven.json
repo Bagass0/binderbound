@@ -28,7 +28,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d8abab7f0df7c8ec9fff8c8dfa71c732e1ce2e6a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-SP1-006",
@@ -45,7 +46,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a14d1be8f014a331f60885013d81a1a8f5c8c076-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-R01",
@@ -62,7 +64,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f95ed6ba0c4d4d357c45bf5bdb1a8e540af1f85f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706028"
     },
     {
       "id": "VEN-SP2-006",
@@ -79,7 +82,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2cc800fbd0011dd084426445ebb1c2831420063d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": "706110"
     },
     {
       "id": "VEN-R02",
@@ -96,7 +100,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9b70aa1b334728a3e8beeea0c9154a2d0f79b1eb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706010"
     },
     {
       "id": "VEN-002-166",
@@ -113,7 +118,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b222082d5d38630c4d2542ed24c0442881e3de18-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706005"
     },
     {
       "id": "VEN-R03",
@@ -130,7 +136,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/33df1c56c6e76f9cb783c19161f16fcdbdc20f98-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706067"
     },
     {
       "id": "VEN-003-166",
@@ -147,7 +154,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2264ab788558ec69b1b6ed3e03ce69a3f63bdbb7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-SP3-006",
@@ -164,7 +172,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e8d1993018d8317494cbaab4e4dd738c2e80740d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": "705996"
     },
     {
       "id": "VEN-SP4-006",
@@ -181,7 +190,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/075f83adf06b41c42c78addd11cfc73fbdb8aabb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": "706098"
     },
     {
       "id": "VEN-004-166",
@@ -198,7 +208,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/acab9ec71d58f1e109cd8879c0fef0bdeb866432-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Dao Trong Le"
+      "artist": "Dao Trong Le",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-R04",
@@ -215,7 +226,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3313c73c5b31daa482073bfefbf4d2255a89d7d0-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706006"
     },
     {
       "id": "VEN-005-166",
@@ -232,7 +244,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/33d3e7840280e2780687057f08f30312a56d230f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-R05",
@@ -249,7 +262,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3861fc566891a70c21cf3d3075adec716deb7080-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706011"
     },
     {
       "id": "VEN-SP5-006",
@@ -266,7 +280,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fd4beecca19d4e84ead0852acce83d4c34ac1b4c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": "706026"
     },
     {
       "id": "VEN-SP6-006",
@@ -283,7 +298,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b9778ec229e052268ea66213ca2dbf60612b2862-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706057"
     },
     {
       "id": "VEN-R06",
@@ -300,7 +316,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/71e7d71ebadb81ccad7ca4cb8b3fb85d2f5fd4bf-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Greg Ghielmetti & Leah Chen"
+      "artist": "Greg Ghielmetti & Leah Chen",
+      "tcgplayerId": "706078"
     },
     {
       "id": "VEN-006-166",
@@ -317,7 +334,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d44355b9b129054e63b6f2c8de30518fe87b6295-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JiHun Lee"
+      "artist": "JiHun Lee",
+      "tcgplayerId": "706075"
     },
     {
       "id": "VEN-007-166",
@@ -334,7 +352,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/03b9a8e704e0f09b686d89d4c2d79f100f212b0f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706082"
     },
     {
       "id": "VEN-008-166",
@@ -351,7 +370,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/90293ef9407950d171f5fdd040da289a0f6da487-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-009-166",
@@ -368,7 +388,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/14c473be38b3ec40503f44555db9a4168a45bfb4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706004"
     },
     {
       "id": "VEN-010-166",
@@ -385,7 +406,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4254a96c88275f09c2c41653d46702125bc24d9f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-011-166",
@@ -402,7 +424,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/857a5cee28f403454b1825dd112c07e9ac06b8a4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-012-166",
@@ -419,7 +442,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cb13c46f8c3872678b87f68891d9f4a416ba8080-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706080"
     },
     {
       "id": "VEN-013-166",
@@ -436,7 +460,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d5c1aed33b6aa109ff2baea8b3e0c146af750dcc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JiHun Lee"
+      "artist": "JiHun Lee",
+      "tcgplayerId": "706099"
     },
     {
       "id": "VEN-014-166",
@@ -453,7 +478,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3bbeed15ac517c2e39c039e376553ce7e1c65f0c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-015-166",
@@ -470,7 +496,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/320d9f52a4f22fa3405bb9da82c4d02451d7c133-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-016-166",
@@ -487,7 +514,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6b7ea97973ced0e0631554ff07c726fe0a257a3c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706022"
     },
     {
       "id": "VEN-017-166",
@@ -504,7 +532,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/04f3ff3a25b08c9af33090e7a533396583f5e433-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706068"
     },
     {
       "id": "VEN-018-166",
@@ -521,7 +550,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/83a7cd497dd42f535f8f0adc72c3c4324f9aec14-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706084"
     },
     {
       "id": "VEN-019A-166",
@@ -538,7 +568,8 @@
       "baseCardId": "VEN-019-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cf5a7294a9ebd2d5a8727078efbfd2cf84f12e3e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706090"
     },
     {
       "id": "VEN-019-166",
@@ -555,7 +586,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2f6eb3e8328048ad52617c8639ecbe2c287efa36-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706089"
     },
     {
       "id": "VEN-020-166",
@@ -572,7 +604,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c9b3acfc3f996d784d1b5f98ab87ba4d1c6136ce-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-021A-166",
@@ -589,7 +622,8 @@
       "baseCardId": "VEN-021-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/92d8ad4bc4724da89f32348f290600f632f24e9e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": "705997"
     },
     {
       "id": "VEN-021-166",
@@ -606,7 +640,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/564e5f35ae39b6604290e83f39ffb61c2b2b9175-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "705998"
     },
     {
       "id": "VEN-022-166",
@@ -623,7 +658,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e2c33bf55162086acd458775a5db3d976f137b61-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-023A-166",
@@ -640,7 +676,8 @@
       "baseCardId": "VEN-023-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dcf031bd69c4880c33d68f73dde8e391a6059be7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706124"
     },
     {
       "id": "VEN-023-166",
@@ -657,7 +694,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/06793f17adbd827e468db40d644eb273a3932c7e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706122"
     },
     {
       "id": "VEN-024-166",
@@ -674,7 +712,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/aa5fdc995322af38f540629fcf695f1080a14afb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-025-166",
@@ -691,7 +730,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b47621d2b8efcee4d17de40b16c61fa06e404a2a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706023"
     },
     {
       "id": "VEN-026-166",
@@ -708,7 +748,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e880946b6c99023d9fb1e9aa7d23a0c673b0f6ac-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706027"
     },
     {
       "id": "VEN-027-166",
@@ -725,7 +766,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/524fedb9116db0eb62380c03e0853c342c53daeb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-028-166",
@@ -742,7 +784,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2f31651fc37a3e8bc562d0a361c509c0998d82c8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706069"
     },
     {
       "id": "VEN-029-166",
@@ -759,7 +802,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/267fdc483ff8c740779f23eb8f965105feb030cd-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706077"
     },
     {
       "id": "VEN-030-166",
@@ -776,7 +820,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7acc2f9fcdec5d2649e4a50dc3c96aeb31b87916-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-031-166",
@@ -793,7 +838,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0bd93298503d6b1b2f6faf7e97ab494e6e26db76-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "小牛设计"
+      "artist": "小牛设计",
+      "tcgplayerId": "706117"
     },
     {
       "id": "VEN-032-166",
@@ -810,7 +856,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/38e2b4f12346a1af420f875c0a5f922c56c4140f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Caravan Studio"
+      "artist": "Caravan Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-033-166",
@@ -827,7 +874,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab3be32adadb72831c07750d8defc7918fd32d96-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Bubble Cat Studio"
+      "artist": "Bubble Cat Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-034-166",
@@ -844,7 +892,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1a625de128019d65d41dd0af4f8d189d5de530a5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-035-166",
@@ -861,7 +910,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/daef24792dddefd0971b34d01bd60bc3b11adcca-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-036-166",
@@ -878,7 +928,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7a483e91e2bbb81bc8f66697bd610427b080b45c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-037-166",
@@ -895,7 +946,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/31d0c16ecaa0bd8522d13d6dd5d940be8111f118-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Caravan Studio"
+      "artist": "Caravan Studio",
+      "tcgplayerId": "706115"
     },
     {
       "id": "VEN-038-166",
@@ -912,7 +964,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f1a4d73853194a3dde02c51b083d197af89d2bda-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706000"
     },
     {
       "id": "VEN-038A-166",
@@ -929,7 +982,8 @@
       "baseCardId": "VEN-038-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6924311aab46a74aa2c54030c053427725860ea8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "705999"
     },
     {
       "id": "VEN-039-166",
@@ -946,7 +1000,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0d7491bdb2e9d18f64a5b53a16623b26a7cac6a1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-040-166",
@@ -963,7 +1018,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3f9a1b209cfd6097bac6fa9aec57531e300ef511-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-041-166",
@@ -980,7 +1036,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8c16a53ee243e468f3c337de4354668665f3b386-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706093"
     },
     {
       "id": "VEN-042-166",
@@ -997,7 +1054,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bbe849918c7f4189379ae8957dd427a3f272a1a6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706106"
     },
     {
       "id": "VEN-042A-166",
@@ -1014,7 +1072,8 @@
       "baseCardId": "VEN-042-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a4bac7b94b87fbb3227ecdccd9e2aa1231b655c8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706105"
     },
     {
       "id": "VEN-043-166",
@@ -1031,7 +1090,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/79d9b6583ed8e7d5a1486f1c15b66b19fb7f69a5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706113"
     },
     {
       "id": "VEN-044-166",
@@ -1048,7 +1108,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b1ce87efc9a1a7e2438c53e034a7f92caaa67ed6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-045-166",
@@ -1065,7 +1126,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ecfe67bbdc04f5c16a845ccc7a1b8d534195ca70-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-046A-166",
@@ -1082,7 +1144,8 @@
       "baseCardId": "VEN-046-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/014103b536a1c5aa2397f0952323375ac9b73d60-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706071"
     },
     {
       "id": "VEN-046-166",
@@ -1099,7 +1162,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4d9e9cc17be6aebf33ee1db42b515ad87ba8ee8c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706070"
     },
     {
       "id": "VEN-047-166",
@@ -1116,7 +1180,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6e650b9680864a949299cbe2ef7d06d1d22c7d18-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706003"
     },
     {
       "id": "VEN-048-166",
@@ -1133,7 +1198,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cb0dbff1058e8c59fa041dd242aa9b43d92eae14-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": "706012"
     },
     {
       "id": "VEN-049-166",
@@ -1150,7 +1216,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/cf561c8a0f8debde66b66d3e74ce861d0ce388ae-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-050-166",
@@ -1167,7 +1234,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2f7f3759c59746486a5f91b8452302fa59eddde6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Dao Trong Le"
+      "artist": "Dao Trong Le",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-051-166",
@@ -1184,7 +1252,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8d85a05075f95b63832ed7aa15620041eacb49d3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-052-166",
@@ -1201,7 +1270,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/854ceafc3f20c7e2d38c83170cb73232116f3d58-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "小牛设计"
+      "artist": "小牛设计",
+      "tcgplayerId": "706066"
     },
     {
       "id": "VEN-053-166",
@@ -1218,7 +1288,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/62f77b80a6d8f28a92c039595baf5943c4e055f0-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-054-166",
@@ -1235,7 +1306,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/07bb606d7cbcb218496b78a4fef354abb99875dc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706083"
     },
     {
       "id": "VEN-055-166",
@@ -1252,7 +1324,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/67a5f67bad4d4201b14760206a34c838d7a1e4dc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-056-166",
@@ -1269,7 +1342,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f43cb85d4939cc6ea1ed67b1c6526eef912cf9a6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Max Grecke"
+      "artist": "Max Grecke",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-057-166",
@@ -1286,7 +1360,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ff33454bf980a5c884b63e524c6580408e9b94e3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-058-166",
@@ -1303,7 +1378,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7667d7e0c902782c38221e9326d1bb98181ec17f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706079"
     },
     {
       "id": "VEN-059-166",
@@ -1320,7 +1396,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a8b976725e4722dcbf327cde9f92625cb516150e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-060-166",
@@ -1337,7 +1414,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4a99fbe995f6d5d71c1c46e1c38f64a9f9d7c3e9-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706109"
     },
     {
       "id": "VEN-061-166",
@@ -1354,7 +1432,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/da019355562b207814be6aec55bccf415bd416df-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706019"
     },
     {
       "id": "VEN-062-166",
@@ -1371,7 +1450,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/95f4ee0625dda4213847e6649465397be03c8bd1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706037"
     },
     {
       "id": "VEN-063A-166",
@@ -1388,7 +1468,8 @@
       "baseCardId": "VEN-063-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c6bfe2146a52c3d8dd0230904435369ff29bac0e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706073"
     },
     {
       "id": "VEN-063-166",
@@ -1405,7 +1486,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/aa96dbb8b4d72db7e47a72ce652ad542f55bf31d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706072"
     },
     {
       "id": "VEN-064-166",
@@ -1422,7 +1504,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3fc86ed4d23604dbb3c7de211eb6a9c36bd9176d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-065-166",
@@ -1439,7 +1522,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/66d8ec4322d6734719451bb3e004b7d2ec71af87-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-066-166",
@@ -1456,7 +1540,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7c670dc3d997c52b90d67043989b53c67a72f4c4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706114"
     },
     {
       "id": "VEN-067-166",
@@ -1473,7 +1558,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2068b7c202cab7f877c331a7bad0531d6a8f0d73-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706007"
     },
     {
       "id": "VEN-068-166",
@@ -1490,7 +1576,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/123e949085a63fdb6e1590ff0e519cab5758688b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": "706042"
     },
     {
       "id": "VEN-068A-166",
@@ -1507,7 +1594,8 @@
       "baseCardId": "VEN-068-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/77439053c7f0cb76ff470d7ecaa57871448b1faf-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706043"
     },
     {
       "id": "VEN-069A-166",
@@ -1524,7 +1612,8 @@
       "baseCardId": "VEN-069-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2781dd135b5f42527df3bacee59ccee8684236fa-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706065"
     },
     {
       "id": "VEN-069-166",
@@ -1541,7 +1630,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7d794234d8efef9ad647046d1e2cd3736441899f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": "706064"
     },
     {
       "id": "VEN-070-166",
@@ -1558,7 +1648,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/54122304a3bb1f989faf124cb74fd7d41b029681-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-071-166",
@@ -1575,7 +1666,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/24370c9e33705b393c40f426e221ae851a65dd05-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-072-166",
@@ -1592,7 +1684,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/891f0f85b039b16593865c74b90b0640a312e59b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-073-166",
@@ -1609,7 +1702,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/22aae23e1ac1797beb50f3f735becfe65b51ee02-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706041"
     },
     {
       "id": "VEN-074-166",
@@ -1626,7 +1720,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/15ec9e813e58c9ba96f37e78f09faaaa184ecdad-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-075-166",
@@ -1643,7 +1738,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f6a3940440a38e34fe306947d663018dd2df7ca8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-076-166",
@@ -1660,7 +1756,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b1ef578e372e64afbce717384fb8a3b7fd841fc8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Dao Trong Le"
+      "artist": "Dao Trong Le",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-077-166",
@@ -1677,7 +1774,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c4f511ca650143e3f5267e272513e4dcf9cba04f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": "706116"
     },
     {
       "id": "VEN-078-166",
@@ -1694,7 +1792,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fa41ae964411e63643025f7d8914627849ff57a8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Will Gist"
+      "artist": "Will Gist",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-079-166",
@@ -1711,7 +1810,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7c45dc79e72efc8ddf8c5b20d83474e23dc66e5e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706016"
     },
     {
       "id": "VEN-080-166",
@@ -1728,7 +1828,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a8c9a1b0eefc89106aa154ce3958c82d86e70940-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Dao Trong Le"
+      "artist": "Dao Trong Le",
+      "tcgplayerId": "706074"
     },
     {
       "id": "VEN-081-166",
@@ -1745,7 +1846,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6a1ef90c64e07b3f561e34c8d43ff5f64db925d8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-082-166",
@@ -1762,7 +1864,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/27955854d3f04ed95e87152f066f99671af2f9f1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-083-166",
@@ -1779,7 +1882,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3c85ae2c6bd5b2644651564fad0f86ad19c5709a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706085"
     },
     {
       "id": "VEN-084-166",
@@ -1796,7 +1900,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3907dc56d3a639e62f5222eaa0fd589c7a582da6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-084A-166",
@@ -1813,7 +1918,8 @@
       "baseCardId": "VEN-084-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/df72c64b97738a217508ee8ee6e6297000607a97-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-085-166",
@@ -1830,7 +1936,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/12106889f9f76914421f38e8958a248462637a22-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-086-166",
@@ -1847,7 +1954,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f270a3ecc4850594513c45d145f2b855152e2cb7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706030"
     },
     {
       "id": "VEN-087-166",
@@ -1864,7 +1972,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/36acfeb7da10f1254e962b7bacda3e6ea559fe53-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": "706036"
     },
     {
       "id": "VEN-088A-166",
@@ -1881,7 +1990,8 @@
       "baseCardId": "VEN-088-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/69539dc4cfa14f1cfe9dc8b49c67344eca176a32-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706045"
     },
     {
       "id": "VEN-088-166",
@@ -1898,7 +2008,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2dcecc0aab2b62e48388177cc27d220fd70b8a78-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League of Legends"
+      "artist": "League of Legends",
+      "tcgplayerId": "706044"
     },
     {
       "id": "VEN-089-166",
@@ -1915,7 +2026,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a58871b08a51efb8ce33f399fe4d168fd25b596a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706120"
     },
     {
       "id": "VEN-090-166",
@@ -1932,7 +2044,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1fb5fcd8ca8be36b5aba234040b7428aab682576-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-091-166",
@@ -1949,7 +2062,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6000c549047967e619d47bdbd2f265e5bb8b5b19-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706013"
     },
     {
       "id": "VEN-092A-166",
@@ -1966,7 +2080,8 @@
       "baseCardId": "VEN-092-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ba4078d7df5cd5f661aa0c606794036338b64864-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-092-166",
@@ -1983,7 +2098,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0b4340e30e46f1784b31b9a110903825b7428a94-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-093-166",
@@ -2000,7 +2116,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/18e925b4291231a2045e60d062bd174950316c1d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706054"
     },
     {
       "id": "VEN-094-166",
@@ -2017,7 +2134,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/21cf578371a75f6e2661d44f4d7389d8732c133e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-095-166",
@@ -2034,7 +2152,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f85fb8b46a29360f9850826df11202ff8221fec8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706100"
     },
     {
       "id": "VEN-096-166",
@@ -2051,7 +2170,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2874318b39f1dd9d1bf2ed21203795688b788413-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-097-166",
@@ -2068,7 +2188,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fadf12e6e52eb5c70c65b479438f999f49d825fc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-098-166",
@@ -2085,7 +2206,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/72ef8764cb3909940f0ca4bd8b31cdceed241af0-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-099-166",
@@ -2102,7 +2224,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f9b2ffecc997670713bffd3168e5578b5fb7a014-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-100-166",
@@ -2119,7 +2242,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/245942e8b2bf073d5d6d57074474ec273557f4df-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-101-166",
@@ -2136,7 +2260,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/93a194c0c1f055c0b3bc3c0717cbe488749fed92-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706032"
     },
     {
       "id": "VEN-102-166",
@@ -2153,7 +2278,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/57ecb26880ea084ea16b785c9a563ff298ee6a42-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": "706086"
     },
     {
       "id": "VEN-103-166",
@@ -2170,7 +2296,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/25e2130938a893833fcb8e29287adbd230c3b67f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706101"
     },
     {
       "id": "VEN-104-166",
@@ -2187,7 +2314,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/91a04e2131245c81c2eac486e63925592b0e253a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-105-166",
@@ -2204,7 +2332,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1c5c10009a9fb2605df5db1ff12647a47ac07d98-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-106-166",
@@ -2221,7 +2350,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ef118660422af84f6183d375b68ce1872acb1e2e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706121"
     },
     {
       "id": "VEN-107-166",
@@ -2238,7 +2368,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b0e82842acddb99c47af6793dab48164caf498c2-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706018"
     },
     {
       "id": "VEN-108-166",
@@ -2255,7 +2386,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e249b3c2a7f652dfb7549604f600792df11835b4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-109-166",
@@ -2272,7 +2404,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/86fccf469e67fb89312e0c860842e2801a8b12e7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Michal Ivan"
+      "artist": "Michal Ivan",
+      "tcgplayerId": "706040"
     },
     {
       "id": "VEN-110-166",
@@ -2289,7 +2422,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/214567717b4f0156ff06c923e1603234cb52db61-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": "706063"
     },
     {
       "id": "VEN-110A-166",
@@ -2306,7 +2440,8 @@
       "baseCardId": "VEN-110-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0495d07746d71cdd1aeae8f7fd5a0b78da0817fb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706062"
     },
     {
       "id": "VEN-111-166",
@@ -2323,7 +2458,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/30b6e4a44bcadaa53168bd4ac043fbf2136f5eb3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-112A-166",
@@ -2340,7 +2476,8 @@
       "baseCardId": "VEN-112-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a9828930a4b5ab7aa98d8199f00e1fde59fd20e3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706126"
     },
     {
       "id": "VEN-112-166",
@@ -2357,7 +2494,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/be97ca6a33e25b85a04ec1b3a163b31f141776cf-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706125"
     },
     {
       "id": "VEN-113-166",
@@ -2374,7 +2512,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2f27c99f3df2940940dddd65105e5e42bbeeab3d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706051"
     },
     {
       "id": "VEN-113A-166",
@@ -2391,7 +2530,8 @@
       "baseCardId": "VEN-113-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/000c73937c370cd3572facc9b313b4eb2d26eee8-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Rift Splash Team"
+      "artist": "Wild Rift Splash Team",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-114-166",
@@ -2408,7 +2548,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2453848e7069e994498c828d72c33df6905f38e5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-115-166",
@@ -2425,7 +2566,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bd93cc3c9165204cd3e830fc2022384bad7517be-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Caravan Studio"
+      "artist": "Caravan Studio",
+      "tcgplayerId": "706076"
     },
     {
       "id": "VEN-116-166",
@@ -2442,7 +2584,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ded9b54d93d7c3ade8a1d65c8ac66a13d1246329-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-117-166",
@@ -2459,7 +2602,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/de5b6316d65297e67a97d12d7c70974f7d3ce7d6-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-118-166",
@@ -2476,7 +2620,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7b3cb9f4175e71bc8fb60e69c55a0ea3f26fe8f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JiHun Lee"
+      "artist": "JiHun Lee",
+      "tcgplayerId": "706038"
     },
     {
       "id": "VEN-119-166",
@@ -2493,7 +2638,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/42b965736c715293da57ec23472684506f49ba7f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706048"
     },
     {
       "id": "VEN-120-166",
@@ -2510,7 +2656,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c02046374935d38a8e4bb28a8192dfc46e2596a0-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-121-166",
@@ -2527,7 +2674,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d70352ba57ae548c405614ec6ba2bb17d7a19a44-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706088"
     },
     {
       "id": "VEN-122-166",
@@ -2544,7 +2692,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1aaf389ca46bd9122233aadcfd23fee8f9cdfdc9-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-123-166",
@@ -2561,7 +2710,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9a23a1f2c83751c2a715049be32c2482ea10454d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Wild Blue Studios"
+      "artist": "Wild Blue Studios",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-124-166",
@@ -2578,7 +2728,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/253d782f8f6d4056eebecf9617e6858fdb2e712d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Michal Ivan"
+      "artist": "Michal Ivan",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-125-166",
@@ -2595,7 +2746,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/464b4e2edfd526a3b72a80ab05bc9630b7057c22-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-126-166",
@@ -2612,7 +2764,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/10fa1b5646489adb8ae70ff41a63ff856d8f20d1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706053"
     },
     {
       "id": "VEN-127-166",
@@ -2629,7 +2782,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f21bbd09545d949f095756281e5506128eb4809d-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": "706055"
     },
     {
       "id": "VEN-128-166",
@@ -2646,7 +2800,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0720c25776670ef32dcc504b14378890991798be-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-129-166",
@@ -2663,7 +2818,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a93887af1128d19cdec798611ffdd29900ac5d85-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706096"
     },
     {
       "id": "VEN-130-166",
@@ -2680,7 +2836,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2324531e93383ce0d7efbe67cbf7ee226127dea2-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Slawomir Maniak"
+      "artist": "Slawomir Maniak",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-131-166",
@@ -2697,7 +2854,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/220161ac48f1307e4d74c372d549fea18829a86b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-132-166",
@@ -2714,7 +2872,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e5d46c6d56dc14670b5e25547eeb1ee3ceca5a80-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Dao Trong Le"
+      "artist": "Dao Trong Le",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-133-166",
@@ -2731,7 +2890,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/6426e9c2b168f0dde5430d5bc57108a0cc2bcebb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706031"
     },
     {
       "id": "VEN-134-166",
@@ -2748,7 +2908,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8ae883f96bb3a5e20d8002ec49cace430aaf2b88-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Michal Ivan"
+      "artist": "Michal Ivan",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-135-166",
@@ -2765,7 +2926,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/446ff54c091b07627f826952f45ee40e9976d040-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "706050"
     },
     {
       "id": "VEN-135A-166",
@@ -2782,7 +2944,8 @@
       "baseCardId": "VEN-135-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1d55c475f395c2b1bac63844208687bb9b3232b2-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706049"
     },
     {
       "id": "VEN-136-166",
@@ -2799,7 +2962,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/687c273217cd94067be9625a7f85b61d108a6293-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": "706001"
     },
     {
       "id": "VEN-136A-166",
@@ -2816,7 +2980,8 @@
       "baseCardId": "VEN-136-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/02a1cfcd6663687d28b98a2de3ba666231c4eeee-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706002"
     },
     {
       "id": "VEN-137-166",
@@ -2833,7 +2998,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e49461109a4116c22af9206719f53fb73aee36d0-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": "706102"
     },
     {
       "id": "VEN-138-166",
@@ -2850,7 +3016,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b227d9f9abc6f165beffba4eaf3b5819cf06eab4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Pandart Studio"
+      "artist": "Pandart Studio",
+      "tcgplayerId": "706104"
     },
     {
       "id": "VEN-138A-166",
@@ -2867,7 +3034,8 @@
       "baseCardId": "VEN-138-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bf3f260e47de2887ba16fbc02e9df7f02e57a24a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "706103"
     },
     {
       "id": "VEN-139-166",
@@ -2884,7 +3052,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0d53b477ed43fb9bbed84858443a606b2b51a2b5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706094"
     },
     {
       "id": "VEN-140-166",
@@ -2901,7 +3070,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bac1ecff92d022e99a3696ad00d020530a1a09e7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706107"
     },
     {
       "id": "VEN-141-166",
@@ -2918,7 +3088,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7620595b36b40a0c3d05c4c5469b016d1c18c6f2-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706008"
     },
     {
       "id": "VEN-142-166",
@@ -2935,7 +3106,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0d5ccc8bb0b70473add784a3f4c71e1e8635e2ce-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "小牛设计"
+      "artist": "小牛设计",
+      "tcgplayerId": "706021"
     },
     {
       "id": "VEN-143-166",
@@ -2952,7 +3124,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/aa316eb1b01c8d036eaba84b03909027fe69f6e2-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706058"
     },
     {
       "id": "VEN-144-166",
@@ -2969,7 +3142,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/87ccfb8d1c19f402bb37ffa392011ee2f0880aa9-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JunHuan"
+      "artist": "JunHuan",
+      "tcgplayerId": "706017"
     },
     {
       "id": "VEN-145-166",
@@ -2986,7 +3160,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f26a25c5fddba7da788455c3d82b85c5abc7a2eb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706015"
     },
     {
       "id": "VEN-146-166",
@@ -3003,7 +3178,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8b28e4a0681eee9b19c29770a5f167e1e68c78cf-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706108"
     },
     {
       "id": "VEN-147-166",
@@ -3020,7 +3196,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/54388a3124b7e1f0331e5970f952778db5f24500-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706025"
     },
     {
       "id": "VEN-148-166",
@@ -3037,7 +3214,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c95a4862c3af5f3ec1cee1f1ae7291c8724df7a1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-149-166",
@@ -3054,7 +3232,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/670b7efd367a42beba11c18fb59e240a7c574a57-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706020"
     },
     {
       "id": "VEN-150-166",
@@ -3071,7 +3250,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/31b71a16ee85cf30124fdaa2c575e709a4c83771-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "小牛设计/Kudos Productions"
+      "artist": "小牛设计/Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-151-166",
@@ -3088,7 +3268,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2e9e60b3f161b41219c40ef0426049634fb7ba1a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706112"
     },
     {
       "id": "VEN-152-166",
@@ -3105,7 +3286,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2df67fe2ba17f0796ff1f9c03b85d2db48fe954b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "小牛设计"
+      "artist": "小牛设计",
+      "tcgplayerId": "706087"
     },
     {
       "id": "VEN-153-166",
@@ -3122,7 +3304,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/49e81916d7ae72b24de845223e1798652d26e789-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706060"
     },
     {
       "id": "VEN-154-166",
@@ -3139,7 +3322,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c8348e2aef6bad5a38d4f71b1b1c277598670286-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-155-166",
@@ -3156,7 +3340,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0eab83392b310417d2630d50a3bfee3dd02b31c4-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706034"
     },
     {
       "id": "VEN-156-166",
@@ -3173,7 +3358,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/22375e0d2d1a49cb0eb7e31aebf3e73a2e0bba55-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706056"
     },
     {
       "id": "VEN-157-166",
@@ -3190,7 +3376,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/94558ee0292d92126829036d32495cbf702e5391-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-158-166",
@@ -3207,7 +3394,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/075d4b78c065a96845ac978c86af3a3349cb5501-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706035"
     },
     {
       "id": "VEN-159-166",
@@ -3224,7 +3412,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/afef083faa1f3813e5744a552c9873c798bedfd5-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-160-166",
@@ -3241,7 +3430,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/55f6fec944c489010464cb554c4661d94518fa75-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Caravan Studio"
+      "artist": "Caravan Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-161-166",
@@ -3258,7 +3448,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0cc432b51e80d1734529ef323e601e62e202c2b1-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706081"
     },
     {
       "id": "VEN-162-166",
@@ -3275,7 +3466,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a994ae712cdefcbdaf263fbb6ab0723d0f678e99-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-163-166",
@@ -3292,7 +3484,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/47402ed9d5eebb9e38176315bdaf1a556845eef7-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706092"
     },
     {
       "id": "VEN-164-166",
@@ -3309,7 +3502,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d77c607878d6815e02796f8bfa8a5696ad5f1a7d-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "706097"
     },
     {
       "id": "VEN-165-166",
@@ -3326,7 +3520,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/635a3a0b724a2cfc11938ecbc1d8abddd89d3436-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-166-166",
@@ -3343,7 +3538,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5521aac82f036f1070326c743a9f653955d67bb9-1039x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-167-166",
@@ -3360,7 +3556,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dff596efc7413bfdd9cc8e667c46bd4228447de5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": "706118"
     },
     {
       "id": "VEN-168-166",
@@ -3377,7 +3574,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3a7304f3c9897967812940838e978e54e251e545-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": "706047"
     },
     {
       "id": "VEN-169-166",
@@ -3394,7 +3592,8 @@
       "baseCardId": "VEN-023-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5d665b28073066442b35f7b6aed98c83fca23631-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "华锐"
+      "artist": "华锐",
+      "tcgplayerId": "706123"
     },
     {
       "id": "VEN-170-166",
@@ -3411,7 +3610,8 @@
       "baseCardId": "VEN-042-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/56d6b54bdc2ae37579da820cec613c127a8843d3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "华锐"
+      "artist": "华锐",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-171-166",
@@ -3428,7 +3628,8 @@
       "baseCardId": "VEN-041-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/929f7184d11756933729ab4d7e2e88547e6dd49b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Shawn Lee"
+      "artist": "Shawn Lee",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-172-166",
@@ -3445,7 +3646,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ff8f818d7f59b549af9067e9956f25aec706587c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Shawn Lee"
+      "artist": "Shawn Lee",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-173-166",
@@ -3462,7 +3664,8 @@
       "baseCardId": "VEN-065-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7f068252d62ab4eea8a779825d84c2c078bbd722-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JunHuan"
+      "artist": "JunHuan",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-174-166",
@@ -3479,7 +3682,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/45d83debda443f1bf88e1cf7123eb8b844143124-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "JunHuan"
+      "artist": "JunHuan",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-175-166",
@@ -3496,7 +3700,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/be6d6a608c5bee9d2012e24d9e6f6f1d1977a37a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706046"
     },
     {
       "id": "VEN-176-166",
@@ -3513,7 +3718,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0416b4a447494acac41413a4511bb59ce983b4ec-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706119"
     },
     {
       "id": "VEN-177-166",
@@ -3530,7 +3736,8 @@
       "baseCardId": "VEN-092-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/49ebe990f1d3631e3c18fc37323c49f49bf159fa-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Ziyan Lin"
+      "artist": "Ziyan Lin",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-178-166",
@@ -3547,7 +3754,8 @@
       "baseCardId": "VEN-063-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3095b4ed4fd647539ed9a80828b8e1ce7f09ae82-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Ziyan Lin"
+      "artist": "Ziyan Lin",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-179-166",
@@ -3564,7 +3772,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1f16f5b1f980106057606a2faa3cce64fa4850e7-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706091"
     },
     {
       "id": "VEN-180-166",
@@ -3581,7 +3790,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/4875b0eb5705f9723118f0895dd702373826bdbc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "莺之歌"
+      "artist": "莺之歌",
+      "tcgplayerId": "706052"
     },
     {
       "id": "VEN-181-166",
@@ -3598,7 +3808,8 @@
       "baseCardId": "VEN-086-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9d9fd99b083fb7104d533ca0eccb43a47c2cc74a-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": "706029"
     },
     {
       "id": "VEN-182-166",
@@ -3615,7 +3826,8 @@
       "baseCardId": "VEN-109-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a50aadbfd6f435433a80b12da9826fa0a6bd8172-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": "706039"
     },
     {
       "id": "VEN-183-166",
@@ -3632,7 +3844,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d5a7071e4f1af712c9bf5342ba70fbb2e359483f-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Naifan Zhang"
+      "artist": "Naifan Zhang",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-184-166",
@@ -3649,7 +3862,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/92ac39878346a886129b6d339ab3d9e6c722a7eb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Naifan Zhang"
+      "artist": "Naifan Zhang",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-185-166",
@@ -3666,7 +3880,8 @@
       "baseCardId": "VEN-134-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0fec986bfca86382c61770575ed20e1799b6b830-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "HCuu"
+      "artist": "HCuu",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-186-166",
@@ -3683,7 +3898,8 @@
       "baseCardId": "VEN-017-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f5015b3077bbe6fbcdb0437fd47f119040e26ca3-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Yuande Wu"
+      "artist": "Yuande Wu",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-187-166",
@@ -3700,7 +3916,8 @@
       "baseCardId": "VEN-136-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/17552788c608d9cb044c0a9bf7076d462548875b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "蛋费鸡丁"
+      "artist": "蛋费鸡丁",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-188-166",
@@ -3717,7 +3934,8 @@
       "baseCardId": "VEN-110-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0dac0b8b724d7d20f3e8c2126856d54d990e4ebc-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Zhongqi Li"
+      "artist": "Zhongqi Li",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-189-166",
@@ -3734,7 +3952,8 @@
       "baseCardId": "VEN-139-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7b0ec31df147b40bbb83c40644252b48a7619593-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Jessica Oyhenart"
+      "artist": "Jessica Oyhenart",
+      "tcgplayerId": "706095"
     },
     {
       "id": "VEN-190-166",
@@ -3751,7 +3970,8 @@
       "baseCardId": "VEN-141-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f5db9db00111d8225e17c3a03d0111b471e74999-744x1040.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Edgardo Monteon"
+      "artist": "Edgardo Monteon",
+      "tcgplayerId": "706009"
     },
     {
       "id": "VEN-191-166",
@@ -3768,7 +3988,8 @@
       "baseCardId": "VEN-143-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/75b7ba57a83af496b26d9fe7e8521f9a851bf464-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Yh Shen"
+      "artist": "Yh Shen",
+      "tcgplayerId": "706059"
     },
     {
       "id": "VEN-192-166",
@@ -3785,7 +4006,8 @@
       "baseCardId": "VEN-145-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1790b30538781eb2a55b5baee00fff9ed08794aa-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Sean Budanio"
+      "artist": "Sean Budanio",
+      "tcgplayerId": "706014"
     },
     {
       "id": "VEN-193-166",
@@ -3802,7 +4024,8 @@
       "baseCardId": "VEN-147-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8c234c7efc30a24dc50c4b76517857bff6e1f906-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Oscar Vega"
+      "artist": "Oscar Vega",
+      "tcgplayerId": "706024"
     },
     {
       "id": "VEN-194-166",
@@ -3819,7 +4042,8 @@
       "baseCardId": "VEN-149-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f527eb9b02ce62d808ec82e12ac28af5a6bd75fb-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Stella Chen Yui"
+      "artist": "Stella Chen Yui",
+      "tcgplayerId": null
     },
     {
       "id": "VEN-195-166",
@@ -3836,7 +4060,8 @@
       "baseCardId": "VEN-151-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f56cf2a3755318e1dc6afd01736f2a4d759cd4a1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Envar Studio"
+      "artist": "Envar Studio",
+      "tcgplayerId": "706111"
     },
     {
       "id": "VEN-196-166",
@@ -3853,7 +4078,8 @@
       "baseCardId": "VEN-153-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2d6c1bd7992ddd20fe524587274ed6f9a249e42c-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Aliya Chen"
+      "artist": "Aliya Chen",
+      "tcgplayerId": "706061"
     },
     {
       "id": "VEN-197-166",
@@ -3870,7 +4096,8 @@
       "baseCardId": "VEN-155-166",
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f208ffb2ee76827cd4c608bcc8e1bcb9380bfa31-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Shop Sun"
+      "artist": "Shop Sun",
+      "tcgplayerId": "706033"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { EASE_OUT } from '../lib/motion.js';
+import { itemMotion, listMotion } from '../lib/motion.js';
 import { useSets } from '../hooks/useConfig.js';
 import { useLayoutParams, withParams } from '../hooks/useLayoutParams.js';
 import { localizedName } from '../lib/format.js';
@@ -11,12 +11,6 @@ import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { ChevronRight } from '../components/icons/Icons.jsx';
 import { RecentBinders } from './RecentBinders.jsx';
 import styles from './SetSelectPage.module.css';
-
-const list = { show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } } };
-const item = {
-  hidden: { opacity: 0, y: 24, scale: 0.97 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: EASE_OUT } },
-};
 
 export default function SetSelectPage() {
   const { t, i18n } = useTranslation();
@@ -48,9 +42,14 @@ export default function SetSelectPage() {
           return (
             <section key={kind} className={styles.section}>
               <h2 className={styles.sectionTitle}>{t(`setSelect.kind.${kind}`)}</h2>
-              <motion.ul className={styles.grid} variants={list} initial="hidden" animate="show">
+              <motion.ul
+                className={styles.grid}
+                variants={listMotion}
+                initial="hidden"
+                animate="show"
+              >
                 {group.map((set) => (
-                  <motion.li key={set.id} variants={item}>
+                  <motion.li key={set.id} variants={itemMotion}>
                     <SetCard
                       set={set}
                       selected={params.setId === set.id}
@@ -75,7 +74,7 @@ function SetCard({ set, selected, onChoose, dateFormat }) {
       type="button"
       className={`${styles.card} ${selected ? styles.selected : ''}`}
       onClick={onChoose}
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -3 }}
       whileTap={{ scale: 0.98 }}
     >
       <span className={styles.stage}>

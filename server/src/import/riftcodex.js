@@ -132,6 +132,7 @@ export function mapSet(meta, rawCards) {
         imageUrl: c.media.image_url || null,
         orientation: c.orientation === 'landscape' ? 'landscape' : 'portrait',
         artist: c.media.artist || null,
+        tcgplayerId: c.tcgplayer_id ? String(c.tcgplayer_id) : null,
       };
     });
 

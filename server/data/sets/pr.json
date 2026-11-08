@@ -28,7 +28,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fabbcc2f83f397cf07299236a702db05a151053b-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "659765"
     },
     {
       "id": "PR-068A-298",
@@ -45,7 +46,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/51e6bacf25d19e7c391367ff107efb9e0b9f1ff5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "678050"
     },
     {
       "id": "PR-111A-298",
@@ -62,7 +64,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5b14a5f9d567c90329c151a8cc72d870b47b1434-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "678051"
     },
     {
       "id": "PR-159A-298",
@@ -79,7 +82,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fcbf878905001fa81858e9f081346fd05425f264-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "678049"
     },
     {
       "id": "PR-036A-298",
@@ -96,7 +100,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dff596efc7413bfdd9cc8e667c46bd4228447de5-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Grafit Studio"
+      "artist": "Grafit Studio",
+      "tcgplayerId": "678053"
     },
     {
       "id": "PR-197-298",
@@ -113,7 +118,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ca8a2e11dd78dd09ad1c9ad3a23e5699254b947e-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "659766"
     },
     {
       "id": "PR-202-298",
@@ -130,7 +136,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7fe105f40df66525be51bd18e25506945a7b027-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "678052"
     },
     {
       "id": "PR-246A-298",
@@ -147,7 +154,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab390d6d074c3f07abba000cc166faa1796ec464-744x1039.png",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "678054"
     },
     {
       "id": "PR-246B-298",
@@ -164,7 +172,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ab390d6d074c3f07abba000cc166faa1796ec464-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "League Splash Team"
+      "artist": "League Splash Team",
+      "tcgplayerId": "678054"
     },
     {
       "id": "PR-263A-298",
@@ -181,7 +190,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9723181e3392bb61c2aabc804a44f7b0558cedf1-744x1039.png?accountingTag=RB",
       "orientation": "portrait",
-      "artist": "Shawn Lee"
+      "artist": "Shawn Lee",
+      "tcgplayerId": "670598"
     },
     {
       "id": "PR-276A-298",
@@ -198,7 +208,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9301593f3800e68427469d38181b578a672473c3-1038x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Polar Engine Studio"
+      "artist": "Polar Engine Studio",
+      "tcgplayerId": "672088"
     },
     {
       "id": "PR-278A-298",
@@ -215,7 +226,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/538f93a34006c4afaddb890cbc75b4db222f1783-1038x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Kudos Productions"
+      "artist": "Kudos Productions",
+      "tcgplayerId": "672073"
     },
     {
       "id": "PR-293A-298",
@@ -232,7 +244,8 @@
       "baseCardId": null,
       "imageUrl": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f9ca8d04cb269ad99bca7e6dae874cad1bec336a-1038x744.png?accountingTag=RB",
       "orientation": "landscape",
-      "artist": "Six More Vodka"
+      "artist": "Six More Vodka",
+      "tcgplayerId": "672083"
     }
   ]
 }

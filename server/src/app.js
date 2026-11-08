@@ -14,9 +14,13 @@ import { errorHandler, notFound } from './middleware/errorHandler.js';
  * Construit l'application Express (sans listen) pour pouvoir la tester avec supertest.
  * `staticDir` (prod) : sert le build du client et renvoie index.html pour les routes du SPA.
  * `accounts` (voir services/accounts.js) : active les comptes, classeurs et collections.
+ * `prices` / `fingerprints` (services/prices.js, services/fingerprints.js) : prix et scan.
  * Sans base de données, l'app reste utilisable sans compte.
  */
-export function createApp(repo, { staticDir, accounts, trustProxy = false } = {}) {
+export function createApp(
+  repo,
+  { staticDir, accounts, prices, fingerprints, trustProxy = false } = {},
+) {
   const app = express();
   app.disable('x-powered-by');
   // Derrière un reverse proxy, l'IP réelle (limitation des connexions) vient de X-Forwarded-For.
@@ -25,7 +29,7 @@ export function createApp(repo, { staticDir, accounts, trustProxy = false } = {}
 
   app.get('/api/health', (_req, res) => res.json({ ok: true }));
   app.use('/api/config', configRouter({ accounts }));
-  app.use('/api/sets', setsRouter(repo));
+  app.use('/api/sets', setsRouter(repo, { prices, fingerprints }));
   app.use('/api/layout', layoutRouter(repo));
 
   if (accounts) {

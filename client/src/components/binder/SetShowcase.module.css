@@ -15,7 +15,10 @@
     radial-gradient(ellipse at 50% 100%, oklch(from var(--tint) 0.35 c h / 0.5), transparent 70%);
 }
 
-/* Rayons de lumière qui tournent lentement derrière le booster. */
+/*
+ * Rayons de lumière qui tournent très lentement derrière le booster : un fond discret, pas un
+ * effet. Calque à part (will-change) : la rotation reste sur le GPU, sans repeindre la carte.
+ */
 .showcase::before {
   content: '';
   position: absolute;
@@ -23,16 +26,17 @@
   z-index: -1;
   background: repeating-conic-gradient(
     from 0deg at 50% 50%,
-    oklch(from var(--tint) 0.85 c h / 0.1) 0 5deg,
+    oklch(from var(--tint) 0.85 c h / 0.05) 0 5deg,
     transparent 5deg 15deg
   );
   mask: radial-gradient(circle, #000 15%, transparent 55%);
-  animation: rays 40s linear infinite;
+  animation: rays 120s linear infinite;
+  will-change: transform;
 }
 
 @keyframes rays {
   to {
-    rotate: 1turn;
+    transform: rotate(1turn);
   }
 }
 
@@ -60,7 +64,7 @@
   max-height: 86%;
   translate: -62% -50%;
   rotate: -4deg;
-  transform: rotateY(calc(var(--px) * 14deg)) rotateX(calc(var(--py) * -10deg));
+  transform: rotateY(calc(var(--px) * 8deg)) rotateX(calc(var(--py) * -6deg));
   transform-style: preserve-3d;
   filter: drop-shadow(0 1rem 1.2rem rgb(0 0 0 / 0.6))
     drop-shadow(0 0 1.5rem oklch(from var(--tint) 0.6 c h / 0.35));
@@ -117,7 +121,7 @@
 .card .front img,
 .card .back,
 .card .sheen {
-  border-radius: 4.5% / 3.3%;
+  border-radius: var(--card-radius);
 }
 
 /* Carte rectangulaire : pas besoin de découper le reflet. */

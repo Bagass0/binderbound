@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'motion/react';
 
 import { useCollection } from '../../hooks/useCollection.js';
-import { useConfig, useSet } from '../../hooks/useConfig.js';
+import { useConfig, usePrices, useSet } from '../../hooks/useConfig.js';
 import { useLayout } from '../../hooks/useLayout.js';
 import { useLayoutParams } from '../../hooks/useLayoutParams.js';
 
@@ -12,9 +12,12 @@ import { BinderView } from '../../components/binder/BinderView.jsx';
 import { CardPreview } from '../../components/binder/CardPreview.jsx';
 import { Button } from '../../components/ui/Button.jsx';
 import { Toggle } from '../../components/ui/controls.jsx';
-import { Book, Download, Link, List, Printer } from '../../components/icons/Icons.jsx';
+import { Book, Download, Link, List, Printer, Scan } from '../../components/icons/Icons.jsx';
+import { PriceSource } from '../../components/common/PriceTag.jsx';
 import { Summary } from './Summary.jsx';
 import { SearchBar } from './SearchBar.jsx';
+import { LocatedCard } from './LocatedCard.jsx';
+import { ScanDialog } from './ScanDialog.jsx';
 import { ListView } from './ListView.jsx';
 import { PrintSheet } from './PrintSheet.jsx';
 import { SaveBinder } from './SaveBinder.jsx';
@@ -35,8 +38,11 @@ export default function ResultPage() {
   const { data: set, error: setError } = useSet(params.setId);
   const { data: layout, error: layoutError, loading } = useLayout(params, config, { delay: 0 });
   const collection = useCollection(params.setId);
+  const { data: prices } = usePrices(params.setId);
 
   const [tab, setTab] = useState('binder');
+  const [scanning, setScanning] = useState(false);
+  const [located, setLocated] = useState(null); // carte trouvée par la recherche
   const [target, setTarget] = useState(null); // { cardId, nonce }
   const [copied, setCopied] = useState(false);
   const [preview, setPreview] = useState(null); // { card, origin } : origin = élément cliqué
@@ -53,7 +59,13 @@ export default function ResultPage() {
     // Les onglets restent montés : on peut amener le classeur à l'écran tout de suite.
     if (scroll) tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
-  const locateFromSearch = useCallback((card) => locate(card, { scroll: false }), [locate]);
+  const locateFromSearch = useCallback(
+    (card) => {
+      setLocated(card);
+      locate(card, { scroll: false });
+    },
+    [locate],
+  );
 
   const { tracking, toggle } = collection;
   const toggleOwned = useCallback((card) => toggle(card.id), [toggle]);
@@ -106,7 +118,12 @@ export default function ResultPage() {
         </motion.div>
 
         <div className={styles.toolbar}>
-          <SearchBar cards={set.cards} index={layout.index} onSelect={locateFromSearch} />
+          <div className={styles.finders}>
+            <SearchBar cards={set.cards} index={layout.index} onSelect={locateFromSearch} />
+            <Button icon={<Scan />} onClick={() => setScanning(true)}>
+              {t('scan.button')}
+            </Button>
+          </div>
           <div className={styles.exports}>
             <Button size="sm" variant="ghost" icon={<Link />} onClick={copyLink}>
               {copied ? t('result.copied') : t('result.share')}
@@ -119,6 +136,18 @@ export default function ResultPage() {
             </Button>
           </div>
         </div>
+
+        <AnimatePresence initial={false}>
+          {located && (
+            <LocatedCard
+              key={located.id}
+              card={located}
+              layout={layout}
+              prices={prices}
+              onDismiss={() => setLocated(null)}
+            />
+          )}
+        </AnimatePresence>
 
         <div ref={tabsRef} className={`${styles.viewBar} ${styles.binderAnchor}`}>
           <div className={styles.tabs} role="tablist" aria-label={t('result.views')}>
@@ -222,21 +251,39 @@ export default function ResultPage() {
                 placements={placements}
                 config={config}
                 collection={collection}
+                prices={prices}
                 onLocate={locate}
                 onPreview={openPreview}
               />
             )}
           </motion.div>
         </AnimatePresence>
+
+        {prices && (
+          <p className={styles.priceSource}>
+            <PriceSource prices={prices} />
+          </p>
+        )}
       </div>
 
       <CardPreview
         card={preview?.card ?? null}
         origin={preview?.origin}
-        position={preview && layout.index[preview.card.id]}
+        layout={layout}
+        prices={prices}
         setCode={set.code}
         collection={collection}
         onClose={() => setPreview(null)}
+      />
+
+      <ScanDialog
+        open={scanning}
+        onClose={() => setScanning(false)}
+        set={set}
+        layout={layout}
+        prices={prices}
+        collection={collection}
+        onLocate={locate}
       />
 
       <PrintSheet set={set} layout={layout} placements={placements} collection={collection} />

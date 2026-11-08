@@ -41,6 +41,21 @@
   gap: 0.25rem;
 }
 
+/* Recherche et scan côte à côte : les deux façons de trouver une carte. */
+.finders {
+  display: flex;
+  flex: 1 1 22rem;
+  gap: 0.5rem;
+  max-width: 40rem;
+}
+
+.priceSource {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  text-align: right;
+  color: var(--text-3);
+}
+
 /* Onglets à gauche, collection à droite : une seule ligne au-dessus du classeur. */
 .viewBar {
   display: flex;

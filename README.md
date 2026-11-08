@@ -14,6 +14,9 @@ Choisis un set, un format de classeur (2x2, 3x3, 4x3 ou personnalisé) et tes op
 - Faces réservées en début de classeur et départ sur une face de droite
 - Nombre de feuillets nécessaires affiché en direct pendant le réglage du classeur
 - Vue classeur animée (pages qui se tournent en 3D, swipe sur mobile), vue liste triable et filtrable, recherche
+- Emplacement de chaque carte en clair : **page** (feuillet 1 recto = page 1, verso = page 2), feuillet, côté, ligne et colonne, avec la case surlignée sur une mini-page
+- **Prix** de chaque carte (prix de marché TCGplayer en USD, normal et foil, via [tcgcsv.com](https://tcgcsv.com)), dans l'aperçu, la liste et le scan
+- **Scan de carte** à la caméra (ou depuis une photo) : la carte est reconnue, Binderbound indique où la ranger et propose de l'ajouter à la collection
 - Collection : coche les cartes possédées ; les manquantes restent grisées mais gardent leur place
 - Export CSV, version imprimable, lien de partage (tous les réglages sont dans l'URL)
 - Interface en français et en anglais
@@ -125,7 +128,8 @@ sudo chown -R ubuntu: /srv/binderbound
 | `npm run format`                             | Prettier                                                                           |
 | `npm run build`                              | Build de production du client (`client/dist`)                                      |
 | `npm start`                                  | Démarre l'API seule (définis `STATIC_DIR=client/dist` pour servir aussi le client) |
-| `npm run sync-sets [-- OGN SFD] [--dry-run]` | Télécharge les sets Riftbound (tous, ou ceux listés) dans `server/data/sets`       |
+| `npm run sync-sets [-- OGN SFD] [--dry-run]` | Télécharge les sets Riftbound (tous, ou ceux listés) et leurs empreintes de scan   |
+| `npm run fingerprint-sets [-- ogn sfd]`      | Recalcule les empreintes du scan (`server/data/fingerprints`) sans retélécharger   |
 | `npm run import-set -- <fichier> [--write]`  | Valide un set, et le copie dans `server/data/sets` avec `--write`                  |
 
 ## Données des cartes

@@ -5,7 +5,7 @@ import { api } from '../api/client.js';
 import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { localCollection } from '../hooks/localCollection.js';
-import { EASE_OUT } from '../lib/motion.js';
+import { itemMotion, listMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
@@ -13,12 +13,6 @@ import { RarityBreakdown } from '../components/common/RarityBreakdown.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { ChevronRight } from '../components/icons/Icons.jsx';
 import styles from './CollectionPage.module.css';
-
-const list = { show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } };
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE_OUT } },
-};
 
 /** Avancement d'un set : toutes ses cartes (variantes comprises), par rareté. */
 function setProgress(set, ownedIds) {
@@ -108,11 +102,16 @@ export default function CollectionPage() {
         return (
           <section key={kind} className={styles.section}>
             <h2 className={styles.sectionTitle}>{t(`setSelect.kind.${kind}`)}</h2>
-            <motion.ul className={styles.grid} variants={list} initial="hidden" animate="show">
+            <motion.ul
+              className={styles.grid}
+              variants={listMotion}
+              initial="hidden"
+              animate="show"
+            >
               {group.map(({ summary: set, progress }) => {
                 const ratio = progress.total ? progress.owned / progress.total : 0;
                 return (
-                  <motion.li key={set.id} variants={item}>
+                  <motion.li key={set.id} variants={itemMotion}>
                     <article className={styles.card}>
                       <SetShowcase
                         className={styles.showcase}

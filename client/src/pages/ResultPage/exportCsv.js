@@ -14,6 +14,7 @@ const escape = (value, sep) => {
 export function buildCsv(placements, { t, lang, collection }) {
   const sep = lang === 'fr' ? ';' : ',';
   const header = [
+    t('list.page'),
     t('list.sheet'),
     t('list.side'),
     t('list.row'),
@@ -29,6 +30,7 @@ export function buildCsv(placements, { t, lang, collection }) {
 
   const lines = placements.map((p) => {
     const row = [
+      p.page,
       p.sheet,
       t(`side.${p.side}`),
       p.row,

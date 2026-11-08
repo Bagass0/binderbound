@@ -1,0 +1,93 @@
+.guide {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgb(var(--accent-rgb) / 0.35);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(135deg, rgb(var(--accent-rgb) / 0.1), transparent 60%), var(--bg-void);
+}
+
+/* Le numéro de page, en très grand : c'est la première chose à lire. */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+  line-height: 1;
+}
+
+.pageLabel {
+  composes: label-caps from global;
+  font-size: 0.6875rem;
+  color: var(--accent-dim);
+}
+
+.pageNumber {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.sheet {
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.hand {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.cell {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rift);
+}
+
+/* Mini-page : la case visée ressort en laiton. */
+.grid {
+  display: grid;
+  gap: 3px;
+  width: calc(var(--cols) * 0.95rem);
+}
+
+.grid span {
+  aspect-ratio: var(--card-w) / var(--card-h);
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: var(--surface-2);
+}
+
+.grid .target {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 0.5rem rgb(var(--accent-rgb) / 0.6);
+}
+
+.missing {
+  margin: 0;
+  color: var(--text-2);
+}
+
+@media (max-width: 26rem) {
+  .guide {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .grid {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}

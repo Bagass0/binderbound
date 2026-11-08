@@ -24,8 +24,23 @@ describe('formats de grille', () => {
     expect(summary.slotsPerFace).toBe(4);
     expect(summary.facesUsed).toBe(3);
     expect(summary.emptySlots).toBe(2);
-    expect(index['T-5']).toEqual({ faceIndex: 1, sheet: 1, side: 'verso', row: 1, col: 1 });
-    expect(index['T-10']).toEqual({ faceIndex: 2, sheet: 2, side: 'recto', row: 1, col: 2 });
+    // Pages comptées comme un livre : feuillet 1 = pages 1 et 2, feuillet 2 recto = page 3.
+    expect(index['T-5']).toEqual({
+      faceIndex: 1,
+      page: 2,
+      sheet: 1,
+      side: 'verso',
+      row: 1,
+      col: 1,
+    });
+    expect(index['T-10']).toEqual({
+      faceIndex: 2,
+      page: 3,
+      sheet: 2,
+      side: 'recto',
+      row: 1,
+      col: 2,
+    });
   });
 
   it('3x3 : 9 cartes par face, ligne et colonne en 1-based', () => {
@@ -366,6 +381,7 @@ describe('cas limites et cohérence', () => {
         for (const slot of face.slots.filter((s) => s.card)) {
           expect(layout.index[slot.card.id]).toEqual({
             faceIndex: face.faceIndex,
+            page: face.page,
             sheet: face.sheet,
             side: face.side,
             row: slot.row,

@@ -32,13 +32,38 @@ export const domainLabel = (t, { domains }) => domains.map((d) => t(`domain.${d}
 /** Groupe de tri par domaine (miroir du serveur) : les bi-domaines forment le groupe « multi ». */
 export const domainGroup = ({ domains }) => (domains.length > 1 ? 'multi' : domains[0]);
 
-/** Libellé de face « Feuillet 2 · Verso ». */
+/** Libellé de face « Page 4 · Feuillet 2 · Verso ». */
 export const formatFace = (t, face) =>
-  t('position.face', { sheet: face.sheet, side: t(`side.${face.side}`) });
+  t('position.face', { page: face.page, sheet: face.sheet, side: t(`side.${face.side}`) });
 
-/** Libellé de position complet « Feuillet 2 · Verso · L1 · C3 ». */
+/** Libellé de position complet « Page 4 · Feuillet 2 · Verso · L1 · C3 ». */
 export const formatPosition = (t, pos) =>
-  t('position.full', { sheet: pos.sheet, side: t(`side.${pos.side}`), row: pos.row, col: pos.col });
+  t('position.full', {
+    page: pos.page,
+    sheet: pos.sheet,
+    side: t(`side.${pos.side}`),
+    row: pos.row,
+    col: pos.col,
+  });
+
+/** Prix affiché d'une carte : l'impression normale, à défaut la foil. null si inconnu. */
+export function cardPrice(prices, card) {
+  const price = prices?.prices[card.id];
+  if (!price) return null;
+  return price.normal !== undefined
+    ? { value: price.normal, foil: false }
+    : { value: price.foil, foil: true };
+}
+
+const currencyFormats = new Map();
+/** « 2,26 $ » / « $2.26 » selon la langue. */
+export function formatPrice(value, currency, lang) {
+  const key = `${lang}:${currency}`;
+  if (!currencyFormats.has(key)) {
+    currencyFormats.set(key, new Intl.NumberFormat(lang, { style: 'currency', currency }));
+  }
+  return currencyFormats.get(key).format(value);
+}
 
 /** Style d'une grille de pochettes : les CSS en déduisent le ratio (tokens --card-w/--card-h). */
 export const gridStyle = (rows, cols) => ({

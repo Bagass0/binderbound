@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Checkbox } from '../../components/ui/controls.jsx';
 import {
+  cardPrice,
   domainGroup,
   domainLabel,
   domainStyle,
@@ -10,12 +11,13 @@ import {
   cardNumber,
 } from '../../lib/format.js';
 import { RarityGem } from '../../components/common/RarityGem.jsx';
-import styles from './ListView.module.css';
+import { PriceTag } from '../../components/common/PriceTag.jsx';
 import { cardImage } from '../../lib/images.js';
+import styles from './ListView.module.css';
 
 const ALL = '';
 
-/** Tableau Carte → Feuillet / Face / Ligne / Colonne, avec tri et filtres. */
+/** Tableau Carte → Page / Feuillet / Face / Ligne / Colonne, avec prix, tri et filtres. */
 /** Colonnes triables : clé de tri → clé de traduction de l'en-tête. */
 const SORTABLE = [
   ['number', 'list.number'],
@@ -23,10 +25,11 @@ const SORTABLE = [
   ['domain', 'list.domain'],
   ['rarity', 'list.rarity'],
   ['variant', 'list.variant'],
-  ['position', 'list.sheet'],
+  ['price', 'list.price'],
+  ['position', 'list.page'],
 ];
 
-function sortValue(key, { lang, config }) {
+function sortValue(key, { lang, config, prices }) {
   const rank = (list) => new Map(list.map((v, i) => [v, i]));
   switch (key) {
     case 'number':
@@ -43,12 +46,14 @@ function sortValue(key, { lang, config }) {
     }
     case 'variant':
       return (p) => p.card.variant;
+    case 'price':
+      return (p) => cardPrice(prices, p.card)?.value ?? -1;
     default:
       return (p) => p.faceIndex * 1000 + p.row * 10 + p.col;
   }
 }
 
-export function ListView({ placements, config, collection, onLocate, onPreview }) {
+export function ListView({ placements, config, collection, prices, onLocate, onPreview }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const [sort, setSort] = useState({ key: 'position', dir: 1 });
@@ -71,7 +76,7 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
       );
     });
     // Clé de tri calculée une fois par ligne, puis comparaison simple.
-    const value = sortValue(sort.key, { lang, config });
+    const value = sortValue(sort.key, { lang, config, prices });
     const compare =
       typeof value(filtered[0] ?? placements[0]) === 'string'
         ? new Intl.Collator(lang).compare
@@ -80,7 +85,7 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
       .map((p) => [value(p), p])
       .sort((a, b) => compare(a[0], b[0]) * sort.dir)
       .map(([, p]) => p);
-  }, [placements, filters, sort, lang, collection.owned, collection.tracking, config]);
+  }, [placements, filters, sort, lang, collection.owned, collection.tracking, config, prices]);
 
   const toggleSort = (key) =>
     setSort((s) => (s.key === key ? { key, dir: -s.dir } : { key, dir: 1 }));
@@ -153,6 +158,7 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
                 <th className={styles.ownedCol}>{t('collection.ownedShort')}</th>
               )}
               {SORTABLE.map(sortHeader)}
+              <th>{t('list.sheet')}</th>
               <th>{t('list.side')}</th>
               <th>{t('list.row')}</th>
               <th>{t('list.col')}</th>
@@ -215,6 +221,14 @@ export function ListView({ placements, config, collection, onLocate, onPreview }
                       <span className={styles.badge}>{t(`variant.${p.card.variant}`)}</span>
                     )}
                   </td>
+                  <td className={styles.price}>
+                    <PriceTag
+                      prices={prices}
+                      card={p.card}
+                      fallback={<span className={styles.dim}>—</span>}
+                    />
+                  </td>
+                  <td className={`${styles.pos} ${styles.page}`}>{p.page}</td>
                   <td className={styles.pos}>{p.sheet}</td>
                   <td>{t(`side.${p.side}`)}</td>
                   <td className={styles.pos}>{p.row}</td>
