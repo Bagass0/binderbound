@@ -24,8 +24,8 @@ const PLAYERS_PAGE = 50;
 const formatCode = (code) => (code ? `${code.slice(0, 4)}-${code.slice(4)}` : '');
 
 /**
- * Amis : la liste d'abord (demandes reçues, amis, demandes envoyées), le code ami à côté,
- * puis la recherche parmi tous les joueurs qui acceptent d'apparaître.
+ * Amis : au centre, mes amis puis tous les joueurs (recherche) ; à droite, les demandes
+ * reçues et envoyées, le code ami et la visibilité dans la liste.
  */
 export default function FriendsPage() {
   const { t } = useTranslation();
@@ -45,85 +45,40 @@ export default function FriendsPage() {
       </PageHeading>
 
       <div className={styles.layout}>
-        <FriendLists state={friends} onChange={refresh} />
-        <CodePanel state={friends} onChange={refresh} />
+        <div className={styles.main}>
+          <FriendList state={friends} onChange={refresh} />
+          <Players version={version} onChange={refresh} />
+        </div>
+        <SidePanel state={friends} onChange={refresh} />
       </div>
-
-      <Players version={version} onChange={refresh} />
     </>
   );
 }
 
-function FriendLists({ state, onChange }) {
+function FriendList({ state, onChange }) {
   const { t } = useTranslation();
   const { data, error } = state;
-  const act = (fn) => () => fn().then(onChange, console.error);
-
   return (
-    <div className={styles.lists}>
+    <section className={styles.block}>
+      <h2>
+        {t('friends.mine')} {data && <span>{data.friends.length}</span>}
+      </h2>
       {error && <ErrorMessage error={error} />}
       {!data && !error && <Loading />}
-      {data?.incoming.length > 0 && (
-        <section className={`${styles.block} ${styles.incoming}`}>
-          <h2>
-            {t('friends.incoming')} <span>{data.incoming.length}</span>
-          </h2>
-          <ul className={styles.people}>
-            {data.incoming.map((f) => (
-              <li key={f.id}>
-                <Avatar user={f} />
-                <span className={styles.personName}>{f.name}</span>
-                <Button size="sm" variant="primary" onClick={act(() => api.friends.accept(f.id))}>
-                  {t('friends.accept')}
-                </Button>
-                <Button size="sm" variant="ghost" onClick={act(() => api.friends.remove(f.id))}>
-                  {t('friends.decline')}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {data?.friends.length === 0 && (
+        <p className={styles.empty}>
+          <Users className={styles.emptyIcon} />
+          {t('friends.none')}
+        </p>
       )}
-
-      {data && (
-        <section className={styles.block}>
-          <h2>
-            {t('friends.mine')} <span>{data.friends.length}</span>
-          </h2>
-          {data.friends.length === 0 ? (
-            <p className={styles.empty}>
-              <Users className={styles.emptyIcon} />
-              {t('friends.none')}
-            </p>
-          ) : (
-            <ul className={`${styles.people} ${styles.friendList}`}>
-              {data.friends.map((f) => (
-                <FriendRow key={f.id} friend={f} onRemoved={onChange} />
-              ))}
-            </ul>
-          )}
-        </section>
+      {data?.friends.length > 0 && (
+        <ul className={`${styles.people} ${styles.friendList}`}>
+          {data.friends.map((f) => (
+            <FriendRow key={f.id} friend={f} onRemoved={onChange} />
+          ))}
+        </ul>
       )}
-
-      {data?.outgoing.length > 0 && (
-        <section className={styles.block}>
-          <h2>
-            {t('friends.outgoing')} <span>{data.outgoing.length}</span>
-          </h2>
-          <ul className={styles.people}>
-            {data.outgoing.map((f) => (
-              <li key={f.id}>
-                <Avatar user={f} />
-                <span className={styles.personName}>{f.name}</span>
-                <Button size="sm" variant="ghost" onClick={act(() => api.friends.remove(f.id))}>
-                  {t('common.cancel')}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-    </div>
+    </section>
   );
 }
 
@@ -166,11 +121,12 @@ function FriendRow({ friend, onRemoved }) {
   );
 }
 
-/** Code ami (à copier), ajout par code et visibilité dans la liste des joueurs. */
-function CodePanel({ state, onChange }) {
+/** Demandes reçues, code ami (à copier), ajout par code, demandes envoyées et visibilité. */
+function SidePanel({ state, onChange }) {
   const { t } = useTranslation();
   const { data } = state;
   const [copied, setCopied] = useState(false);
+  const act = (fn) => () => fn().then(onChange, console.error);
 
   const copy = async () => {
     await navigator.clipboard?.writeText(formatCode(data.code)).catch(() => {});
@@ -182,6 +138,36 @@ function CodePanel({ state, onChange }) {
     <Panel className={styles.side}>
       {data && (
         <>
+          {data.incoming.length > 0 && (
+            <div className={`${styles.requests} ${styles.incoming}`}>
+              <h3>
+                {t('friends.incoming')} <span>{data.incoming.length}</span>
+              </h3>
+              <ul className={styles.people}>
+                {data.incoming.map((f) => (
+                  <li key={f.id}>
+                    <Avatar user={f} size="sm" />
+                    <span className={styles.personName}>{f.name}</span>
+                    <Button
+                      size="sm"
+                      variant="primary"
+                      onClick={act(() => api.friends.accept(f.id))}
+                    >
+                      {t('friends.accept')}
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      aria-label={`${t('friends.decline')} ${f.name}`}
+                      onClick={act(() => api.friends.remove(f.id))}
+                    >
+                      ✕
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className={styles.code}>
             <span className={styles.codeLabel}>{t('friends.myCode')}</span>
             <button type="button" className={styles.codeValue} onClick={copy}>
@@ -191,6 +177,24 @@ function CodePanel({ state, onChange }) {
             <small>{copied ? t('friends.copied') : t('friends.codeHint')}</small>
           </div>
           <AddFriendForm onAdded={onChange} />
+          {data.outgoing.length > 0 && (
+            <div className={styles.requests}>
+              <h3>
+                {t('friends.outgoing')} <span>{data.outgoing.length}</span>
+              </h3>
+              <ul className={styles.people}>
+                {data.outgoing.map((f) => (
+                  <li key={f.id}>
+                    <Avatar user={f} size="sm" />
+                    <span className={styles.personName}>{f.name}</span>
+                    <Button size="sm" variant="ghost" onClick={act(() => api.friends.remove(f.id))}>
+                      {t('common.cancel')}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className={styles.visibility}>
             <Toggle
               checked={data.discoverable}

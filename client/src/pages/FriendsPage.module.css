@@ -11,11 +11,11 @@
   }
 }
 
-/* --- Mes amis --- */
+/* --- Colonne principale : mes amis, puis tous les joueurs --- */
 
-.lists {
+.main {
   display: grid;
-  gap: 2rem;
+  gap: 3rem;
   min-width: 0;
 }
 
@@ -39,12 +39,36 @@
   color: var(--text-3);
 }
 
-/* Demandes reçues : à traiter, mises en avant. */
+/* Demandes (panneau de droite) ; les reçues, à traiter, sont mises en avant. */
+.requests {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.requests h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.requests h3 span {
+  letter-spacing: normal;
+}
+
 .incoming {
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1rem;
   border: 1px solid var(--accent-dim);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background: rgb(var(--accent-rgb) / 0.05);
+}
+
+.incoming h3 {
+  color: var(--accent);
 }
 
 .people {
@@ -62,9 +86,9 @@
   min-width: 0;
 }
 
-/* Les amis, en cartes : deux colonnes dès qu'il y a la place. */
+/* Les amis, en cartes : plusieurs colonnes dès qu'il y a la place. */
 .friendList {
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   gap: 0.75rem;
 }
 
@@ -138,6 +162,13 @@
   .side {
     position: static;
     order: -1;
+  }
+}
+
+/* Panneau plus haut que l'écran (beaucoup de demandes) : il défile avec la page. */
+@media (max-height: 48rem) {
+  .side {
+    position: static;
   }
 }
 
@@ -220,7 +251,6 @@
 .players {
   display: grid;
   gap: 1rem;
-  margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--line);
 }
@@ -264,7 +294,7 @@
 /* En colonnes de journal : l'ordre alphabétique se lit de haut en bas. */
 .playerList {
   display: block;
-  columns: 18rem;
+  columns: 17rem;
   column-gap: 2.5rem;
 }
 
