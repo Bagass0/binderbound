@@ -52,7 +52,7 @@ export default function CollectionSetPage() {
   const { data: set, error } = useSet(setId);
   const collection = useCollection(setId);
   const { data: prices } = usePrices(setId);
-  const [show, setShow] = useState('all'); // all | owned | missing
+  const [show, setShow] = useState('all'); // all | owned | missing | doubles
   const [rarity, setRarity] = useState(null);
   const [sort, setSort] = useState('rarity');
   const [preview, setPreview] = useState(null);
@@ -77,12 +77,15 @@ export default function CollectionSetPage() {
   if (error) return <ErrorMessage error={error} />;
   if (!set) return <Loading />;
 
-  const { owned } = collection;
+  const { owned, doubles } = collection;
   const count = (cards) => cards.filter((c) => owned.has(c.id)).length;
   const total = set.cards.length;
   const ownedTotal = count(set.cards);
   const keep = (card) =>
-    show === 'all' || (show === 'owned' ? owned.has(card.id) : !owned.has(card.id));
+    show === 'all' ||
+    (show === 'owned' && owned.has(card.id)) ||
+    (show === 'missing' && !owned.has(card.id)) ||
+    (show === 'doubles' && doubles.has(card.id));
   const visible = sections
     .map((g) => ({ ...g, shown: g.cards.filter(keep) }))
     .filter((g) => g.shown.length);
@@ -119,10 +122,12 @@ export default function CollectionSetPage() {
           <Segmented
             value={show}
             onChange={setShow}
-            options={['all', 'owned', 'missing'].map((v) => ({
-              value: v,
-              label: t(`collectionSet.show.${v}`),
-            }))}
+            options={['all', 'owned', 'missing', ...(collection.synced ? ['doubles'] : [])].map(
+              (v) => ({
+                value: v,
+                label: t(`collectionSet.show.${v}`),
+              }),
+            )}
           />
           <label className={styles.sort}>
             {t('collectionSet.sortLabel')}
@@ -196,6 +201,11 @@ export default function CollectionSetPage() {
                       pressed={owned.has(card.id)}
                       onClick={(c, el) => setPreview({ card: c, origin: el })}
                     />
+                    {doubles.has(card.id) && (
+                      <span className={styles.double} title={t('collectionSet.doubleHint')}>
+                        ×2
+                      </span>
+                    )}
                   </div>
                   <PriceTag prices={prices} card={card} className={styles.price} />
                 </li>

@@ -31,6 +31,7 @@ services:
     environment:
       DATABASE_URL: mysql://binderbound:binderbound@db:3306/binderbound
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      CARDNEXUS_API_KEY: ${CARDNEXUS_API_KEY:-}
     volumes:
       - ./server:/app/server
     ports:

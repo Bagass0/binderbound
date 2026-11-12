@@ -173,7 +173,9 @@
   "price": {
     "label": "Prix",
     "foil": "foil",
-    "source": "Prix de marché {{source}} (USD), mis à jour le {{date}}"
+    "source": "Prix {{source}} ({{currency}}), mis à jour le {{date}}",
+    "converted": "≈ : prix TCGplayer converti en euros",
+    "estimate": "Prix TCGplayer converti en euros (estimation)"
   },
   "scan": {
     "button": "Scanner",
@@ -290,7 +292,10 @@
     "close": "Fermer",
     "markOwned": "Je la possède",
     "markMissing": "Je ne l’ai plus",
-    "noImage": "Illustration indisponible"
+    "noImage": "Illustration indisponible",
+    "markDouble": "J’en ai un double",
+    "removeDouble": "Plus de double",
+    "doubleHint": "Un double peut être proposé à tes amis en échange"
   },
   "auth": {
     "signIn": "Se connecter",
@@ -406,12 +411,16 @@
         "body": "Si tu crées un compte, nous conservons ton adresse e-mail, ton nom et, selon ta façon de te connecter, ton mot de passe sous forme chiffrée (jamais en clair) ou ton identifiant Google avec ta photo de profil. Nous conservons aussi tes classeurs enregistrés et les cartes que tu as cochées."
       },
       {
+        "title": "Amis et échanges",
+        "body": "Si tu utilises les échanges, nous conservons tes amis, les cartes que tu marques comme doubles et tes propositions d’échange (cartes, message, statut). Un code ami aléatoire te permet d’être ajouté sans jamais montrer ton adresse e-mail. Tes amis, et eux seuls, voient ton nom, ta photo de profil, les cartes que tu possèdes et tes doubles dans le set d’un échange ; retirer un ami lui retire cet accès."
+      },
+      {
         "title": "Connexion avec Google",
         "body": "Avec « Se connecter avec Google », Google nous transmet uniquement ton nom, ton adresse e-mail et ta photo de profil. Nous n’avons accès à rien d’autre de ton compte Google."
       },
       {
         "title": "Finalité et base légale",
-        "body": "Ces données servent uniquement à faire fonctionner ton compte : te connecter, enregistrer tes classeurs et ta collection. Le traitement repose sur l’exécution du service que tu demandes en créant un compte (article 6.1.b du RGPD). Aucune décision automatisée ni aucun profilage."
+        "body": "Ces données servent uniquement à faire fonctionner ton compte : te connecter, enregistrer tes classeurs et ta collection, échanger avec tes amis. Le traitement repose sur l’exécution du service que tu demandes en créant un compte (article 6.1.b du RGPD). Aucune décision automatisée ni aucun profilage."
       },
       {
         "title": "Durée de conservation",
@@ -423,7 +432,7 @@
       },
       {
         "title": "Destinataires et hébergement",
-        "body": "Tes données ne sont ni vendues, ni partagées, ni utilisées à des fins publicitaires. Elles sont hébergées par OVHcloud (OVH SAS, France). Les images des cartes sont chargées depuis les serveurs de Riot Games, et le bouton Google depuis ceux de Google : comme pour tout site, ils reçoivent ton adresse IP."
+        "body": "Tes données ne sont ni vendues, ni partagées (hors ce que voient les amis que tu as acceptés), ni utilisées à des fins publicitaires. Elles sont hébergées par OVHcloud (OVH SAS, France). Les images des cartes sont chargées depuis les serveurs de Riot Games, et le bouton Google depuis ceux de Google : comme pour tout site, ils reçoivent ton adresse IP."
       },
       {
         "title": "Tes droits",
@@ -454,6 +463,10 @@
       {
         "title": "Utilisation acceptable",
         "body": "Il est interdit de tenter de porter atteinte à la sécurité ou au fonctionnement du site, d’accéder aux données d’autres personnes, d’envoyer des requêtes automatisées en masse ou d’utiliser le service à des fins commerciales sans accord préalable."
+      },
+      {
+        "title": "Échanges entre amis",
+        "body": "Binderbound permet de proposer des échanges de cartes entre amis, sans aucune transaction d’argent. Le site ne fait qu’enregistrer les propositions et mettre à jour les collections : l’échange réel des cartes se fait entre joueurs, sous leur seule responsabilité. Les prix affichés sont indicatifs (Card Nexus, TCGplayer converti en euros) et ne constituent pas une offre."
       },
       {
         "title": "Propriété intellectuelle",
@@ -488,13 +501,16 @@
     "error": "La suppression a échoué. Réessaie dans un instant."
   },
   "legal": {
-    "updated": "Dernière mise à jour : 5 novembre 2026"
+    "updated": "Dernière mise à jour : 12 novembre 2026"
   },
   "nav": {
     "label": "Navigation principale",
     "sets": "Sets",
     "binders": "Mes classeurs",
-    "collection": "Ma collection"
+    "collection": "Ma collection",
+    "trades": "Échanges",
+    "waiting_one": "{{count}} en attente de réponse",
+    "waiting_other": "{{count}} en attente de réponse"
   },
   "collectionPage": {
     "title": "Ma collection",
@@ -518,7 +534,8 @@
     "show": {
       "all": "Toutes",
       "owned": "Possédées",
-      "missing": "Manquantes"
+      "missing": "Manquantes",
+      "doubles": "Doubles"
     },
     "sortLabel": "Trier",
     "sort": {
@@ -526,6 +543,96 @@
       "number": "Par numéro",
       "priceDesc": "Prix décroissant",
       "priceAsc": "Prix croissant"
-    }
+    },
+    "doubleHint": "Double : proposé à l’échange"
+  },
+  "friends": {
+    "title": "Amis",
+    "myCode": "Ton code ami",
+    "codeHint": "Donne-le à tes amis pour qu’ils t’ajoutent. Clique pour le copier.",
+    "copied": "Copié !",
+    "addLabel": "Code d’un ami",
+    "add": "Ajouter",
+    "added": {
+      "requested": "Demande envoyée à {{name}}.",
+      "accepted": "{{name}} et toi êtes maintenant amis !",
+      "pending": "Demande déjà envoyée à {{name}}.",
+      "friends": "{{name}} est déjà ton ami."
+    },
+    "errors": {
+      "CODE_NOT_FOUND": "Aucun joueur avec ce code.",
+      "SELF": "C’est ton propre code !",
+      "RATE_LIMITED": "Trop d’essais, réessaie dans quelques minutes.",
+      "VALIDATION_ERROR": "Un code fait 8 caractères (ex. ABCD-EFGH).",
+      "other": "Impossible d’ajouter cet ami pour le moment."
+    },
+    "incoming": "Demandes reçues",
+    "outgoing": "Demandes envoyées",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "list_one": "Mon ami ({{count}})",
+    "list_other": "Mes amis ({{count}})",
+    "none": "Pas encore d’ami : partage ton code ou saisis le leur.",
+    "propose": "Échanger",
+    "remove": "Retirer {{name}} de mes amis",
+    "confirmRemove": "Retirer"
+  },
+  "trades": {
+    "eyebrow": "Entre amis",
+    "title": "Échanges",
+    "lead": "Ajoute tes amis, puis propose-leur tes doubles contre les leurs, set par set. Une fois l’échange accepté, vos collections se mettent à jour toutes seules.",
+    "none": "Aucun échange pour l’instant. Choisis un ami et clique sur « Échanger ».",
+    "groups": {
+      "incoming": "À traiter",
+      "outgoing": "En attente de réponse",
+      "history": "Historique"
+    },
+    "with": "Proposé à {{name}}",
+    "from": "{{name}} te propose",
+    "youGive": "Tu donnes",
+    "youGet": "Tu reçois",
+    "nothing": "Rien",
+    "status": {
+      "pending": "En attente",
+      "accepted": "Accepté",
+      "declined": "Refusé",
+      "cancelled": "Annulé"
+    },
+    "accept": "Accepter l’échange",
+    "decline": "Refuser",
+    "cancel": "Annuler la proposition",
+    "stale": "Certaines cartes ne sont plus disponibles : cet échange ne peut plus être accepté.",
+    "failed": "L’action a échoué, réessaie."
+  },
+  "compose": {
+    "eyebrow": "Nouvel échange",
+    "title": "Proposer un échange",
+    "lead": "Choisis un ami et un set, puis sélectionne les doubles à échanger de chaque côté.",
+    "noFriends": "Il te faut d’abord un ami.",
+    "addFriends": "Ajouter des amis",
+    "friend": "Ami",
+    "chooseFriend": "Choisir un ami",
+    "set": "Set",
+    "chooseSet": "Choisir un set",
+    "onlyUseful": "Seulement les cartes utiles",
+    "onlyUsefulHint": "Masque les doubles que l’autre possède déjà.",
+    "yourDoubles": "Tes doubles",
+    "theirDoubles": "Doubles de {{name}}",
+    "selected_one": "{{count}} choisie",
+    "selected_other": "{{count}} choisies",
+    "theyNeed": "Lui manque",
+    "youNeed": "Te manque",
+    "noDoubles": "Tu n’as pas encore marqué de doubles dans ce set.",
+    "markDoubles": "Marquer mes doubles",
+    "nothingUseful": "{{name}} a déjà tous tes doubles.",
+    "nothingForYou": "Tu as déjà tous ses doubles.",
+    "noTheirDoubles": "{{name}} n’a pas encore marqué de doubles dans ce set.",
+    "give_one": "Tu donnes {{count}} carte",
+    "give_other": "Tu donnes {{count}} cartes",
+    "get_one": "Tu reçois {{count}} carte",
+    "get_other": "Tu reçois {{count}} cartes",
+    "message": "Un petit mot (facultatif)",
+    "send": "Envoyer à {{name}}",
+    "failed": "Impossible d’envoyer la proposition, réessaie."
   }
 }

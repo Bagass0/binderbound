@@ -102,6 +102,7 @@ export function CardPreview({ card, origin, layout, prices, setCode, collection,
   const backdrop = useBackdropClose(requestClose);
 
   const owned = card && collection.owned.has(card.id);
+  const double = Boolean(card && collection.doubles?.has(card.id));
   const thumbnail = card && loadedThumbnail(origin);
 
   return (
@@ -191,6 +192,16 @@ export function CardPreview({ card, origin, layout, prices, setCode, collection,
                   onClick={() => collection.toggle(card.id)}
                 >
                   {owned ? t('preview.markMissing') : t('preview.markOwned')}
+                </Button>
+              )}
+              {collection.tracking && collection.toggleDouble && (
+                <Button
+                  variant="secondary"
+                  aria-pressed={double}
+                  title={t('preview.doubleHint')}
+                  onClick={() => collection.toggleDouble(card.id)}
+                >
+                  {double ? t('preview.removeDouble') : t('preview.markDouble')}
                 </Button>
               )}
               <Button variant="ghost" onClick={requestClose}>

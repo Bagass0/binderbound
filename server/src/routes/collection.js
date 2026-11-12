@@ -15,14 +15,22 @@ export function collectionRouter(repo, { collections }) {
   };
   const cardIdsOf = (set) => new Set(set.cards.map((c) => c.id));
 
-  /** Toute la collection, set par set : { sets: { setId: [cardId…] } } (page « Ma collection »). */
+  /** Toute la collection, set par set : { sets, doubles: { setId: [cardId…] } } (« Ma collection »). */
   router.get('/', async (req, res) => {
-    res.json({ sets: await collections.all(req.user.id) });
+    const [sets, doubles] = await Promise.all([
+      collections.all(req.user.id),
+      collections.allDoubles(req.user.id),
+    ]);
+    res.json({ sets, doubles });
   });
 
   router.get('/:setId', async (req, res) => {
     findSet(req.params.setId);
-    res.json({ cardIds: await collections.list(req.user.id, req.params.setId) });
+    const [cardIds, doubleIds] = await Promise.all([
+      collections.list(req.user.id, req.params.setId),
+      collections.doubles(req.user.id, req.params.setId),
+    ]);
+    res.json({ cardIds, doubleIds });
   });
 
   router.put('/:setId', async (req, res) => {
@@ -45,6 +53,21 @@ export function collectionRouter(repo, { collections }) {
   router.delete('/:setId/cards/:cardId', async (req, res) => {
     findSet(req.params.setId);
     await collections.remove(req.user.id, req.params.setId, req.params.cardId);
+    res.status(204).end();
+  });
+
+  /** Doubles : cartes en plus d'un exemplaire, que les amis peuvent demander en échange. */
+  router.put('/:setId/doubles/:cardId', async (req, res) => {
+    const { setId, cardId } = req.params;
+    if (!cardIdsOf(findSet(setId)).has(cardId))
+      throw new HttpError(404, 'CARD_NOT_FOUND', `Carte "${cardId}" absente du set`);
+    await collections.addDouble(req.user.id, setId, cardId);
+    res.status(204).end();
+  });
+
+  router.delete('/:setId/doubles/:cardId', async (req, res) => {
+    findSet(req.params.setId);
+    await collections.removeDouble(req.user.id, req.params.setId, req.params.cardId);
     res.status(204).end();
   });
 

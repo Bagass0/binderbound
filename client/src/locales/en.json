@@ -173,7 +173,9 @@
   "price": {
     "label": "Price",
     "foil": "foil",
-    "source": "{{source}} market price (USD), updated {{date}}"
+    "source": "{{source}} prices ({{currency}}), updated {{date}}",
+    "converted": "≈: TCGplayer price converted to euros",
+    "estimate": "TCGplayer price converted to euros (estimate)"
   },
   "scan": {
     "button": "Scan",
@@ -290,7 +292,10 @@
     "close": "Close",
     "markOwned": "I own it",
     "markMissing": "I no longer own it",
-    "noImage": "Artwork unavailable"
+    "noImage": "Artwork unavailable",
+    "markDouble": "I have a spare",
+    "removeDouble": "No more spare",
+    "doubleHint": "Spares can be offered to your friends in trades"
   },
   "auth": {
     "signIn": "Sign in",
@@ -406,12 +411,16 @@
         "body": "If you create an account, we store your email address, your name and, depending on how you sign in, your password in hashed form (never in plain text) or your Google ID with your profile picture. We also store your saved binders and the cards you have checked."
       },
       {
+        "title": "Friends and trades",
+        "body": "If you use trades, we store your friends, the cards you mark as spares and your trade offers (cards, note, status). A random friend code lets people add you without ever seeing your email address. Your friends, and only them, can see your name, profile picture, the cards you own and your spares in a trade’s set; removing a friend revokes this access."
+      },
+      {
         "title": "Sign in with Google",
         "body": "With “Sign in with Google”, Google only shares your name, email address and profile picture with us. We have no access to anything else in your Google account."
       },
       {
         "title": "Purpose and legal basis",
-        "body": "This data is only used to run your account: signing you in and saving your binders and collection. Processing is based on providing the service you request by creating an account (GDPR article 6.1.b). No automated decision-making and no profiling."
+        "body": "This data is only used to run your account: signing you in and saving your binders and collection, trading with your friends. Processing is based on providing the service you request by creating an account (GDPR article 6.1.b). No automated decision-making and no profiling."
       },
       {
         "title": "Retention",
@@ -423,7 +432,7 @@
       },
       {
         "title": "Recipients and hosting",
-        "body": "Your data is never sold, shared or used for advertising. It is hosted by OVHcloud (OVH SAS, France). Card images are loaded from Riot Games’ servers and the Google button from Google’s: like any website, they receive your IP address."
+        "body": "Your data is never sold, shared (beyond what friends you accepted can see) or used for advertising. It is hosted by OVHcloud (OVH SAS, France). Card images are loaded from Riot Games’ servers and the Google button from Google’s: like any website, they receive your IP address."
       },
       {
         "title": "Your rights",
@@ -454,6 +463,10 @@
       {
         "title": "Acceptable use",
         "body": "You must not try to compromise the site’s security or operation, access other people’s data, send automated requests in bulk, or use the service commercially without prior agreement."
+      },
+      {
+        "title": "Trades between friends",
+        "body": "Binderbound lets friends propose card trades, with no money involved. The site only records offers and updates collections: the actual exchange of cards happens between players, under their sole responsibility. Prices shown are indicative (Card Nexus, TCGplayer converted to euros) and are not an offer."
       },
       {
         "title": "Intellectual property",
@@ -488,13 +501,16 @@
     "error": "Deletion failed. Please try again in a moment."
   },
   "legal": {
-    "updated": "Last updated: November 5, 2026"
+    "updated": "Last updated: November 12, 2026"
   },
   "nav": {
     "label": "Main navigation",
     "sets": "Sets",
     "binders": "My binders",
-    "collection": "My collection"
+    "collection": "My collection",
+    "trades": "Trades",
+    "waiting_one": "{{count}} awaiting your answer",
+    "waiting_other": "{{count}} awaiting your answer"
   },
   "collectionPage": {
     "title": "My collection",
@@ -518,7 +534,8 @@
     "show": {
       "all": "All",
       "owned": "Owned",
-      "missing": "Missing"
+      "missing": "Missing",
+      "doubles": "Spares"
     },
     "sortLabel": "Sort",
     "sort": {
@@ -526,6 +543,96 @@
       "number": "By number",
       "priceDesc": "Price: high to low",
       "priceAsc": "Price: low to high"
-    }
+    },
+    "doubleHint": "Spare: up for trade"
+  },
+  "friends": {
+    "title": "Friends",
+    "myCode": "Your friend code",
+    "codeHint": "Share it so friends can add you. Click to copy.",
+    "copied": "Copied!",
+    "addLabel": "Friend’s code",
+    "add": "Add",
+    "added": {
+      "requested": "Request sent to {{name}}.",
+      "accepted": "You and {{name}} are now friends!",
+      "pending": "Request already sent to {{name}}.",
+      "friends": "{{name}} is already your friend."
+    },
+    "errors": {
+      "CODE_NOT_FOUND": "No player with this code.",
+      "SELF": "That’s your own code!",
+      "RATE_LIMITED": "Too many attempts, try again in a few minutes.",
+      "VALIDATION_ERROR": "A code is 8 characters long (e.g. ABCD-EFGH).",
+      "other": "Couldn’t add this friend right now."
+    },
+    "incoming": "Requests received",
+    "outgoing": "Requests sent",
+    "accept": "Accept",
+    "decline": "Decline",
+    "list_one": "My friend ({{count}})",
+    "list_other": "My friends ({{count}})",
+    "none": "No friends yet: share your code or enter theirs.",
+    "propose": "Trade",
+    "remove": "Remove {{name}} from my friends",
+    "confirmRemove": "Remove"
+  },
+  "trades": {
+    "eyebrow": "Between friends",
+    "title": "Trades",
+    "lead": "Add your friends, then offer your spares for theirs, one set at a time. Once a trade is accepted, both collections update automatically.",
+    "none": "No trades yet. Pick a friend and click “Trade”.",
+    "groups": {
+      "incoming": "To answer",
+      "outgoing": "Awaiting answer",
+      "history": "History"
+    },
+    "with": "Offered to {{name}}",
+    "from": "{{name}} offers you",
+    "youGive": "You give",
+    "youGet": "You get",
+    "nothing": "Nothing",
+    "status": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "declined": "Declined",
+      "cancelled": "Cancelled"
+    },
+    "accept": "Accept trade",
+    "decline": "Decline",
+    "cancel": "Cancel offer",
+    "stale": "Some cards are no longer available: this trade can’t be accepted anymore.",
+    "failed": "That didn’t work, please try again."
+  },
+  "compose": {
+    "eyebrow": "New trade",
+    "title": "Propose a trade",
+    "lead": "Pick a friend and a set, then select the spares to swap on each side.",
+    "noFriends": "You need a friend first.",
+    "addFriends": "Add friends",
+    "friend": "Friend",
+    "chooseFriend": "Choose a friend",
+    "set": "Set",
+    "chooseSet": "Choose a set",
+    "onlyUseful": "Only useful cards",
+    "onlyUsefulHint": "Hides spares the other player already owns.",
+    "yourDoubles": "Your spares",
+    "theirDoubles": "{{name}}’s spares",
+    "selected_one": "{{count}} selected",
+    "selected_other": "{{count}} selected",
+    "theyNeed": "They need",
+    "youNeed": "You need",
+    "noDoubles": "You haven’t marked any spares in this set yet.",
+    "markDoubles": "Mark my spares",
+    "nothingUseful": "{{name}} already owns all your spares.",
+    "nothingForYou": "You already own all their spares.",
+    "noTheirDoubles": "{{name}} hasn’t marked any spares in this set yet.",
+    "give_one": "You give {{count}} card",
+    "give_other": "You give {{count}} cards",
+    "get_one": "You get {{count}} card",
+    "get_other": "You get {{count}} cards",
+    "message": "A short note (optional)",
+    "send": "Send to {{name}}",
+    "failed": "Couldn’t send the offer, please try again."
   }
 }

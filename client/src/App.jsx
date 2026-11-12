@@ -33,7 +33,14 @@ const router = createBrowserRouter([
       },
       {
         element: <RequireUser />,
-        children: [{ path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) }],
+        children: [
+          { path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) },
+          { path: 'echanges', lazy: page(() => import('./pages/TradesPage.jsx')) },
+          {
+            path: 'echanges/nouveau',
+            lazy: page(() => import('./pages/TradeComposerPage.jsx')),
+          },
+        ],
       },
       { path: '*', element: <Navigate to="/" replace /> },
     ],

@@ -201,6 +201,7 @@
 
 /* Une case au format d'une carte, comme une pochette de classeur. */
 .slot {
+  position: relative;
   aspect-ratio: var(--card-w) / var(--card-h);
 }
 
@@ -219,4 +220,20 @@
   margin: 3rem 0;
   text-align: center;
   color: var(--text-2);
+}
+
+/* Double (carte à échanger) : pastille posée sur le coin de la carte. */
+.double {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  z-index: 3;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--bg-void);
+  background: var(--accent-gradient);
+  box-shadow: 0 0 0.6rem rgb(var(--accent-rgb) / 0.55);
+  pointer-events: none;
 }

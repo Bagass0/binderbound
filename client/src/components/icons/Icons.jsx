@@ -75,6 +75,18 @@ export const Cards = (p) => (
     <path d="M5 6.5v12A2.5 2.5 0 0 0 7.5 21H15" />
   </svg>
 );
+/** Échanges : deux flèches qui se croisent. */
+export const Trade = (p) => (
+  <svg {...base} {...p}>
+    <path d="M4 8h13m0 0-3.5-3.5M17 8l-3.5 3.5M20 16H7m0 0 3.5-3.5M7 16l3.5 3.5" />
+  </svg>
+);
+export const Copy = (p) => (
+  <svg {...base} {...p}>
+    <rect x="8.5" y="8.5" width="11" height="11" rx="1.5" />
+    <path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5" />
+  </svg>
+);
 export const Book = (p) => (
   <svg {...base} {...p}>
     <path d="M12 6c-2-1.5-5-2-8-1.5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-14c-3-.5-6 0-8 1.5Zm0 0v14" />

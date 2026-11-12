@@ -1,0 +1,335 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 56rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* --- Amis --- */
+
+.friends {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (max-width: 56rem) {
+  .friends {
+    position: static;
+  }
+}
+
+.code {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.codeLabel,
+.block h3 {
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.codeValue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: var(--bg-deep);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.codeValue:hover {
+  border-color: var(--accent);
+}
+
+.codeValue svg {
+  font-size: 1rem;
+  color: var(--text-2);
+}
+
+.code small,
+.hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+
+.addBlock {
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* Le bouton s'aligne sur le champ (le message éventuel est sous le formulaire). */
+.add {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+.add > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.addError {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--danger);
+}
+
+.block {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.people {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.personName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-strong);
+}
+
+.avatar {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+  font-weight: 700;
+  color: var(--on-accent);
+  background: var(--accent-gradient);
+}
+
+.md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.8rem;
+}
+
+.propose {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.propose:hover {
+  border-color: var(--accent);
+  background: rgb(var(--accent-rgb) / 0.08);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+/* --- Échanges --- */
+
+.trades {
+  display: grid;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.empty {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  margin: 0;
+  padding: 3rem 1rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--text-2);
+}
+
+.emptyIcon {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.group {
+  display: grid;
+  gap: 1rem;
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  color: var(--text-strong);
+}
+
+.groupTitle span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trade {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-2), var(--bg-deep));
+}
+
+.closed {
+  opacity: 0.75;
+}
+
+.tradeHead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tradeHead > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  color: var(--text-strong);
+}
+
+.tradeHead small {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.status {
+  padding: 0.15rem 0.6rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pending {
+  color: var(--accent);
+}
+
+.accepted {
+  color: var(--rift);
+}
+
+.declined,
+.cancelled {
+  color: var(--text-3);
+}
+
+.message {
+  margin: 0;
+  padding: 0.5rem 0.85rem;
+  border-left: 2px solid var(--accent-dim);
+  font-style: italic;
+  color: var(--text-2);
+}
+
+.sides {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.sides h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.arrows {
+  align-self: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+@media (max-width: 36rem) {
+  .sides {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arrows {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+}
+
+.warning {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--danger);
+}
+
+.tradeActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}

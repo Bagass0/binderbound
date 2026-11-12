@@ -10,6 +10,8 @@ const TITLES = {
   '/login': 'auth.title.login',
   '/binders': 'binders.title',
   '/collection': 'collectionPage.title',
+  '/echanges': 'trades.title',
+  '/echanges/nouveau': 'compose.title',
 };
 
 export function usePageMeta(pathname) {

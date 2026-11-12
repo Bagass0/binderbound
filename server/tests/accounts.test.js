@@ -14,7 +14,17 @@ import { HttpError } from '../src/middleware/errorHandler.js';
  */
 const url = process.env.TEST_DATABASE_URL;
 const FIXTURES = fileURLToPath(new URL('./fixtures', import.meta.url));
-const TABLES = ['owned_cards', 'binders', 'sessions', 'users', 'schema_migrations'];
+const TABLES = [
+  'trade_items',
+  'trades',
+  'double_cards',
+  'friendships',
+  'owned_cards',
+  'binders',
+  'sessions',
+  'users',
+  'schema_migrations',
+];
 
 // Faux vérificateur Google : le « jeton » est le profil encodé en JSON.
 const fakeGoogle = async (credential) => {
@@ -26,15 +36,15 @@ const fakeGoogle = async (credential) => {
 describe.skipIf(!url)('comptes (MySQL)', () => {
   let db;
   let app;
+  let accounts;
 
   beforeAll(async () => {
     db = await connect(url, { retries: 1 });
     for (const table of TABLES) await db.query(`DROP TABLE IF EXISTS ${table}`);
     await migrate(db, { log: () => {} });
     const repo = createSetRepository(await loadSets(FIXTURES));
-    app = createApp(repo, {
-      accounts: createAccounts(db, { googleClientId: 'test-client', verifyGoogle: fakeGoogle }),
-    });
+    accounts = createAccounts(db, { googleClientId: 'test-client', verifyGoogle: fakeGoogle });
+    app = createApp(repo, { accounts });
   });
 
   beforeEach(async () => {
@@ -319,7 +329,155 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
       expect(rarities.reduce((n, r) => n + r.owned, 0)).toBe(2);
 
       const all = await agent.get('/api/collection').expect(200);
-      expect(all.body).toEqual({ sets: { sample: ['SMP-001', 'SMP-002'] } });
+      expect(all.body).toEqual({ sets: { sample: ['SMP-001', 'SMP-002'] }, doubles: {} });
+    });
+  });
+
+  describe('amis et échanges', () => {
+    let ezreal;
+    let ezrealId;
+    let jinx;
+    let jinxId;
+
+    // Comptes créés directement (pas par /register : sa limite par IP vaut pour toute la suite).
+    const signUp = async (name) => {
+      const user = await accounts.users.create({ email: `${name}@runeterra.gg`, name });
+      const cookie = `bb_session=${await accounts.sessions.create(user.id)}`;
+      const as = (method) => (url) => request(app)[method](url).set('Cookie', cookie);
+      return [{ get: as('get'), post: as('post'), put: as('put'), delete: as('delete') }, user.id];
+    };
+    const codeOf = async (agent) => (await agent.get('/api/friends').expect(200)).body.code;
+    const befriend = async () => {
+      const code = await codeOf(jinx);
+      await ezreal.post('/api/friends').send({ code }).expect(201);
+      await jinx.post(`/api/friends/${ezrealId}/accept`).expect(204);
+    };
+    const owned = async (agent) => (await agent.get('/api/collection/sample').expect(200)).body;
+
+    beforeEach(async () => {
+      [ezreal, ezrealId] = await signUp('ezreal');
+      [jinx, jinxId] = await signUp('jinx');
+    });
+
+    it('ajoute un ami par son code, sans exposer son e-mail', async () => {
+      const code = await codeOf(jinx);
+      expect(code).toMatch(/^[A-Z2-9]{8}$/);
+      expect(await codeOf(jinx)).toBe(code); // stable
+
+      await ezreal.post('/api/friends').send({ code: 'ZZZZZZZZ' }).expect(404);
+      await ezreal
+        .post('/api/friends')
+        .send({ code: await codeOf(ezreal) })
+        .expect(400);
+      const res = await ezreal
+        .post('/api/friends')
+        .send({ code: `${code.slice(0, 4)}-${code.slice(4).toLowerCase()}` })
+        .expect(201);
+      expect(res.body).toEqual({
+        status: 'requested',
+        user: { id: jinxId, name: 'jinx', avatarUrl: null },
+      });
+
+      expect((await jinx.get('/api/trades/summary')).body).toEqual({
+        friendRequests: 1,
+        trades: 0,
+      });
+      const lists = (await jinx.get('/api/friends')).body;
+      expect(lists.incoming.map((f) => f.name)).toEqual(['ezreal']);
+      expect(JSON.stringify(lists)).not.toContain('@');
+
+      // Une demande en sens inverse conclut l'amitié.
+      const back = await jinx
+        .post('/api/friends')
+        .send({ code: await codeOf(ezreal) })
+        .expect(200);
+      expect(back.body.status).toBe('accepted');
+      expect((await ezreal.get('/api/friends')).body.friends.map((f) => f.name)).toEqual(['jinx']);
+    });
+
+    it('ne montre la collection qu’aux amis', async () => {
+      await jinx.put('/api/collection/sample/doubles/SMP-003').expect(204);
+      await ezreal.get(`/api/friends/${jinxId}/collection/sample`).expect(404);
+      await befriend();
+      const { body } = await ezreal.get(`/api/friends/${jinxId}/collection/sample`).expect(200);
+      // Un double est forcément possédé.
+      expect(body).toEqual({ cardIds: ['SMP-003'], doubleIds: ['SMP-003'] });
+    });
+
+    it('échange des doubles : chacun garde son exemplaire, l’autre gagne la carte', async () => {
+      await befriend();
+      await ezreal.put('/api/collection/sample/doubles/SMP-001').expect(204);
+      await jinx.put('/api/collection/sample/doubles/SMP-002').expect(204);
+      await ezreal.put('/api/collection/sample/cards/SMP-002').expect(204); // il l'a déjà
+
+      const propose = (body) =>
+        ezreal.post('/api/trades').send({ friendId: jinxId, setId: 'sample', ...body });
+      await propose({ give: ['SMP-004'], receive: [] }).expect(409); // pas un double
+      await propose({ give: [], receive: [] }).expect(400);
+      await propose({ give: ['SMP-001'], receive: ['SMP-001'] }).expect(400);
+      const { body } = await propose({
+        give: ['SMP-001'],
+        receive: ['SMP-002'],
+        message: 'Deal ?',
+      }).expect(201);
+
+      expect((await jinx.get('/api/trades/summary')).body.trades).toBe(1);
+      const [trade] = (await jinx.get('/api/trades')).body.trades;
+      expect(trade).toMatchObject({
+        id: body.id,
+        status: 'pending',
+        message: 'Deal ?',
+        proposer: { name: 'ezreal' },
+        give: [{ cardId: 'SMP-001', available: true }],
+        receive: [{ cardId: 'SMP-002', available: true }],
+      });
+
+      await ezreal.post(`/api/trades/${body.id}/accept`).expect(404); // seul le destinataire
+      await jinx.post(`/api/trades/${body.id}/accept`).expect(204);
+      await jinx.post(`/api/trades/${body.id}/accept`).expect(409);
+
+      expect(await owned(ezreal)).toEqual({
+        cardIds: ['SMP-001', 'SMP-002'],
+        doubleIds: ['SMP-002'],
+      });
+      expect(await owned(jinx)).toEqual({ cardIds: ['SMP-001', 'SMP-002'], doubleIds: [] });
+    });
+
+    it('refuse un échange devenu impossible, et gère refus et annulation', async () => {
+      await befriend();
+      await ezreal.put('/api/collection/sample/doubles/SMP-001').expect(204);
+      const propose = () =>
+        ezreal
+          .post('/api/trades')
+          .send({ friendId: jinxId, setId: 'sample', give: ['SMP-001'], receive: [] })
+          .expect(201)
+          .then((r) => r.body.id);
+
+      const first = await propose();
+      const second = await propose();
+      await jinx.post(`/api/trades/${second}/decline`).expect(204);
+      await ezreal.post(`/api/trades/${second}/cancel`).expect(404); // déjà clos
+
+      // Le double disparaît (carte retirée) : l'échange n'est plus réalisable.
+      await ezreal.delete('/api/collection/sample/cards/SMP-001').expect(204);
+      expect((await jinx.get('/api/trades')).body.trades[0].give[0].available).toBe(false);
+      await jinx.post(`/api/trades/${first}/accept`).expect(409);
+      await ezreal.post(`/api/trades/${first}/cancel`).expect(204);
+
+      const statuses = (await ezreal.get('/api/trades')).body.trades.map((t) => t.status);
+      expect(statuses.sort()).toEqual(['cancelled', 'declined']);
+    });
+
+    it('retirer un ami annule les échanges en attente', async () => {
+      await befriend();
+      await ezreal.put('/api/collection/sample/doubles/SMP-001').expect(204);
+      await ezreal
+        .post('/api/trades')
+        .send({ friendId: jinxId, setId: 'sample', give: ['SMP-001'], receive: [] })
+        .expect(201);
+      await ezreal.delete(`/api/friends/${jinxId}`).expect(204);
+      expect((await jinx.get('/api/trades')).body.trades[0].status).toBe('cancelled');
+      expect((await jinx.get('/api/friends')).body.friends).toEqual([]);
     });
   });
 });

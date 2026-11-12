@@ -16,7 +16,16 @@ const authLimiter = rateLimit({
     next(new HttpError(429, 'RATE_LIMITED', 'Trop de tentatives, réessaie plus tard')),
 });
 
-export function authRouter({ users, sessions, binders, collections, verifyGoogle, cookieSecure }) {
+export function authRouter({
+  users,
+  sessions,
+  binders,
+  collections,
+  friends,
+  trades,
+  verifyGoogle,
+  cookieSecure,
+}) {
   const router = Router();
 
   const startSession = async (res, user, status = 200) => {
@@ -102,6 +111,9 @@ export function authRouter({ users, sessions, binders, collections, verifyGoogle
       },
       binders: await binders.list(user.id),
       collection: await collections.all(user.id),
+      doubles: await collections.allDoubles(user.id),
+      friends: await friends.list(user.id),
+      trades: await trades.list(user.id, { limit: 10000 }),
     });
   });
 

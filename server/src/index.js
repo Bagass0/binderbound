@@ -30,7 +30,12 @@ if (env.DATABASE_URL) {
 const app = createApp(createSetRepository(sets), {
   staticDir: STATIC_DIR,
   accounts,
-  prices: createPriceService(),
+  // Card Nexus (prix Cardmarket en euros) si une clé d'API est fournie ; TCGplayer sinon.
+  prices: createPriceService({
+    cardNexus: env.CARDNEXUS_API_KEY
+      ? { apiKey: env.CARDNEXUS_API_KEY, game: env.CARDNEXUS_GAME || 'riftbound' }
+      : null,
+  }),
   fingerprints: createFingerprintStore(),
   trustProxy: Number(env.TRUST_PROXY) || false, // nombre de reverse proxies devant l'app
 });

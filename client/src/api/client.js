@@ -68,5 +68,26 @@ export const api = {
     remove: (setId, cardId) => send('DELETE', `/collection/${enc(setId)}/cards/${enc(cardId)}`),
     replace: (setId, cardIds) => send('PUT', `/collection/${enc(setId)}`, { cardIds }),
     import: (sets) => send('POST', '/collection/import', { sets }),
+    addDouble: (setId, cardId) => send('PUT', `/collection/${enc(setId)}/doubles/${enc(cardId)}`),
+    removeDouble: (setId, cardId) =>
+      send('DELETE', `/collection/${enc(setId)}/doubles/${enc(cardId)}`),
+  },
+
+  friends: {
+    list: (signal) => request('/friends', { signal }),
+    add: (code) => send('POST', '/friends', { code }),
+    accept: (id) => send('POST', `/friends/${enc(id)}/accept`),
+    remove: (id) => send('DELETE', `/friends/${enc(id)}`),
+    collection: (id, setId, signal) =>
+      request(`/friends/${enc(id)}/collection/${enc(setId)}`, { signal }),
+  },
+
+  trades: {
+    list: (signal) => request('/trades', { signal }),
+    summary: (signal) => request('/trades/summary', { signal }),
+    create: (body) => send('POST', '/trades', body),
+    accept: (id) => send('POST', `/trades/${enc(id)}/accept`),
+    decline: (id) => send('POST', `/trades/${enc(id)}/decline`),
+    cancel: (id) => send('POST', `/trades/${enc(id)}/cancel`),
   },
 };

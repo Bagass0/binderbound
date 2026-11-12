@@ -1,7 +1,9 @@
 import { createGoogleVerifier } from '../auth/google.js';
 import { createBinderStore } from './binders.js';
 import { createCollectionStore } from './collections.js';
+import { createFriendStore } from './friends.js';
 import { createSessionStore } from './sessions.js';
+import { createTradeStore } from './trades.js';
 import { createUserStore } from './users.js';
 
 /**
@@ -17,6 +19,8 @@ export function createAccounts(
     sessions: createSessionStore(db),
     binders: createBinderStore(db),
     collections: createCollectionStore(db),
+    friends: createFriendStore(db),
+    trades: createTradeStore(db),
     googleClientId,
     cookieSecure,
     verifyGoogle: verifyGoogle ?? (googleClientId ? createGoogleVerifier(googleClientId) : null),

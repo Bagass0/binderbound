@@ -56,3 +56,27 @@ export const collectionReplaceSchema = z.object({ cardIds });
 export const collectionImportSchema = z.object({
   sets: z.record(z.string().min(1).max(32), cardIds),
 });
+
+/** Code ami saisi à la main : espaces et tirets ignorés, casse indifférente. */
+export const friendRequestSchema = z.object({
+  code: z
+    .string()
+    .max(32)
+    .transform((c) => c.replace(/[\s-]/g, '').toUpperCase())
+    .pipe(z.string().regex(/^[A-Z0-9]{8}$/)),
+});
+
+const tradeCards = z.array(z.string().min(1).max(64)).max(30);
+
+/** Proposition d'échange : au moins une carte, jamais la même des deux côtés. */
+export const tradeCreateSchema = z
+  .object({
+    friendId: z.number().int().positive(),
+    setId: z.string().min(1).max(32),
+    give: tradeCards,
+    receive: tradeCards,
+    message: z.string().trim().max(280).optional(),
+  })
+  .transform((t) => ({ ...t, give: [...new Set(t.give)], receive: [...new Set(t.receive)] }))
+  .refine((t) => t.give.length + t.receive.length > 0, 'Échange vide')
+  .refine((t) => !t.give.some((id) => t.receive.includes(id)), 'Même carte des deux côtés');

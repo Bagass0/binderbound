@@ -34,6 +34,33 @@
   color: var(--accent);
 }
 
+/* Nombre de demandes et d'échanges en attente de réponse. */
+.badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--bg-void);
+  background: var(--accent-gradient);
+  box-shadow: 0 0 0.6rem rgb(var(--accent-rgb) / 0.6);
+}
+
+@media (max-width: 62rem) {
+  .badge {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.1rem;
+    min-width: 1rem;
+    height: 1rem;
+    font-size: 0.6rem;
+  }
+}
+
 /* Trait lumineux posé sur le bas du header, qui glisse d'un lien à l'autre. */
 .underline {
   position: absolute;
