@@ -11,6 +11,8 @@ export const registerSchema = z.object({
   email,
   name,
   password: z.string().min(8).max(128),
+  /** Apparaître dans la liste des joueurs : oui par défaut, décochable à l'inscription. */
+  discoverable: z.boolean().default(true),
 });
 
 export const loginSchema = z.object({

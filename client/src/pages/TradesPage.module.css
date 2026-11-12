@@ -1,173 +1,24 @@
-.layout {
-  display: grid;
-  grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
-  gap: 2rem;
-  align-items: start;
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 56rem;
+  margin: 0 auto 2rem;
 }
 
-@media (max-width: 56rem) {
-  .layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* --- Amis --- */
-
-.friends {
-  position: sticky;
-  top: calc(var(--header-h) + 1rem);
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (max-width: 56rem) {
-  .friends {
-    position: static;
-  }
-}
-
-.code {
-  display: grid;
-  gap: 0.35rem;
-  justify-items: start;
-}
-
-.codeLabel,
-.block h3 {
-  font-size: 0.6875rem;
-  font-weight: 650;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-
-.codeValue {
+.friendsLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  background: var(--bg-deep);
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.codeValue:hover {
-  border-color: var(--accent);
-}
-
-.codeValue svg {
-  font-size: 1rem;
-  color: var(--text-2);
-}
-
-.code small,
-.hint {
-  margin: 0;
-  font-size: 0.8125rem;
-  color: var(--text-3);
-}
-
-.addBlock {
-  display: grid;
   gap: 0.4rem;
-}
-
-/* Le bouton s'aligne sur le champ (le message éventuel est sous le formulaire). */
-.add {
-  display: flex;
-  gap: 0.6rem;
-  align-items: flex-end;
-}
-
-.add > :first-child {
-  flex: 1;
-  min-width: 0;
-}
-
-.addError {
-  margin: 0;
-  font-size: 0.8125rem;
-  color: var(--danger);
-}
-
-.block {
-  display: grid;
-  gap: 0.6rem;
-}
-
-.people {
-  display: grid;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.people li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.personName {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--text-strong);
-}
-
-.avatar {
-  display: inline-grid;
-  flex: none;
-  place-items: center;
-  border-radius: 50%;
-  object-fit: cover;
-  font-weight: 700;
-  color: var(--on-accent);
-  background: var(--accent-gradient);
-}
-
-.md {
-  width: 2rem;
-  height: 2rem;
-}
-
-.sm {
-  width: 1.75rem;
-  height: 1.75rem;
-  font-size: 0.8rem;
-}
-
-.propose {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.65rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  font-size: 0.8125rem;
-  color: var(--accent);
+  font-size: 0.875rem;
+  color: var(--text-2);
   text-decoration: none;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
 }
 
-.propose:hover {
-  border-color: var(--accent);
-  background: rgb(var(--accent-rgb) / 0.08);
-}
-
-.danger {
-  color: var(--danger);
+.friendsLink:hover {
+  color: var(--accent);
 }
 
 /* --- Échanges --- */
@@ -175,7 +26,8 @@
 .trades {
   display: grid;
   gap: 2rem;
-  min-width: 0;
+  max-width: 56rem;
+  margin: 0 auto;
 }
 
 .empty {
@@ -329,66 +181,6 @@
 }
 
 .tradeActions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.6rem;
-}
-
-.visibility {
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-
-/* --- Liste des joueurs --- */
-
-.playersDialog {
-  width: min(30rem, calc(100vw - 2rem));
-}
-
-.players {
-  display: grid;
-  gap: 1rem;
-}
-
-.playerList {
-  max-height: min(24rem, 55vh);
-  padding-right: 0.25rem;
-  overflow-y: auto;
-}
-
-.playerList[aria-busy='true'] {
-  opacity: 0.6;
-}
-
-/* Première personne d'une lettre : la lettre en intercalaire. */
-.letterStart {
-  position: relative;
-  margin-top: 1.4rem;
-}
-
-.letterStart::before {
-  content: attr(data-letter);
-  position: absolute;
-  top: -1.35rem;
-  left: 0;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  color: var(--accent);
-}
-
-.playerList > li:first-child {
-  margin-top: 1.2rem;
-}
-
-.relation {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8125rem;
-  color: var(--text-3);
-}
-
-.dialogFoot {
   display: flex;
   justify-content: flex-end;
   gap: 0.6rem;

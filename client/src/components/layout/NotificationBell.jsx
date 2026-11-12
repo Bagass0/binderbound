@@ -173,6 +173,11 @@ function NotificationList() {
                     <Check /> {t('notifications.nowFriends')}
                   </span>
                 )}
+                {n.type === 'friend_accepted' && (
+                  <Link to="/amis" className={styles.link}>
+                    {t('notifications.viewFriends')}
+                  </Link>
+                )}
                 {n.type === 'trade_received' && (
                   <Link to="/echanges" className={styles.link}>
                     {t('notifications.viewTrade')}

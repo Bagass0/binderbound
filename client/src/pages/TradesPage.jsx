@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion } from 'motion/react';
 import { api } from '../api/client.js';
@@ -9,37 +9,25 @@ import { usePrices, useSet } from '../hooks/useConfig.js';
 import { notifyChanged } from '../hooks/useNotifications.js';
 import { itemMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
+import { Avatar } from '../components/common/Avatar.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { TotalValue, TradeCards } from '../components/trade/TradeCards.jsx';
 import { Button } from '../components/ui/Button.jsx';
-import { Dialog } from '../components/ui/Dialog.jsx';
-import { Panel } from '../components/ui/Panel.jsx';
-import { Toggle } from '../components/ui/controls.jsx';
-import { TextField } from '../components/ui/TextField.jsx';
-import { Check, Copy, Plus, Search, Trade, Trash } from '../components/icons/Icons.jsx';
+import { Plus, Trade, Users } from '../components/icons/Icons.jsx';
 import styles from './TradesPage.module.css';
 
-const initialOf = (user) => user.name.slice(0, 1).toLocaleUpperCase();
-
-/** Taille d'une page de la liste des joueurs (fixée par le serveur). */
-const PLAYERS_PAGE = 50;
-
-/** « ABCD-EFGH » : plus lisible à dicter ou recopier. */
-const formatCode = (code) => (code ? `${code.slice(0, 4)}-${code.slice(4)}` : '');
-
-/** Amis (ajout par code ami) et propositions d'échange reçues, envoyées et passées. */
+/** Propositions d'échange reçues, envoyées et passées (les amis ont leur propre page). */
 export default function TradesPage() {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [version, setVersion] = useState(0);
   const refresh = () => {
     setVersion((v) => v + 1);
     notifyChanged();
   };
-  const key = `${user.id}:${version}`;
-  const friends = useAsync(`friends:${key}`, (signal) => api.friends.list(signal));
-  const trades = useAsync(`trades:${key}`, (signal) => api.trades.list(signal));
+  const trades = useAsync(`trades:${user.id}:${version}`, (signal) => api.trades.list(signal));
 
   const list = trades.data?.trades ?? [];
   const groups = [
@@ -54,363 +42,52 @@ export default function TradesPage() {
         {t('trades.lead')}
       </PageHeading>
 
-      <div className={styles.layout}>
-        <FriendsPanel state={friends} onChange={refresh} />
+      <div className={styles.toolbar}>
+        <Button variant="primary" icon={<Plus />} onClick={() => navigate('/echanges/nouveau')}>
+          {t('trades.new')}
+        </Button>
+        <Link to="/amis" className={styles.friendsLink}>
+          <Users /> {t('trades.manageFriends')}
+        </Link>
+      </div>
 
-        <div className={styles.trades}>
-          {trades.error && <ErrorMessage error={trades.error} />}
-          {!trades.data && !trades.error && <Loading />}
-          {trades.data && list.length === 0 && (
-            <p className={styles.empty}>
-              <Trade className={styles.emptyIcon} />
-              {t('trades.none')}
-            </p>
-          )}
-          {groups.map(
-            ([group, items]) =>
-              items.length > 0 && (
-                <section key={group} className={styles.group}>
-                  <h2 className={styles.groupTitle}>
-                    {t(`trades.groups.${group}`)} <span>{items.length}</span>
-                  </h2>
-                  <ul className={styles.list}>
-                    <AnimatePresence initial={false}>
-                      {items.map((trade) => (
-                        <motion.li
-                          key={trade.id}
-                          layout
-                          variants={itemMotion}
-                          initial="hidden"
-                          animate="show"
-                          exit={{ opacity: 0 }}
-                        >
-                          <TradeCard trade={trade} me={user.id} onChange={refresh} />
-                        </motion.li>
-                      ))}
-                    </AnimatePresence>
-                  </ul>
-                </section>
-              ),
-          )}
-        </div>
+      <div className={styles.trades}>
+        {trades.error && <ErrorMessage error={trades.error} />}
+        {!trades.data && !trades.error && <Loading />}
+        {trades.data && list.length === 0 && (
+          <p className={styles.empty}>
+            <Trade className={styles.emptyIcon} />
+            {t('trades.none')}
+          </p>
+        )}
+        {groups.map(
+          ([group, items]) =>
+            items.length > 0 && (
+              <section key={group} className={styles.group}>
+                <h2 className={styles.groupTitle}>
+                  {t(`trades.groups.${group}`)} <span>{items.length}</span>
+                </h2>
+                <ul className={styles.list}>
+                  <AnimatePresence initial={false}>
+                    {items.map((trade) => (
+                      <motion.li
+                        key={trade.id}
+                        layout
+                        variants={itemMotion}
+                        initial="hidden"
+                        animate="show"
+                        exit={{ opacity: 0 }}
+                      >
+                        <TradeCard trade={trade} me={user.id} onChange={refresh} />
+                      </motion.li>
+                    ))}
+                  </AnimatePresence>
+                </ul>
+              </section>
+            ),
+        )}
       </div>
     </>
-  );
-}
-
-function Avatar({ user, size = 'md' }) {
-  return user.avatarUrl ? (
-    <img
-      className={`${styles.avatar} ${styles[size]}`}
-      src={user.avatarUrl}
-      alt=""
-      referrerPolicy="no-referrer"
-    />
-  ) : (
-    <span className={`${styles.avatar} ${styles[size]}`} aria-hidden>
-      {user.name.slice(0, 1).toUpperCase()}
-    </span>
-  );
-}
-
-function FriendsPanel({ state, onChange }) {
-  const { t } = useTranslation();
-  const { data, error } = state;
-  const [copied, setCopied] = useState(false);
-  const [browsing, setBrowsing] = useState(false);
-
-  const copy = async () => {
-    await navigator.clipboard?.writeText(formatCode(data.code)).catch(() => {});
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1600);
-  };
-  const act = (fn) => () => fn().then(onChange, console.error);
-
-  return (
-    <Panel className={styles.friends} title={t('friends.title')}>
-      {error && <ErrorMessage error={error} />}
-      {!data && !error && <Loading />}
-      {data && (
-        <>
-          <div className={styles.code}>
-            <span className={styles.codeLabel}>{t('friends.myCode')}</span>
-            <button type="button" className={styles.codeValue} onClick={copy}>
-              {formatCode(data.code)}
-              {copied ? <Check /> : <Copy />}
-            </button>
-            <small>{copied ? t('friends.copied') : t('friends.codeHint')}</small>
-          </div>
-
-          <AddFriendForm onAdded={onChange} />
-          <Button variant="secondary" icon={<Search />} onClick={() => setBrowsing(true)}>
-            {t('players.browse')}
-          </Button>
-
-          {data.incoming.length > 0 && (
-            <div className={styles.block}>
-              <h3>{t('friends.incoming')}</h3>
-              <ul className={styles.people}>
-                {data.incoming.map((f) => (
-                  <li key={f.id}>
-                    <Avatar user={f} />
-                    <span className={styles.personName}>{f.name}</span>
-                    <Button
-                      size="sm"
-                      variant="primary"
-                      onClick={act(() => api.friends.accept(f.id))}
-                    >
-                      {t('friends.accept')}
-                    </Button>
-                    <Button size="sm" variant="ghost" onClick={act(() => api.friends.remove(f.id))}>
-                      {t('friends.decline')}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div className={styles.block}>
-            <h3>{t('friends.list', { count: data.friends.length })}</h3>
-            {data.friends.length === 0 ? (
-              <p className={styles.hint}>{t('friends.none')}</p>
-            ) : (
-              <ul className={styles.people}>
-                {data.friends.map((f) => (
-                  <FriendRow key={f.id} friend={f} onRemoved={onChange} />
-                ))}
-              </ul>
-            )}
-          </div>
-
-          {data.outgoing.length > 0 && (
-            <div className={styles.block}>
-              <h3>{t('friends.outgoing')}</h3>
-              <ul className={styles.people}>
-                {data.outgoing.map((f) => (
-                  <li key={f.id}>
-                    <Avatar user={f} />
-                    <span className={styles.personName}>{f.name}</span>
-                    <Button size="sm" variant="ghost" onClick={act(() => api.friends.remove(f.id))}>
-                      {t('common.cancel')}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div className={styles.visibility}>
-            <Toggle
-              checked={data.discoverable}
-              onChange={(value) => api.friends.setDiscoverable(value).then(onChange, console.error)}
-              label={t('players.discoverable')}
-              description={t('players.discoverableHint')}
-            />
-          </div>
-        </>
-      )}
-      <PlayersDialog
-        open={browsing}
-        onClose={() => {
-          setBrowsing(false);
-          onChange();
-        }}
-      />
-    </Panel>
-  );
-}
-
-/** Tous les joueurs (qui l'acceptent), par ordre alphabétique, à ajouter sans code. */
-function PlayersDialog({ open, onClose }) {
-  const { t } = useTranslation();
-  return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      title={t('players.title')}
-      className={styles.playersDialog}
-    >
-      <PlayersList onClose={onClose} />
-    </Dialog>
-  );
-}
-
-function PlayersList({ onClose }) {
-  const { t } = useTranslation();
-  const [query, setQuery] = useState('');
-  const [pages, setPages] = useState(1);
-  const [version, setVersion] = useState(0);
-  const q = query.trim();
-  // Les pages déjà affichées sont rechargées ensemble : liste à jour après un ajout.
-  const { data, error, loading } = useAsync(
-    `players:${q}:${pages}:${version}`,
-    async (signal) => {
-      const results = await Promise.all(
-        Array.from({ length: pages }, (_, i) =>
-          api.friends.directory({ q, offset: i * PLAYERS_PAGE }, signal),
-        ),
-      );
-      return { users: results.flatMap((r) => r.users), more: results.at(-1).more };
-    },
-    { delay: q ? 250 : 0 },
-  );
-
-  const act = (fn) => () => fn().then(() => setVersion((v) => v + 1), console.error);
-  return (
-    <div className={styles.players}>
-      <TextField
-        label={t('players.search')}
-        type="search"
-        value={query}
-        autoFocus
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setPages(1);
-        }}
-      />
-      {error && <ErrorMessage error={error} />}
-      {!data && !error && <Loading />}
-      {data?.users.length === 0 && (
-        <p className={styles.hint}>{q ? t('players.noMatch') : t('players.none')}</p>
-      )}
-      {data?.users.length > 0 && (
-        <ul className={`${styles.people} ${styles.playerList}`} aria-busy={loading}>
-          {data.users.map((u, i) => {
-            const initial = initialOf(u);
-            const header = i === 0 || initialOf(data.users[i - 1]) !== initial;
-            return (
-              <li key={u.id} className={header ? styles.letterStart : ''} data-letter={initial}>
-                <Avatar user={u} />
-                <span className={styles.personName}>{u.name}</span>
-                {u.relation === null && (
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    icon={<Plus />}
-                    onClick={act(() => api.friends.addUser(u.id))}
-                  >
-                    {t('friends.add')}
-                  </Button>
-                )}
-                {u.relation === 'incoming' && (
-                  <Button size="sm" variant="primary" onClick={act(() => api.friends.accept(u.id))}>
-                    {t('friends.accept')}
-                  </Button>
-                )}
-                {u.relation === 'outgoing' && (
-                  <span className={styles.relation}>{t('players.sent')}</span>
-                )}
-                {u.relation === 'friend' && (
-                  <span className={styles.relation}>
-                    <Check /> {t('players.friend')}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
-      <div className={styles.dialogFoot}>
-        {data?.more && (
-          <Button size="sm" variant="ghost" onClick={() => setPages((p) => p + 1)}>
-            {t('players.more')}
-          </Button>
-        )}
-        <Button variant="secondary" onClick={onClose}>
-          {t('preview.close')}
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-function FriendRow({ friend, onRemoved }) {
-  const { t } = useTranslation();
-  const [confirming, setConfirming] = useState(false);
-  return (
-    <li>
-      <Avatar user={friend} />
-      <span className={styles.personName}>{friend.name}</span>
-      {confirming ? (
-        <>
-          <Button size="sm" variant="ghost" onClick={() => setConfirming(false)}>
-            {t('common.cancel')}
-          </Button>
-          <Button
-            size="sm"
-            variant="secondary"
-            className={styles.danger}
-            onClick={() => api.friends.remove(friend.id).then(onRemoved, console.error)}
-          >
-            {t('friends.confirmRemove')}
-          </Button>
-        </>
-      ) : (
-        <>
-          <Link to={`/echanges/nouveau?ami=${friend.id}`} className={styles.propose}>
-            <Trade /> {t('friends.propose')}
-          </Link>
-          <Button
-            size="sm"
-            variant="ghost"
-            icon={<Trash />}
-            aria-label={t('friends.remove', { name: friend.name })}
-            onClick={() => setConfirming(true)}
-          />
-        </>
-      )}
-    </li>
-  );
-}
-
-function AddFriendForm({ onAdded }) {
-  const { t } = useTranslation();
-  const [code, setCode] = useState('');
-  const [message, setMessage] = useState(null); // { error?, text }
-
-  const submit = async (e) => {
-    e.preventDefault();
-    try {
-      const { status, user } = await api.friends.add(code);
-      setCode('');
-      setMessage({ text: t(`friends.added.${status}`, { name: user.name }) });
-      onAdded();
-    } catch (err) {
-      const known = ['CODE_NOT_FOUND', 'SELF', 'RATE_LIMITED', 'VALIDATION_ERROR'];
-      setMessage({
-        error: true,
-        text: t(`friends.errors.${known.includes(err.code) ? err.code : 'other'}`),
-      });
-    }
-  };
-
-  return (
-    <div className={styles.addBlock}>
-      <form className={styles.add} onSubmit={submit}>
-        <TextField
-          label={t('friends.addLabel')}
-          placeholder="ABCD-EFGH"
-          value={code}
-          maxLength={12}
-          autoComplete="off"
-          spellCheck={false}
-          aria-invalid={message?.error || undefined}
-          onChange={(e) => {
-            setCode(e.target.value.toUpperCase());
-            setMessage(null);
-          }}
-        />
-        <Button type="submit" variant="secondary" icon={<Plus />} disabled={code.trim().length < 8}>
-          {t('friends.add')}
-        </Button>
-      </form>
-      {message && (
-        <p role="status" className={message.error ? styles.addError : styles.hint}>
-          {message.text}
-        </p>
-      )}
-    </div>
   );
 }
 

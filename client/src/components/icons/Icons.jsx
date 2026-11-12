@@ -80,6 +80,13 @@ export const Bell = (p) => (
     <path d="M6 16.5V11a6 6 0 1 1 12 0v5.5l1.5 1.5h-15L6 16.5ZM10 20.5a2.2 2.2 0 0 0 4 0" />
   </svg>
 );
+/** Amis : deux silhouettes. */
+export const Users = (p) => (
+  <svg {...base} {...p}>
+    <circle cx="9" cy="8.5" r="3.5" />
+    <path d="M2.5 19.5c.9-3.1 3.3-4.8 6.5-4.8s5.6 1.7 6.5 4.8M15.5 5.2a3.5 3.5 0 0 1 0 6.6M17.5 14.9c2 .5 3.4 2 4 4.6" />
+  </svg>
+);
 /** Échanges : deux flèches qui se croisent. */
 export const Trade = (p) => (
   <svg {...base} {...p}>

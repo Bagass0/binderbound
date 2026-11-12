@@ -4,44 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0b0a16" />
-    <!-- Google affiche une icône PNG/ICO d'au moins 48 px dans ses résultats ; le SVG sert aux navigateurs. -->
-    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <!--
+      Google n'affiche dans ses résultats qu'un favicon PNG/ICO carré d'au moins 48 px
+      (multiple de 48), à une adresse stable et accessible à Googlebot. Le SVG sert aux navigateurs.
+    -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" href="/icon-48.png" sizes="48x48" />
     <link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Binderbound — Rangement de classeur Riftbound</title>
+    <title>Binderbound — Classeur Riftbound, collection et échange de doubles</title>
     <meta
       name="description"
-      content="Range tes cartes Riftbound dans ton classeur : choisis un set et un format (2x2, 3x3, 4x3…), Binderbound t'indique la page, la face et la position exacte de chaque carte, variantes comprises."
+      content="Crée le plan de ton classeur Riftbound : la page et la place exacte de chaque carte, variantes comprises. Suis ta collection, repère tes doubles et échange-les avec tes amis. Gratuit."
     />
     <link rel="canonical" href="https://binderbound.space/" />
 
+    <!-- Aperçu des liens partagés (Discord, WhatsApp, X, Facebook…). -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Binderbound" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:url" content="https://binderbound.space/" />
-    <meta property="og:title" content="Binderbound — Rangement de classeur Riftbound" />
+    <meta
+      property="og:title"
+      content="Binderbound — Classeur Riftbound, collection et échange de doubles"
+    />
     <meta
       property="og:description"
-      content="Choisis un set Riftbound et ton format de classeur : Binderbound t'indique où ranger chaque carte."
+      content="Range ton classeur Riftbound carte par carte, suis ta collection et échange tes doubles avec tes amis. Gratuit."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://binderbound.space/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Binderbound : ton classeur Riftbound carte par carte, ta collection et tes échanges de doubles"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Binderbound — Classeur Riftbound, collection et échange de doubles"
+    />
+    <meta
+      name="twitter:description"
+      content="Range ton classeur Riftbound carte par carte, suis ta collection et échange tes doubles avec tes amis. Gratuit."
+    />
+    <meta name="twitter:image" content="https://binderbound.space/og-image.jpg" />
 
+    <!-- WebSite : nom du site affiché par Google ; WebApplication : l'outil lui-même. -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Binderbound",
-        "url": "https://binderbound.space/",
-        "image": "https://binderbound.space/icon-512.png",
-        "description": "Outil gratuit pour ranger les cartes du TCG Riftbound dans un classeur : emplacement exact de chaque carte selon le set, le format du classeur et les options de tri.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Web",
-        "inLanguage": ["fr", "en"],
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-      }
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Binderbound",
+          "url": "https://binderbound.space/",
+          "inLanguage": ["fr", "en"]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Binderbound",
+          "url": "https://binderbound.space/",
+          "image": "https://binderbound.space/og-image.jpg",
+          "description": "Outil gratuit pour le TCG Riftbound : plan de classeur avec l'emplacement exact de chaque carte selon le set et le format, suivi de collection, cartes manquantes et doubles, et échanges de doubles entre amis.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Web",
+          "inLanguage": ["fr", "en"],
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+        }
+      ]
     </script>
   </head>
   <body>

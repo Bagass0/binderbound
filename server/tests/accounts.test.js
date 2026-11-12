@@ -79,6 +79,15 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
 
       const me = await agent.get('/api/auth/me').expect(200);
       expect(me.body.user.email).toBe('ezreal@piltover.gg');
+      const friends = await agent.get('/api/friends').expect(200);
+      expect(friends.body.discoverable).toBe(true);
+    });
+
+    it("peut ne pas apparaître dans la liste des joueurs dès l'inscription", async () => {
+      const agent = request.agent(app);
+      await register(agent, { discoverable: false }).expect(201);
+      const friends = await agent.get('/api/friends').expect(200);
+      expect(friends.body.discoverable).toBe(false);
     });
 
     it('refuse un e-mail déjà pris et un mot de passe trop court', async () => {

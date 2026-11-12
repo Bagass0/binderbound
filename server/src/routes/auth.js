@@ -38,10 +38,15 @@ export function authRouter({
   router.get('/me', (req, res) => res.json({ user: req.user ? publicUser(req.user) : null }));
 
   router.post('/register', authLimiter, async (req, res) => {
-    const { email, name, password } = registerSchema.parse(req.body ?? {});
+    const { email, name, password, discoverable } = registerSchema.parse(req.body ?? {});
     if (await users.findByEmail(email))
       throw new HttpError(409, 'EMAIL_TAKEN', 'Un compte existe déjà avec cet e-mail');
-    const user = await users.create({ email, name, passwordHash: await hashPassword(password) });
+    const user = await users.create({
+      email,
+      name,
+      discoverable,
+      passwordHash: await hashPassword(password),
+    });
     await startSession(res, user, 201);
   });
 

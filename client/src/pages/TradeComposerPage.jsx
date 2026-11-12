@@ -57,7 +57,7 @@ export default function TradeComposerPage() {
 
       {friendsData && friends.length === 0 && (
         <p className={styles.notice}>
-          {t('compose.noFriends')} <Link to="/echanges">{t('compose.addFriends')}</Link>
+          {t('compose.noFriends')} <Link to="/amis">{t('compose.addFriends')}</Link>
         </p>
       )}
 

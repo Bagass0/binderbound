@@ -35,6 +35,7 @@ const router = createBrowserRouter([
         element: <RequireUser />,
         children: [
           { path: 'binders', lazy: page(() => import('./pages/BindersPage.jsx')) },
+          { path: 'amis', lazy: page(() => import('./pages/FriendsPage.jsx')) },
           { path: 'echanges', lazy: page(() => import('./pages/TradesPage.jsx')) },
           {
             path: 'echanges/nouveau',

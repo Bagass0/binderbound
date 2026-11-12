@@ -9,7 +9,7 @@ import { Loading } from '../components/common/StatusMessage.jsx';
 import { Button } from '../components/ui/Button.jsx';
 import { Panel } from '../components/ui/Panel.jsx';
 import { TextField } from '../components/ui/TextField.jsx';
-import { Segmented } from '../components/ui/controls.jsx';
+import { Segmented, Toggle } from '../components/ui/controls.jsx';
 import styles from './LoginPage.module.css';
 
 /** Destination après connexion : uniquement un chemin interne (pas de redirection ouverte). */
@@ -23,7 +23,7 @@ export default function LoginPage() {
   const next = safeNext(searchParams.get('next'));
 
   const [mode, setMode] = useState('login');
-  const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const [form, setForm] = useState({ name: '', email: '', password: '', discoverable: true });
   const [error, setError] = useState(null);
   const [pending, setPending] = useState(false);
 
@@ -128,6 +128,24 @@ export default function LoginPage() {
             required
             {...field('password')}
           />
+          <AnimatePresence initial={false}>
+            {mode === 'register' && (
+              <motion.div
+                key="discoverable"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className={styles.collapsible}
+              >
+                <Toggle
+                  checked={form.discoverable}
+                  onChange={(discoverable) => setForm((f) => ({ ...f, discoverable }))}
+                  label={t('players.discoverable')}
+                  description={t('players.discoverableHint')}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <AnimatePresence>
             {formError && (

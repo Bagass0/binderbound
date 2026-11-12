@@ -7,10 +7,18 @@ export function createUserStore(db) {
     findByEmail: (email) => one('SELECT * FROM users WHERE email = ?', [email]),
     findByGoogleSub: (sub) => one('SELECT * FROM users WHERE google_sub = ?', [sub]),
 
-    async create({ email, name, passwordHash = null, googleSub = null, avatarUrl = null }) {
+    async create({
+      email,
+      name,
+      passwordHash = null,
+      googleSub = null,
+      avatarUrl = null,
+      discoverable = true,
+    }) {
       const [result] = await db.query(
-        'INSERT INTO users (email, name, password_hash, google_sub, avatar_url) VALUES (?, ?, ?, ?, ?)',
-        [email, name, passwordHash, googleSub, avatarUrl],
+        `INSERT INTO users (email, name, password_hash, google_sub, avatar_url, discoverable)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+        [email, name, passwordHash, googleSub, avatarUrl, discoverable],
       );
       return this.findById(result.insertId);
     },

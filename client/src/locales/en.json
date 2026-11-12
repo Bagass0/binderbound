@@ -3,7 +3,8 @@
     "name": "Binderbound",
     "tagline": "Riftbound binder organizer",
     "home": "Binderbound — home",
-    "language": "Language"
+    "language": "Language",
+    "homeTitle": "Binderbound — Riftbound binder, collection and duplicate trading"
   },
   "common": {
     "back": "Back",
@@ -419,7 +420,7 @@
       },
       {
         "title": "Friends and trades",
-        "body": "If you use trades, we store your friends, the cards you mark as spares, your trade offers (cards, note, status) and the related notifications. Your email address is never shown. By default, your name and profile picture appear in the player list so people can add you without your friend code; you can opt out at any time from the Trades page. Your friends, and only them, can see the cards you own and your spares in a trade’s set; removing a friend revokes this access."
+        "body": "If you use trades, we store your friends, the cards you mark as spares, your trade offers (cards, note, status) and the related notifications. Your email address is never shown. By default, your name and profile picture appear in the player list so people can add you without your friend code; you can opt out when signing up or at any time from the Friends page. Your friends, and only them, can see the cards you own and your spares in a trade’s set; removing a friend revokes this access."
       },
       {
         "title": "Sign in with Google",
@@ -515,7 +516,8 @@
     "sets": "Sets",
     "binders": "My binders",
     "collection": "My collection",
-    "trades": "Trades"
+    "trades": "Trades",
+    "friends": "Friends"
   },
   "collectionPage": {
     "title": "My collection",
@@ -552,7 +554,9 @@
     "doubleHint": "Spare: up for trade"
   },
   "friends": {
+    "eyebrow": "Between players",
     "title": "Friends",
+    "lead": "Your friends first, then every player you can add. Once you are friends, you can see each other’s collection and swap your duplicates.",
     "myCode": "Your friend code",
     "codeHint": "Share it so friends can add you. Click to copy.",
     "copied": "Copied!",
@@ -575,18 +579,17 @@
     "outgoing": "Requests sent",
     "accept": "Accept",
     "decline": "Decline",
-    "list_one": "My friend ({{count}})",
-    "list_other": "My friends ({{count}})",
-    "none": "No friends yet: share your code or enter theirs.",
+    "none": "No friends yet: search for a player below, or share your friend code.",
     "propose": "Trade",
     "remove": "Remove {{name}} from my friends",
-    "confirmRemove": "Remove"
+    "confirmRemove": "Remove",
+    "mine": "My friends"
   },
   "trades": {
     "eyebrow": "Between friends",
     "title": "Trades",
-    "lead": "Add your friends, then offer your spares for theirs, one set at a time. Once a trade is accepted, both collections update automatically.",
-    "none": "No trades yet. Pick a friend and click “Trade”.",
+    "lead": "Offer your duplicates to your friends in exchange for theirs, set by set. Once a trade is accepted, both collections update automatically.",
+    "none": "No trades yet. Offer one to a friend!",
     "groups": {
       "incoming": "To answer",
       "outgoing": "Awaiting answer",
@@ -607,7 +610,9 @@
     "decline": "Decline",
     "cancel": "Cancel offer",
     "stale": "Some cards are no longer available: this trade can’t be accepted anymore.",
-    "failed": "That didn’t work, please try again."
+    "failed": "That didn’t work, please try again.",
+    "new": "Offer a trade",
+    "manageFriends": "Manage my friends"
   },
   "compose": {
     "eyebrow": "New trade",
@@ -659,10 +664,10 @@
       "trade_cancelled": "{{name}} cancelled their offer ({{set}})."
     },
     "justNow": "just now",
-    "nowFriends": "You’re now friends"
+    "nowFriends": "You’re now friends",
+    "viewFriends": "See my friends"
   },
   "players": {
-    "browse": "Browse players",
     "title": "All players",
     "search": "Search a player",
     "none": "Nobody else yet.",
@@ -671,6 +676,7 @@
     "friend": "Friend",
     "more": "Show more",
     "discoverable": "Show me in the player list",
-    "discoverableHint": "Others can then add you without your code. Only your name and picture are shown."
+    "discoverableHint": "Others can then add you without your code. Only your name and picture are shown.",
+    "lead": "Everyone who chose to be listed, in alphabetical order. Add them without their code."
   }
 }

@@ -1,0 +1,21 @@
+.avatar {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+  font-weight: 700;
+  color: var(--on-accent);
+  background: var(--accent-gradient);
+}
+
+.md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.8rem;
+}

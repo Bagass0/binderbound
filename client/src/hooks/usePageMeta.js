@@ -10,6 +10,7 @@ const TITLES = {
   '/login': 'auth.title.login',
   '/binders': 'binders.title',
   '/collection': 'collectionPage.title',
+  '/amis': 'friends.title',
   '/echanges': 'trades.title',
   '/echanges/nouveau': 'compose.title',
 };
@@ -19,9 +20,8 @@ export function usePageMeta(pathname) {
 
   useEffect(() => {
     const key = TITLES[pathname] ?? (pathname.startsWith('/collection/') && TITLES['/collection']);
-    document.title = key
-      ? `${t(key)} · ${t('app.name')}`
-      : `${t('app.name')} — ${t('app.tagline')}`;
+    // Accueil : même titre que index.html (celui que Google indexe après rendu).
+    document.title = key ? `${t(key)} · ${t('app.name')}` : t('app.homeTitle');
 
     let robots = document.querySelector('meta[name="robots"]');
     if (pathname === '/') {

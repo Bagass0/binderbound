@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { useAuth } from '../../auth/useAuth.js';
-import { Book, Cards, Packs, Trade } from '../icons/Icons.jsx';
+import { Book, Cards, Packs, Trade, Users } from '../icons/Icons.jsx';
 import { STEPS } from './steps.js';
 import styles from './MainNav.module.css';
 
@@ -11,6 +11,7 @@ const LINKS = [
   { to: '/', key: 'sets', icon: Packs, match: (path) => STEPS.some((s) => s.path === path) },
   { to: '/binders', key: 'binders', icon: Book, accounts: true },
   { to: '/collection', key: 'collection', icon: Cards },
+  { to: '/amis', key: 'friends', icon: Users, user: true },
   { to: '/echanges', key: 'trades', icon: Trade, user: true },
 ];
 

@@ -3,7 +3,8 @@
     "name": "Binderbound",
     "tagline": "Rangement de classeur Riftbound",
     "home": "Binderbound — accueil",
-    "language": "Langue"
+    "language": "Langue",
+    "homeTitle": "Binderbound — Classeur Riftbound, collection et échange de doubles"
   },
   "common": {
     "back": "Retour",
@@ -419,7 +420,7 @@
       },
       {
         "title": "Amis et échanges",
-        "body": "Si tu utilises les échanges, nous conservons tes amis, les cartes que tu marques comme doubles, tes propositions d’échange (cartes, message, statut) et les notifications qui en découlent. Ton adresse e-mail n’est jamais montrée. Par défaut, ton nom et ta photo de profil apparaissent dans la liste des joueurs, pour qu’on puisse t’ajouter sans ton code ami ; tu peux t’en retirer à tout moment depuis la page Échanges. Tes amis, et eux seuls, voient les cartes que tu possèdes et tes doubles dans le set d’un échange ; retirer un ami lui retire cet accès."
+        "body": "Si tu utilises les échanges, nous conservons tes amis, les cartes que tu marques comme doubles, tes propositions d’échange (cartes, message, statut) et les notifications qui en découlent. Ton adresse e-mail n’est jamais montrée. Par défaut, ton nom et ta photo de profil apparaissent dans la liste des joueurs, pour qu’on puisse t’ajouter sans ton code ami ; tu peux t’en retirer à l’inscription ou à tout moment depuis la page Amis. Tes amis, et eux seuls, voient les cartes que tu possèdes et tes doubles dans le set d’un échange ; retirer un ami lui retire cet accès."
       },
       {
         "title": "Connexion avec Google",
@@ -515,7 +516,8 @@
     "sets": "Sets",
     "binders": "Mes classeurs",
     "collection": "Ma collection",
-    "trades": "Échanges"
+    "trades": "Échanges",
+    "friends": "Amis"
   },
   "collectionPage": {
     "title": "Ma collection",
@@ -552,7 +554,9 @@
     "doubleHint": "Double : proposé à l’échange"
   },
   "friends": {
+    "eyebrow": "Entre joueurs",
     "title": "Amis",
+    "lead": "Tes amis d’abord, puis tous les joueurs à ajouter. Une fois amis, vous voyez vos collections et pouvez échanger vos doubles.",
     "myCode": "Ton code ami",
     "codeHint": "Donne-le à tes amis pour qu’ils t’ajoutent. Clique pour le copier.",
     "copied": "Copié !",
@@ -575,18 +579,17 @@
     "outgoing": "Demandes envoyées",
     "accept": "Accepter",
     "decline": "Refuser",
-    "list_one": "Mon ami ({{count}})",
-    "list_other": "Mes amis ({{count}})",
-    "none": "Pas encore d’ami : partage ton code ou saisis le leur.",
+    "none": "Pas encore d’ami : cherche un joueur ci-dessous, ou partage ton code ami.",
     "propose": "Échanger",
     "remove": "Retirer {{name}} de mes amis",
-    "confirmRemove": "Retirer"
+    "confirmRemove": "Retirer",
+    "mine": "Mes amis"
   },
   "trades": {
     "eyebrow": "Entre amis",
     "title": "Échanges",
-    "lead": "Ajoute tes amis, puis propose-leur tes doubles contre les leurs, set par set. Une fois l’échange accepté, vos collections se mettent à jour toutes seules.",
-    "none": "Aucun échange pour l’instant. Choisis un ami et clique sur « Échanger ».",
+    "lead": "Propose tes doubles à tes amis contre les leurs, set par set. Une fois l’échange accepté, vos collections se mettent à jour toutes seules.",
+    "none": "Aucun échange pour l’instant. Propose-en un à un ami !",
     "groups": {
       "incoming": "À traiter",
       "outgoing": "En attente de réponse",
@@ -607,7 +610,9 @@
     "decline": "Refuser",
     "cancel": "Annuler la proposition",
     "stale": "Certaines cartes ne sont plus disponibles : cet échange ne peut plus être accepté.",
-    "failed": "L’action a échoué, réessaie."
+    "failed": "L’action a échoué, réessaie.",
+    "new": "Proposer un échange",
+    "manageFriends": "Gérer mes amis"
   },
   "compose": {
     "eyebrow": "Nouvel échange",
@@ -659,10 +664,10 @@
       "trade_cancelled": "{{name}} a annulé sa proposition ({{set}})."
     },
     "justNow": "à l’instant",
-    "nowFriends": "Vous êtes maintenant amis"
+    "nowFriends": "Vous êtes maintenant amis",
+    "viewFriends": "Voir mes amis"
   },
   "players": {
-    "browse": "Parcourir les joueurs",
     "title": "Tous les joueurs",
     "search": "Rechercher un joueur",
     "none": "Personne d’autre pour l’instant.",
@@ -671,6 +676,7 @@
     "friend": "Ami",
     "more": "Voir plus",
     "discoverable": "Apparaître dans la liste des joueurs",
-    "discoverableHint": "Les autres peuvent alors t’ajouter sans ton code. Seuls ton nom et ta photo y figurent."
+    "discoverableHint": "Les autres peuvent alors t’ajouter sans ton code. Seuls ton nom et ta photo y figurent.",
+    "lead": "Tous ceux qui ont choisi d’apparaître, par ordre alphabétique. Ajoute-les sans leur code."
   }
 }
