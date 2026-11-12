@@ -23,6 +23,7 @@ export function authRouter({
   collections,
   friends,
   trades,
+  notifications,
   verifyGoogle,
   cookieSecure,
 }) {
@@ -107,6 +108,7 @@ export function authRouter({
       account: {
         ...publicUser(user),
         googleId: user.google_sub,
+        discoverable: Boolean(user.discoverable),
         createdAt: user.created_at,
       },
       binders: await binders.list(user.id),
@@ -114,6 +116,7 @@ export function authRouter({
       doubles: await collections.allDoubles(user.id),
       friends: await friends.list(user.id),
       trades: await trades.list(user.id, { limit: 10000 }),
+      notifications: await notifications.list(user.id),
     });
   });
 

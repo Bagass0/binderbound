@@ -2,7 +2,12 @@ import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import { HttpError } from '../middleware/errorHandler.js';
 import { requireUser } from '../middleware/session.js';
-import { friendRequestSchema, idParamSchema } from '../schemas/account.schema.js';
+import {
+  directoryQuerySchema,
+  discoverableSchema,
+  friendRequestSchema,
+  idParamSchema,
+} from '../schemas/account.schema.js';
 import { friendView } from '../services/friends.js';
 
 /** Limite les essais de codes ami (on ne devine pas le code de quelqu'un en boucle). */
@@ -16,7 +21,10 @@ const requestLimiter = rateLimit({
     next(new HttpError(429, 'RATE_LIMITED', 'Trop de tentatives, réessaie plus tard')),
 });
 
-/** Amis : ajout par code ami, demandes à accepter, collection d'un ami pour préparer un échange. */
+/**
+ * Amis : ajout par code ami ou depuis la liste des joueurs, demandes à accepter, collection
+ * d'un ami pour préparer un échange.
+ */
 export function friendsRouter(repo, { friends, collections }) {
   const router = Router();
   router.use(requireUser);
@@ -28,11 +36,33 @@ export function friendsRouter(repo, { friends, collections }) {
   };
 
   router.get('/', async (req, res) => {
-    const [code, lists] = await Promise.all([
+    const [code, lists, discoverable] = await Promise.all([
       friends.codeOf(req.user.id),
       friends.list(req.user.id),
+      friends.isDiscoverable(req.user.id),
     ]);
-    res.json({ code, ...lists });
+    res.json({ code, discoverable, ...lists });
+  });
+
+  /** Liste des joueurs par ordre alphabétique : { users, more }. */
+  router.get('/directory', async (req, res) => {
+    const { q, offset } = directoryQuerySchema.parse(req.query);
+    res.json(await friends.directory(req.user.id, { query: q, offset }));
+  });
+
+  /** Apparaître ou non dans la liste des joueurs. */
+  router.put('/settings', async (req, res) => {
+    const { discoverable } = discoverableSchema.parse(req.body ?? {});
+    await friends.setDiscoverable(req.user.id, discoverable);
+    res.status(204).end();
+  });
+
+  /** Ajoute un joueur de la liste, sans son code. */
+  router.post('/users/:id', requestLimiter, async (req, res) => {
+    const target = await friends.findDiscoverable(otherId(req));
+    if (!target) throw new HttpError(404, 'USER_NOT_FOUND', 'Joueur introuvable');
+    const status = await friends.request(req.user.id, target.id);
+    res.status(status === 'requested' ? 201 : 200).json({ status, user: friendView(target) });
   });
 
   /** Ajoute par code : demande envoyée, ou amitié conclue si l'autre avait déjà demandé. */

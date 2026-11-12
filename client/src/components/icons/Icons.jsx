@@ -75,6 +75,11 @@ export const Cards = (p) => (
     <path d="M5 6.5v12A2.5 2.5 0 0 0 7.5 21H15" />
   </svg>
 );
+export const Bell = (p) => (
+  <svg {...base} {...p}>
+    <path d="M6 16.5V11a6 6 0 1 1 12 0v5.5l1.5 1.5h-15L6 16.5ZM10 20.5a2.2 2.2 0 0 0 4 0" />
+  </svg>
+);
 /** Échanges : deux flèches qui se croisent. */
 export const Trade = (p) => (
   <svg {...base} {...p}>

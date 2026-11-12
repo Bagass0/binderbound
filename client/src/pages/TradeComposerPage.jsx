@@ -5,7 +5,7 @@ import { api } from '../api/client.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { useCollection } from '../hooks/useCollection.js';
 import { usePrices, useSet, useSets } from '../hooks/useConfig.js';
-import { notifyTradesChanged } from '../hooks/useTradeSummary.js';
+import { notifyChanged } from '../hooks/useNotifications.js';
 import { localizedName } from '../lib/format.js';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
@@ -152,7 +152,7 @@ function Composer({ friend, setId }) {
         receive: [...receive],
         message: message.trim() || undefined,
       });
-      notifyTradesChanged();
+      notifyChanged();
       navigate('/echanges');
     } catch (err) {
       setError(err.code === 'TRADE_STALE' ? t('trades.stale') : t('compose.failed'));

@@ -76,6 +76,10 @@ export const api = {
   friends: {
     list: (signal) => request('/friends', { signal }),
     add: (code) => send('POST', '/friends', { code }),
+    addUser: (id) => send('POST', `/friends/users/${enc(id)}`),
+    directory: ({ q = '', offset = 0 } = {}, signal) =>
+      request(`/friends/directory?${new URLSearchParams({ q, offset })}`, { signal }),
+    setDiscoverable: (discoverable) => send('PUT', '/friends/settings', { discoverable }),
     accept: (id) => send('POST', `/friends/${enc(id)}/accept`),
     remove: (id) => send('DELETE', `/friends/${enc(id)}`),
     collection: (id, setId, signal) =>
@@ -84,10 +88,15 @@ export const api = {
 
   trades: {
     list: (signal) => request('/trades', { signal }),
-    summary: (signal) => request('/trades/summary', { signal }),
     create: (body) => send('POST', '/trades', body),
     accept: (id) => send('POST', `/trades/${enc(id)}/accept`),
     decline: (id) => send('POST', `/trades/${enc(id)}/decline`),
     cancel: (id) => send('POST', `/trades/${enc(id)}/cancel`),
+  },
+
+  notifications: {
+    list: (signal) => request('/notifications', { signal }),
+    count: (signal) => request('/notifications/count', { signal }),
+    markRead: () => send('POST', '/notifications/read'),
   },
 };

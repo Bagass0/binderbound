@@ -11,8 +11,21 @@ const newCode = () =>
 /** Ce qu'un ami voit d'un autre utilisateur : ni e-mail, ni identifiants de connexion. */
 export const friendView = (row) => ({ id: row.id, name: row.name, avatarUrl: row.avatar_url });
 
-/** Amitiés (table `friendships`) et codes ami (`users.friend_code`). */
-export function createFriendStore(db) {
+/** Lien entre l'utilisateur et un autre joueur, vu de l'utilisateur. */
+const relationOf = (row, userId) => {
+  if (!row.status) return null;
+  if (row.status === 'accepted') return 'friend';
+  return row.requester_id === userId ? 'outgoing' : 'incoming';
+};
+
+/** Au-delà, la liste des joueurs se parcourt par pages (ou par recherche). */
+export const DIRECTORY_PAGE = 50;
+
+/**
+ * Amitiés (table `friendships`), codes ami (`users.friend_code`) et liste des joueurs.
+ * `notifications` (services/notifications.js) prévient l'autre joueur des demandes et réponses.
+ */
+export function createFriendStore(db, { notifications }) {
   return {
     /** Code ami de l'utilisateur, créé à la première demande. */
     async codeOf(userId) {
@@ -89,6 +102,7 @@ export function createFriendStore(db) {
         fromId,
         toId,
       ]);
+      await notifications.add(toId, 'friend_request', fromId);
       return 'requested';
     },
 
@@ -99,7 +113,9 @@ export function createFriendStore(db) {
          WHERE requester_id = ? AND addressee_id = ? AND status = 'pending'`,
         [requesterId, userId],
       );
-      return result.affectedRows > 0;
+      if (!result.affectedRows) return false;
+      await notifications.add(requesterId, 'friend_accepted', userId);
+      return true;
     },
 
     /**
@@ -117,16 +133,48 @@ export function createFriendStore(db) {
          AND ((proposer_id = ? AND recipient_id = ?) OR (proposer_id = ? AND recipient_id = ?))`,
         [userId, otherId, otherId, userId],
       );
+      await notifications.removeFriendRequest(userId, otherId);
+      await notifications.removeFriendRequest(otherId, userId);
       return result.affectedRows > 0;
     },
 
-    /** Nombre de demandes d'ami reçues en attente. */
-    async incomingCount(userId) {
-      const [[row]] = await db.query(
-        "SELECT COUNT(*) AS n FROM friendships WHERE addressee_id = ? AND status = 'pending'",
-        [userId],
-      );
-      return row.n;
+    /** Joueur visible dans la liste (ajout sans code ami). */
+    async findDiscoverable(id) {
+      const [[row]] = await db.query('SELECT * FROM users WHERE id = ? AND discoverable', [id]);
+      return row ?? null;
     },
+
+    /**
+     * Liste des joueurs par ordre alphabétique, sans l'utilisateur, filtrée par `query` (début
+     * ou milieu du nom). Chacun porte son lien avec l'utilisateur (ami, demande…).
+     */
+    async directory(userId, { query = '', offset = 0 } = {}) {
+      const like = `%${query.replace(/[\\%_]/g, '\\$&')}%`;
+      const [rows] = await db.query(
+        `SELECT u.id, u.name, u.avatar_url, f.status, f.requester_id
+         FROM users u
+         LEFT JOIN friendships f
+           ON (f.requester_id = ? AND f.addressee_id = u.id)
+           OR (f.requester_id = u.id AND f.addressee_id = ?)
+         WHERE u.id <> ? AND u.discoverable AND u.name LIKE ?
+         ORDER BY u.name, u.id
+         LIMIT ? OFFSET ?`,
+        [userId, userId, userId, like, DIRECTORY_PAGE + 1, offset],
+      );
+      return {
+        users: rows
+          .slice(0, DIRECTORY_PAGE)
+          .map((row) => ({ ...friendView(row), relation: relationOf(row, userId) })),
+        more: rows.length > DIRECTORY_PAGE,
+      };
+    },
+
+    async isDiscoverable(userId) {
+      const [[row]] = await db.query('SELECT discoverable FROM users WHERE id = ?', [userId]);
+      return Boolean(row?.discoverable);
+    },
+
+    setDiscoverable: (userId, value) =>
+      db.query('UPDATE users SET discoverable = ? WHERE id = ?', [value, userId]),
   };
 }

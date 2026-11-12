@@ -2,7 +2,6 @@ import { NavLink, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { useAuth } from '../../auth/useAuth.js';
-import { useTradeSummary } from '../../hooks/useTradeSummary.js';
 import { Book, Cards, Packs, Trade } from '../icons/Icons.jsx';
 import { STEPS } from './steps.js';
 import styles from './MainNav.module.css';
@@ -20,7 +19,6 @@ export function MainNav() {
   const { t } = useTranslation();
   const { enabled, user } = useAuth();
   const { pathname } = useLocation();
-  const waiting = useTradeSummary(pathname);
 
   return (
     <nav className={styles.nav} aria-label={t('nav.label')}>
@@ -37,11 +35,6 @@ export function MainNav() {
             >
               <Icon className={styles.icon} />
               <span className={styles.label}>{t(`nav.${key}`)}</span>
-              {key === 'trades' && waiting > 0 && (
-                <span className={styles.badge} aria-label={t('nav.waiting', { count: waiting })}>
-                  {waiting}
-                </span>
-              )}
               {active && <motion.span layoutId="nav-underline" className={styles.underline} />}
             </NavLink>
           );

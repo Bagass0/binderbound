@@ -2,6 +2,7 @@ import { createGoogleVerifier } from '../auth/google.js';
 import { createBinderStore } from './binders.js';
 import { createCollectionStore } from './collections.js';
 import { createFriendStore } from './friends.js';
+import { createNotificationStore } from './notifications.js';
 import { createSessionStore } from './sessions.js';
 import { createTradeStore } from './trades.js';
 import { createUserStore } from './users.js';
@@ -14,13 +15,15 @@ export function createAccounts(
   db,
   { googleClientId = null, cookieSecure = false, verifyGoogle } = {},
 ) {
+  const notifications = createNotificationStore(db);
   return {
     users: createUserStore(db),
     sessions: createSessionStore(db),
     binders: createBinderStore(db),
     collections: createCollectionStore(db),
-    friends: createFriendStore(db),
-    trades: createTradeStore(db),
+    friends: createFriendStore(db, { notifications }),
+    trades: createTradeStore(db, { notifications }),
+    notifications,
     googleClientId,
     cookieSecure,
     verifyGoogle: verifyGoogle ?? (googleClientId ? createGoogleVerifier(googleClientId) : null),

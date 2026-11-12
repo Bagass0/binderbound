@@ -80,3 +80,10 @@ export const tradeCreateSchema = z
   .transform((t) => ({ ...t, give: [...new Set(t.give)], receive: [...new Set(t.receive)] }))
   .refine((t) => t.give.length + t.receive.length > 0, 'Échange vide')
   .refine((t) => !t.give.some((id) => t.receive.includes(id)), 'Même carte des deux côtés');
+
+export const directoryQuerySchema = z.object({
+  q: z.string().trim().max(80).default(''),
+  offset: z.coerce.number().int().min(0).max(100000).default(0),
+});
+
+export const discoverableSchema = z.object({ discoverable: z.boolean() });

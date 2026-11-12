@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  min-height: 2.3rem;
+  min-height: var(--action-size, 2.3rem);
   padding: 0 0.95rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -125,7 +125,7 @@
 @media (max-width: 40rem) {
   .login {
     justify-content: center;
-    width: 2.3rem;
+    width: var(--action-size, 2.3rem);
     padding: 0;
   }
 

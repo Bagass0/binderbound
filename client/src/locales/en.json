@@ -419,7 +419,7 @@
       },
       {
         "title": "Friends and trades",
-        "body": "If you use trades, we store your friends, the cards you mark as spares and your trade offers (cards, note, status). A random friend code lets people add you without ever seeing your email address. Your friends, and only them, can see your name, profile picture, the cards you own and your spares in a trade’s set; removing a friend revokes this access."
+        "body": "If you use trades, we store your friends, the cards you mark as spares, your trade offers (cards, note, status) and the related notifications. Your email address is never shown. By default, your name and profile picture appear in the player list so people can add you without your friend code; you can opt out at any time from the Trades page. Your friends, and only them, can see the cards you own and your spares in a trade’s set; removing a friend revokes this access."
       },
       {
         "title": "Sign in with Google",
@@ -515,9 +515,7 @@
     "sets": "Sets",
     "binders": "My binders",
     "collection": "My collection",
-    "trades": "Trades",
-    "waiting_one": "{{count}} awaiting your answer",
-    "waiting_other": "{{count}} awaiting your answer"
+    "trades": "Trades"
   },
   "collectionPage": {
     "title": "My collection",
@@ -641,5 +639,38 @@
     "message": "A short note (optional)",
     "send": "Send to {{name}}",
     "failed": "Couldn’t send the offer, please try again."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "label_zero": "Notifications",
+    "label_one": "Notifications, {{count}} unread",
+    "label_other": "Notifications, {{count}} unread",
+    "seeTrades": "See trades",
+    "loading": "Loading…",
+    "error": "Couldn’t load notifications.",
+    "none": "Nothing new for now.",
+    "viewTrade": "See the offer",
+    "types": {
+      "friend_request": "{{name}} wants to add you as a friend.",
+      "friend_accepted": "{{name}} accepted your friend request.",
+      "trade_received": "{{name}} offers you a trade ({{set}}).",
+      "trade_accepted": "{{name}} accepted your trade ({{set}}): your collection is up to date.",
+      "trade_declined": "{{name}} declined your trade ({{set}}).",
+      "trade_cancelled": "{{name}} cancelled their offer ({{set}})."
+    },
+    "justNow": "just now",
+    "nowFriends": "You’re now friends"
+  },
+  "players": {
+    "browse": "Browse players",
+    "title": "All players",
+    "search": "Search a player",
+    "none": "Nobody else yet.",
+    "noMatch": "No player matches.",
+    "sent": "Request sent",
+    "friend": "Friend",
+    "more": "Show more",
+    "discoverable": "Show me in the player list",
+    "discoverableHint": "Others can then add you without your code. Only your name and picture are shown."
   }
 }

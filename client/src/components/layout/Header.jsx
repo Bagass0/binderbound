@@ -5,6 +5,7 @@ import { Emblem } from '../icons/Icons.jsx';
 import { LANGUAGES } from '../../i18n.js';
 import { AccountMenu } from './AccountMenu.jsx';
 import { MainNav } from './MainNav.jsx';
+import { NotificationBell } from './NotificationBell.jsx';
 import { SoundToggle } from './SoundToggle.jsx';
 import styles from './Header.module.css';
 
@@ -48,6 +49,7 @@ export function Header() {
               );
             })}
           </div>
+          <NotificationBell />
           <AccountMenu />
         </div>
       </div>

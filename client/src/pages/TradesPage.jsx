@@ -6,17 +6,24 @@ import { api } from '../api/client.js';
 import { useAuth } from '../auth/useAuth.js';
 import { useAsync } from '../hooks/useAsync.js';
 import { usePrices, useSet } from '../hooks/useConfig.js';
-import { notifyTradesChanged } from '../hooks/useTradeSummary.js';
+import { notifyChanged } from '../hooks/useNotifications.js';
 import { itemMotion } from '../lib/motion.js';
 import { localizedName } from '../lib/format.js';
 import { PageHeading } from '../components/common/PageHeading.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { TotalValue, TradeCards } from '../components/trade/TradeCards.jsx';
 import { Button } from '../components/ui/Button.jsx';
+import { Dialog } from '../components/ui/Dialog.jsx';
 import { Panel } from '../components/ui/Panel.jsx';
+import { Toggle } from '../components/ui/controls.jsx';
 import { TextField } from '../components/ui/TextField.jsx';
-import { Check, Copy, Plus, Trade, Trash } from '../components/icons/Icons.jsx';
+import { Check, Copy, Plus, Search, Trade, Trash } from '../components/icons/Icons.jsx';
 import styles from './TradesPage.module.css';
+
+const initialOf = (user) => user.name.slice(0, 1).toLocaleUpperCase();
+
+/** Taille d'une page de la liste des joueurs (fixée par le serveur). */
+const PLAYERS_PAGE = 50;
 
 /** « ABCD-EFGH » : plus lisible à dicter ou recopier. */
 const formatCode = (code) => (code ? `${code.slice(0, 4)}-${code.slice(4)}` : '');
@@ -28,7 +35,7 @@ export default function TradesPage() {
   const [version, setVersion] = useState(0);
   const refresh = () => {
     setVersion((v) => v + 1);
-    notifyTradesChanged();
+    notifyChanged();
   };
   const key = `${user.id}:${version}`;
   const friends = useAsync(`friends:${key}`, (signal) => api.friends.list(signal));
@@ -110,6 +117,7 @@ function FriendsPanel({ state, onChange }) {
   const { t } = useTranslation();
   const { data, error } = state;
   const [copied, setCopied] = useState(false);
+  const [browsing, setBrowsing] = useState(false);
 
   const copy = async () => {
     await navigator.clipboard?.writeText(formatCode(data.code)).catch(() => {});
@@ -134,6 +142,9 @@ function FriendsPanel({ state, onChange }) {
           </div>
 
           <AddFriendForm onAdded={onChange} />
+          <Button variant="secondary" icon={<Search />} onClick={() => setBrowsing(true)}>
+            {t('players.browse')}
+          </Button>
 
           {data.incoming.length > 0 && (
             <div className={styles.block}>
@@ -188,9 +199,129 @@ function FriendsPanel({ state, onChange }) {
               </ul>
             </div>
           )}
+
+          <div className={styles.visibility}>
+            <Toggle
+              checked={data.discoverable}
+              onChange={(value) => api.friends.setDiscoverable(value).then(onChange, console.error)}
+              label={t('players.discoverable')}
+              description={t('players.discoverableHint')}
+            />
+          </div>
         </>
       )}
+      <PlayersDialog
+        open={browsing}
+        onClose={() => {
+          setBrowsing(false);
+          onChange();
+        }}
+      />
     </Panel>
+  );
+}
+
+/** Tous les joueurs (qui l'acceptent), par ordre alphabétique, à ajouter sans code. */
+function PlayersDialog({ open, onClose }) {
+  const { t } = useTranslation();
+  return (
+    <Dialog
+      open={open}
+      onClose={onClose}
+      title={t('players.title')}
+      className={styles.playersDialog}
+    >
+      <PlayersList onClose={onClose} />
+    </Dialog>
+  );
+}
+
+function PlayersList({ onClose }) {
+  const { t } = useTranslation();
+  const [query, setQuery] = useState('');
+  const [pages, setPages] = useState(1);
+  const [version, setVersion] = useState(0);
+  const q = query.trim();
+  // Les pages déjà affichées sont rechargées ensemble : liste à jour après un ajout.
+  const { data, error, loading } = useAsync(
+    `players:${q}:${pages}:${version}`,
+    async (signal) => {
+      const results = await Promise.all(
+        Array.from({ length: pages }, (_, i) =>
+          api.friends.directory({ q, offset: i * PLAYERS_PAGE }, signal),
+        ),
+      );
+      return { users: results.flatMap((r) => r.users), more: results.at(-1).more };
+    },
+    { delay: q ? 250 : 0 },
+  );
+
+  const act = (fn) => () => fn().then(() => setVersion((v) => v + 1), console.error);
+  return (
+    <div className={styles.players}>
+      <TextField
+        label={t('players.search')}
+        type="search"
+        value={query}
+        autoFocus
+        onChange={(e) => {
+          setQuery(e.target.value);
+          setPages(1);
+        }}
+      />
+      {error && <ErrorMessage error={error} />}
+      {!data && !error && <Loading />}
+      {data?.users.length === 0 && (
+        <p className={styles.hint}>{q ? t('players.noMatch') : t('players.none')}</p>
+      )}
+      {data?.users.length > 0 && (
+        <ul className={`${styles.people} ${styles.playerList}`} aria-busy={loading}>
+          {data.users.map((u, i) => {
+            const initial = initialOf(u);
+            const header = i === 0 || initialOf(data.users[i - 1]) !== initial;
+            return (
+              <li key={u.id} className={header ? styles.letterStart : ''} data-letter={initial}>
+                <Avatar user={u} />
+                <span className={styles.personName}>{u.name}</span>
+                {u.relation === null && (
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    icon={<Plus />}
+                    onClick={act(() => api.friends.addUser(u.id))}
+                  >
+                    {t('friends.add')}
+                  </Button>
+                )}
+                {u.relation === 'incoming' && (
+                  <Button size="sm" variant="primary" onClick={act(() => api.friends.accept(u.id))}>
+                    {t('friends.accept')}
+                  </Button>
+                )}
+                {u.relation === 'outgoing' && (
+                  <span className={styles.relation}>{t('players.sent')}</span>
+                )}
+                {u.relation === 'friend' && (
+                  <span className={styles.relation}>
+                    <Check /> {t('players.friend')}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      <div className={styles.dialogFoot}>
+        {data?.more && (
+          <Button size="sm" variant="ghost" onClick={() => setPages((p) => p + 1)}>
+            {t('players.more')}
+          </Button>
+        )}
+        <Button variant="secondary" onClick={onClose}>
+          {t('preview.close')}
+        </Button>
+      </div>
+    </div>
   );
 }
 

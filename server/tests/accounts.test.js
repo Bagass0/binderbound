@@ -15,6 +15,7 @@ import { HttpError } from '../src/middleware/errorHandler.js';
 const url = process.env.TEST_DATABASE_URL;
 const FIXTURES = fileURLToPath(new URL('./fixtures', import.meta.url));
 const TABLES = [
+  'notifications',
   'trade_items',
   'trades',
   'double_cards',
@@ -378,10 +379,11 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
         user: { id: jinxId, name: 'jinx', avatarUrl: null },
       });
 
-      expect((await jinx.get('/api/trades/summary')).body).toEqual({
-        friendRequests: 1,
-        trades: 0,
-      });
+      const notified = (await jinx.get('/api/notifications')).body;
+      expect(notified.unread).toBe(1);
+      expect(notified.notifications).toMatchObject([
+        { type: 'friend_request', actor: { name: 'ezreal' }, pending: true, read: false },
+      ]);
       const lists = (await jinx.get('/api/friends')).body;
       expect(lists.incoming.map((f) => f.name)).toEqual(['ezreal']);
       expect(JSON.stringify(lists)).not.toContain('@');
@@ -421,7 +423,8 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
         message: 'Deal ?',
       }).expect(201);
 
-      expect((await jinx.get('/api/trades/summary')).body.trades).toBe(1);
+      // La demande d'ami (acceptée, elle reste affichée) et la proposition.
+      expect((await jinx.get('/api/notifications/count')).body.unread).toBe(2);
       const [trade] = (await jinx.get('/api/trades')).body.trades;
       expect(trade).toMatchObject({
         id: body.id,
@@ -441,6 +444,13 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
         doubleIds: ['SMP-002'],
       });
       expect(await owned(jinx)).toEqual({ cardIds: ['SMP-001', 'SMP-002'], doubleIds: [] });
+
+      // Ezreal est prévenu de l'acceptation (et de l'amitié conclue plus tôt).
+      const { notifications } = (await ezreal.get('/api/notifications')).body;
+      expect(notifications.map((n) => n.type)).toEqual(['trade_accepted', 'friend_accepted']);
+      expect(notifications[0].trade).toEqual({ id: body.id, setId: 'sample' });
+      await ezreal.post('/api/notifications/read').expect(204);
+      expect((await ezreal.get('/api/notifications/count')).body.unread).toBe(0);
     });
 
     it('refuse un échange devenu impossible, et gère refus et annulation', async () => {
@@ -478,6 +488,65 @@ describe.skipIf(!url)('comptes (MySQL)', () => {
       await ezreal.delete(`/api/friends/${jinxId}`).expect(204);
       expect((await jinx.get('/api/trades')).body.trades[0].status).toBe('cancelled');
       expect((await jinx.get('/api/friends')).body.friends).toEqual([]);
+    });
+    it('liste les joueurs par ordre alphabétique et permet de les ajouter sans code', async () => {
+      const [ahri, ahriId] = await signUp('ahri');
+      const { body } = await ezreal.get('/api/friends/directory').expect(200);
+      // Sans soi-même, avec le lien de chacun, et jamais l'e-mail.
+      expect(body).toEqual({
+        users: [
+          { id: ahriId, name: 'ahri', avatarUrl: null, relation: null },
+          { id: jinxId, name: 'jinx', avatarUrl: null, relation: null },
+        ],
+        more: false,
+      });
+      expect(
+        (await ezreal.get('/api/friends/directory?q=JI')).body.users.map((u) => u.name),
+      ).toEqual(['jinx']);
+      expect((await ezreal.get('/api/friends/directory?q=%25')).body.users).toEqual([]);
+
+      const res = await ezreal.post(`/api/friends/users/${jinxId}`).expect(201);
+      expect(res.body.status).toBe('requested');
+      const after = (await ezreal.get('/api/friends/directory')).body.users;
+      expect(after.find((u) => u.id === jinxId).relation).toBe('outgoing');
+      expect(
+        (await jinx.get('/api/friends/directory')).body.users.find((u) => u.name === 'ezreal')
+          .relation,
+      ).toBe('incoming');
+
+      // Un joueur qui se retire de la liste n'y apparaît plus et ne peut plus être ajouté ainsi.
+      await ahri.put('/api/friends/settings').send({ discoverable: false }).expect(204);
+      expect((await ahri.get('/api/friends')).body.discoverable).toBe(false);
+      expect((await ezreal.get('/api/friends/directory')).body.users.map((u) => u.name)).toEqual([
+        'jinx',
+      ]);
+      await ezreal.post(`/api/friends/users/${ahriId}`).expect(404);
+      await ezreal.post(`/api/friends/users/${ezrealId}`).expect(400);
+    });
+
+    it('notifie les refus et annulations, et oublie une demande d’ami retirée', async () => {
+      await ezreal.post(`/api/friends/users/${jinxId}`).expect(201);
+      await ezreal.delete(`/api/friends/${jinxId}`).expect(204);
+      expect((await jinx.get('/api/notifications')).body).toEqual({ notifications: [], unread: 0 });
+
+      await befriend();
+      await ezreal.put('/api/collection/sample/doubles/SMP-001').expect(204);
+      const propose = () =>
+        ezreal
+          .post('/api/trades')
+          .send({ friendId: jinxId, setId: 'sample', give: ['SMP-001'], receive: [] })
+          .then((r) => r.body.id);
+      await jinx.post(`/api/trades/${await propose()}/decline`).expect(204);
+      await ezreal.post(`/api/trades/${await propose()}/cancel`).expect(204);
+      const types = async (agent) =>
+        (await agent.get('/api/notifications')).body.notifications.map((n) => n.type);
+      expect(await types(ezreal)).toEqual(['trade_declined', 'friend_accepted']);
+      expect(await types(jinx)).toEqual([
+        'trade_cancelled',
+        'trade_received',
+        'trade_received',
+        'friend_request',
+      ]);
     });
   });
 });

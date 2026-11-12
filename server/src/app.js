@@ -9,6 +9,7 @@ import { bindersRouter } from './routes/binders.js';
 import { collectionRouter } from './routes/collection.js';
 import { friendsRouter } from './routes/friends.js';
 import { tradesRouter } from './routes/trades.js';
+import { notificationsRouter } from './routes/notifications.js';
 import { loadSession, sameOrigin } from './middleware/session.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
@@ -41,6 +42,7 @@ export function createApp(
     app.use('/api/collection', collectionRouter(repo, accounts));
     app.use('/api/friends', friendsRouter(repo, accounts));
     app.use('/api/trades', tradesRouter(repo, accounts));
+    app.use('/api/notifications', notificationsRouter(accounts));
   }
   app.use('/api', notFound);
 

@@ -12,15 +12,6 @@ export function tradesRouter(repo, { friends, trades }) {
     res.json({ trades: await trades.list(req.user.id) });
   });
 
-  /** Ce qui attend une réponse : pastille de la navigation. */
-  router.get('/summary', async (req, res) => {
-    const [friendRequests, incoming] = await Promise.all([
-      friends.incomingCount(req.user.id),
-      trades.incomingCount(req.user.id),
-    ]);
-    res.json({ friendRequests, trades: incoming });
-  });
-
   router.post('/', async (req, res) => {
     const body = tradeCreateSchema.parse(req.body ?? {});
     const set = repo.get(body.setId);

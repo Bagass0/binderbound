@@ -419,7 +419,7 @@
       },
       {
         "title": "Amis et échanges",
-        "body": "Si tu utilises les échanges, nous conservons tes amis, les cartes que tu marques comme doubles et tes propositions d’échange (cartes, message, statut). Un code ami aléatoire te permet d’être ajouté sans jamais montrer ton adresse e-mail. Tes amis, et eux seuls, voient ton nom, ta photo de profil, les cartes que tu possèdes et tes doubles dans le set d’un échange ; retirer un ami lui retire cet accès."
+        "body": "Si tu utilises les échanges, nous conservons tes amis, les cartes que tu marques comme doubles, tes propositions d’échange (cartes, message, statut) et les notifications qui en découlent. Ton adresse e-mail n’est jamais montrée. Par défaut, ton nom et ta photo de profil apparaissent dans la liste des joueurs, pour qu’on puisse t’ajouter sans ton code ami ; tu peux t’en retirer à tout moment depuis la page Échanges. Tes amis, et eux seuls, voient les cartes que tu possèdes et tes doubles dans le set d’un échange ; retirer un ami lui retire cet accès."
       },
       {
         "title": "Connexion avec Google",
@@ -515,9 +515,7 @@
     "sets": "Sets",
     "binders": "Mes classeurs",
     "collection": "Ma collection",
-    "trades": "Échanges",
-    "waiting_one": "{{count}} en attente de réponse",
-    "waiting_other": "{{count}} en attente de réponse"
+    "trades": "Échanges"
   },
   "collectionPage": {
     "title": "Ma collection",
@@ -641,5 +639,38 @@
     "message": "Un petit mot (facultatif)",
     "send": "Envoyer à {{name}}",
     "failed": "Impossible d’envoyer la proposition, réessaie."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "label_zero": "Notifications",
+    "label_one": "Notifications, {{count}} non lue",
+    "label_other": "Notifications, {{count}} non lues",
+    "seeTrades": "Voir les échanges",
+    "loading": "Chargement…",
+    "error": "Impossible de charger les notifications.",
+    "none": "Rien de nouveau pour l’instant.",
+    "viewTrade": "Voir la proposition",
+    "types": {
+      "friend_request": "{{name}} veut t’ajouter en ami.",
+      "friend_accepted": "{{name}} a accepté ta demande d’ami.",
+      "trade_received": "{{name}} te propose un échange ({{set}}).",
+      "trade_accepted": "{{name}} a accepté ton échange ({{set}}) : ta collection est à jour.",
+      "trade_declined": "{{name}} a refusé ton échange ({{set}}).",
+      "trade_cancelled": "{{name}} a annulé sa proposition ({{set}})."
+    },
+    "justNow": "à l’instant",
+    "nowFriends": "Vous êtes maintenant amis"
+  },
+  "players": {
+    "browse": "Parcourir les joueurs",
+    "title": "Tous les joueurs",
+    "search": "Rechercher un joueur",
+    "none": "Personne d’autre pour l’instant.",
+    "noMatch": "Aucun joueur ne correspond.",
+    "sent": "Demande envoyée",
+    "friend": "Ami",
+    "more": "Voir plus",
+    "discoverable": "Apparaître dans la liste des joueurs",
+    "discoverableHint": "Les autres peuvent alors t’ajouter sans ton code. Seuls ton nom et ta photo y figurent."
   }
 }

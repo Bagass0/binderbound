@@ -23,7 +23,7 @@ async function lockDoubles(conn, userId, setId, cardIds) {
  * celui qui donne garde son exemplaire, celui qui reçoit gagne la carte (ou un double s'il
  * l'avait déjà).
  */
-export function createTradeStore(db) {
+export function createTradeStore(db, { notifications }) {
   async function transaction(work) {
     const conn = await db.getConnection();
     try {
@@ -87,6 +87,10 @@ export function createTradeStore(db) {
           ...receive.map((id) => [result.insertId, recipientId, id]),
         ];
         await conn.query('INSERT INTO trade_items (trade_id, giver_id, card_id) VALUES ?', [items]);
+        await notifications.add(recipientId, 'trade_received', proposerId, {
+          tradeId: result.insertId,
+          conn,
+        });
         return result.insertId;
       });
     },
@@ -165,6 +169,7 @@ export function createTradeStore(db) {
         await transfer(conn, trade.set_id, trade.proposer_id, trade.recipient_id, give);
         await transfer(conn, trade.set_id, trade.recipient_id, trade.proposer_id, receive);
         await conn.query("UPDATE trades SET status = 'accepted' WHERE id = ?", [tradeId]);
+        await notifications.add(trade.proposer_id, 'trade_accepted', userId, { tradeId, conn });
       });
     },
 
@@ -173,21 +178,23 @@ export function createTradeStore(db) {
      * Renvoie false si l'utilisateur n'a pas ce droit ou si l'échange n'est plus en attente.
      */
     async close(tradeId, userId, status) {
-      const column = status === 'declined' ? 'recipient_id' : 'proposer_id';
+      const declined = status === 'declined';
       const [result] = await db.query(
-        `UPDATE trades SET status = ? WHERE id = ? AND ${column} = ? AND status = 'pending'`,
+        `UPDATE trades SET status = ? WHERE id = ? AND ${declined ? 'recipient_id' : 'proposer_id'} = ?
+         AND status = 'pending'`,
         [status, tradeId, userId],
       );
-      return result.affectedRows > 0;
-    },
-
-    /** Propositions reçues qui attendent une réponse. */
-    async incomingCount(userId) {
-      const [[row]] = await db.query(
-        "SELECT COUNT(*) AS n FROM trades WHERE recipient_id = ? AND status = 'pending'",
-        [userId],
+      if (!result.affectedRows) return false;
+      // Prévient l'autre : le proposant d'un refus, le destinataire d'une annulation.
+      const [[trade]] = await db.query(
+        'SELECT proposer_id, recipient_id FROM trades WHERE id = ?',
+        [tradeId],
       );
-      return row.n;
+      const other = declined ? trade.proposer_id : trade.recipient_id;
+      await notifications.add(other, declined ? 'trade_declined' : 'trade_cancelled', userId, {
+        tradeId,
+      });
+      return true;
     },
   };
 }
