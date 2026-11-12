@@ -13,7 +13,7 @@ import { CardPreview } from '../../components/binder/CardPreview.jsx';
 import { Button } from '../../components/ui/Button.jsx';
 import { Toggle } from '../../components/ui/controls.jsx';
 import { Book, Download, Link, List, Printer, Scan } from '../../components/icons/Icons.jsx';
-import { PriceSource } from '../../components/common/PriceTag.jsx';
+import { PriceNote } from '../../components/common/PriceTag.jsx';
 import { Summary } from './Summary.jsx';
 import { SearchBar } from './SearchBar.jsx';
 import { LocatedCard } from './LocatedCard.jsx';
@@ -259,11 +259,7 @@ export default function ResultPage() {
           </motion.div>
         </AnimatePresence>
 
-        {prices && (
-          <p className={styles.priceSource}>
-            <PriceSource prices={prices} />
-          </p>
-        )}
+        <PriceNote prices={prices} />
       </div>
 
       <CardPreview

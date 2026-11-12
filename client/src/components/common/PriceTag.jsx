@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { cardPrice, formatPrice } from '../../lib/format.js';
+import styles from './PriceTag.module.css';
 
 /** Prix converti d'une autre devise (TCGplayer en euros) : une estimation, marquée « ≈ ». */
 const isEstimate = (prices, card) =>
@@ -20,18 +21,26 @@ export function PriceTag({ prices, card, fallback = null, className }) {
   );
 }
 
-/** Mention des sources des prix, avec la date de mise à jour. */
-export function PriceSource({ prices }) {
+/**
+ * Explication des prix : ce sont des moyennes indicatives, avec leur source et leur date.
+ * `prices` : réponse de /api/sets/:id/prices (n'importe quel set : la source est la même).
+ */
+export function PriceNote({ prices }) {
   const { t, i18n } = useTranslation();
   if (!prices) return null;
   const date = new Date(prices.updatedAt).toLocaleDateString(i18n.language);
-  const sources = prices.sources ?? [prices.source];
-  const names = sources.map((s) => s.name).join(' + ');
-  const converted = prices.currency === 'EUR' && sources.some((s) => s.id === 'tcgplayer');
+  const ids = (prices.sources ?? [prices.source]).map((s) => s.id);
+  const source = ids.includes('cardnexus')
+    ? ids.includes('tcgplayer')
+      ? 'mixed'
+      : 'cardnexus'
+    : prices.currency === 'EUR'
+      ? 'tcgplayer'
+      : 'tcgplayerUsd';
   return (
-    <>
-      {t('price.source', { source: names, currency: prices.currency, date })}
-      {converted && ` · ${t('price.converted')}`}
-    </>
+    <p className={styles.note}>
+      <strong>{t('price.noteTitle')}</strong> {t(`price.note.${source}`)} {t('price.noteVaries')}{' '}
+      {t('price.updated', { date })}
+    </p>
   );
 }

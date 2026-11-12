@@ -10,6 +10,7 @@ import { itemMotion, listMotion } from '../lib/motion.js';
 import { formatPrice, localizedName, ownedValue } from '../lib/format.js';
 import { SetShowcase } from '../components/binder/SetShowcase.jsx';
 import { PageHeading } from '../components/common/PageHeading.jsx';
+import { PriceNote } from '../components/common/PriceTag.jsx';
 import { RarityBreakdown } from '../components/common/RarityBreakdown.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { ChevronRight } from '../components/icons/Icons.jsx';
@@ -168,6 +169,8 @@ export default function CollectionPage() {
           </section>
         );
       })}
+
+      {currency && <PriceNote prices={Object.values(allPrices).find(Boolean)} />}
     </>
   );
 }

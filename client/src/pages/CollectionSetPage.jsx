@@ -9,7 +9,7 @@ import { cardPrice, formatPrice, localizedName, ownedValue } from '../lib/format
 import { CardFrame } from '../components/binder/CardFrame.jsx';
 import { CardPreview } from '../components/binder/CardPreview.jsx';
 import { RarityGem } from '../components/common/RarityGem.jsx';
-import { PriceTag } from '../components/common/PriceTag.jsx';
+import { PriceNote, PriceTag } from '../components/common/PriceTag.jsx';
 import { ErrorMessage, Loading } from '../components/common/StatusMessage.jsx';
 import { Segmented } from '../components/ui/controls.jsx';
 import { ChevronLeft } from '../components/icons/Icons.jsx';
@@ -214,6 +214,8 @@ export default function CollectionSetPage() {
           </motion.section>
         ))}
       </AnimatePresence>
+
+      <PriceNote prices={prices} />
 
       <CardPreview
         card={preview?.card ?? null}

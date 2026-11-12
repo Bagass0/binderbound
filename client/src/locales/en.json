@@ -173,9 +173,16 @@
   "price": {
     "label": "Price",
     "foil": "foil",
-    "source": "{{source}} prices ({{currency}}), updated {{date}}",
-    "converted": "≈: TCGplayer price converted to euros",
-    "estimate": "TCGplayer price converted to euros (estimate)"
+    "estimate": "Average of recent TCGplayer sales, converted to euros (indicative)",
+    "noteTitle": "Indicative prices.",
+    "note": {
+      "tcgplayer": "Each price is the average of the card’s recent sales on TCGplayer (US market), converted to euros at today’s rate, hence the “≈”.",
+      "tcgplayerUsd": "Each price is the average of the card’s recent sales on TCGplayer (US market), in dollars.",
+      "cardnexus": "Each price is the average of the card’s recent sales on Cardmarket, provided by Card Nexus.",
+      "mixed": "Each price is the average of the card’s recent sales on Cardmarket, provided by Card Nexus; prices marked “≈” come from TCGplayer (US market), converted to euros."
+    },
+    "noteVaries": "The actual price depends on the card’s condition, language and seller: it can be higher or lower.",
+    "updated": "Updated {{date}}."
   },
   "scan": {
     "button": "Scan",
